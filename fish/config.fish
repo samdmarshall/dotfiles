@@ -20,10 +20,10 @@ end
 function fish_prompt
 	#setting up colours
 	if not set -q __fish_prompt_user
-		set -g __fish_prompt_user (set_color $fish_color_user)
+		set -g __fish_prompt_user (set_color blue)
 	end
 	if not set -q __fish_prompt_host
-		set -g __fish_prompt_host (set_color $fish_color_host)
+		set -g __fish_prompt_host (set_color blue)
 	end
 	if not set -q __fish_prompt_normal
 		set -g __fish_prompt_normal (set_color normal)
