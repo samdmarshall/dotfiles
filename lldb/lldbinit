@@ -1,0 +1,6 @@
+command script import ~/Projects/lldbscript/lldbscript.py
+command script import /Library/Python/2.7/site-packages/voltron-0.1-py2.7.egg/dbgentry.py
+
+#settings set target.load-script-from-symbol-file true
+#log enable -v -f ~/lldb.log lldb all
+#log enable -v -f ~/gdb-remote.log gdb-remote all
