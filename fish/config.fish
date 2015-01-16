@@ -47,14 +47,32 @@ function fish_prompt
 end
 
 # setting up local search paths
-set XCODE_NODE_PATH /Applications/Xcode.app/Contents/Developer/usr/share/xcs/Node/bin
-set LOCAL_PYTHON_PATH ~/Library/Python/2.7/bin
-set LOCAL_RUBY_PATH ~/.gem/ruby/2.0.0/bin
-set MACPORTS_BIN /opt/local/bin
-set MACPORTS_SBIN /opt/local/sbin
+set XCODE_NODE_PATH ""
+if test -e /Applications/Xcode.app/Contents/Developer/usr/share/xcs/Node/bin
+	set XCODE_NODE_PATH /Applications/Xcode.app/Contents/Developer/usr/share/xcs/Node/bin
+end
+set LOCAL_PYTHON_PATH ""
+if test -e ~/Library/Python/2.7/bin
+	set LOCAL_PYTHON_PATH ~/Library/Python/2.7/bin
+end
+set LOCAL_RUBY_PATH ""
+if test -e  ~/.gem/ruby/2.0.0/bin
+	set LOCAL_RUBY_PATH ~/.gem/ruby/2.0.0/bin
+end
+set MACPORTS_BIN ""
+if test -e /opt/local/bin
+	set MACPORTS_BIN /opt/local/bin
+end
+set MACPORTS_SBIN ""
+if test -e /opt/local/sbin
+	set MACPORTS_SBIN /opt/local/sbin
+end
 # setting $PATH
 set PATH $MACPORTS_BIN $MACPORTS_SBIN $PATH $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $XCODE_NODE_PATH
 
 # setting $GEM_HOME
-set LOCAL_GEM_HOME ~/.gems
+set LOCAL_GEM_HOME ""
+if test -e ~/.gems
+	set LOCAL_GEM_HOME ~/.gems
+end
 set GEM_HOME $GEM_HOME $LOCAL_GEM_HOME
