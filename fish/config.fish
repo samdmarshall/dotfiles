@@ -14,7 +14,7 @@ set __fish_git_prompt_char_stashstate '↩'
 set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
 
-function current_working_dir
+function prompt_current_working_dir
 	#setting up current working dir
 	set working_path_sub (pwd | sed -e "s=^$HOME=~=" | awk '{if(length($1)-40 < 0){print substr($1,0,length($1))}else{print "..."substr($1,length($1)-37,length($1))}}')
 	echo $working_path_sub;
@@ -53,7 +53,7 @@ function fish_prompt
 	#setting up hostname
 	set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
 	
-	echo -n -s "$__fish_prompt_user" "$USER" "$__fish_prompt_normal" @ "$__fish_prompt_host" "$__fish_prompt_hostname" "$__fish_prompt_normal" ":" "$__fish_prompt_path" (current_working_dir) "$__fish_prompt_normal"
+	echo -n -s "$__fish_prompt_user" "$USER" "$__fish_prompt_normal" @ "$__fish_prompt_host" "$__fish_prompt_hostname" "$__fish_prompt_normal" ":" "$__fish_prompt_path" (prompt_current_working_dir) "$__fish_prompt_normal"
     
 	set_color normal
     printf '%s ' (__fish_git_prompt)
