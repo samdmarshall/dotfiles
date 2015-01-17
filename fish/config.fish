@@ -1,3 +1,6 @@
+# disable greeting
+set fish_greeting ""
+
 # fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
