@@ -53,7 +53,7 @@ function fish_prompt
 	#setting up hostname
 	set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
 	
-	echo -n -s "$__fish_prompt_user" "$USER" "$__fish_prompt_normal" @ "$__fish_prompt_host" "$__fish_prompt_hostname" ":" "$__fish_prompt_path" (current_working_dir) "$__fish_prompt_normal"
+	echo -n -s "$__fish_prompt_user" "$USER" "$__fish_prompt_normal" @ "$__fish_prompt_host" "$__fish_prompt_hostname" "$__fish_prompt_normal" ":" "$__fish_prompt_path" (current_working_dir) "$__fish_prompt_normal"
     
 	set_color normal
     printf '%s ' (__fish_git_prompt)
