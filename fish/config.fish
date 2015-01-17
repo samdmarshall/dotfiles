@@ -20,6 +20,16 @@ function current_working_dir
 	echo $working_path_sub;
 end
 
+function fish_reload
+	. ~/.config/fish/config.fish
+end
+
+function fish_update
+	cd ~/.config
+	git pull
+	fish_reload
+end
+
 function fish_prompt
 	#setting up colours
 	set -g __fish_prompt_user (set_color blue)
