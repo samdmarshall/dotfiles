@@ -28,8 +28,8 @@ function fish_pull_update
 	set CURR (pwd)
 	cd ~/.config
 	git pull
-	fish_reload
 	cd $CURR
+	fish_reload
 end
 
 function fish_push_update
@@ -42,6 +42,7 @@ function fish_push_update
 	git commit -m "$argv"
 	git push origin master
 	cd $CURR
+	fish_reload
 end
 
 function fish_prompt
