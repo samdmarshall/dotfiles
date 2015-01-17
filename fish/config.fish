@@ -24,10 +24,20 @@ function fish_reload
 	. ~/.config/fish/config.fish
 end
 
-function fish_update
+function fish_pull_update
 	cd ~/.config
 	git pull
 	fish_reload
+end
+
+function fish_push_update
+	cd ~/.config
+	git add -f fish/config.fish fish/functions/*.fish
+	if test -e ~/.config/fish/functions/testfunc.fish
+		git reset -- fish/functions/testfunc.fish 
+	end
+	git commit -m "$argv"
+	git push origin master
 end
 
 function fish_prompt
