@@ -25,12 +25,15 @@ function fish_reload
 end
 
 function fish_pull_update
+	set CURR (pwd)
 	cd ~/.config
 	git pull
 	fish_reload
+	cd $CURR
 end
 
 function fish_push_update
+	set CURR (pwd)
 	cd ~/.config
 	git add -f fish/config.fish fish/functions/*.fish
 	if test -e ~/.config/fish/functions/testfunc.fish
@@ -38,6 +41,7 @@ function fish_push_update
 	end
 	git commit -m "$argv"
 	git push origin master
+	cd $CURR
 end
 
 function fish_prompt
