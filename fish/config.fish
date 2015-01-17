@@ -50,7 +50,7 @@ function fish_prompt
 	set -g __fish_prompt_user (set_color blue)
 	set -g __fish_prompt_host (set_color cyan)
 	set -g __fish_prompt_normal (set_color normal)
-	set -g __fish_prompt_path (set_color $fish_color_cwd)
+	set -g __fish_prompt_path (set_color green)
 	#setting up hostname
 	set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
 	
