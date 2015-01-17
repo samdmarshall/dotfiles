@@ -16,7 +16,7 @@ set __fish_git_prompt_char_upstream_behind '↓'
 
 function current_working_dir
 	#setting up current working dir
-	set working_path_sub (pwd | sed "s/^\/Users\/$USER/~/g" | awk '{if(length($1)-40 < 0){print substr($1,0,length($1))}else{print "..."substr($1,length($1)-37,length($1))}}')
+	set working_path_sub (pwd | sed "s/^\/Users\/$USER/~/g" | sed "s/^\/home\/$USER/~/g" | awk '{if(length($1)-40 < 0){print substr($1,0,length($1))}else{print "..."substr($1,length($1)-37,length($1))}}')
 	echo $working_path_sub;
 end
 
