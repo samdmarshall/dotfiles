@@ -62,7 +62,21 @@ function fish_prompt
 	#setting up hostname
 	set -g __fish_prompt_hostname (hostname | cut -d . -f 1)
 	
-	echo -n -s "$__fish_prompt_user" "$USER" "$__fish_prompt_normal" @ "$__fish_prompt_host" "$__fish_prompt_hostname" "$__fish_prompt_normal" ":" "$__fish_prompt_path" (prompt_current_working_dir) "$__fish_prompt_normal"
+	set user_name $USER
+	
+	if [ $user_name = "sam" ];
+		set user_name "😈 "
+	end
+	
+	set current_host "$__fish_prompt_hostname"
+	
+	if [ $current_host = "Pegasus" ];
+		set current_host "🐎 "
+	else if [ $current_host = "Galactica" ];
+		set current_host "🚀 "
+	end
+	
+	echo -n -s "$__fish_prompt_user" "$user_name" "$__fish_prompt_normal" @ "$__fish_prompt_host" "$current_host" "$__fish_prompt_normal" ":" "$__fish_prompt_path" (prompt_current_working_dir) "$__fish_prompt_normal"
     
 	set_color normal
     printf '%s ' (__fish_git_prompt)
