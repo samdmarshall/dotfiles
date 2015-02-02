@@ -63,7 +63,7 @@ end
 function fish_prompt
 	# setting up colours
 	if not set -q __fish_prompt_user
-		set -g __fish_prompt_user (set_color blue)
+		set -g __fish_prompt_user (set_color purple)
 	end
 	if not set -q __fish_prompt_host
 		set -g __fish_prompt_host (set_color cyan)
@@ -127,3 +127,10 @@ if test -e ~/.gems
 	set LOCAL_GEM_HOME ~/.gems
 end
 set GEM_HOME $GEM_HOME $LOCAL_GEM_HOME
+
+# setting $PYTHONSTARTUP
+set PYTHONSTARTUP_PATH ""
+if test -e ~/.pythonrc
+	set PYTHONSTARTUP_PATH ~/.pythonrc
+end
+set PYTHONSTARTUP $PYTHONSTARTUP_PATH
