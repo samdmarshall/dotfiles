@@ -11,7 +11,7 @@ from scp import SCPClient
 # Globals
 SITE_PATH='';
 EXPORT_PATH='';
-FILE_BLACKLIST=['.DS_Store'];
+FILE_BLACKLIST=['.DS_Store', '.git', '.gitignore'];
 EXPORT_LIST=[];
 WEBSITE_ROOT='/var/www/samdmarshall.com/public_html/';
 HOST_NAME='samdmarshall.com';
@@ -43,6 +43,16 @@ def should_update(installed, update):
     existing = os.path.getmtime(installed);
     updated = os.path.getmtime(update);
     return existing < updated;
+def test_for_in_git(check_path):
+    result = False;
+    check_name = check_path;
+    split_path = os.path.split(check_path);
+    while len(split_path[0]) != 0:
+        split_path = os.path.split(split_path[0]);
+    if split_path[1] == '.git':
+        result = True;
+    
+    return result;
 # Main
 def main(argv):
     if len(argv) == 0:
@@ -66,23 +76,25 @@ def main(argv):
         MakeDirectory(EXPORT_PATH);
         for root, dirs, files in os.walk(SITE_PATH, followlinks=False):
             for dir_name in dirs:
-                export_dir_path = os.path.join(os.path.join(EXPORT_PATH, root.split(SITE_PATH)[1]), dir_name);
-                MakeDirectory(export_dir_path);
+                if test_for_in_git(root.split(SITE_PATH)[1]) == False and dir_name != '.git':
+                    export_dir_path = os.path.join(os.path.join(EXPORT_PATH, root.split(SITE_PATH)[1]), dir_name);
+                    MakeDirectory(export_dir_path);
             for file_name in files:
-                site_file_path = os.path.join(root, file_name);
-                file_basename, file_extension = os.path.splitext(file_name);
-                if file_extension == '.md':
-                    file_name = file_basename+'.html'
-                export_file_path = os.path.join(os.path.join(EXPORT_PATH, root.split(SITE_PATH)[1]), file_name);
-                if file_name not in FILE_BLACKLIST:
-                    if should_update(export_file_path, site_file_path):
-                        print 'Exporting \"'+os.path.normpath(root.split(SITE_PATH)[1]+'/'+file_name)+'\" ...';
-                        EXPORT_LIST.append(export_file_path);
-                        if file_extension == '.md':
-                            make_subprocess_call(('pandoc', '-f', 'markdown', '-t', 'html5', '-c', CSS_URL, site_file_path, '-o', export_file_path));
-                            make_subprocess_call((REMOVE_JS_SCRIPT, export_file_path));
-                        else:
-                            shutil.copy2(site_file_path, export_file_path);
+                if test_for_in_git(root.split(SITE_PATH)[1]) == False:
+                    site_file_path = os.path.join(root, file_name);
+                    file_basename, file_extension = os.path.splitext(file_name);
+                    if file_extension == '.md':
+                        file_name = file_basename+'.html'
+                    export_file_path = os.path.join(os.path.join(EXPORT_PATH, root.split(SITE_PATH)[1]), file_name);
+                    if file_name not in FILE_BLACKLIST:
+                        if should_update(export_file_path, site_file_path):
+                            print 'Exporting \"'+os.path.normpath(root.split(SITE_PATH)[1]+'/'+file_name)+'\" ...';
+                            EXPORT_LIST.append(export_file_path);
+                            if file_extension == '.md':
+                                make_subprocess_call(('pandoc', '-f', 'markdown', '-t', 'html5', '-c', CSS_URL, site_file_path, '-o', export_file_path));
+                                make_subprocess_call((REMOVE_JS_SCRIPT, export_file_path));
+                            else:
+                                shutil.copy2(site_file_path, export_file_path);
     ssh = paramiko.SSHClient();
     ssh.load_system_host_keys();
     ssh.connect(HOST_NAME, username=USER_NAME);
