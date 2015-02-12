@@ -16,7 +16,7 @@ EXPORT_LIST=[];
 WEBSITE_ROOT='/var/www/samdmarshall.com/public_html/';
 HOST_NAME='samdmarshall.com';
 USER_NAME='samdm';
-CSS_URL='http://samdmarshall.com/shiny/styling.css';
+CSS_URL='/shiny/styling.css';
 REMOVE_JS_SCRIPT=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'remove-js.sh');
 # Helper Functions
 def MakeDirectory(path):
