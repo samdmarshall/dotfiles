@@ -7,6 +7,9 @@
 ### C ###
 *.o
 
+### Clang Format ###
+.clang-format
+
 ### Python ###
 *.pyc
 dist/
@@ -27,7 +30,6 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.xcuserstate
-
 
 ### Hopper ###
 *.hop
