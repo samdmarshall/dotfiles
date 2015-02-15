@@ -7,9 +7,6 @@
 ### C ###
 *.o
 
-### Clang Format ###
-.clang-format
-
 ### Python ###
 *.pyc
 dist/
