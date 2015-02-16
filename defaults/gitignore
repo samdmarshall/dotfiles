@@ -1,6 +1,3 @@
-### git ###
-.gitignore*
-
 ### OS X ###
 .DS_Store
 
