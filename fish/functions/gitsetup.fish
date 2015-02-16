@@ -3,7 +3,7 @@ function gitsetup
 	set filename "$PWD/.git"
 	
 	if test -d $filename
-		echo ""
+		echo "Skipping git-init..."
 	else
 		gitnew
 	end
@@ -20,7 +20,7 @@ function gitsetup
 		git push -u origin develop
 		
 	else
-		echo "Please pass a video file path"
+		echo "Please specify the origin address"
 	end
 	
 end
