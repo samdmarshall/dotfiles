@@ -1,3 +1,4 @@
+---
 AlignAfterOpenBracket: false
 AlignOperands: false
 AlignTrailingComments: true
@@ -34,7 +35,6 @@ SpaceBeforeParens: ControlStatements
 SpaceInEmptyParentheses: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
-
 ---
 Language: Cpp
 ObjCSpaceAfterProperty: true
@@ -42,3 +42,4 @@ ObjCSpaceBeforeProtocolList: true
 ---
 Language: Proto
 DisableFormat: true
+---
