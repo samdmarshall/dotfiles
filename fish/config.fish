@@ -50,7 +50,7 @@ end
 function fish_push_update
 	set CURR (pwd)
 	cd ~/.config
-	git add -f fish/config.fish fish/functions/*.fish defaults/* 
+	git add -f fish/config.fish fish/functions/*.fish defaults/* fish/functions/gensite/*
 	if test -e ~/.config/fish/functions/testfunc.fish
 		git reset -- fish/functions/testfunc.fish 
 	end
