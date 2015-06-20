@@ -11,10 +11,10 @@ from scp import SCPClient
 # Globals
 SITE_PATH='';
 EXPORT_PATH='';
-FILE_BLACKLIST=['.DS_Store', '.git', '.gitignore'];
+FILE_BLACKLIST=['.DS_Store', '.git', '.gitignore', 'header.html'];
 EXPORT_LIST=[];
 WEBSITE_ROOT='/var/www/samdmarshall.com/public_html/';
-HOST_NAME='samdmarshall.com';
+HOST_NAME='pewpewthespells.com';
 USER_NAME='samdm';
 CSS_URL='/shiny/styling.css';
 REMOVE_JS_SCRIPT=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'remove-js.sh');
@@ -91,7 +91,8 @@ def main(argv):
                             print 'Exporting \"'+os.path.normpath(root.split(SITE_PATH)[1]+'/'+file_name)+'\" ...';
                             EXPORT_LIST.append(export_file_path);
                             if file_extension == '.md':
-                                make_subprocess_call(('pandoc', '-f', 'markdown+grid_tables', '-t', 'html5', '-c', CSS_URL, site_file_path, '-o', export_file_path));
+                                header_path = os.path.join(SITE_PATH, 'header.html');
+                                make_subprocess_call(('pandoc', '-f', 'markdown+grid_tables', '-t', 'html5', '--email-obfuscation=references', '-H', header_path, '-c', CSS_URL, site_file_path, '-o', export_file_path));
                                 make_subprocess_call((REMOVE_JS_SCRIPT, export_file_path));
                             else:
                                 shutil.copy2(site_file_path, export_file_path);
