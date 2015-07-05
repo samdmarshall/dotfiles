@@ -13,7 +13,7 @@ SITE_PATH='';
 EXPORT_PATH='';
 FILE_BLACKLIST=['.DS_Store', '.git', '.gitignore', 'header.html'];
 EXPORT_LIST=[];
-WEBSITE_ROOT='/var/www/samdmarshall.com/public_html/';
+WEBSITE_ROOT='/var/www/pewpewthespells.com/public_html/';
 HOST_NAME='pewpewthespells.com';
 USER_NAME='samdm';
 CSS_URL='/shiny/styling.css';
@@ -92,7 +92,7 @@ def main(argv):
                             EXPORT_LIST.append(export_file_path);
                             if file_extension == '.md':
                                 header_path = os.path.join(SITE_PATH, 'header.html');
-                                make_subprocess_call(('pandoc', '-f', 'markdown+grid_tables', '-t', 'html5', '--email-obfuscation=references', '-H', header_path, '-c', CSS_URL, site_file_path, '-o', export_file_path));
+                                make_subprocess_call(('pandoc', '-f', 'markdown+grid_tables', '-t', 'html5', '-H', header_path, '--email-obfuscation', 'references', '-c', CSS_URL, site_file_path, '-o', export_file_path));
                                 make_subprocess_call((REMOVE_JS_SCRIPT, export_file_path));
                             else:
                                 shutil.copy2(site_file_path, export_file_path);
