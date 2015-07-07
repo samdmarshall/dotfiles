@@ -134,3 +134,5 @@ if test -e ~/.pythonrc
 	set PYTHONSTARTUP_PATH ~/.pythonrc
 end
 set PYTHONSTARTUP $PYTHONSTARTUP_PATH
+
+set -g HOMEBREW_INSTALL_BADGE 🌈
