@@ -25,3 +25,5 @@ sudo pip install paramiko
 sudo pip install scp
 sudo pip install machobot
 sudo pip install thefuck
+
+sudo ~/.config/lldb/install.sh

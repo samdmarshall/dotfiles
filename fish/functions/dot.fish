@@ -7,6 +7,7 @@ function dot --description 'dot file management' --argument dot_command
 		cd $HOME_CONFIG_PATH
 		
 		if test "$dot_command" = "upload"
+			gitnuke
 			git add -f fish/*.fish fish/functions/* defaults/* scripts/* lldb/*
 			git commit -m "💻"
 			git push origin master
