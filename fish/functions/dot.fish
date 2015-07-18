@@ -7,10 +7,7 @@ function dot --description 'dot file management' --argument dot_command
 		cd $HOME_CONFIG_PATH
 		
 		if test "$dot_command" = "upload"
-			git add -f fish/*.fish fish/functions/*.fish defaults/* scripts/* lldb/*
-			if test -e $FISH_CONFIG_PATH/functions/testfunc.fish
-				git reset -- fish/functions/testfunc.fish 
-			end
+			git add -f fish/*.fish fish/functions/* defaults/* scripts/* lldb/*
 			git commit -m "💻"
 			git push origin master
 			set dot_command "reload"
@@ -20,6 +17,10 @@ function dot --description 'dot file management' --argument dot_command
 			git pull
 			set dot_command "reload"
 		end
+		
+		if test "$dot_command" = "status"
+			git status | grep ":   "
+		end
 
 		if test "$dot_command" = "reload"
 			. $FISH_CONFIG_PATH/config.fish
@@ -27,6 +28,6 @@ function dot --description 'dot file management' --argument dot_command
 		
 		cd $CURR
 	else
-		echo "usage: dot [upload|update|reload]"
+		echo "usage: dot [upload|update|status|reload]"
 	end
 end
