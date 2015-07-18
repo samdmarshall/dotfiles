@@ -9,3 +9,6 @@ source ~/.config/fish/prompt.fish
 
 # configuring event handlers
 source ~/.config/fish/handlers.fish
+
+# common aliases
+source ~/.config/fish/aliases.fish

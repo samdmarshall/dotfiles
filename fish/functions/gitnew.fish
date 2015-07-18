@@ -1,9 +1,14 @@
 function gitnew
-	git init
+
+	if which git > /dev/null
+		git init
 	
-	cp ~/.config/defaults/clang-format ./.clang-format
-	cp ~/.config/defaults/gitignore ./.gitignore
-	cp ~/.config/defaults/LICENSE ./LICENSE
-	cp ~/.config/defaults/CONTRIBUTING.md ./CONTRIBUTING.md
+		cp $GIT_DEFAULTS_DIR/clang-format ./.clang-format
+		cp $GIT_DEFAULTS_DIR/gitignore ./.gitignore
+		cp $GIT_DEFAULTS_DIR/LICENSE ./LICENSE
+		cp $GIT_DEFAULTS_DIR/CONTRIBUTING.md ./CONTRIBUTING.md
+	else
+		echo "git isn't installed!"
+	end
 	
 end

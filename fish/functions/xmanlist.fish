@@ -6,6 +6,6 @@ function xmanlist
 		
 		open "$open_string"
 	else
-		echo "Please look something up."
+		echo "usage: xmanlist [name]"
 	end
 end

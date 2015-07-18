@@ -7,8 +7,8 @@ function dot --description 'dot file management' --argument dot_command
 		cd $HOME_CONFIG_PATH
 		
 		if test "$dot_command" = "upload"
-			git add -f fish/*.fish fish/functions/*.fish defaults/* fish/functions/gensite/*
-			if test -e $HOME_CONFIG_PATH/fish/functions/testfunc.fish
+			git add -f fish/*.fish fish/functions/*.fish defaults/* scripts/* lldb/*
+			if test -e $FISH_CONFIG_PATH/functions/testfunc.fish
 				git reset -- fish/functions/testfunc.fish 
 			end
 			git commit -m "💻"

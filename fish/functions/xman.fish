@@ -16,7 +16,7 @@ function xman
 			echo "No man page found!"
 		end
 	else
-		echo "Please look something up."
+		echo "usage: xman [name] (section)"
 	end
 end
 
