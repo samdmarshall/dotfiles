@@ -7,11 +7,11 @@ function dot --description 'dot file management' --argument dot_command
 		cd $HOME_CONFIG_PATH
 		
 		if test "$dot_command" = "upload"
-			git add -f fish/config.fish fish/functions/*.fish defaults/* fish/functions/gensite/*
+			git add -f fish/*.fish fish/functions/*.fish defaults/* fish/functions/gensite/*
 			if test -e $HOME_CONFIG_PATH/fish/functions/testfunc.fish
 				git reset -- fish/functions/testfunc.fish 
 			end
-			git commit -m "$argv"
+			git commit -m "💻"
 			git push origin master
 			set dot_command "reload"
 		end
@@ -22,7 +22,7 @@ function dot --description 'dot file management' --argument dot_command
 		end
 
 		if test "$dot_command" = "reload"
-			reload
+			. $FISH_CONFIG_PATH/config.fish
 		end
 		
 		cd $CURR

@@ -1,6 +1,6 @@
 function dump_cert
 
-	set arg_count (echo $argv | wc -w | awk '{print $1}')
+	set arg_count argv_c
 	
 	if [ $arg_count -eq 1 ];
 		set cert_path "$argv[1]"
