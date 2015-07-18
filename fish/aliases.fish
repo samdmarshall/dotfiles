@@ -43,3 +43,5 @@ alias tbmute "python $CORE_SCRIPTS_PATH/tweetbot-mute.py"
 if test -e ~/Sites/markdown
 	alias UpdateSite "python $CORE_SCRIPTS_PATH/gensite.py ~/Sites/markdown/"
 end
+
+alias GetServerLogs "scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.com/logs/ ~/Sites/; find ~/Sites/logs/ -name '*.gz' | xargs gunzip -f"

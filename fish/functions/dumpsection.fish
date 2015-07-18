@@ -1,14 +1,8 @@
-function dumpsection
+function dumpsection --argument segname --argument sectname --argument filename
 
-	set arg_count (echo $argv | wc -w | awk '{
-		print $1
-	}')
+	set arg_count (echo $argv | wc -w | awk '{print $1}')
 	
 	if [ $arg_count -ge 3 ];
-		
-		set segname "$argv[1]"
-		set sectname "$argv[2]"
-		set filename "$argv[3]"
 	
 		set binname (basename "$filename")
 	
