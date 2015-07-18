@@ -32,8 +32,6 @@ end
 
 alias mkwindow "open -a Finder ."
 
-alias gitnuke "git status | grep 'deleted:' | awk '{print $2}' | xargs git rm"
-
 alias json "python -m json.tool"
 
 alias cloc "perl $CORE_SCRIPTS_PATH/cloc.pl"
