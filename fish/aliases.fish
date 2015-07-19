@@ -45,3 +45,5 @@ if test -e ~/Sites/markdown
 end
 
 alias GetServerLogs "scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.com/logs/ ~/Sites/; find ~/Sites/logs/ -name '*.gz' | xargs gunzip -f"
+
+alias gitnuke='git status | grep "deleted:" | awk \'{print $2}\' | xargs git rm'
