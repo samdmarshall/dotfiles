@@ -12,3 +12,7 @@ source ~/.config/fish/handlers.fish
 
 # common aliases
 source ~/.config/fish/aliases.fish
+
+if status --is-login
+    echo "Hello, world!"
+end
