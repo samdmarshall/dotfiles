@@ -7,12 +7,10 @@ source ~/.config/fish/paths.fish
 # building prompt
 source ~/.config/fish/prompt.fish
 
-# configuring event handlers
-source ~/.config/fish/handlers.fish
-
 # common aliases
 source ~/.config/fish/aliases.fish
 
 if status --is-login
-    echo "Hello, world!"
+	# configuring event handlers
+	source ~/.config/fish/handlers.fish
 end
