@@ -1,6 +1,6 @@
 function logout_message --on-process-exit %self
 	set processName (ps -p %self -o comm=)
-	if test "processName" = "-fish"
+	if test "$processName" = "-fish"
 		set ESC_SEQ "\x1b[38;5;"
 		set COL_01 $ESC_SEQ"160;01m"
 		set COL_02 $ESC_SEQ"196;01m"
