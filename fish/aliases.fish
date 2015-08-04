@@ -30,7 +30,8 @@ else
 	end
 end
 
-alias screensaver "/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
+
+alias ScreenSaver "open -a ScreenSaverEngine"
 
 alias mkwindow "open -a Finder ."
 
