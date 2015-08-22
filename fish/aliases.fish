@@ -1,10 +1,18 @@
-alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
 alias server "ssh -t -t -L 5902:127.0.0.1:5901 samdm@pewpewthespells.com"
 alias home "server 'ssh -L 5901:127.0.0.1:5900 samantha@$HOME_IP'"
-alias backtohome "ssh galactica.(BTMM)"
 alias travel "ssh -L 5901:127.0.0.1:5900 Pegasus.local"
 alias Pegasus "ssh Pegasus.local"
 alias Galactica "ssh Galactica.local"
+
+if which scutil > /dev/null 
+	alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
+	alias backtohome "ssh galactica.(BTMM)"
+	alias homeproxy "backtohome -D 1234"
+else
+	alias BTMM "echo 'this host doesn't have scutil, cannot resolve BTMM address'"
+	alias backtohome "echo 'this host doesn't have scutil, cannot resolve BTMM address'"
+	alias homeproxy "echo 'this host doesn't have scutil, cannot resolve BTMM address'"
+end
 
 if which xattr > /dev/null
 	alias vaccine "xattr -rd com.apple.quarantine" 
@@ -35,15 +43,19 @@ end
 
 alias VisualLog "git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-alias ScreenSaver "open -a ScreenSaverEngine"
+if test "$PLATFORM_NAME" = "Darwin"
+	alias ScreenSaver "open -a ScreenSaverEngine"
+	alias bundleid "mdfind kMDItemCFBundleIdentifier = "
+	alias mkwindow "open -a Finder ."
+end
 
-alias mkwindow "open -a Finder ."
+if which shutdown > /dev/null
+	alias HostShutdown "printf '%s%s%s\n' (set_color red) \"WARNING: SHUTTING DOWN HOST NOW!\" (set_color normal); sudo shutdown -h now; exit"
+end
 
 alias json "python -m json.tool"
 
 alias cloc "perl $CORE_SCRIPTS_PATH/cloc.pl"
-
-alias bundleid "mdfind kMDItemCFBundleIdentifier = "
 
 alias tbmute "python $CORE_SCRIPTS_PATH/tweetbot-mute.py"
 
