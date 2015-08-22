@@ -40,7 +40,7 @@ end
 alias VisualLog "git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 if test "$PLATFORM_NAME" = "Darwin"
-	alias ScreenSaver "open -a ScreenSaverEngine"
+	alias ScreenSaver "sudo open -a ScreenSaverEngine"
 	alias bundleid "mdfind kMDItemCFBundleIdentifier = "
 	alias mkwindow "open -a Finder ."
 end
