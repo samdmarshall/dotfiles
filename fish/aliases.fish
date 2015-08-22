@@ -1,5 +1,7 @@
+alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
 alias server "ssh -t -t -L 5902:127.0.0.1:5901 samdm@pewpewthespells.com"
 alias home "server 'ssh -L 5901:127.0.0.1:5900 samantha@$HOME_IP'"
+alias backtohome "ssh galactica.(BTMM)"
 alias travel "ssh -L 5901:127.0.0.1:5900 Pegasus.local"
 alias Pegasus "ssh Pegasus.local"
 alias Galactica "ssh Galactica.local"
@@ -30,6 +32,8 @@ else
 	end
 end
 
+
+alias VisualLog "git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 alias ScreenSaver "open -a ScreenSaverEngine"
 
