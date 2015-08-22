@@ -46,7 +46,7 @@ if test "$PLATFORM_NAME" = "Darwin"
 end
 
 if which shutdown > /dev/null
-	alias HostShutdown "printf '%s%s%s\n' (set_color red) \"WARNING: SHUTTING DOWN HOST NOW!\" (set_color normal); sudo shutdown -h now; exit"
+	alias HostShutdown "printf '%s%s%s\n' (set_color red) \"WARNING: SHUTTING DOWN HOST NOW! ABORTING WILL EXIT THE SHELL!\" (set_color normal); sudo shutdown -h now; exit"
 end
 
 alias json "python -m json.tool"
