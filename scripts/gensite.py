@@ -16,7 +16,7 @@ EXPORT_LIST=[];
 WEBSITE_ROOT='/var/www/pewpewthespells.com/public_html/';
 HOST_NAME='pewpewthespells.com';
 USER_NAME='samdm';
-CSS_URL='/shiny/styling.css';
+CSS_URL='/shiny/min.css';
 REMOVE_JS_SCRIPT=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'remove-js.sh');
 # Helper Functions
 def MakeDirectory(path):
