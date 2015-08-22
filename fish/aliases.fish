@@ -8,10 +8,6 @@ if which scutil > /dev/null
 	alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
 	alias backtohome "ssh galactica.(BTMM)"
 	alias homeproxy "backtohome -D 1234"
-else
-	alias BTMM "echo 'this host doesn't have scutil, cannot resolve BTMM address'"
-	alias backtohome "echo 'this host doesn't have scutil, cannot resolve BTMM address'"
-	alias homeproxy "echo 'this host doesn't have scutil, cannot resolve BTMM address'"
 end
 
 if which xattr > /dev/null
