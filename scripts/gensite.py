@@ -74,6 +74,7 @@ def main(argv):
     
     if PathExists(SITE_PATH) == True:
         MakeDirectory(EXPORT_PATH);
+        files_to_export_to_pdf = [];
         for root, dirs, files in os.walk(SITE_PATH, followlinks=False):
             for dir_name in dirs:
                 if test_for_in_git(root.split(SITE_PATH)[1]) == False and dir_name != '.git':
@@ -88,14 +89,23 @@ def main(argv):
                     export_file_path = os.path.join(os.path.join(EXPORT_PATH, root.split(SITE_PATH)[1]), file_name);
                     if file_name not in FILE_BLACKLIST:
                         if should_update(export_file_path, site_file_path):
-                            print 'Exporting \"'+os.path.normpath(root.split(SITE_PATH)[1]+'/'+file_name)+'\" ...';
+                            normalized_path = os.path.normpath(root.split(SITE_PATH)[1]+'/'+file_name);
+                            print 'Exporting \"'+normalized_path+'\" ...';
                             EXPORT_LIST.append(export_file_path);
                             if file_extension == '.md':
                                 header_path = os.path.join(SITE_PATH, 'header.html');
-                                make_subprocess_call(('pandoc', '-f', 'markdown+grid_tables', '-t', 'html5', '-H', header_path, '--email-obfuscation', 'references', '-c', CSS_URL, site_file_path, '-o', export_file_path));
+                                make_subprocess_call(('pandoc', '-f', 'markdown+grid_tables', '-t', 'html5', '-H', header_path, '--email-obfuscation', 'references', site_file_path, '-o', export_file_path)); #'-c', CSS_URL,
                                 make_subprocess_call((REMOVE_JS_SCRIPT, export_file_path));
+                                if normalized_path.startswith('blog/'):
+                                    files_to_export_to_pdf.append(normalized_path);
                             else:
                                 shutil.copy2(site_file_path, export_file_path);
+        for blog_post in files_to_export_to_pdf:
+            post_path = os.path.join(EXPORT_PATH, blog_post);
+            print 'making PDF of \"'+post_path+'\" ...';
+            pdf_path = os.path.splitext(post_path)[0] + '.pdf';
+            EXPORT_LIST.append(pdf_path);
+            make_subprocess_call(('html2pdf', '-b', EXPORT_PATH, '-i', post_path));
     ssh = paramiko.SSHClient();
     ssh.load_system_host_keys();
     ssh.connect(HOST_NAME, username=USER_NAME);
