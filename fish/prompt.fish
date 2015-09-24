@@ -20,7 +20,7 @@ function source_control_prompt
 		printf '%s' (__fish_git_prompt)
 	end
 	
-	set svn_info (svn info $pwd)
+	set svn_info (svn info $pwd 2> /dev/null)
 	if [ $status -eq 0 ];
 		set svn_revision (svn info $pwd | grep "Last Changed Rev: " | sed -e "s=Last Changed Rev: ==" -e "s=\n==g")
 		set svn_status_lines (svn stat | awk '{print $1}' | sort | uniq)
