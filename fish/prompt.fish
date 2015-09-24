@@ -14,23 +14,36 @@ set __fish_git_prompt_char_stashstate '↩'
 set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
 
-function prompt_current_working_dir
-	#setting up current working dir for path truncation
-	set working_path_sub (pwd | sed -e "s=^$HOME=~=" | awk -F':' -v user_name=$USER -v host_name=$__fish_prompt_hostname '{
-		total_length=40-length(user_name)-2-length(host_name);
-		elipse_length=3;
-		trunc_length=total_length-elipse_length;
-		
-		if (length($1) - total_length < 0) {
-			print substr($1,0,length($1))
-		}
-		else {
-			print "..."substr($1,length($1)-trunc_length,length($1))
-		}
-	}')
-	echo $working_path_sub;
+function source_control_prompt
+	git rev-parse 2> /dev/null
+	if [ $status -eq 0 ];
+		printf '%s' (__fish_git_prompt)
+	end
+	
+	set svn_info (svn info $pwd)
+	if [ $status -eq 0 ];
+		set svn_revision (svn info $pwd | grep "Last Changed Rev: " | sed -e "s=Last Changed Rev: ==" -e "s=\n==g")
+		set svn_status_lines (svn stat | awk '{print $1}' | sort | uniq)
+		set svn_status (echo "$svn_status_lines" | sed -e "s=[\n| ]==g")
+		printf ' (%s%s%s, %s)' (set_color yellow) $svn_revision (set_color normal) $svn_status
+	end
 end
 
+function prompt_current_working_dir
+	#setting up current working dir for path truncation
+	set user_length (echo -n $USER | wc -c)
+	set host_length (echo -n $__fish_prompt_hostname | wc -c)
+	set working_path (pwd | sed -e "s=^$HOME=~=")
+	set working_path_length (echo -n $working_path | wc -c)
+	set total_length (echo "40-$user_length-1-$host_length-1" | bc)
+	set path_prefix ""
+	if [ $working_path_length -gt $total_length ];
+		set total_length (echo "$total_length-3" | bc)
+		set path_prefix "..."
+	end
+	set working_path_sub (echo -n $working_path | tail -c $total_length)
+	echo -n $path_prefix$working_path_sub
+end
 
 function fish_prompt
 	# setting up colours
@@ -64,7 +77,7 @@ function fish_prompt
 	printf '%s' $__fish_prompt_path
 	printf '%s' (prompt_current_working_dir)
 	printf '%s' $__fish_prompt_normal
-	printf '%s ' (__fish_git_prompt)
+	printf '%s ' (source_control_prompt)
 	printf '%s' $__fish_prompt_normal
 	printf '$ '	
 end
