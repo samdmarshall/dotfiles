@@ -106,7 +106,7 @@ function source_control_prompt
 	set svn_info (svn info $pwd 2> /dev/null)
 	if [ $status -eq 0 ];
 		set svn_revision (svn info $pwd | grep "Last Changed Rev: " | sed -e "s=Last Changed Rev: ==" -e "s=\n==g")
-		printf ' (%s%s%s'  (set_color yellow) $svn_revision (set_color normal) 
+		printf ' (%s%s%s'  (set_color $__fish_git_prompt_color_branch) $svn_revision (set_color normal) 
 		set svn_status_lines (svn stat | awk '{print substr($0,0,7)}')
 		for col in (seq 6)
 			set current_status_line (echo "$svn_status_lines" | awk -FS="" -v col=$col '{print $col}' | sort | uniq)
