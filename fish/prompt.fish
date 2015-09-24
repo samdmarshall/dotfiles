@@ -14,89 +14,86 @@ set __fish_git_prompt_char_stashstate '↩'
 set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
 
-function parse_svn_status --argument status_string
 
-	switch $status_string
-		case 'A' 'A*' '*A*' '*A'
-			printf '%sA%s' (set_color green) (set_color normal)
-	end
-	
-	switch $status_string
-		case 'C' 'C*' '*C*' '*C'
-			printf '%sC%s' (set_color --underline orange) (set_color normal)
-	end
-	
-	switch $status_string
-		case 'D' 'D*' '*D*' '*D'
-			printf '%sD%s' (set_color red) (set_color normal)
-	end
-	
-	switch $status_string
-		case 'M' 'M*' '*M*' '*M'
-			printf '%sM%s' (set_color blue) (set_color normal)
-	end
-	
-	switch $status_string
-		case 'R' 'R*' '*R*' '*R'
-			printf '%sR%s' (set_color cyan) (set_color normal)
-	end
-	
-	switch $status_string
-		case 'X' 'X*' '*X*' '*X'
-			printf '%sX%s' (set_color --underline cyan) (set_color normal)
-	end
-	
-	switch $status_string
-		case '?' '?*' '*?*' '*?'
-			printf '%s?%s' (set_color purple) (set_color normal)
-	end
-	
-	switch $status_string
-		case '!' '!*' '*!*' '*!'
-			printf '%s!%s' (set_color yellow) (set_color normal)
-	end
-	
-	switch $status_string
-		case '~' '~*' '*~*' '*~'
-			printf '%s~%s' (set_color orange) (set_color normal)
-	end
-	
-	switch $status_string
-		case 'L' 'L*' '*L*' '*L'
-			printf '%sL%s' (set_color --bold red) (set_color normal)
-	end
-	
-	switch $status_string
-		case '+' '+*' '*+*' '*+'
-			printf '%s+%s' (set_color --bold green) (set_color normal)
-	end
-	
-	switch $status_string
-		case 'S' 'S*' '*S*' '*S'
-			printf '%sS%s' (set_color --bold blue) (set_color normal)
-	end
-	
-	switch $status_string
-		case 'K' 'K*' '*K*' '*K'
-			printf '%sK%s' (set_color --bold cyan) (set_color normal)
-	end
-	
-	
-	switch $status_string
-		case 'O' 'O*' '*O*' '*O'
-			printf '%sO%s' (set_color --underline purple) (set_color normal)
-	end
-	
-	
-	switch $status_string
-		case 'T' 'T*' '*T*' '*T'
-			printf '%sT%s' (set_color --bold purple) (set_color normal)
-	end
-	
-	
-	switch $status_string
-		case 'B' 'B*' '*B*' '*B'
-			printf '%sK%s' (set_color --bold orange) (set_color normal)
+## SVN 
+set -g __fish_svn_prompt_added_char 'A'
+set -g __fish_svn_prompt_added_color (set_color green)
+set -g __fish_svn_prompt_added_display 'A'
+
+set -g __fish_svn_prompt_conflicted_char 'C'
+set -g __fish_svn_prompt_conflicted_color (set_color --underline magenta)
+set -g __fish_svn_prompt_conflicted_display 'C'
+
+set -g __fish_svn_prompt_deleted_char 'D'
+set -g __fish_svn_prompt_deleted_color (set_color red)
+set -g __fish_svn_prompt_deleted_display 'D'
+
+set -g __fish_svn_prompt_ignored_char 'I'
+set -g __fish_svn_prompt_ignored_color (set_color --bold yellow)
+set -g __fish_svn_prompt_ignored_display 'I'
+
+set -g __fish_svn_prompt_modified_char 'M'
+set -g __fish_svn_prompt_modified_color (set_color blue)
+set -g __fish_svn_prompt_modified_display 'M'
+
+set -g __fish_svn_prompt_replaced_char 'R'
+set -g __fish_svn_prompt_replaced_color (set_color cyan)
+set -g __fish_svn_prompt_replaced_display 'R'
+
+set -g __fish_svn_prompt_unversioned_external_char 'X'
+set -g __fish_svn_prompt_unversioned_external_color (set_color --underline cyan)
+set -g __fish_svn_prompt_unversioned_external_display 'X'
+
+set -g __fish_svn_prompt_unversioned_char '?'
+set -g __fish_svn_prompt_unversioned_color (set_color purple)
+set -g __fish_svn_prompt_unversioned_display '?'
+
+set -g __fish_svn_prompt_missing_char '!'
+set -g __fish_svn_prompt_missing_color (set_color yellow)
+set -g __fish_svn_prompt_missing_display '!'
+
+set -g __fish_svn_prompt_versioned_obstructed_char '~'
+set -g __fish_svn_prompt_versioned_obstructed_color (set_color magenta)
+set -g __fish_svn_prompt_versioned_obstructed_display '~'
+
+set -g __fish_svn_prompt_locked_char 'L'
+set -g __fish_svn_prompt_locked_color (set_color --bold red)
+set -g __fish_svn_prompt_locked_display 'L'
+
+set -g __fish_svn_prompt_scheduled_char '+'
+set -g __fish_svn_prompt_scheduled_color (set_color --bold green)
+set -g __fish_svn_prompt_scheduled_display '+'
+
+set -g __fish_svn_prompt_switched_char 'S'
+set -g __fish_svn_prompt_switched_color (set_color --bold blue)
+set -g __fish_svn_prompt_switched_display 'S'
+
+set -g __fish_svn_prompt_token_present_char 'K'
+set -g __fish_svn_prompt_token_present_color (set_color --bold cyan)
+set -g __fish_svn_prompt_token_present_display 'K'
+
+set -g __fish_svn_prompt_token_other_char 'O'
+set -g __fish_svn_prompt_token_other_color (set_color --underline purple)
+set -g __fish_svn_prompt_token_other_display 'O'
+
+set -g __fish_svn_prompt_token_stolen_char 'T'
+set -g __fish_svn_prompt_token_stolen_color (set_color --bold purple)
+set -g __fish_svn_prompt_token_stolen_display 'T'
+
+set -g __fish_svn_prompt_token_broken_char 'B'
+set -g __fish_svn_prompt_token_broken_color (set_color --bold magenta)
+set -g __fish_svn_prompt_token_broken_display 'B'
+
+function parse_svn_status --argument status_string
+	set flags added conflicted deleted ignored modified replaced unversioned_external unversioned missing locked scheduled switched token_present token_other token_stolen token_broken
+	for index in (seq (count $flags))
+		set flag_name __fish_svn_prompt_{$flags[$index]}_char
+		set has_flag (echo $status_string | grep -c $$flag_name)
+		if [ $has_flag -eq 1 ];
+			set flag_display __fish_svn_prompt_{$flags[$index]}_display
+			set flag_color __fish_svn_prompt_{$flags[$index]}_color
+			printf '%s%s%s' $$flag_color $$flag_display (set_color normal)
+		end
 	end
 end
 
