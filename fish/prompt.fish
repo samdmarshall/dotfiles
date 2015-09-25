@@ -17,71 +17,71 @@ set __fish_git_prompt_char_upstream_behind '↓'
 
 ## SVN 
 set -g __fish_svn_prompt_added_char 'A'
-set -g __fish_svn_prompt_added_color (set_color green)
+set -g __fish_svn_prompt_added_color green
 set -g __fish_svn_prompt_added_display 'A'
 
 set -g __fish_svn_prompt_conflicted_char 'C'
-set -g __fish_svn_prompt_conflicted_color (set_color --underline magenta)
+set -g __fish_svn_prompt_conflicted_color --underline magenta
 set -g __fish_svn_prompt_conflicted_display 'C'
 
 set -g __fish_svn_prompt_deleted_char 'D'
-set -g __fish_svn_prompt_deleted_color (set_color red)
+set -g __fish_svn_prompt_deleted_color red
 set -g __fish_svn_prompt_deleted_display 'D'
 
 set -g __fish_svn_prompt_ignored_char 'I'
-set -g __fish_svn_prompt_ignored_color (set_color --bold yellow)
+set -g __fish_svn_prompt_ignored_color --bold yellow
 set -g __fish_svn_prompt_ignored_display 'I'
 
 set -g __fish_svn_prompt_modified_char 'M'
-set -g __fish_svn_prompt_modified_color (set_color blue)
+set -g __fish_svn_prompt_modified_color blue
 set -g __fish_svn_prompt_modified_display 'M'
 
 set -g __fish_svn_prompt_replaced_char 'R'
-set -g __fish_svn_prompt_replaced_color (set_color cyan)
+set -g __fish_svn_prompt_replaced_color cyan
 set -g __fish_svn_prompt_replaced_display 'R'
 
 set -g __fish_svn_prompt_unversioned_external_char 'X'
-set -g __fish_svn_prompt_unversioned_external_color (set_color --underline cyan)
+set -g __fish_svn_prompt_unversioned_external_color --underline cyan
 set -g __fish_svn_prompt_unversioned_external_display 'X'
 
 set -g __fish_svn_prompt_unversioned_char '?'
-set -g __fish_svn_prompt_unversioned_color (set_color purple)
+set -g __fish_svn_prompt_unversioned_color purple
 set -g __fish_svn_prompt_unversioned_display '?'
 
 set -g __fish_svn_prompt_missing_char '!'
-set -g __fish_svn_prompt_missing_color (set_color yellow)
+set -g __fish_svn_prompt_missing_color yellow
 set -g __fish_svn_prompt_missing_display '!'
 
 set -g __fish_svn_prompt_versioned_obstructed_char '~'
-set -g __fish_svn_prompt_versioned_obstructed_color (set_color magenta)
+set -g __fish_svn_prompt_versioned_obstructed_color magenta
 set -g __fish_svn_prompt_versioned_obstructed_display '~'
 
 set -g __fish_svn_prompt_locked_char 'L'
-set -g __fish_svn_prompt_locked_color (set_color --bold red)
+set -g __fish_svn_prompt_locked_color --bold red
 set -g __fish_svn_prompt_locked_display 'L'
 
 set -g __fish_svn_prompt_scheduled_char '+'
-set -g __fish_svn_prompt_scheduled_color (set_color --bold green)
+set -g __fish_svn_prompt_scheduled_color --bold green
 set -g __fish_svn_prompt_scheduled_display '+'
 
 set -g __fish_svn_prompt_switched_char 'S'
-set -g __fish_svn_prompt_switched_color (set_color --bold blue)
+set -g __fish_svn_prompt_switched_color --bold blue
 set -g __fish_svn_prompt_switched_display 'S'
 
 set -g __fish_svn_prompt_token_present_char 'K'
-set -g __fish_svn_prompt_token_present_color (set_color --bold cyan)
+set -g __fish_svn_prompt_token_present_color --bold cyan
 set -g __fish_svn_prompt_token_present_display 'K'
 
 set -g __fish_svn_prompt_token_other_char 'O'
-set -g __fish_svn_prompt_token_other_color (set_color --underline purple)
+set -g __fish_svn_prompt_token_other_color --underline purple
 set -g __fish_svn_prompt_token_other_display 'O'
 
 set -g __fish_svn_prompt_token_stolen_char 'T'
-set -g __fish_svn_prompt_token_stolen_color (set_color --bold purple)
+set -g __fish_svn_prompt_token_stolen_color --bold purple
 set -g __fish_svn_prompt_token_stolen_display 'T'
 
 set -g __fish_svn_prompt_token_broken_char 'B'
-set -g __fish_svn_prompt_token_broken_color (set_color --bold magenta)
+set -g __fish_svn_prompt_token_broken_color --bold magenta
 set -g __fish_svn_prompt_token_broken_display 'B'
 
 function parse_svn_status --argument status_string
@@ -92,7 +92,7 @@ function parse_svn_status --argument status_string
 		if [ $has_flag -eq 1 ];
 			set flag_display __fish_svn_prompt_{$flags[$index]}_display
 			set flag_color __fish_svn_prompt_{$flags[$index]}_color
-			printf '%s%s%s' $$flag_color $$flag_display (set_color normal)
+			printf '%s%s%s' (set_color $$flag_color) $$flag_display (set_color normal)
 		end
 	end
 end
