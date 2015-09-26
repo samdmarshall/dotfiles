@@ -1,7 +1,7 @@
 function SiteReport
 	
 	if test -e ~/Sites/logs
-		set arg_count (echo $argv | wc -w | awk '{print $1}')
+		set arg_count (count $argv)
 	
 		set log_file "access.log"
 	

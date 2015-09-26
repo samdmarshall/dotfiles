@@ -2,15 +2,19 @@
 set fish_greeting ""
 
 set -gx HOME_CONFIG_PATH ~/.config
-set -g FISH_CONFIG_PATH $HOME_CONFIG_PATH/fish
+set -xg FISH_CONFIG_PATH $HOME_CONFIG_PATH/fish
 
 set -x GIT_DEFAULTS_DIR $HOME_CONFIG_PATH/defaults
 
 set -x CORE_SCRIPTS_PATH $HOME_CONFIG_PATH/scripts
 
+set -xg LLDB_DEFAULTS_DIR $HOME_CONFIG_PATH/lldb
+
 set -xg KEY_STORAGE_KEYCHAIN_NAME keys.keychain
 
-set -xg KEY_STORAGE_PATH $HOME_CONFIG_PATH/storage/$KEY_STORAGE_KEYCHAIN_NAME
+set -xg KEY_STORAGE_PATH $HOME_CONFIG_PATH/storage
+
+set -xg KEY_STORAGE_KEYCHAIN_PATH $KEY_STORAGE_PATH/$KEY_STORAGE_KEYCHAIN_NAME
 
 set -x HOMEBREW_INSTALL_BADGE 🌈
 
@@ -25,8 +29,8 @@ end
 
 function secure_note_storage --argument name
 	set keys_keychain_password (security find-generic-password -l $KEY_STORAGE_KEYCHAIN_NAME -w)
-	security unlock-keychain -p $keys_keychain_password $KEY_STORAGE_PATH
-	set note_contents (security find-generic-password -C note -w -l $name $KEY_STORAGE_PATH | xxd -r -p | plutil -p - | grep "NOTE" | awk '{gsub(/"/, "", $3); print $3}')
+	security unlock-keychain -p $keys_keychain_password $KEY_STORAGE_KEYCHAIN_PATH
+	set note_contents (security find-generic-password -C note -w -l $name $KEY_STORAGE_KEYCHAIN_PATH | xxd -r -p | plutil -p - | grep "NOTE" | awk '{gsub(/"/, "", $3); print $3}')
 	echo $note_contents
 end
 

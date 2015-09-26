@@ -1,4 +1,4 @@
 function testfunc
-	set arg_count (echo $argv | wc -w | awk '{print $1}')
+	set arg_count (count $argv)
 	
 end

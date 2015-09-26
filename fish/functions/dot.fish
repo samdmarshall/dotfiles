@@ -1,6 +1,6 @@
 function dot --description 'dot file management' --argument dot_command
 
-	set arg_count (echo $argv | wc -w | awk '{print $1}')
+	set arg_count (count $argv)
 
 	if [ $arg_count -eq 1 ];
 		set CURR (pwd)
@@ -8,7 +8,7 @@ function dot --description 'dot file management' --argument dot_command
 		
 		if test "$dot_command" = "upload"
 			gitnuke
-			git add -f fish/*.fish fish/functions/* defaults/* scripts/* lldb/*
+			git add -f $FISH_CONFIG_PATH/*.fish $FISH_CONFIG_PATH/functions/* $GIT_DEFAULTS_DIR/* $CORE_SCRIPTS_PATH/* $LLDB_DEFAULTS_DIR/* $KEY_STORAGE_PATH/*
 			git commit -m "💻"
 			git push origin master
 			set dot_command "reload"

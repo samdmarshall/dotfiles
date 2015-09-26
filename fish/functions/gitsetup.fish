@@ -8,10 +8,10 @@ function gitsetup --argument remote
 		gitnew
 	end
 	
-	set arg_count (echo $argv | wc -w | awk '{print $1}')
+	set arg_count (count $argv)
 	
 	if [ $arg_count -eq 1 ];
-		if which git > /dev/null
+		if [ $HAS_GIT = true ];
 			git remote add origin "$remote"
 			git checkout -b develop
 			git add .clang-format .gitignore CONTRIBUTING.md LICENSE

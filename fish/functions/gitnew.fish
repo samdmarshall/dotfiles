@@ -1,6 +1,6 @@
 function gitnew
 
-	if which git > /dev/null
+	if [ $HAS_GIT = true ];
 		git init
 	
 		cp $GIT_DEFAULTS_DIR/clang-format ./.clang-format

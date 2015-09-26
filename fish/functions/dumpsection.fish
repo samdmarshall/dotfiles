@@ -1,6 +1,6 @@
 function dumpsection --argument segname --argument sectname --argument filename
 
-	set arg_count (echo $argv | wc -w | awk '{print $1}')
+	set arg_count (count $argv)
 	
 	if [ $arg_count -ge 3 ];
 	
