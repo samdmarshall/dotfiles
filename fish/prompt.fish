@@ -117,7 +117,7 @@ function source_control_prompt
 				set svn_status (echo -n "$current_status_line" | sed -e "s=[\n| ]==g")
 				if [ "$svn_status" != "" -o $had_previous_column = true ];
 					printf '|%s' (parse_svn_status $svn_status)
-					if [ "$svn_status" == "" ];
+					if [ "$svn_status" = "" ];
 						set had_previous_column true
 					end
 				end
