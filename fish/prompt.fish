@@ -129,7 +129,7 @@ function source_control_prompt
 						set previous_nonempty_column $col
 					end
 					
-					if [ $previous_col_empty != $found_first_column ];
+					if [ $previous_nonempty_column != $found_first_column ];
 						printf '|'
 					end
 					
