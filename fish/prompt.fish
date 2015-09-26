@@ -117,9 +117,11 @@ function source_control_prompt
 				set current_status_line (echo "$svn_status_lines" | awk -FS="" -v col=$col '{print $col}' | sort | uniq)
 				set svn_status (echo -n "$current_status_line" | sed -e "s=[\n| ]==g")
 				
-				if [ "$svn_status" != "" -a $found_first_column = 0 ];
-					set found_first_column $col
-					printf '|'
+				if [ "$svn_status" != "" ];
+					if [ $found_first_column -eq 0 ];
+						set found_first_column $col
+						printf '|'
+					end
 				end
 				
 				if [ $found_first_column != 0 ];
