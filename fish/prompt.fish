@@ -124,23 +124,22 @@ function source_control_prompt
 end
 
 function prompt_current_working_dir
+	set path_prefix ""
 	set working_path (pwd | sed -e "s=^$HOME=~=")
+	set total_length "38"
 	if [ $HAS_WC = true ];
 		#setting up current working dir for path truncation
 		set user_length (echo -n $USER | wc -c)
 		set host_length (echo -n $__fish_prompt_hostname | wc -c)
 		set working_path_length (echo -n $working_path | wc -c)
 		set total_length (math "40-$user_length-1-$host_length-1")
-		set path_prefix ""
 		if [ $working_path_length -gt $total_length ];
 			set total_length (math "$total_length-3")
 			set path_prefix "..."
 		end
-		set working_path_sub (echo -n $working_path | tail -c $total_length)
-		echo -n $path_prefix$working_path_sub
-	else
-		echo -n $working_path
 	end
+	set working_path_sub (echo -n $working_path | tail -c $total_length)
+	echo -n $path_prefix$working_path_sub
 end
 
 function fish_prompt
