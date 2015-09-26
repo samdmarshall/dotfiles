@@ -30,7 +30,7 @@ function secure_note_storage --argument name
 	echo $note_contents
 end
 
-if test $HAS_SECURITY
+if [ $HAS_SECURITY = true ];
 
 	set found_registered_keychain (security list-keychains | grep "$KEY_STORAGE_KEYCHAIN_NAME" | wc -l)
 	if [ $found_registered_keychain -eq 1 ];
