@@ -113,7 +113,7 @@ function source_control_prompt
 			set svn_status_lines (svn stat | awk '{print substr($0,0,7)}')
 			set found_first_column false
 			set previous_col_empty false
-			for col in (seq 7)
+			for col in (seq 6)
 				set current_status_line (echo "$svn_status_lines" | awk -FS="" -v col=$col '{print $col}' | sort | uniq)
 				set svn_status (echo -n "$current_status_line" | sed -e "s=[\n| ]==g")
 				
@@ -130,7 +130,7 @@ function source_control_prompt
 						printf '|'
 					end
 					
-					if [ "$svn_status" != ""];
+					if [ "$svn_status" != "" ];
 						printf '%s' (parse_svn_status $svn_status)
 					end
 				else
