@@ -111,23 +111,23 @@ function source_control_prompt
 			set svn_revision (svn info $pwd | grep "Last Changed Rev: " | sed -e "s=Last Changed Rev: ==" -e "s=\n==g")
 			printf ' (%s%s%s'  (set_color $__fish_git_prompt_color_branch) $svn_revision (set_color normal) 
 			set svn_status_lines (svn stat | awk '{print substr($0,0,7)}')
-			set found_first_column false
-			set previous_col_empty false
+			set found_first_column 0
+			set previous_nonempty_column 0
 			for col in (seq 6)
 				set current_status_line (echo "$svn_status_lines" | awk -FS="" -v col=$col '{print $col}' | sort | uniq)
 				set svn_status (echo -n "$current_status_line" | sed -e "s=[\n| ]==g")
 				
-				if [ "$svn_status" != "" -a $found_first_column = false ];
-					set found_first_column true
+				if [ "$svn_status" != "" -a $found_first_column = 0 ];
+					set found_first_column $col
 					printf '|'
 				end
 				
-				if [ $found_first_column = true ];
-					if [ "$svn_status" = "" ];
-						set previous_col_empty true
+				if [ $found_first_column != 0 ];
+					if [ "$svn_status" != "" ];
+						set previous_nonempty_column $col
 					end
 					
-					if [ $previous_col_empty = true ];
+					if [ $previous_col_empty != $found_first_column ];
 						printf '|'
 					end
 					
