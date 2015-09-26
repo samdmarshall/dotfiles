@@ -98,41 +98,49 @@ function parse_svn_status --argument status_string
 end
 
 function source_control_prompt
-	git rev-parse 2> /dev/null
-	if [ $status -eq 0 ];
-		printf '%s' (__fish_git_prompt)
+	if test $HAS_GIT
+		git rev-parse 2> /dev/null
+		if [ $status -eq 0 ];
+			printf '%s' (__fish_git_prompt)
+		end
 	end
 	
-	set svn_info (svn info $pwd 2> /dev/null)
-	if [ $status -eq 0 ];
-		set svn_revision (svn info $pwd | grep "Last Changed Rev: " | sed -e "s=Last Changed Rev: ==" -e "s=\n==g")
-		printf ' (%s%s%s'  (set_color $__fish_git_prompt_color_branch) $svn_revision (set_color normal) 
-		set svn_status_lines (svn stat | awk '{print substr($0,0,7)}')
-		for col in (seq 6)
-			set current_status_line (echo "$svn_status_lines" | awk -FS="" -v col=$col '{print $col}' | sort | uniq)
-			set svn_status (echo -n "$current_status_line" | sed -e "s=[\n| ]==g")
-			if [ "$svn_status" != "" ];
-				printf '|%s' (parse_svn_status $svn_status)
+	if test $HAS_SVN
+		set svn_info (svn info $pwd 2> /dev/null)
+		if [ $status -eq 0 ];
+			set svn_revision (svn info $pwd | grep "Last Changed Rev: " | sed -e "s=Last Changed Rev: ==" -e "s=\n==g")
+			printf ' (%s%s%s'  (set_color $__fish_git_prompt_color_branch) $svn_revision (set_color normal) 
+			set svn_status_lines (svn stat | awk '{print substr($0,0,7)}')
+			for col in (seq 6)
+				set current_status_line (echo "$svn_status_lines" | awk -FS="" -v col=$col '{print $col}' | sort | uniq)
+				set svn_status (echo -n "$current_status_line" | sed -e "s=[\n| ]==g")
+				if [ "$svn_status" != "" ];
+					printf '|%s' (parse_svn_status $svn_status)
+				end
 			end
+			printf ')'
 		end
-		printf ')'
 	end
 end
 
 function prompt_current_working_dir
-	#setting up current working dir for path truncation
-	set user_length (echo -n $USER | wc -c)
-	set host_length (echo -n $__fish_prompt_hostname | wc -c)
 	set working_path (pwd | sed -e "s=^$HOME=~=")
-	set working_path_length (echo -n $working_path | wc -c)
-	set total_length (echo "40-$user_length-1-$host_length-1" | bc)
-	set path_prefix ""
-	if [ $working_path_length -gt $total_length ];
-		set total_length (echo "$total_length-3" | bc)
-		set path_prefix "..."
+	if test $HAS_BC -a $HAS_WC
+		#setting up current working dir for path truncation
+		set user_length (echo -n $USER | wc -c)
+		set host_length (echo -n $__fish_prompt_hostname | wc -c)
+		set working_path_length (echo -n $working_path | wc -c)
+		set total_length (echo "40-$user_length-1-$host_length-1" | bc)
+		set path_prefix ""
+		if [ $working_path_length -gt $total_length ];
+			set total_length (echo "$total_length-3" | bc)
+			set path_prefix "..."
+		end
+		set working_path_sub (echo -n $working_path | tail -c $total_length)
+		echo -n $path_prefix$working_path_sub
+	else
+		echo -n $working_path
 	end
-	set working_path_sub (echo -n $working_path | tail -c $total_length)
-	echo -n $path_prefix$working_path_sub
 end
 
 function fish_prompt
@@ -152,7 +160,7 @@ function fish_prompt
 	
 	# setting up hostname
 	if not set -q __fish_prompt_hostname
-		set -g __fish_prompt_hostname (hostname | cut -d . -f 1)
+		set -g __fish_prompt_hostname (hostname | sed 's=\.local$==')
 	end
 	
 	# printing prompt
@@ -167,7 +175,7 @@ function fish_prompt
 	printf '%s' $__fish_prompt_path
 	printf '%s' (prompt_current_working_dir)
 	printf '%s' $__fish_prompt_normal
-	printf '%s ' (source_control_prompt)
+	printf '%s' (source_control_prompt)
 	printf '%s' $__fish_prompt_normal
-	printf '$ '	
+	printf ' $ '	
 end

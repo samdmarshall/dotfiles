@@ -16,6 +16,13 @@ set -x HOMEBREW_INSTALL_BADGE 🌈
 
 set -x PLATFORM_NAME (uname -s)
 
+function unlock_login_keychain_if_necessary
+	set keychain_status (security show-keychain-info login.keychain 2>&1 | grep "User interaction is not allowed" | wc -l)
+	if [ $keychain_status -eq 1 ];
+		security unlock-keychain login.keychain
+	end
+end
+
 function secure_note_storage --argument name
 	set keys_keychain_password (security find-generic-password -l $KEY_STORAGE_KEYCHAIN_NAME -w)
 	security unlock-keychain -p $keys_keychain_password $KEY_STORAGE_PATH
@@ -23,10 +30,13 @@ function secure_note_storage --argument name
 	echo $note_contents
 end
 
-if which security > /dev/null
+if test $HAS_SECURITY
 
 	set found_registered_keychain (security list-keychains | grep "$KEY_STORAGE_KEYCHAIN_NAME" | wc -l)
 	if [ $found_registered_keychain -eq 1 ];
+		
+		unlock_login_keychain_if_necessary
+		
 		# this will need to be updated when it changes, connect to server and netstat for bouncer connection
 		set -g HOME_IP (secure_note_storage HOME_IP)
 

@@ -1,3 +1,6 @@
+# setting up the environment checks for what commands are supported
+source ~/.config/fish/environment_config.fish
+
 # environment variables and fish settings
 source ~/.config/fish/settings.fish
 
