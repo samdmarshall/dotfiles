@@ -172,6 +172,11 @@ function prompt_current_working_dir
 	echo -n $path_prefix$working_path_sub
 end
 
+function fish_right_prompt
+	printf '%s' (source_control_prompt)
+	printf '%s' $__fish_prompt_normal
+end
+
 function fish_prompt
 	# setting up colours
 	if not set -q __fish_prompt_user
@@ -203,8 +208,6 @@ function fish_prompt
 	printf ':'
 	printf '%s' $__fish_prompt_path
 	printf '%s' (prompt_current_working_dir)
-	printf '%s' $__fish_prompt_normal
-	printf '%s' (source_control_prompt)
 	printf '%s' $__fish_prompt_normal
 	printf ' $ '	
 end
