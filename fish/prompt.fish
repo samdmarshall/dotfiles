@@ -113,13 +113,14 @@ function source_control_prompt
 			set svn_status_lines (svn stat | sed -e 's=^Summary of conflicts.*==' -e 's=^  Text conflicts.*==' -e 's=^  Tree conflicts.*==' -e 's=.*incoming .* upon update.*==' | cut -c 1-7 | tr '\n' ':')
 			set found_first_column 0
 			set previous_nonempty_column 0
+			set status_state ""
 			for col in (seq 7)
 				set svn_status (echo $svn_status_lines | tr ':' '\n' | cut -c $col | sort | uniq | tr -d '\n' | tr -d ' ')
-			
+	
 				if [ "$svn_status" != "" ];
 					if [ $found_first_column -eq 0 ];
 						set found_first_column $col
-						printf '|'
+						set status_state $status_state'|'
 					end
 				end
 
@@ -129,15 +130,24 @@ function source_control_prompt
 					end
 
 					if [ $previous_nonempty_column != $found_first_column ];
-						printf '|'
+						set status_state $status_state'|'
 					end
 
 					if [ "$svn_status" != "" ];
-						printf '%s' (parse_svn_status $svn_status)
+						set tags (parse_svn_status $svn_status)
+						set status_state $status_state$tags
 					end
 				else
-					printf '|'
+					set status_state $status_state'|'
 				end
+			end
+			set was_not_empty false
+			set status_length (echo $status_state | tr -d '|' | wc -c)
+			if [ $status_length -gt 1 ];
+				set was_not_empty true
+			end
+			if [ $was_not_empty = true ];
+				printf $status_state
 			end
 			printf ')'
 		end
@@ -174,7 +184,6 @@ end
 
 function fish_right_prompt
 	printf '%s' (source_control_prompt)
-	printf '%s' $__fish_prompt_normal
 end
 
 function fish_prompt
