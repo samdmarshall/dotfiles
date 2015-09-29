@@ -110,29 +110,28 @@ function source_control_prompt
 		if [ $status -eq 0 ];
 			set svn_revision (svn info $pwd | grep "Last Changed Rev: " | sed -e "s=Last Changed Rev: ==" -e "s=\n==g")
 			printf ' (%s%s%s'  (set_color $__fish_git_prompt_color_branch) $svn_revision (set_color normal) 
-			set svn_status_lines (svn stat | awk '{print substr($0,0,7)}')
+			set svn_status_lines (svn stat | sed -e 's=^Summary of conflicts.*==' -e 's=^  Text conflicts.*==' -e 's=^  Tree conflicts.*==' -e 's=.*incoming .* upon update.*==' | cut -c 1-7 | tr '\n' ':')
 			set found_first_column 0
 			set previous_nonempty_column 0
-			for col in (seq 6)
-				set current_status_line (echo "$svn_status_lines" | awk -FS="" -v col=$col '{print $col}' | sort | uniq)
-				set svn_status (echo -n "$current_status_line" | sed -e "s=[\n| ]==g")
-				
+			for col in (seq 7)
+				set svn_status (echo $svn_status_lines | tr ':' '\n' | cut -c $col | sort | uniq | tr -d '\n' | tr -d ' ')
+			
 				if [ "$svn_status" != "" ];
 					if [ $found_first_column -eq 0 ];
 						set found_first_column $col
 						printf '|'
 					end
 				end
-				
+
 				if [ $found_first_column != 0 ];
 					if [ "$svn_status" != "" ];
 						set previous_nonempty_column $col
 					end
-					
+
 					if [ $previous_nonempty_column != $found_first_column ];
 						printf '|'
 					end
-					
+
 					if [ "$svn_status" != "" ];
 						printf '%s' (parse_svn_status $svn_status)
 					end
