@@ -10,7 +10,7 @@ function dot --description 'dot file management' --argument dot_command
 			gitnuke
 			git add -f $FISH_CONFIG_PATH/*.fish $FISH_CONFIG_PATH/functions/* $GIT_DEFAULTS_DIR/* $CORE_SCRIPTS_PATH/* $LLDB_DEFAULTS_DIR/* $KEY_STORAGE_PATH/*
 			git commit -m "💻"
-			git push origin master
+			git push
 			set dot_command "reload"
 		end
 
