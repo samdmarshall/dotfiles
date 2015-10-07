@@ -41,6 +41,10 @@ if [ $HAS_GIT = true ];
 	alias gitnuke 'git status | grep "deleted:" | awk \'{print $2}\' | xargs git rm'
 end
 
+if [ $HAS_SVN = true ];
+	alias svndiff "svn diff --diff-cmd=diff"
+end
+
 if [ "$PLATFORM_NAME" = "Darwin" ];
 	alias ScreenSaver "sudo open -a ScreenSaverEngine"
 	alias bundleid "mdfind kMDItemCFBundleIdentifier = "
