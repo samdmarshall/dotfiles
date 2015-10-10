@@ -53,3 +53,7 @@ set -xg HAS_BC $env_cmd_test_result
 set env_cmd_test_result false
 if which wc > /dev/null; set env_cmd_test_result true; end
 set -xg HAS_WC $env_cmd_test_result
+
+set env_cmd_test_result false
+if which hg > /dev/null; set env_cmd_test_result true; end
+set -xg HAS_HG $env_cmd_test_result

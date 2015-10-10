@@ -84,6 +84,9 @@ set -g __fish_svn_prompt_token_broken_char 'B'
 set -g __fish_svn_prompt_token_broken_color --bold magenta
 set -g __fish_svn_prompt_token_broken_display 'B'
 
+
+## MERCURIAL
+
 function parse_svn_status --argument status_string
 	set flags added conflicted deleted ignored modified replaced unversioned_external unversioned missing locked scheduled switched token_present token_other token_stolen token_broken
 	for index in (seq (count $flags))
@@ -102,6 +105,17 @@ function source_control_prompt
 		git rev-parse 2> /dev/null
 		if [ $status -eq 0 ];
 			printf '%s' (__fish_git_prompt)
+		end
+	end
+	
+	if [ $HAS_HG = true ];
+		set hg_info (hg summary $pwd 2> /dev/null)
+		if [ $status -eq 0 ];
+			set hg_branch (hg branch)
+			printf '(%s%s%s' (set_color $__fish_git_prompt_color_branch) $hg_branch (set_color normal) 
+			set hg_status (hg status | awk '{print $1}' | sort | uniq)
+			printf ' %s' $hg_status
+			printf ')'
 		end
 	end
 	
