@@ -217,7 +217,7 @@ function fish_prompt
 	
 	# setting up hostname
 	if not set -q __fish_prompt_hostname
-		set -g __fish_prompt_hostname (hostname | sed 's=\.local$==')
+		set -g __fish_prompt_hostname (hostname -s)
 	end
 	
 	# printing prompt
