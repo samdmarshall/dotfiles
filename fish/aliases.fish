@@ -7,7 +7,6 @@ alias Galactica "ssh Galactica.local"
 if [ $HAS_SCUTIL = true ];
 	alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
 	alias backtohome "ssh galactica.(BTMM)"
-	alias homeproxy "backtohome -D 1234"
 end
 
 if [ $HAS_XATTR = true ];
