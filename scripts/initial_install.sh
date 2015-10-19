@@ -1,5 +1,7 @@
 #!/bin/sh
 
+touch ~/.hushlogin
+
 sudo ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew install fish
@@ -19,6 +21,10 @@ brew install automake
 brew install autoconf
 brew install lynx
 
+brew tap samdmarshall/formulae
+brew install samdmarshall/formulae/xcrunner
+brew install samdmarshall/formulae/iosconsole
+
 sudo easy_install pip
 
 sudo pip install paramiko
@@ -27,7 +33,6 @@ sudo pip install machobot
 sudo pip install thefuck
 
 sudo ~/.config/lldb/install.sh
-
 
 sudo cat <<EOT >> /usr/local/bin/git-xcode
 #!/usr/bin/env sh
