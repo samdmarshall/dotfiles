@@ -47,10 +47,6 @@ if which perl > /dev/null; set env_cmd_test_result true; end
 set -xg HAS_PERL $env_cmd_test_result
 
 set env_cmd_test_result false
-if which bc > /dev/null; set env_cmd_test_result true; end
-set -xg HAS_BC $env_cmd_test_result
-
-set env_cmd_test_result false
 if which wc > /dev/null; set env_cmd_test_result true; end
 set -xg HAS_WC $env_cmd_test_result
 
