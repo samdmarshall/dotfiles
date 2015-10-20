@@ -53,3 +53,11 @@ set -xg HAS_WC $env_cmd_test_result
 set env_cmd_test_result false
 if which hg > /dev/null; set env_cmd_test_result true; end
 set -xg HAS_HG $env_cmd_test_result
+
+set env_cmd_test_result false
+if which otool > /dev/null; set env_cmd_test_result true; end
+set -xg HAS_OTOOL $env_cmd_test_result
+
+set env_cmd_test_result false
+if which xxd > /dev/null; set env_cmd_test_result true; end
+set -xg HAS_XXD $env_cmd_test_result

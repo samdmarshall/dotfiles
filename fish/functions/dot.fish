@@ -3,7 +3,7 @@ function dot --description 'dot file management' --argument dot_command
 	set arg_count (count $argv)
 
 	if [ $arg_count -eq 1 ];
-		set CURR (pwd)
+		pushd
 		cd $HOME_CONFIG_PATH
 		
 		if test "$dot_command" = "upload"
@@ -27,7 +27,7 @@ function dot --description 'dot file management' --argument dot_command
 			. $FISH_CONFIG_PATH/config.fish
 		end
 		
-		cd $CURR
+		popd
 	else
 		echo "usage: dot [upload|update|status|reload]"
 	end
