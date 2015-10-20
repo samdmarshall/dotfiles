@@ -1,11 +1,11 @@
 function dumpembedplist --argument filename
 
 	if [ $HAS_OTOOL = true ];
-		if [ $HAS_XXD = true];
+		if [ $HAS_XXD = true ];
 		
 			set arg_count (count $argv)
 	
-			if [ $arg_count -ge 3 ];
+			if [ $arg_count -eq 1 ];
 	
 				set binname (basename "$filename")
 	
