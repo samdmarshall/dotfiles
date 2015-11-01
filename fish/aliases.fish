@@ -47,7 +47,7 @@ end
 if [ "$PLATFORM_NAME" = "Darwin" ];
 	alias ScreenSaver "sudo open -a ScreenSaverEngine"
 	alias bundleid "mdfind kMDItemCFBundleIdentifier = "
-	alias mkwindow "open -a Finder ."
+	alias mkwindow "open -a Finder "
 end
 
 if [ $HAS_SHUTDOWN = true ];
