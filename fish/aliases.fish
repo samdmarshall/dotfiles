@@ -42,6 +42,7 @@ end
 
 if [ $HAS_SVN = true ];
 	alias svndiff "svn diff --diff-cmd=diff"
+	alias svncommits "svn log -v --xml | grep '<author./*author>' | sort | uniq -c | sort -rn | sed -e 's=<author>==g' -e 's=</author>==g'"
 end
 
 if [ "$PLATFORM_NAME" = "Darwin" ];
