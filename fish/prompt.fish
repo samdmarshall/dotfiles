@@ -135,7 +135,7 @@ function svn_prompt
 		end
 	end
 	set was_not_empty false
-	set status_length (echo $status_state | tr -d '|' | wc -c)
+	set status_length (echo $status_state | tr -d '|' | numchar)
 	if [ $status_length -gt 1 ];
 		set was_not_empty true
 	end
@@ -180,7 +180,7 @@ function prompt_current_working_dir
 	set total_length "38"
 	if [ $HAS_WC = true ];
 		#setting up current working dir for path truncation
-		set working_path_length (echo -n $working_path | wc -c)
+		set working_path_length (echo -n $working_path | numchar)
 		set user_host_length (math "$prompt_user_length + 1 + $prompt_hostname_length + 1")
 		if [ $user_host_length -ge $default_length ];
 			set should_show_path false
@@ -223,10 +223,10 @@ function fish_prompt
 	end
 	if [ $HAS_WC = true ];
 		if not set -q prompt_hostname_length
-			set -g prompt_hostname_length (echo -n $__fish_prompt_hostname | wc -c)
+			set -g prompt_hostname_length (echo -n $__fish_prompt_hostname | numchar)
 		end
 		if not set -q prompt_user_length
-			set -g prompt_user_length (echo -n $USER | wc -c)
+			set -g prompt_user_length (echo -n $USER | numchar)
 		end
 	end
 	

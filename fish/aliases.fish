@@ -25,6 +25,9 @@ if [ $HAS_FFMPEG = true ];
 	alias video2gif "ffmpeg -vf super2xsai,scale=w=iw/2:h=ih/2 ~/Desktop/out.gif -i"
 end
 
+if [ $HAS_WC = true ];
+	alias numchar "wc -m"
+end
 
 # alias to xcrunner (https://github.com/samdmarshall/xcrunner) or xcrun
 if [ $HAS_XCRUNNER = true ];
