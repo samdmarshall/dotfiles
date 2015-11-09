@@ -104,8 +104,7 @@ function svn_prompt
 	set svn_revision (svn info $pwd | grep "Last Changed Rev: " | sed -e "s=Last Changed Rev: ==" -e "s=\n==g")
 	printf '(%s%s%s'  (set_color $__fish_git_prompt_color_branch) $svn_revision (set_color normal) 
 	set svn_status_lines (svn stat | sed -e 's=^Summary of conflicts.*==' -e 's=^  Text conflicts.*==' -e 's=^  Tree conflicts.*==' -e 's=.*incoming .* upon update.*==' | cut -c 1-7 | tr '\n' ':')
-	set has_state ""
-	set status_state ""
+	set status_state
 	set last_column 0
 	for col in (seq 7)
 		set svn_status (echo $svn_status_lines | tr ':' '\n' | cut -c $col | sort | uniq | tr -d '\n')
@@ -114,17 +113,19 @@ function svn_prompt
 		set status_state $status_state $svn_status
 	end
 	for col in (seq 7)
+		set tags ""
+		set separator "|"
 		set current_column $status_state[$col]
-		set column_state $has_state[$col]
 		set state_string (echo -n "$current_column" | tr -d ' ')
-		if [ $col -le $last_column ];
-			printf '|'
-			set state_string_length (echo -n "$state_string" | numchar)
-			if [ $state_string_length -ge 1 ];
-				set tags (parse_svn_status $state_string)
-				printf '%s' $tags
-			end
+		if [ $col -gt $last_column ];
+			set separator ""
 		end
+		set state_string_length (echo -n "$state_string" | numchar)
+		if [ $state_string_length -ge 1 ];
+			set tags (parse_svn_status $state_string)
+			set separator "|"
+		end
+		printf '%s%s' $separator $tags
 	end
 	printf ')'
 end
