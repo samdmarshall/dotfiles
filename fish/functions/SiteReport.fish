@@ -1,8 +1,10 @@
 function SiteReport
 	
 	if test -e ~/Sites/logs
+		pushd
+		
 		set arg_count (count $argv)
-	
+		
 		set log_file "access.log"
 	
 		if [ $arg_count -eq 1 ];
@@ -16,6 +18,8 @@ function SiteReport
 	
 			open -a Safari ~/Desktop/Report.html
 		end
+		
+		popd
 	end
 	
 end
