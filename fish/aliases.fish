@@ -4,6 +4,8 @@ alias travel "ssh -L 5901:127.0.0.1:5900 Pegasus.local"
 alias Pegasus "ssh Pegasus.local"
 alias Galactica "ssh Galactica.local"
 
+alias disablephotos "defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES"
+
 if [ $HAS_SCUTIL = true ];
 	alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
 	alias backtohome "ssh -q galactica.(BTMM)"
