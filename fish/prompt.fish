@@ -112,20 +112,22 @@ function svn_prompt
 		if [ $column_state_length -ge 1 ]; set last_column $col; end
 		set status_state $status_state $svn_status
 	end
-	for col in (seq 7)
-		set tags ""
-		set separator "|"
-		set current_column $status_state[$col]
-		set state_string (echo -n "$current_column" | tr -d ' ')
-		if [ $col -gt $last_column ];
-			set separator ""
-		end
-		set state_string_length (echo -n "$state_string" | numchar)
-		if [ $state_string_length -ge 1 ];
-			set tags (parse_svn_status $state_string)
+	if [ $last_column -gt 0 ];
+		for col in (seq 7)
+			set tags ""
 			set separator "|"
+			set current_column $status_state[$col]
+			set state_string (echo -n "$current_column" | tr -d ' ')
+			if [ $col -gt $last_column ];
+				set separator ""
+			end
+			set state_string_length (echo -n "$state_string" | numchar)
+			if [ $state_string_length -ge 1 ];
+				set tags (parse_svn_status $state_string)
+				set separator "|"
+			end
+			printf '%s%s' $separator $tags
 		end
-		printf '%s%s' $separator $tags
 	end
 	printf ')'
 end
