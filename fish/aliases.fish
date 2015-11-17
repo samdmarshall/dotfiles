@@ -5,6 +5,7 @@ alias Pegasus "ssh Pegasus.local"
 alias Galactica "ssh Galactica.local"
 
 alias disablephotos "defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES"
+alias tweetbotdirectlinks "defaults write com.tapbots.TweetbotMac OpenURLsDirectly YES"
 
 if [ $HAS_SCUTIL = true ];
 	alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
