@@ -1,6 +1,6 @@
 function dumpsection --argument segname --argument sectname --argument filename
 
-	if [ $HAS_OTOOL = true]; 
+	if which otool > /dev/null
 		set arg_count (count $argv)
 	
 		if [ $arg_count -ge 3 ];

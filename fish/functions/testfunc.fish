@@ -1,3 +1,2 @@
-function testfunc --argument port
-printf '%s' $port
+function testfunc --argument arg
 end

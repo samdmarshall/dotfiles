@@ -1,7 +1,7 @@
 function dumpembedplist --argument filename
 
-	if [ $HAS_OTOOL = true ];
-		if [ $HAS_XXD = true ];
+	if which otool > /dev/null
+		if which xxd > /dev/null
 		
 			set arg_count (count $argv)
 	

@@ -4,24 +4,8 @@ alias travel "ssh -L 5901:127.0.0.1:5900 Pegasus.local"
 alias Pegasus "ssh Pegasus.local"
 alias Galactica "ssh Galactica.local"
 
-alias disablephotos "defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES"
-alias tweetbotdirectlinks "defaults write com.tapbots.TweetbotMac OpenURLsDirectly YES"
-
-if [ $HAS_SCUTIL = true ];
-	alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
-	alias backtohome "ssh -q galactica.(BTMM)"
-end
-
-if [ $HAS_XATTR = true ];
-	alias vaccine "xattr -rd com.apple.quarantine" 
-end
-
 if [ $HAS_OPENSSL = true ];
 	alias certinfo "openssl x509 -inform DER -text -in"
-end
-
-if [ $HAS_SECURITY = true ];
-	alias ppinfo "security cms -D -i"
 end
 
 if [ $HAS_FFMPEG = true ];
@@ -30,15 +14,6 @@ end
 
 if [ $HAS_WC = true ];
 	alias numchar "wc -m"
-end
-
-# alias to xcrunner (https://github.com/samdmarshall/xcrunner) or xcrun
-if [ $HAS_XCRUNNER = true ];
-	alias xc xcrunner
-else
-	if [ $HAS_XCRUN = true ];
-		alias xc xcrun
-	end
 end
 
 if [ $HAS_GIT = true ];
@@ -55,6 +30,33 @@ if [ "$PLATFORM_NAME" = "Darwin" ];
 	alias ScreenSaver "sudo open -a ScreenSaverEngine"
 	alias bundleid "mdfind kMDItemCFBundleIdentifier = "
 	alias mkwindow "open -a Finder "
+	
+	# alias to xcrunner (https://github.com/samdmarshall/xcrunner) or xcrun
+	if [ $HAS_XCRUNNER = true ];
+		alias xc xcrunner
+	else
+		if [ $HAS_XCRUN = true ];
+			alias xc xcrun
+		end
+	end
+	
+	if [ $HAS_DEFAULTS = true ];
+		alias disablephotos "defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES"
+		alias tweetbotdirectlinks "defaults write com.tapbots.TweetbotMac OpenURLsDirectly YES"
+	end
+
+	if [ $HAS_SCUTIL = true ];
+		alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
+		alias backtohome "ssh -q galactica.(BTMM)"
+	end
+
+	if [ $HAS_XATTR = true ];
+		alias vaccine "xattr -rd com.apple.quarantine" 
+	end
+	
+	if [ $HAS_SECURITY = true ];
+		alias ppinfo "security cms -D -i"
+	end
 end
 
 if [ $HAS_SHUTDOWN = true ];
@@ -69,8 +71,6 @@ if [ $HAS_PYTHON = true ];
 	end
 end
 
-if [ $HAS_PERL = true ];
-	alias cloc "perl $CORE_SCRIPTS_PATH/cloc.pl"
-end
+alias cloc "perl $CORE_SCRIPTS_PATH/cloc.pl"
 
 alias GetServerLogs "scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.com/logs/ ~/Sites/; find ~/Sites/logs/ -name '*.gz' | xargs gunzip -f"
