@@ -1,128 +1,167 @@
 import os
-import shutil
-import time
-import string
 import sys
+import argparse
+import string
 import subprocess
 from subprocess import CalledProcessError
+import tempfile
+import stat
 import paramiko
 from paramiko import SSHClient
 from scp import SCPClient
-# Globals
-SITE_PATH='';
-EXPORT_PATH='';
-FILE_BLACKLIST=['.DS_Store', '.git', '.gitignore', 'header.html'];
-EXPORT_LIST=[];
-WEBSITE_ROOT='/var/www/pewpewthespells.com/public_html/';
-HOST_NAME='pewpewthespells.com';
-USER_NAME='samdm';
-CSS_URL='/shiny/min.css';
-REMOVE_JS_SCRIPT=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'remove-js.sh');
-# Helper Functions
-def MakeDirectory(path):
-    if PathExists(path) == False:
-        os.mkdir(path);
-def MakeSymLink(original, path):
-    if PathExists(path) == False:
-        os.symlink(original, path);
-def PathExists(path):
-    return os.path.exists(path);
+import shutil
+
+update_identifier = '*'
+WEBSITE_ROOT='/var/www/pewpewthespells.com/public_html/'
+HOST_NAME='pewpewthespells.com'
+USER_NAME='samdm'
+
+REMOVE_JS_SCRIPT = "#!/usr/bin/env bash\n\
+# script used for stripping the js file out for IE\n\
+lineone=`sed '/\<!--\[if lt IE 9\]\>/d' $1`\n\
+linetwo=`echo \"$lineone\" | sed '/\<script src=\"http\:\/\/html5shim\.googlecode\.com\/svn\/trunk\/html5.js\"\>\<\/script\>/d'`\n\
+linethree=`echo \"$linetwo\" | sed '/\<!\[endif\]--\>/d'`\n\
+linefour=`echo \"$linethree\" | sed '/\<style type=\"text\/css\"\>code{white-space\: pre;}\<\/style\>/d'`\n\
+linefive=`echo \"$linefour\" | sed '/\<style type=\"text\/css\"\>\<\/style\>/d'`\n\
+echo \"$linefive\" > $1"
+
 def make_subprocess_call(call_args):
-    error = 0;
-    output = '';
+    error = 0
+    output = ''
     try:
-        output = subprocess.check_output(call_args);
-        error = 0;
+        output = subprocess.check_output(call_args)
+        error = 0
     except CalledProcessError as e:
-        output = e.output;
-        error = e.returncode;
-    return (output, error);
-def should_update(installed, update):
-    if PathExists(installed) == False:
-        return True;
-    existing = os.path.getmtime(installed);
-    updated = os.path.getmtime(update);
-    return existing < updated;
-def test_for_in_git(check_path):
-    result = False;
-    check_name = check_path;
-    split_path = os.path.split(check_path);
-    while len(split_path[0]) != 0:
-        split_path = os.path.split(split_path[0]);
-    if split_path[1] == '.git':
-        result = True;
-    
-    return result;
-# Main
+        output = e.output
+        error = e.returncode
+    return (output, error)
+
+def ExportHTML(site_path, item_path, export_dir):
+    HEADER_PATH = os.path.join(site_path, 'header.html')
+    INPUT_FILE_PATH = os.path.join(site_path, item_path)
+    # convert extension to html
+    item_name = os.path.splitext(os.path.basename(item_path))[0]
+    item_dir = os.path.dirname(item_path)
+    html_path = os.path.join(item_dir, item_name+'.html')
+    EXPORT_FILE_PATH = os.path.join(export_dir, html_path)
+    make_subprocess_call(('pandoc', '-f', 'markdown+grid_tables', '-t', 'html5', '-H', HEADER_PATH, '--email-obfuscation', 'references', INPUT_FILE_PATH, '-o', EXPORT_FILE_PATH))
+    fd = tempfile.NamedTemporaryFile(delete=False)
+    fd.write(REMOVE_JS_SCRIPT)
+    fd.close()
+    st = os.stat(fd.name)
+    os.chmod(fd.name, st.st_mode | stat.S_IEXEC)
+    make_subprocess_call((fd.name, EXPORT_FILE_PATH))
+    os.unlink(fd.name)
+    return EXPORT_FILE_PATH
+
+def ExportPDF(site_path, item_path, export_dir):
+    # convert extension to html
+    item_name = os.path.splitext(os.path.basename(item_path))[0]
+    item_dir = os.path.dirname(item_path)
+    html_path = os.path.join(item_dir, item_name+'.html')
+    pdf_path = os.path.join(item_dir, item_name+'.pdf')
+    INPUT_FILE_PATH = os.path.join(export_dir, html_path)
+    EXPORT_DIR = export_dir
+    make_subprocess_call(('html2pdf', '-b', EXPORT_DIR, '-i', INPUT_FILE_PATH))
+    EXPORT_FILE_PATH = os.path.join(export_dir, pdf_path)
+    return EXPORT_FILE_PATH
+
+export_rules = {
+  'html': ExportHTML,
+  'pdf': ExportPDF,
+}
+
 def main(argv):
-    if len(argv) == 0:
-        print 'Root of markdown site not given!';
-        sys.exit();
-    elif len(argv) == 1:
-        SITE_PATH = argv[0];
-        EXPORT_PATH = os.path.join(os.path.dirname(os.path.dirname(SITE_PATH)), 'export');
-    else:
-        print 'Too many arguments!';
-        sys.exit();
+    parser = argparse.ArgumentParser()
+    parser.add_argument('site_map_path', help='path to sitemap.txt')
+    parser.add_argument('-p', '--preview', action='store_true')
+    parser.add_argument('-u', '--upload', action='store_true')
     
-    if SITE_PATH == '' or EXPORT_PATH == '':
-        print 'Could not get site and export paths!';
-        sys.exit();
+    args = vars(parser.parse_args())
     
-    print 'Site: ' + SITE_PATH;
-    print 'Export: ' + EXPORT_PATH;
+    export_items = list()
     
-    if PathExists(SITE_PATH) == True:
-        MakeDirectory(EXPORT_PATH);
-        files_to_export_to_pdf = [];
-        for root, dirs, files in os.walk(SITE_PATH, followlinks=False):
-            for dir_name in dirs:
-                if test_for_in_git(root.split(SITE_PATH)[1]) == False and dir_name != '.git':
-                    export_dir_path = os.path.join(os.path.join(EXPORT_PATH, root.split(SITE_PATH)[1]), dir_name);
-                    MakeDirectory(export_dir_path);
-            for file_name in files:
-                if test_for_in_git(root.split(SITE_PATH)[1]) == False:
-                    site_file_path = os.path.join(root, file_name);
-                    file_basename, file_extension = os.path.splitext(file_name);
-                    if file_extension == '.md':
-                        file_name = file_basename+'.html'
-                    export_file_path = os.path.join(os.path.join(EXPORT_PATH, root.split(SITE_PATH)[1]), file_name);
-                    if file_name not in FILE_BLACKLIST:
-                        if should_update(export_file_path, site_file_path):
-                            normalized_path = os.path.normpath(root.split(SITE_PATH)[1]+'/'+file_name);
-                            print 'Exporting \"'+normalized_path+'\" ...';
-                            EXPORT_LIST.append(export_file_path);
-                            if file_extension == '.md':
-                                header_path = os.path.join(SITE_PATH, 'header.html');
-                                make_subprocess_call(('pandoc', '-f', 'markdown+grid_tables', '-t', 'html5', '-H', header_path, '--email-obfuscation', 'references', site_file_path, '-o', export_file_path)); #'-c', CSS_URL,
-                                make_subprocess_call((REMOVE_JS_SCRIPT, export_file_path));
-                                if normalized_path.startswith('blog/'):
-                                    files_to_export_to_pdf.append(normalized_path);
+    site_map_path = os.path.abspath(args.get('site_map_path'))
+    site_path = os.path.dirname(site_map_path)
+    export_path = os.path.join(os.path.dirname(site_path), '_export')
+    if os.path.exists(export_path) == False:
+        os.mkdir(export_path)
+    
+    if args.get('preview') or args.get('upload'):
+        with open(site_map_path, 'rw') as fd:
+            for line in fd:
+                line = line.rstrip('\n')
+                # skip lines that are empty or start with a comment
+                if len(line) == 0 or line.startswith('#'):
+                    continue
+                
+                # parse all other lines, format should be as follows:
+                # path/to/file.extension_on_disk comma,separated,extensions,to,create symbol_here_to_indicate_file_should_be_updated
+                item_path, file_ext, update = (line.split(' ') + list(' '))[:3]
+            
+                full_path = os.path.join(site_path, item_path)
+            
+                update = update.strip(' ')
+                
+                # if the 3rd field has a value, then we want to update the page
+                if len(update) > 0:
+                    if update == update_identifier:
+                        for extension in file_ext.split(','):
+                            print('Processing: %s -> %s' % (full_path, extension))
+                            
+                            # create the directory structure in the export directory so that 
+                            export_file_path_dirs = item_path.split(os.sep)[:1]
+                            item_counter = 1
+                            for component in export_file_path_dirs:
+                                component_name, component_extension = os.path.splitext(component)
+                                if component_extension == '':
+                                    partial_path = string.join(export_file_path_dirs[0:item_counter], os.sep)
+                                    export_item_dir_path = os.path.normpath(os.path.join(export_path, partial_path))
+                                    if os.path.exists(export_item_dir_path) == False:
+                                        os.mkdir(export_item_dir_path)
+                                item_counter = item_counter + 1
+                            # check to see if we need to perform an export action or copy the file
+                            item_extension = os.path.splitext(os.path.basename(full_path))[1].replace('.', '')
+                            if item_extension == extension:
+                                # same file extension, so copy it over
+                                export_file_path = os.path.join(export_path, item_path)
+                                shutil.copy2(full_path, export_file_path)
+                                export_items.append(export_file_path)
+                                continue
+                        
+                            # otherwise we need to process the extension for a rule
+                            if extension in export_rules.keys():
+                                function = export_rules[extension]
+                                exported_item_path = function(site_path, item_path, export_path)
+                                export_items.append(exported_item_path)
                             else:
-                                shutil.copy2(site_file_path, export_file_path);
-        for blog_post in files_to_export_to_pdf:
-            post_path = os.path.join(EXPORT_PATH, blog_post);
-            print 'making PDF of \"'+post_path+'\" ...';
-            pdf_path = os.path.splitext(post_path)[0] + '.pdf';
-            EXPORT_LIST.append(pdf_path);
-            make_subprocess_call(('html2pdf', '-b', EXPORT_PATH, '-i', post_path));
-    ssh = paramiko.SSHClient();
-    ssh.load_system_host_keys();
-    ssh.connect(HOST_NAME, username=USER_NAME);
-    scp = SCPClient(ssh.get_transport());
-    for item in EXPORT_LIST:
-        item_path = item.split(EXPORT_PATH)[1];
-        remote_path = os.path.normpath(WEBSITE_ROOT + item_path);
-        item_dirs = item_path.split(os.sep)[1:];
-        item_counter = 1;
-        for component in item_dirs:
-            component_name, component_extension = os.path.splitext(component);
-            if component_extension == '':
-                partial_path = string.join(item_dirs[0:item_counter],os.sep);
-                ssh.exec_command('mkdir -p '+os.path.normpath(WEBSITE_ROOT + partial_path));
-            item_counter = item_counter + 1;
-        print 'Uploading \"'+item_path+'\" ...'
-        scp.put(item, remote_path);
-    ssh.close();
+                                print('Error: No rule found for export extension "%s" for file "%s"' % (extension, item_path))
+                                sys.exit()
+                    else:
+                        print('Error: Unknown identifier found in sitemap file! Please use "%s" to indicate an update' % update_identifier)
+                        sys.exit()
+    # now upload if necessary
+    if args.get('upload'):
+        ssh = paramiko.SSHClient();
+        ssh.load_system_host_keys();
+        ssh.connect(HOST_NAME, username=USER_NAME);
+        scp = SCPClient(ssh.get_transport());
+        for item in export_items:
+            item_path = os.path.relpath(item, export_path)
+            remote_path = os.path.normpath(os.path.join(WEBSITE_ROOT, item_path))
+            item_dirs = item_path.split(os.sep)[1:]
+            item_counter = 1
+            for component in item_dirs:
+                component_name, component_extension = os.path.splitext(component)
+                if component_extension == '':
+                    partial_path = string.join(item_dirs[0:item_counter], os.sep)
+                    ssh.exec_command('mkdir -p '+os.path.normpath(os.path.join(WEBSITE_ROOT, partial_path)))
+                item_counter = item_counter + 1
+            print('Uploading: %s -> %s@%s:%s' % (item, USER_NAME, HOST_NAME, remote_path))
+            scp.put(item, remote_path);
+        ssh.close();
+        # remove local files that were uploaded
+        shutil.rmtree(export_path)
+
 if __name__ == "__main__":
-    main(sys.argv[1:]);
+    main(sys.argv[1:])
