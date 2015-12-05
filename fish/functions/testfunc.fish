@@ -1,2 +1,3 @@
-function testfunc --argument arg
+function testfunc --argument argstring
+
 end
