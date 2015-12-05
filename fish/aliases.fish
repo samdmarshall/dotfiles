@@ -29,7 +29,7 @@ end
 if [ "$PLATFORM_NAME" = "Darwin" ];
 	alias ScreenSaver "sudo open -a ScreenSaverEngine"
 	alias bundleid "mdfind kMDItemCFBundleIdentifier = "
-	alias mkwindow "open -a Finder "
+	alias mkwindow "open -a Finder ."
 	
 	# alias to xcrunner (https://github.com/samdmarshall/xcrunner) or xcrun
 	if [ $HAS_XCRUNNER = true ];
