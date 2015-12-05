@@ -84,10 +84,11 @@ def main(argv):
     site_map_path = os.path.abspath(args.get('site_map_path'))
     site_path = os.path.dirname(site_map_path)
     export_path = os.path.join(os.path.dirname(site_path), '_export')
-    if os.path.exists(export_path) == False:
-        os.mkdir(export_path)
     
     if args.get('preview') or args.get('upload'):
+        if os.path.exists(export_path) == False:
+            os.mkdir(export_path)
+            
         with open(site_map_path, 'rw') as fd:
             for line in fd:
                 line = line.rstrip('\n')
