@@ -142,7 +142,7 @@ def main(argv):
                         print('Error: Unknown identifier found in sitemap file! Please use "%s" to indicate an update' % update_identifier)
                         sys.exit()
     # now upload if necessary
-    if args.get('upload'):
+    if args.get('upload') and not args.get('preview'):
         ssh = paramiko.SSHClient();
         ssh.load_system_host_keys();
         ssh.connect(HOST_NAME, username=USER_NAME);
