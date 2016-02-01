@@ -59,6 +59,10 @@ if [ "$PLATFORM_NAME" = "Darwin" ];
 	end
 end
 
+if [ "$PLATFORM_NAME" = "Linux" ];
+	alias UpdateSSLCert "~/letsencrypt/letsencrypt-auto certonly --apache -d pewpewthespells.com,www.pewpewthespells.com"
+end
+
 if [ $HAS_SHUTDOWN = true ];
 	alias HostShutdown "printf '%s%s%s\n' (set_color red) \"WARNING: SHUTTING DOWN HOST NOW! ABORTING WILL EXIT THE SHELL!\" (set_color normal); sudo shutdown -h now; exit"
 end
