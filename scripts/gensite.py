@@ -23,7 +23,8 @@ linetwo=`echo \"$lineone\" | sed '/\<script src=\"http\:\/\/html5shim\.googlecod
 linethree=`echo \"$linetwo\" | sed '/\<!\[endif\]--\>/d'`\n\
 linefour=`echo \"$linethree\" | sed '/\<style type=\"text\/css\"\>code{white-space\: pre;}\<\/style\>/d'`\n\
 linefive=`echo \"$linefour\" | sed '/\<style type=\"text\/css\"\>\<\/style\>/d'`\n\
-echo \"$linefive\" > $1"
+linesix=`echo \"$linefive\" | sed '/\<script src=\"\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/html5shiv\/3\.7\.3\/html5shiv\-printshiv\.min\.js\"\>\<\/script\>/d'`\n\
+echo \"$linesix\" > $1"
 
 def make_subprocess_call(call_args):
     error = 0
