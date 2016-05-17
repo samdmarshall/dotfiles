@@ -18,7 +18,7 @@ end
 
 if [ $HAS_GIT = true ];
 	alias VisualLog "git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-	alias gitnuke 'git status | grep "deleted:" | awk \'{print $2}\' | xargs git rm'
+	alias gitnuke 'git status | grep "deleted:" | sed -e \'s=deleted:==\' -e \'s=^	    ==\' | tr \'\n\'  \'\0\' | xargs -0 git rm '
 end
 
 if [ $HAS_SVN = true ];

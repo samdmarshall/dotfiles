@@ -112,16 +112,16 @@ def main(argv):
                             print('Processing: %s -> %s' % (full_path, extension))
                             
                             # create the directory structure in the export directory so that 
-                            export_file_path_dirs = item_path.split(os.sep)[:1]
+                            export_file_path_dirs = item_path.split(os.sep)
                             item_counter = 1
                             for component in export_file_path_dirs:
-                                component_name, component_extension = os.path.splitext(component)
-                                if component_extension == '':
-                                    partial_path = string.join(export_file_path_dirs[0:item_counter], os.sep)
-                                    export_item_dir_path = os.path.normpath(os.path.join(export_path, partial_path))
-                                    if os.path.exists(export_item_dir_path) == False:
-                                        os.mkdir(export_item_dir_path)
-                                item_counter = item_counter + 1
+                              component_name, component_extension = os.path.splitext(component)
+                              if component_extension == '':
+                                partial_path = string.join(export_file_path_dirs[0:item_counter], os.sep)
+                                export_item_dir_path = os.path.normpath(os.path.join(export_path, partial_path))
+                                if os.path.exists(export_item_dir_path) == False:
+                                    os.mkdir(export_item_dir_path)
+                              item_counter = item_counter + 1
                             # check to see if we need to perform an export action or copy the file
                             item_extension = os.path.splitext(os.path.basename(full_path))[1].replace('.', '')
                             if item_extension == extension:
@@ -151,7 +151,7 @@ def main(argv):
         for item in export_items:
             item_path = os.path.relpath(item, export_path)
             remote_path = os.path.normpath(os.path.join(WEBSITE_ROOT, item_path))
-            item_dirs = item_path.split(os.sep)[1:]
+            item_dirs = item_path.split(os.sep)
             item_counter = 1
             for component in item_dirs:
                 component_name, component_extension = os.path.splitext(component)
