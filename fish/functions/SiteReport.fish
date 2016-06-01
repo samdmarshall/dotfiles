@@ -1,7 +1,7 @@
 function SiteReport
 	
 	if test -e ~/Sites/logs
-		pushd
+		pushd ~/Sites/logs
 		
 		set arg_count (count $argv)
 		
