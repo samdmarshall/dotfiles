@@ -70,9 +70,9 @@ end
 if [ $HAS_PYTHON = true ];
 	alias json "python -m json.tool"
 	alias tbmute "python $CORE_SCRIPTS_PATH/tweetbot-mute.py"
-	# if test -e ~/Sites/markdown
-	# 	alias UpdateSite "python $CORE_SCRIPTS_PATH/gensite.py ~/Sites/markdown/sitemap.txt -u"
-	# end
+	if test -e ~/Sites/markdown
+		alias UpdateSite "python $CORE_SCRIPTS_PATH/gensite.py ~/Sites/markdown/sitemap.txt -u"
+	end
 end
 
 alias cloc "perl $CORE_SCRIPTS_PATH/cloc.pl"

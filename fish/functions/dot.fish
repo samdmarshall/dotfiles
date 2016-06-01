@@ -3,8 +3,7 @@ function dot --description 'dot file management' --argument dot_command
 	set arg_count (count $argv)
 
 	if [ $arg_count -eq 1 ];
-		pushd
-		cd $HOME_CONFIG_PATH
+		pushd $HOME_CONFIG_PATH
 		
 		if test "$dot_command" = "upload"
 			gitnuke
