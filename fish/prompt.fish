@@ -40,9 +40,9 @@ function prompt_current_working_dir
 	echo -n $path_prefix$working_path_sub
 end
 
-function fish_right_prompt
-	printf '%s' (__fish_vcs_prompt)
-end
+# function fish_right_prompt
+# 	printf '%s' (__fish_vcs_prompt)
+# end
 
 function fish_prompt
 	# setting up colours
