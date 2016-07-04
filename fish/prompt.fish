@@ -14,32 +14,6 @@ set __fish_git_prompt_char_stashstate '↩'
 set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
 
-function prompt_current_working_dir
-	set should_show_path true
-	set path_prefix ""
-	set working_path (pwd | sed -e "s=^$HOME=~=")
-	set default_length "40"
-	set total_length "38"
-	if [ $HAS_WC = true ];
-		#setting up current working dir for path truncation
-		set working_path_length (echo -n $working_path | numchar)
-		set user_host_length (math "$prompt_user_length + 1 + $prompt_hostname_length + 1")
-		if [ $user_host_length -ge $default_length ];
-			set should_show_path false
-		end
-		set total_length (math "$default_length - $user_host_length")
-		if [ $working_path_length -gt $total_length ];
-			set total_length (math "$total_length - 3")
-			set path_prefix "..."
-		end
-	end
-	set working_path_sub (echo -n $working_path | tail -c $total_length)
-	if [ $should_show_path = false ];
-		set working_path_sub ""
-	end
-	echo -n $path_prefix$working_path_sub
-end
-
 # function fish_right_prompt
 # 	printf '%s' (__fish_vcs_prompt)
 # end
@@ -63,14 +37,6 @@ function fish_prompt
 	if not set -q __fish_prompt_hostname
 		set -g __fish_prompt_hostname (hostname -s)
 	end
-	if [ $HAS_WC = true ];
-		if not set -q prompt_hostname_length
-			set -g prompt_hostname_length (echo -n $__fish_prompt_hostname | numchar)
-		end
-		if not set -q prompt_user_length
-			set -g prompt_user_length (echo -n $USER | numchar)
-		end
-	end
 	
 	# printing prompt
 	printf '%s' $__fish_prompt_user
@@ -82,7 +48,7 @@ function fish_prompt
 	printf '%s' $__fish_prompt_normal
 	printf ':'
 	printf '%s' $__fish_prompt_path
-	printf '%s' (prompt_current_working_dir)
+	printf '%s' (prompt_pwd)
 	printf '%s' $__fish_prompt_normal
 	printf ' $ '	
 end
