@@ -14,7 +14,7 @@ function SiteReport
 		end
 	
 		if which goaccess < /dev/null
-			cat $log_file | goaccess --no-global-config --geoip-database=/usr/local/var/GeoIP/GeoIP.dat -a -H -M --real-os > ~/Desktop/Report.html
+			goaccess --no-global-config -f $log_file --geoip-database=/usr/local/var/GeoIP/GeoIP.dat -g --real-os -o ~/Desktop/Report.html
 	
 			open -a Safari ~/Desktop/Report.html
 		end

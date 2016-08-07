@@ -9,7 +9,7 @@ if [ $HAS_OPENSSL = true ];
 end
 
 if [ $HAS_FFMPEG = true ];
-	alias video2gif "ffmpeg -vf super2xsai,scale=w=iw/2:h=ih/2 ~/Desktop/out.gif -i"
+	alias video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff ~/Desktop/out.gif -i"
 end
 
 if [ $HAS_WC = true ];
@@ -30,6 +30,7 @@ if [ "$PLATFORM_NAME" = "Darwin" ];
 	alias ScreenSaver "sudo open -a ScreenSaverEngine"
 	alias bundleid "mdfind kMDItemCFBundleIdentifier = "
 	alias mkwindow "open -a Finder ."
+	alias runner "open -a CodeRunner"
 	
 	# alias to xcrunner (https://github.com/samdmarshall/xcrunner) or xcrun
 	if [ $HAS_XCRUNNER = true ];
