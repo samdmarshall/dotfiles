@@ -146,7 +146,7 @@ def main(argv):
     if args.get('upload') and not args.get('preview'):
         ssh = paramiko.SSHClient();
         ssh.load_system_host_keys();
-        ssh.connect(HOST_NAME, username=USER_NAME);
+        ssh.connect(HOST_NAME, username=USER_NAME, key_filename=os.path.expanduser('~/.ssh/id_rsa_linode'));
         scp = SCPClient(ssh.get_transport());
         for item in export_items:
             item_path = os.path.relpath(item, export_path)

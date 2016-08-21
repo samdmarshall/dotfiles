@@ -76,6 +76,4 @@ if [ $HAS_PYTHON = true ];
 	end
 end
 
-alias cloc "perl $CORE_SCRIPTS_PATH/cloc.pl"
-
 alias GetServerLogs "scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.com/logs/ ~/Sites/; find ~/Sites/logs/ -name '*.gz' | xargs gunzip -f"
