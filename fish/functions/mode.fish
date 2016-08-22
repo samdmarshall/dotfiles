@@ -15,10 +15,10 @@ function mode --description 'mode enabler/disabler' --argument mode_command
 		if test "$mode_command" = "work"
 			if test "$ENABLED_WORK" = "false"
 				set -xg ENABLED_WORK true
-				sudo chmod +rx /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk
+				sudo chmod +rx /Library/Java/JavaVirtualMachines/jdk*.jdk
 			else
 				set -xg ENABLED_WORK false
-				sudo chmod -rx /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk
+				sudo chmod -rx /Library/Java/JavaVirtualMachines/jdk*.jdk
 			end
 		end
 		
