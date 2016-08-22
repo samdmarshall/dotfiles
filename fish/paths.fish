@@ -23,4 +23,4 @@ if test -e  ~/.gem/ruby/2.0.0/bin
 	set LOCAL_RUBY_PATH ~/.gem/ruby/2.0.0/bin
 end
 # setting $PATH
-set PATH $PATH $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH
+set PATH /usr/local/bin /usr/bin /bin $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH
