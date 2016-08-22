@@ -16,14 +16,9 @@ set PYTHONSTARTUP $PYTHONSTARTUP_PATH
 
 set -xg ANDROID_HOME ""
 set -xg ANDROID_NDK_HOME ""
-set ANDROID_SDK_PATH ""
-set ANDROID_NDK_PATH ""
-
 if test "$ENABLE_ANDROID" = "true"
-	if test -e /usr/local/opt/android-sdk
-		set -xg ANDROID_HOME /usr/local/opt/android-sdk
-		set -xg ANDROID_NDK_HOME /usr/local/opt/android-ndk
-	end
+	set -xg ANDROID_HOME /usr/local/opt/android-sdk
+	set -xg ANDROID_NDK_HOME /usr/local/opt/android-ndk
 end
 
 set CCOLLAB_PATH ""
