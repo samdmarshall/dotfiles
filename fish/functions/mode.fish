@@ -35,7 +35,7 @@ function mode --description 'mode enabler/disabler' --argument mode_command
 				sudo chmod -rx /Library/Java/JavaVirtualMachines/jdk*.jdk
 			end
 			
-			set PATH $PATH $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $CCOLLAB_PATH 
+			set PATH /usr/local/bin /usr/bin /bin $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $CCOLLAB_PATH 
 		end
 		
 	else
