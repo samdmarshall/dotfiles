@@ -19,16 +19,24 @@ function mode --description 'mode enabler/disabler' --argument mode_command
 		end
 
 		if test "$mode_command" = "work"
+
+			set CCOLLAB_PATH ""
+
 			if test "$ENABLED_WORK" = "false"
 				set -xg ENABLED_WORK true
 				sudo chmod +rx /Library/Java/JavaVirtualMachines/jdk*.jdk
+				
+				if test -e /Applications/ccollab_client
+					set CCOLLAB_PATH /Applications/ccollab_client
+				end
+				
 			else
 				set -xg ENABLED_WORK false
 				sudo chmod -rx /Library/Java/JavaVirtualMachines/jdk*.jdk
 			end
+			
+			set PATH $PATH $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $CCOLLAB_PATH 
 		end
-		
-		dot reload
 		
 	else
 		echo "usage: dot [android|work]"
