@@ -85,3 +85,12 @@ if not set -q HAS_HG
 	if command -s hg > /dev/null; set env_cmd_test_result true; end
 	set -xg HAS_HG $env_cmd_test_result
 end
+
+# for working modes
+if not set -q ENABLED_ANDROID
+	set -xg ENABLED_ANDROID false
+end
+
+if not set -q ENABLED_WORK
+	set -xg ENABLED_WORK false
+end
