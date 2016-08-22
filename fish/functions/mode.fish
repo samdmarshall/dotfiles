@@ -7,8 +7,14 @@ function mode --description 'mode enabler/disabler' --argument mode_command
 		if test "$mode_command" = "android"
 			if test "$ENABLED_ANDROID" = "false"
 				set -xg ENABLED_ANDROID true
+
+				set -xg ANDROID_HOME /usr/local/opt/android-sdk
+				set -xg ANDROID_NDK_HOME /usr/local/opt/android-ndk
 			else
 				set -xg ENABLED_ANDROID false
+				
+				set -xg ANDROID_HOME ""
+				set -xg ANDROID_NDK_HOME ""
 			end
 		end
 
