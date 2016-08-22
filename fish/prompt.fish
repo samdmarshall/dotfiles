@@ -14,19 +14,10 @@ set __fish_git_prompt_char_stashstate '↩'
 set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
 
-function append --no-scope-shadowing
-	if test (count $argv) -ne 2
-		echo append: Expected two arguments, (count $argv) received.
-		return 1
-	end
-	set -l __fish_value $$argv[1]
-	set $argv[1] "$__fish_value$argv[2]"
-end
-
 function fish_right_prompt
 	set -l display_string ""
-	if test "$ENABLED_ANDROID" = "true"; append display_string android ; end
-	if test "$ENABLED_WORK" = "true"; append display_string work ; end
+	if test "$ENABLED_ANDROID" = "true"; set display_string $display_string "android" ; end
+	if test "$ENABLED_WORK" = "true"; set display_string $display_string "work" ; end
 
  	set -l display_items (string split " " "$display_string")
 	for item in $display_items
