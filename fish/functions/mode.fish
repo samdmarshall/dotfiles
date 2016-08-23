@@ -16,6 +16,8 @@ function mode --description 'mode enabler/disabler' --argument mode_command
 				set -xg ANDROID_HOME ""
 				set -xg ANDROID_NDK_HOME ""
 			end
+
+			defaults write com.pewpewthespells.fish.modes ENABLE_ANDROID $ENABLE_ANDROID
 		end
 
 		if test "$mode_command" = "work"
@@ -35,6 +37,8 @@ function mode --description 'mode enabler/disabler' --argument mode_command
 				sudo chmod -rx /Library/Java/JavaVirtualMachines/jdk*.jdk
 			end
 			
+			defaults write com.pewpewthespells.fish.modes ENABLED_WORK $ENABLED_WORK
+ 
 			set PATH /usr/local/bin /usr/bin /bin $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $CCOLLAB_PATH 
 		end
 		
