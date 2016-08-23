@@ -87,10 +87,5 @@ if not set -q HAS_HG
 end
 
 # for working modes
-if not set -q ENABLED_ANDROID
-	set -xg ENABLED_ANDROID (defaults read com.pewpewthespells.fish.modes ENABLE_ANDROID)
-end
-
-if not set -q ENABLED_WORK
-	set -xg ENABLED_WORK (defaults read com.pewpewthespells.fish.modes ENABLED_WORK)
-end
+set -xg ENABLED_ANDROID (defaults read com.pewpewthespells.fish.modes ENABLE_ANDROID)
+set -xg ENABLED_WORK (defaults read com.pewpewthespells.fish.modes ENABLED_WORK)
