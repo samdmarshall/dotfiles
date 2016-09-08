@@ -44,6 +44,6 @@ function mode --description 'mode enabler/disabler' --argument mode_command
 		end
 		
 	else
-		echo "usage: dot [android|work]"
+		echo "usage: mode [android|work]"
 	end
 end

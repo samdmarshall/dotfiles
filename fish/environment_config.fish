@@ -89,3 +89,11 @@ end
 # for working modes
 set -xg ENABLED_ANDROID (defaults read com.pewpewthespells.fish.modes ENABLE_ANDROID)
 set -xg ENABLED_WORK (defaults read com.pewpewthespells.fish.modes ENABLED_WORK)
+
+if test "$ENABLED_ANDROID" = "true"
+	set -xg ANDROID_HOME /usr/local/opt/android-sdk
+	set -xg ANDROID_NDK_HOME /usr/local/opt/android-ndk
+else
+	set -xg ANDROID_HOME ""
+	set -xg ANDROID_NDK_HOME ""
+end

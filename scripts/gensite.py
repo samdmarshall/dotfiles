@@ -45,7 +45,7 @@ def ExportHTML(site_path, item_path, export_dir):
     item_dir = os.path.dirname(item_path)
     html_path = os.path.join(item_dir, item_name+'.html')
     EXPORT_FILE_PATH = os.path.join(export_dir, html_path)
-    make_subprocess_call(('pandoc', '-f', 'markdown+grid_tables', '-t', 'html5', '-H', HEADER_PATH, '--email-obfuscation', 'references', INPUT_FILE_PATH, '-o', EXPORT_FILE_PATH))
+    make_subprocess_call(('pandoc', '-f', 'markdown+grid_tables', '-t', 'html5', '-H', HEADER_PATH, '--highlight-style', 'pygments', '--email-obfuscation', 'references', INPUT_FILE_PATH, '-o', EXPORT_FILE_PATH))
     fd = tempfile.NamedTemporaryFile(delete=False)
     fd.write(REMOVE_JS_SCRIPT)
     fd.close()
