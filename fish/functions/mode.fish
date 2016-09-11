@@ -31,7 +31,7 @@ function mode --description 'mode enabler/disabler' --argument mode_command
 				defaults write com.pewpewthespells.fish.modes ENABLED_WORK true
 				
 				if test -e /Applications/ccollab_client
-					set CCOLLAB_PATH /Applications/ccollab_client
+					set -xg CCOLLAB_PATH /Applications/ccollab_client
 				end
 				
 			else

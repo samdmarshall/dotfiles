@@ -22,5 +22,12 @@ set LOCAL_RUBY_PATH ""
 if test -e  ~/.gem/ruby/2.0.0/bin
 	set LOCAL_RUBY_PATH ~/.gem/ruby/2.0.0/bin
 end
+
+if test "$ENABLED_WORK" = "true"
+	set -xg COLLAB_PATH /Applications/ccollab_client
+else
+	set -xg COLLAB_PATH ""
+end
+
 # setting $PATH
-set PATH /usr/local/bin /usr/bin /usr/sbin /bin /sbin $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH
+set PATH /usr/local/bin /usr/bin /usr/sbin /bin /sbin $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $COLLAB_PATH
