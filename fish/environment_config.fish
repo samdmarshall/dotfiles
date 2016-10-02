@@ -1,6 +1,6 @@
-set -x PLATFORM_NAME (uname -s)
+set -x FISH_PLATFORM_NAME (uname -s)
 
-if [ $PLATFORM_NAME = "Darwin" ];
+if [ $FISH_PLATFORM_NAME = "Darwin" ];
 	if not set -q HAS_SECURITY
 		set env_cmd_test_result false
 		if command -s security > /dev/null; set env_cmd_test_result true; end

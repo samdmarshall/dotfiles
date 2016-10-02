@@ -18,7 +18,7 @@ set -xg KEY_STORAGE_KEYCHAIN_PATH $KEY_STORAGE_PATH/$KEY_STORAGE_KEYCHAIN_NAME
 
 set -x HOMEBREW_INSTALL_BADGE 🌈
 
-if [ $PLATFORM_NAME = "Darwin" ];
+if [ $FISH_PLATFORM_NAME = "Darwin" ];
 
 	function unlock_login_keychain_if_necessary
 		set keychain_status (security show-keychain-info login.keychain 2>&1 | grep "User interaction is not allowed" | wc -l)

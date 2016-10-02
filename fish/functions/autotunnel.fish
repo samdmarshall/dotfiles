@@ -1,5 +1,5 @@
 function autotunnel --argument port
-	if [ $PLATFORM_NAME = "Darwin" ];
+	if [ $FISH_PLATFORM_NAME = "Darwin" ];
 		if [ "$port" -eq "" ];
 			set port "1234"
 		end

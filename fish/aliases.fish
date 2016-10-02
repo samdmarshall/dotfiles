@@ -26,7 +26,7 @@ if [ $HAS_SVN = true ];
 	alias svncommits "svn log -v --xml | grep '<author./*author>' | sort | uniq -c | sort -rn | sed -e 's=<author>==g' -e 's=</author>==g'"
 end
 
-if [ "$PLATFORM_NAME" = "Darwin" ];
+if [ "$FISH_PLATFORM_NAME" = "Darwin" ];
 	alias ScreenSaver "sudo open -a ScreenSaverEngine"
 	alias bundleid "mdfind kMDItemCFBundleIdentifier = "
 	alias mkwindow "open -a Finder ."
@@ -60,7 +60,7 @@ if [ "$PLATFORM_NAME" = "Darwin" ];
 	end
 end
 
-if [ "$PLATFORM_NAME" = "Linux" ];
+if [ "$FISH_PLATFORM_NAME" = "Linux" ];
 	alias UpdateSSLCert "~/letsencrypt/letsencrypt-auto certonly --apache -d pewpewthespells.com,www.pewpewthespells.com"
 end
 

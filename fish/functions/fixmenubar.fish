@@ -1,5 +1,5 @@
 function fixmenubar
-	if [ $PLATFORM_NAME = "Darwin" ];
+	if [ $FISH_PLATFORM_NAME = "Darwin" ];
 		sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
 		sudo chmod 600 /System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight
 		sudo chmod 600 /System/Library/CoreServices/NotificationCenter.app/Contents/MacOS/NotificationCenter
