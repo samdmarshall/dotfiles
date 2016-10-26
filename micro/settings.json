@@ -20,7 +20,7 @@
     "saveundo": false,
     "scrollmargin": 3,
     "scrollspeed": 2,
-    "softwrap": false,
+    "softwrap": true,
     "statusline": true,
     "syntax": true,
     "tabsize": 4,
