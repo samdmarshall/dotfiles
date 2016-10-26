@@ -2,11 +2,12 @@
 ##
 syntax "Objective-c" "\.(m|mm|h)$"
 
-color type "\b(float|double|CGFloat|bool|BOOL|char|int|short|long|sizeof|enum|void|static|const|struct|union|typedef|extern|(un)?signed|inline)\b"
+color type "\b(float|double|CGFloat|id|bool|BOOL|char|int|short|long|sizeof|enum|void|static|const|struct|union|typedef|extern|(un)?signed|inline|Class|SEL|IMP)\b"
 color type "\b((s?size)|((u_?)?int(8|16|32|64|ptr)))_t\b"
 color type "\b[A-Z][A-Z][[:alnum:]]*\b"
+color type "\b[A-Za-z0-9_]*_t\b"
 
-color statement "__attribute__[[:space:]]*\(\([^)]*\)\)" "__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__" "__unused" "_Nonnull" "_Nullable"
+color statement "__attribute__[[:space:]]*\(\([^)]*\)\)" "__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__" "__unused" "_Nonnull" "_Nullable" "__block"
 color statement "\b(class|namespace|template|public|protected|private|typename|this|friend|virtual|using|mutable|volatile|register|explicit)\b"
 color statement "\b(for|if|while|do|else|case|default|switch)\b"
 color statement "\b(try|throw|catch|operator|new|delete)\b"
@@ -14,7 +15,7 @@ color statement "\b(goto|continue|break|return)\b"
 color statement "\b(nonatomic|atomic|readonly|readwrite|strong|weak)\b"
 color statement "@encode" "@end" "@interface" "@implementation" "@class" "@selector" "@protocol" "@synchronized" "@try" "@catch" "@finally" "@property"
 
-color preproc "^[[:space:]]*#[[:space:]]*(define|include|(un|ifn?)def|endif|el(if|se)|if|warning|error)"
+color preproc "^[[:space:]]*#[[:space:]]*(define|include|(un|ifn?)def|endif|el(if|se)|if|warning|error|pragma)"
 
 color statement "[.:;,+*|=!\%\[\]]" "<" ">" "/" "-" "&" 
 
@@ -23,6 +24,7 @@ color constant.string ""(\\.|[^"])*"" "@"(\\.|[^"])*""
 color constant "@\[(\\.|[^\]])*\]" "@\{(\\.|[^\}])*\}" "@\((\\.|[^\)])*\)"
 color constant "\b<(\\.[^\>])*\>\b"
 color constant "\b(nil|YES|NO|TRUE|true|FALSE|false|self)\b"
+color constant "\bk[[:alnum]]*\b"
 
 color comment "//.*"
 color comment start="/\*" end="\*/"
