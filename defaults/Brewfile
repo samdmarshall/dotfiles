@@ -1,0 +1,23 @@
+tap tap 'caskroom/cask'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+tap 'samdmarshall/formulae'
+
+brew 'git'
+brew 'fish'
+brew 'ffmpeg'
+brew 'pandoc'
+brew 'nmap'
+brew 'wget'
+brew 'clang-format'
+brew 'goaccess --with-geoip'
+brew 'cmake'
+brew 'vbindiff'
+brew 'binutils'
+brew 'automake'
+brew 'autoconf'
+brew 'lynx'
+brew 'iosconsole'
+brew 'xcrunner'
+
+

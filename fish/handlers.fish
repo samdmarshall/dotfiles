@@ -61,11 +61,11 @@ if not set -q __fish_prompt_path
 end
 
 function current_path --on-variable PWD
-    printf '<'
+    printf '<‌'
     printf '%s' $__fish_prompt_host
     printf '%s' $__fish_prompt_hostname
     printf '%s' $__fish_prompt_normal
-    printf '> <‌'
+    printf '‌> <‌'
     printf '%s' $__fish_prompt_path
     printf '%s' (prompt_pwd)
     printf '%s' $__fish_prompt_normal
