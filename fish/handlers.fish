@@ -69,7 +69,7 @@ function current_path --on-variable PWD
     printf '%s' $__fish_prompt_path
     printf '%s' (prompt_pwd)
     printf '%s' $__fish_prompt_normal
-    printf '>'
+    printf '‌>'
     printf '\n'
 end
 
