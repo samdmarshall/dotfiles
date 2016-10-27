@@ -41,23 +41,15 @@ function fish_prompt
 	if not set -q __fish_prompt_path
 		set -g __fish_prompt_path (set_color green)
 	end
-	
+
 	# setting up hostname
 	if not set -q __fish_prompt_hostname
 		set -g __fish_prompt_hostname (hostname -s)
 	end
-	
+
 	# printing prompt
 	printf '%s' $__fish_prompt_user
 	printf '%s' $USER
 	printf '%s' $__fish_prompt_normal
-	printf '@'
-	printf '%s' $__fish_prompt_host
-	printf '%s' $__fish_prompt_hostname
-	printf '%s' $__fish_prompt_normal
-	printf ':'
-	printf '%s' $__fish_prompt_path
-	printf '%s' (prompt_pwd)
-	printf '%s' $__fish_prompt_normal
-	printf ' $ '	
+	printf ': '
 end

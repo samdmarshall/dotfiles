@@ -48,3 +48,17 @@ function logout_message --on-process-exit %self
 	printf "$COL_21  \"Y8888P\"   \"Y88888P\"  888P     Y888 8888888P\"   \"Y88888P\"     888\n"
 	printf "$RESET"
 end
+
+function current_path --on-variable PWD
+    printf '<'
+    printf '%s' $__fish_prompt_host
+    printf '%s' $__fish_prompt_hostname
+    printf '%s' $__fish_prompt_normal
+    printf '> ['
+    printf '%s' $__fish_prompt_path
+    printf '%s' (prompt_pwd)
+    printf '%s' $__fish_prompt_normal
+    printf ']'
+    printf '\n'
+end
+
