@@ -6,3 +6,4 @@ fish/fishd*
 fish/functions/testfunc.fish
 transmission
 sdkbuild/
+micro/buffers

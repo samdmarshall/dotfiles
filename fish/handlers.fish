@@ -49,16 +49,27 @@ function logout_message --on-process-exit %self
 	printf "$RESET"
 end
 
+# setting up hostname
+if not set -q __fish_prompt_hostname
+	set -g __fish_prompt_hostname (hostname -s)
+end
+if not set -q __fish_prompt_host
+	set -g __fish_prompt_host (set_color b58900)
+end
+if not set -q __fish_prompt_path
+	set -g __fish_prompt_path (set_color 299e95)
+end
+
 function current_path --on-variable PWD
     printf '<'
     printf '%s' $__fish_prompt_host
     printf '%s' $__fish_prompt_hostname
     printf '%s' $__fish_prompt_normal
-    printf '> ['
+    printf '> <‌'
     printf '%s' $__fish_prompt_path
     printf '%s' (prompt_pwd)
     printf '%s' $__fish_prompt_normal
-    printf ']'
+    printf '>'
     printf '\n'
 end
 

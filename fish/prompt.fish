@@ -30,21 +30,10 @@ end
 function fish_prompt
 	# setting up colours
 	if not set -q __fish_prompt_user
-		set -g __fish_prompt_user (set_color purple)
-	end
-	if not set -q __fish_prompt_host
-		set -g __fish_prompt_host (set_color cyan)
+		set -g __fish_prompt_user (set_color -o d43582)
 	end
 	if not set -q __fish_prompt_normal
 		set -g __fish_prompt_normal (set_color normal)
-	end
-	if not set -q __fish_prompt_path
-		set -g __fish_prompt_path (set_color green)
-	end
-
-	# setting up hostname
-	if not set -q __fish_prompt_hostname
-		set -g __fish_prompt_hostname (hostname -s)
 	end
 
 	# printing prompt
