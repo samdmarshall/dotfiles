@@ -36,6 +36,18 @@ if [ $FISH_PLATFORM_NAME = "Darwin" ];
 		if command -s defaults > /dev/null; set env_cmd_test_result true; end
 		set -xg HAS_DEFAULTS $env_cmd_test_result
 	end
+
+    # for working modes
+    set -xg ENABLED_ANDROID (defaults read com.pewpewthespells.fish.modes ENABLE_ANDROID)
+    set -xg ENABLED_WORK (defaults read com.pewpewthespells.fish.modes ENABLED_WORK)
+
+    if test "$ENABLED_ANDROID" = "true"
+	    set -xg ANDROID_HOME /usr/local/opt/android-sdk
+	    set -xg ANDROID_NDK_HOME /usr/local/opt/android-ndk
+    else
+	    set -xg ANDROID_HOME ""
+	    set -xg ANDROID_NDK_HOME ""
+    end
 end
 
 if not set -q HAS_GIT
@@ -86,14 +98,3 @@ if not set -q HAS_HG
 	set -xg HAS_HG $env_cmd_test_result
 end
 
-# for working modes
-set -xg ENABLED_ANDROID (defaults read com.pewpewthespells.fish.modes ENABLE_ANDROID)
-set -xg ENABLED_WORK (defaults read com.pewpewthespells.fish.modes ENABLED_WORK)
-
-if test "$ENABLED_ANDROID" = "true"
-	set -xg ANDROID_HOME /usr/local/opt/android-sdk
-	set -xg ANDROID_NDK_HOME /usr/local/opt/android-ndk
-else
-	set -xg ANDROID_HOME ""
-	set -xg ANDROID_NDK_HOME ""
-end
