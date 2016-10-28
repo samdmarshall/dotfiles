@@ -59,6 +59,9 @@ end
 if not set -q __fish_prompt_path
 	set -g __fish_prompt_path (set_color 299e95)
 end
+if not set -q __fish_prompt_normal
+	set -g __fish_prompt_normal (set_color normal)
+end
 
 function current_path --on-variable PWD
     printf '<‌'

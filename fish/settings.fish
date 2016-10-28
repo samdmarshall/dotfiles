@@ -1,20 +1,20 @@
 # disable greeting
 set fish_greeting ""
 
-set -gx HOME_CONFIG_PATH ~/.config
-set -xg FISH_CONFIG_PATH $HOME_CONFIG_PATH/fish
+set -u HOME_CONFIG_PATH ~/.config
+set -u FISH_CONFIG_PATH $HOME_CONFIG_PATH/fish
 
-set -x GIT_DEFAULTS_DIR $HOME_CONFIG_PATH/defaults
+set -u GIT_DEFAULTS_DIR $HOME_CONFIG_PATH/defaults
 
-set -x CORE_SCRIPTS_PATH $HOME_CONFIG_PATH/scripts
+set -u CORE_SCRIPTS_PATH $HOME_CONFIG_PATH/scripts
 
-set -xg LLDB_DEFAULTS_DIR $HOME_CONFIG_PATH/lldb
+set -u LLDB_DEFAULTS_DIR $HOME_CONFIG_PATH/lldb
 
-set -xg KEY_STORAGE_KEYCHAIN_NAME keys.keychain
+set -u KEY_STORAGE_KEYCHAIN_NAME keys.keychain
 
-set -xg KEY_STORAGE_PATH $HOME_CONFIG_PATH/storage
+set -u KEY_STORAGE_PATH $HOME_CONFIG_PATH/storage
 
-set -xg KEY_STORAGE_KEYCHAIN_PATH $KEY_STORAGE_PATH/$KEY_STORAGE_KEYCHAIN_NAME
+set -u KEY_STORAGE_KEYCHAIN_PATH $KEY_STORAGE_PATH/$KEY_STORAGE_KEYCHAIN_NAME
 
 set -x HOMEBREW_INSTALL_BADGE 🌈
 
@@ -38,11 +38,11 @@ if [ $FISH_PLATFORM_NAME = "Darwin" ];
 
 		set found_registered_keychain (security list-keychains | grep "$KEY_STORAGE_KEYCHAIN_NAME" | wc -l)
 		if [ $found_registered_keychain -eq 1 ];
-		
+
 			unlock_login_keychain_if_necessary
-		
+
 			# this will need to be updated when it changes, connect to server and netstat for bouncer connection
-			set -g HOME_IP (secure_note_storage HOME_IP)
+			set -u HOME_IP (secure_note_storage HOME_IP)
 
 			set -x HOMEBREW_GITHUB_API_TOKEN (secure_note_storage HOMEBREW_GITHUB_API_TOKEN)
 		end

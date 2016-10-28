@@ -1,6 +1,4 @@
 alias server "ssh -t -t -L 5902:127.0.0.1:5901 samdm@pewpewthespells.com"
-alias home "server 'ssh -L 5901:127.0.0.1:5900 samantha@$HOME_IP'"
-alias travel "ssh -L 5901:127.0.0.1:5900 Pegasus.local"
 alias Pegasus "ssh Pegasus.local"
 alias Galactica "ssh Galactica.local"
 

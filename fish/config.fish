@@ -16,4 +16,5 @@ source ~/.config/fish/aliases.fish
 if status --is-login
 	# configuring event handlers
 	source ~/.config/fish/handlers.fish
+	current_path
 end
