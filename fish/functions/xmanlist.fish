@@ -5,7 +5,5 @@ function xmanlist
 		set open_string "x-man-page:///$lookup_name;type=a"
 		
 		open "$open_string"
-	else
-		echo "usage: xmanlist [name]"
 	end
 end

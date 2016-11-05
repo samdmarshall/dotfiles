@@ -24,5 +24,8 @@
     "statusline": true,
     "syntax": true,
     "tabsize": 4,
-    "tabstospaces": true
+    "tabstospaces": false,
+        "*.py": {
+            "tabstospaces": true
+        }
 }

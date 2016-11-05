@@ -12,11 +12,7 @@ function xman
 	
 		if man -k "$lookup_name" | grep -q "$grep_string" > /dev/null
 			open "$open_string"
-		else
-			echo "No man page found!"
 		end
-	else
-		echo "usage: xman [name] (section)"
 	end
 end
 
