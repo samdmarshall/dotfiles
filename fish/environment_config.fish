@@ -98,3 +98,9 @@ if not set -q HAS_HG
 	set -u HAS_HG $env_cmd_test_result
 end
 
+if not set -q HAS_PYGMENTIZE
+	set env_cmd_result false
+	if command -s pygmentize > /dev/null; set env_cmd_test_result true; end
+	set -u HAS_PYGMENTIZE $env_cmd_test_result
+end
+

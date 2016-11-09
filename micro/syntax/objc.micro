@@ -1,6 +1,6 @@
 ## Here is an example for C/C++/Obj-C.
 ##
-syntax "Objective-c" "\.(m|mm|h)$"
+syntax "Objective-C" "\.(m|mm|h)$"
 
 color type "\b(float|double|CGFloat|id|bool|BOOL|char|int|short|long|sizeof|enum|void|static|const|struct|union|typedef|extern|(un)?signed|inline|Class|SEL|IMP)\b"
 color type "\b((s?size)|((u_?)?int(8|16|32|64|ptr)))_t\b"
@@ -13,18 +13,24 @@ color statement "\b(for|if|while|do|else|case|default|switch)\b"
 color statement "\b(try|throw|catch|operator|new|delete)\b"
 color statement "\b(goto|continue|break|return)\b"
 color statement "\b(nonatomic|atomic|readonly|readwrite|strong|weak)\b"
-color statement "@encode" "@end" "@interface" "@implementation" "@class" "@selector" "@protocol" "@synchronized" "@try" "@catch" "@finally" "@property"
+color statement "@[encode|end|interface|implementation|class|selector|protocol|synchronized|try|catch|finally|property|optional|required|import]"
 
-color preproc "^[[:space:]]*#[[:space:]]*(define|include|(un|ifn?)def|endif|el(if|se)|if|warning|error|pragma)"
+color preproc "^[[:space:]]*#[[:space:]]*(define|include|import|(un|ifn?)def|endif|el(if|se)|if|warning|error|pragma)"
 
 color statement "[.:;,+*|=!\%\[\]]" "<" ">" "/" "-" "&" 
 
-color constant.number "\b[0-9]+\b"
-color constant.string ""(\\.|[^"])*"" "@"(\\.|[^"])*""
+color constant.number "\b(-?)?[0-9]+\b" "\b\[0-9]+\.[0-9]+\b" "\b0x[0-9A-F]+\b"
 color constant "@\[(\\.|[^\]])*\]" "@\{(\\.|[^\}])*\}" "@\((\\.|[^\)])*\)"
 color constant "\b<(\\.[^\>])*\>\b"
-color constant "\b(nil|YES|NO|TRUE|true|FALSE|false|self)\b"
+color constant "\b(nil|NULL|YES|NO|TRUE|true|FALSE|false|self)\b"
 color constant "\bk[[:alnum]]*\b"
 
 color comment "//.*"
 color comment start="/\*" end="\*/"
+
+color constant.string ""(\\.|[^"])*"" "@"(\\.|[^"])*""
+
+color special "^[[:space:]]*[#|@][[:space:]]*(import|include)[[:space:]]*[\"|<].*\/?[>|\"]"
+
+
+

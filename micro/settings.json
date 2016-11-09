@@ -24,6 +24,9 @@
     "statusline": true,
     "syntax": true,
     "tabsize": 4,
+    	"*.rb": {
+    		"tabsize": 2
+    	},
     "tabstospaces": false,
         "*.py": {
             "tabstospaces": true

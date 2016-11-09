@@ -24,6 +24,10 @@ if [ $HAS_SVN = true ];
 	alias svncommits "svn log -v --xml | grep '<author./*author>' | sort | uniq -c | sort -rn | sed -e 's=<author>==g' -e 's=</author>==g'"
 end
 
+if [ $HAS_PYGMENTIZE = true ];
+	alias pcat "pygmentize"
+end
+
 if [ "$FISH_PLATFORM_NAME" = "Darwin" ];
 	alias ScreenSaver "sudo open -a ScreenSaverEngine"
 	alias bundleid "mdfind kMDItemCFBundleIdentifier = "
