@@ -7,12 +7,32 @@ set __fish_git_prompt_color_upstream_ahead green
 set __fish_git_prompt_color_upstream_behind red
 
 # Status Chars
-set __fish_git_prompt_char_dirtystate '⚡'
+set __fish_git_prompt_char_dirtystate '↯'
 set __fish_git_prompt_char_stagedstate '→'
 set __fish_git_prompt_char_untrackedfiles '☡'
 set __fish_git_prompt_char_stashstate '↩'
 set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
+
+# setting up colours
+if not set -q __fish_prompt_user
+	set -g __fish_prompt_user (set_color -o d43582)
+end
+if not set -q __fish_prompt_normal
+	set -g __fish_prompt_normal (set_color normal)
+end
+if not set -q __fish_prompt_hostname
+    set -g __fish_prompt_hostname (hostname -s)
+end
+if not set -q __fish_prompt_host
+    set -g __fish_prompt_host (set_color b58900)
+end
+if not set -q __fish_prompt_path
+    set -g __fish_prompt_path (set_color 299e95)
+end
+if not set -q __fish_prompt_normal
+    set -g __fish_prompt_normal (set_color normal)
+end
 
 function fish_right_prompt
 	set -l display_string ""
@@ -28,17 +48,27 @@ function fish_right_prompt
 end
 
 function fish_prompt
-	# setting up colours
-	if not set -q __fish_prompt_user
-		set -g __fish_prompt_user (set_color -o d43582)
-	end
-	if not set -q __fish_prompt_normal
-		set -g __fish_prompt_normal (set_color normal)
-	end
-
-	# printing prompt
 	printf '%s' $__fish_prompt_user
 	printf '%s' $USER
 	printf '%s' $__fish_prompt_normal
 	printf ': '
+end
+
+function path --on-variable PWD --description 'display the current host and working path'
+    printf '<‌'
+    printf '%s' $__fish_prompt_host
+    printf '%s' $__fish_prompt_hostname
+    printf '%s' $__fish_prompt_normal
+    printf '‌> <‌'
+    printf '%s' $__fish_prompt_path
+    printf '%s' (prompt_pwd)
+    printf '%s' $__fish_prompt_normal
+    set -l vcs (__fish_vcs_prompt)
+    if test (string length $vcs)
+		printf '‌> <‌'
+		printf '%s' (string trim --char=\ \(\) (string replace --all ')(' '❙' $vcs))
+    end
+    printf '‌>'
+
+    printf '\n'
 end
