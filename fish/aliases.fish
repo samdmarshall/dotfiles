@@ -2,80 +2,44 @@ alias server "ssh -t -t -L 5902:127.0.0.1:5901 samdm@pewpewthespells.com"
 alias Pegasus "ssh Pegasus.local"
 alias Galactica "ssh Galactica.local"
 
-if [ $HAS_OPENSSL = true ];
-	alias certinfo "openssl x509 -inform DER -text -in"
-end
+alias certinfo "openssl x509 -inform DER -text -in"
+alias video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff ~/Desktop/out.gif -i"
 
-if [ $HAS_FFMPEG = true ];
-	alias video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff ~/Desktop/out.gif -i"
-end
+alias svndiff "svn diff --diff-cmd=diff"
+alias svncommits "svn log -v --xml | grep '<author./*author>' | sort | uniq -c | sort -rn | sed -e 's=<author>==g' -e 's=</author>==g'"
 
-if [ $HAS_WC = true ];
-	alias numchar "wc -m"
-end
-
-if [ $HAS_GIT = true ];
-	alias VisualLog "git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-	alias gitnuke 'git status | grep "deleted:" | sed -e \'s=deleted:==\' -e \'s=^	    ==\' | tr \'\n\'  \'\0\' | xargs -0 git rm '
-end
-
-if [ $HAS_SVN = true ];
-	alias svndiff "svn diff --diff-cmd=diff"
-	alias svncommits "svn log -v --xml | grep '<author./*author>' | sort | uniq -c | sort -rn | sed -e 's=<author>==g' -e 's=</author>==g'"
-end
-
-if [ $HAS_PYGMENTIZE = true ];
-	alias pcat "pygmentize"
-end
-
-if [ "$FISH_PLATFORM_NAME" = "Darwin" ];
-	alias ScreenSaver "sudo open -a ScreenSaverEngine"
-	alias bundleid "mdfind kMDItemCFBundleIdentifier = "
-	alias mkwindow "open -a Finder ."
-	alias runner "open -a CodeRunner"
-	
-	# alias to xcrunner (https://github.com/samdmarshall/xcrunner) or xcrun
-	if [ $HAS_XCRUNNER = true ];
-		alias xc xcrunner
-	else
-		if [ $HAS_XCRUN = true ];
-			alias xc xcrun
-		end
-	end
-	
-	if [ $HAS_DEFAULTS = true ];
-		alias disablephotos "defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES"
-		alias tweetbotdirectlinks "defaults write com.tapbots.TweetbotMac OpenURLsDirectly YES"
-	end
-
-	if [ $HAS_SCUTIL = true ];
-		alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
-		alias backtohome "ssh -q galactica.(BTMM)"
-	end
-
-	if [ $HAS_XATTR = true ];
-		alias vaccine "xattr -rd com.apple.quarantine" 
-	end
-	
-	if [ $HAS_SECURITY = true ];
-		alias ppinfo "security cms -D -i"
-	end
-end
-
-if [ "$FISH_PLATFORM_NAME" = "Linux" ];
-	alias UpdateSSLCert "~/letsencrypt/letsencrypt-auto certonly --apache -d pewpewthespells.com,www.pewpewthespells.com"
-end
-
-if [ $HAS_SHUTDOWN = true ];
-	alias HostShutdown "printf '%s%s%s\n' (set_color red) \"WARNING: SHUTTING DOWN HOST NOW! ABORTING WILL EXIT THE SHELL!\" (set_color normal); sudo shutdown -h now; exit"
-end
-
-if [ $HAS_PYTHON = true ];
-	alias json "python -m json.tool"
-	alias tbmute "python $CORE_SCRIPTS_PATH/tweetbot-mute.py"
-	if test -e ~/Sites/markdown
-		alias UpdateSite "python $CORE_SCRIPTS_PATH/gensite.py ~/Sites/markdown/sitemap.txt -u"
-	end
-end
+alias pcat "pygmentize"
 
 alias GetServerLogs "scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.com/logs/ ~/Sites/; find ~/Sites/logs/ -name '*.gz' | xargs gunzip -f"
+
+alias json "python -m json.tool"
+
+if [ "$FISH_PLATFORM_NAME" = "Darwin" ]
+    alias ScreenSaver "sudo open -a ScreenSaverEngine"
+    alias bundleid "mdfind kMDItemCFBundleIdentifier = "
+    alias mkwindow "open -a Finder"
+
+    # alias to xcrunner (https://github.com/samdmarshall/xcrunner) or xcrun
+    if test command -v xcrunner 2>/dev/null
+        alias xc xcrunner
+    else
+		alias xc xcrun
+    end
+
+	alias disablephotos "defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES"
+	alias tweetbotdirectlinks "defaults write com.tapbots.TweetbotMac OpenURLsDirectly YES"
+
+	alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
+	alias backtohome "ssh -q galactica.(BTMM)"
+
+	alias ppinfo "security cms -D -i"
+end
+
+if [ "$FISH_PLATFORM_NAME" = "Linux" ]
+    alias UpdateSSLCert "~/letsencrypt/letsencrypt-auto certonly --apache -d pewpewthespells.com,www.pewpewthespells.com"
+end
+
+if test -e ~/Sites/markdown
+    alias UpdateSite "python $CORE_SCRIPTS_PATH/gensite.py ~/Sites/markdown/sitemap.txt -u"
+end
+

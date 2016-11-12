@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+mkdir -p ~/Sites/logs
+
+pushd ~/Sites/logs
+
+log_file="access.log"
+if [ "$#" -eq 1 ]; then
+	log_file="$1"
+fi
+
+goaccess --no-global-config -f $log_file --geoip-database=/usr/local/var/GeoIP/GeoIP.dat -g --real-os -o ~/Desktop/Report.html
+open -a Safari ~/Desktop/Report.html
+
+popd

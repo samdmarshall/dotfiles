@@ -63,7 +63,7 @@ if not set -q __fish_prompt_normal
 	set -g __fish_prompt_normal (set_color normal)
 end
 
-function current_path --on-variable PWD
+function path --on-variable PWD --description 'display the current host and working path'
     printf '<‌'
     printf '%s' $__fish_prompt_host
     printf '%s' $__fish_prompt_hostname

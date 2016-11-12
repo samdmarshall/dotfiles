@@ -18,5 +18,7 @@ if status --is-login
     source ~/.config/fish/bindings.fish
 	# configuring event handlers
 	source ~/.config/fish/handlers.fish
-	current_path
+	
+	# print the current path and host
+	path
 end

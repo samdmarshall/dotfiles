@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+if [ "$#" -ne 3 ]; then
+	echo "usage: dumpsection <segment name> <section name> <path to binary>"
+	exit 1
+fi
+
+binname=`basename $3`
+if [[ ! -e $3 ]]; then
+	echo "file does not exist"
+	exit 1
+fi
+
+file_type=`file $3 | grep "Mach-O"`
+if [[ ! "$file_type" ]]; then
+	echo "Not a Mach-O binary"
+	exit 1
+fi
+
+otool -s $1 $2 $3 > ~/Desktop/$1_$2_$binname.data

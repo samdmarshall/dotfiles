@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+current_branch=`git rev-parse --abbrev-ref HEAD`
+for ref in `git rev-list --first-parent $current_branch`; do
+	if [`git branch --contains $ref | wc -l` -eq 2 ]; then
+		parent_branch=`git branch --contains $ref | grep -v "$current_branch" | cut -c 3- `
+		echo `git rev-list $parent_branch.. --count`
+		break
+	fi
+done
