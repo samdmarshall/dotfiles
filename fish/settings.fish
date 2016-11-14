@@ -11,6 +11,8 @@ set -u KEY_STORAGE_PATH $HOME_CONFIG_PATH/storage
 set -u KEY_STORAGE_KEYCHAIN_PATH $KEY_STORAGE_PATH/$KEY_STORAGE_KEYCHAIN_NAME
 set -x HOMEBREW_INSTALL_BADGE 🌈
 
+set foo "bar"
+
 if [ $FISH_PLATFORM_NAME = "Darwin" ]
 
     function unlock_login_keychain_if_necessary

@@ -1,13 +1,13 @@
 {
     "autoclose": true,
     "autoindent": true,
-    "autosave": false,
+    "autosave": true,
     "colorcolumn": 0,
     "colorscheme": "bubblegum",
     "cursorline": true,
     "eofnewline": true,
     "fishfmt": true,
-    "ignorecase": false,
+    "ignorecase": true,
     "indentchar": " ",
     "infobar": true,
     "linter": true,
@@ -24,11 +24,14 @@
     "statusline": true,
     "syntax": true,
     "tabsize": 4,
-    	"*.rb": {
-    		"tabsize": 2
-    	},
+        "*.rb": {
+            "tabsize": 2
+        },
     "tabstospaces": false,
         "*.py": {
+            "tabstospaces": true
+        },
+        "*.rb": {
             "tabstospaces": true
         }
 }
