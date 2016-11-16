@@ -16,10 +16,10 @@ set __fish_git_prompt_char_upstream_behind '↓'
 
 # setting up colours
 if not set -q __fish_prompt_user
-	set -g __fish_prompt_user (set_color -o d43582)
+    set -g __fish_prompt_user (set_color -o d43582)
 end
 if not set -q __fish_prompt_normal
-	set -g __fish_prompt_normal (set_color normal)
+    set -g __fish_prompt_normal (set_color normal)
 end
 if not set -q __fish_prompt_hostname
     set -g __fish_prompt_hostname (hostname -s)
@@ -35,23 +35,27 @@ if not set -q __fish_prompt_normal
 end
 
 function fish_right_prompt
-	set -l display_string ""
-	if test "$ENABLED_ANDROID" = "true"; set display_string $display_string "android" ; end
-	if test "$ENABLED_WORK" = "true"; set display_string $display_string "work" ; end
+    set -l display_string ""
+    if test "$ENABLED_ANDROID" = "true"
+        set display_string $display_string "android"
+    end
+    if test "$ENABLED_WORK" = "true"
+        set display_string $display_string "work"
+    end
 
- 	set -l display_items (string split " " "$display_string")
-	for item in $display_items
-		if test (string length -- "$item") -gt 0
-			printf '(%s)' $item
-		end
-	end
+    set -l display_items (string split " " "$display_string")
+    for item in $display_items
+        if test (string length -- "$item") -gt 0
+            printf '(%s)' $item
+        end
+    end
 end
 
 function fish_prompt
-	printf '%s' $__fish_prompt_user
-	printf '%s' $USER
-	printf '%s' $__fish_prompt_normal
-	printf ': '
+    printf '%s' $__fish_prompt_user
+    printf '%s' $USER
+    printf '%s' $__fish_prompt_normal
+    printf ': '
 end
 
 function path --on-variable PWD --description 'display the current host and working path'
@@ -65,8 +69,8 @@ function path --on-variable PWD --description 'display the current host and work
     printf '%s' $__fish_prompt_normal
     set -l vcs (__fish_vcs_prompt)
     if test (string length $vcs)
-		printf '‌> <‌'
-		printf '%s' (string trim --char=\ \(\) (string replace --all ')(' '❙' $vcs))
+        printf '‌> <‌'
+        printf '%s' (string trim  $vcs)
     end
     printf '‌>'
 
