@@ -48,4 +48,3 @@ function logout_message --on-process-exit %self
     printf "$COL_21  \"Y8888P\"   \"Y88888P\"  888P     Y888 8888888P\"   \"Y88888P\"     888\n"
     printf "$RESET"
 end
-

@@ -16,9 +16,9 @@ source ~/.config/fish/aliases.fish
 if status --is-login
     # load keybindings
     source ~/.config/fish/bindings.fish
-	# configuring event handlers
-	source ~/.config/fish/handlers.fish
-	
-	# print the current path and host
-	path
+    # configuring event handlers
+    source ~/.config/fish/handlers.fish
+
+    # print the current path and host
+    path
 end
