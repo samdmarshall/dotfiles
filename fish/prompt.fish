@@ -52,6 +52,9 @@ function fish_right_prompt
 end
 
 function fish_prompt
+    if set -q SSH_CONNECTION
+        printf 'Connected to -> %s\n' $__fish_prompt_host
+    end
     printf '%s' $__fish_prompt_user
     printf '%s' $USER
     printf '%s' $__fish_prompt_normal
@@ -59,9 +62,6 @@ function fish_prompt
 end
 
 function path --on-variable PWD --description 'display the current host and working path'
-    if set -q SSH_CONNECTION
-        printf 'Connected to -> %s\n' $__fish_prompt_host
-    end
     printf '<‌'
     printf '%s' $__fish_prompt_host
     printf '%s' $__fish_prompt_hostname
