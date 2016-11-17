@@ -5,9 +5,6 @@ alias Galactica "ssh Galactica.local"
 alias certinfo "openssl x509 -inform DER -text -in"
 alias video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff ~/Desktop/out.gif -i"
 
-alias svndiff "svn diff --diff-cmd=diff"
-alias svncommits "svn log -v --xml | grep '<author./*author>' | sort | uniq -c | sort -rn | sed -e 's=<author>==g' -e 's=</author>==g'"
-
 alias pcat "pygmentize"
 
 alias GetServerLogs "scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.com/logs/ ~/Sites/; find ~/Sites/logs/ -name '*.gz' | xargs gunzip -f"
