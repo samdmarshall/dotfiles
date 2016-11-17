@@ -53,7 +53,7 @@ end
 
 function fish_prompt
     if set -q SSH_CONNECTION
-        printf 'Connected to -> %s\n' $__fish_prompt_host
+        printf 'Connected to -> %s\n' $__fish_prompt_hostname
     end
     printf '%s' $__fish_prompt_user
     printf '%s' $USER
