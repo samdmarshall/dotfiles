@@ -17,22 +17,15 @@ alias json "python -m json.tool"
 if [ "$FISH_PLATFORM_NAME" = "Darwin" ]
     alias ScreenSaver "sudo open -a ScreenSaverEngine"
     alias bundleid "mdfind kMDItemCFBundleIdentifier = "
-    alias mkwindow "open -a Finder"
+    alias show "open --reveal"
 
-    # alias to xcrunner (https://github.com/samdmarshall/xcrunner) or xcrun
-    if test command -v xcrunner 2>/dev/null
-        alias xc xcrunner
-    else
-		alias xc xcrun
-    end
+    alias disablephotos "defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES"
+    alias tweetbotdirectlinks "defaults write com.tapbots.TweetbotMac OpenURLsDirectly YES"
 
-	alias disablephotos "defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES"
-	alias tweetbotdirectlinks "defaults write com.tapbots.TweetbotMac OpenURLsDirectly YES"
+    alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
+    alias backtohome "ssh -q galactica.(BTMM)"
 
-	alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
-	alias backtohome "ssh -q galactica.(BTMM)"
-
-	alias ppinfo "security cms -D -i"
+    alias ppinfo "security cms -D -i"
 end
 
 if [ "$FISH_PLATFORM_NAME" = "Linux" ]
@@ -42,4 +35,3 @@ end
 if test -e ~/Sites/markdown
     alias UpdateSite "python $CORE_SCRIPTS_PATH/gensite.py ~/Sites/markdown/sitemap.txt -u"
 end
-
