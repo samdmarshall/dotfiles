@@ -6,13 +6,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 pushd ~/.config/defaults
 brew bundle
-popd
-
 sudo easy_install pip
-
-sudo pip install paramiko
-sudo pip install scp
-sudo pip install machobot
+pip install -r requirements.txt --user
+popd
 
 sudo xcode-select --install
 
