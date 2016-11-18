@@ -13,6 +13,10 @@ source ~/.config/fish/prompt.fish
 # common aliases
 source ~/.config/fish/aliases.fish
 
+if test -e ~/.profile
+    source ~/.profile
+end
+
 if status --is-login
     # load keybindings
     source ~/.config/fish/bindings.fish
