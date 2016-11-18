@@ -34,23 +34,6 @@ if not set -q __fish_prompt_normal
     set -g __fish_prompt_normal (set_color normal)
 end
 
-function fish_right_prompt
-    set -l display_string ""
-    if test "$ENABLED_ANDROID" = "true"
-        set display_string $display_string "android"
-    end
-    if test "$ENABLED_WORK" = "true"
-        set display_string $display_string "work"
-    end
-
-    set -l display_items (string split " " "$display_string")
-    for item in $display_items
-        if test (string length -- "$item") -gt 0
-            printf '(%s)' $item
-        end
-    end
-end
-
 function fish_prompt
     if set -q SSH_CONNECTION
         printf 'Connected to -> %s\n' $__fish_prompt_hostname
