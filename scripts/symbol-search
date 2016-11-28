@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+search_path="$2"
+: ${search_path:="."}
+
+grep --recursive --no-messages --binary-file=without-match --files-with-matches --line-buffered "$1" $search_path
