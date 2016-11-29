@@ -6,3 +6,4 @@ if test -e $HOME/.go
     set -xg GOPATH $HOME/.go
 end
 
+set -xg FZF_DEFAULT_OPTS "--preview=\"echo -e '' ; file {}; echo -e '' ; head -50 {}\""
