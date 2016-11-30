@@ -7,3 +7,5 @@ fish/functions/testfunc.fish
 transmission
 sdkbuild/
 micro/buffers
+getmail/*
+!getmail/getmailrc

@@ -1,0 +1,9 @@
+[retriever]
+type = SimpleIMAPSSLRetriever
+server = mail.messagingengine.com
+username = samdm@mailc.net
+mailboxes = ALL
+
+[destination]
+type = Maildir
+path = ~/Documents/email/
