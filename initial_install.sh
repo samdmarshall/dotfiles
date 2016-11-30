@@ -13,3 +13,8 @@ popd
 sudo xcode-select --install
 
 cp ~/.config/lldb/lldbinit ~/.lldbinit
+
+mkdir -p ~/Documents/email/
+mkdir -p ~/Documents/email/cur/
+mkdir -p ~/Documents/email/new/
+mkdir -p ~/Documents/email/tmp/
