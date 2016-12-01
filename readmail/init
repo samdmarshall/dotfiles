@@ -1,0 +1,4 @@
+[account]
+type = maildir
+location = ~/Documents/email/
+

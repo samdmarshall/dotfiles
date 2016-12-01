@@ -7,6 +7,8 @@ alias video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff ~/Desktop/out.gif 
 
 alias pcat "pygmentize"
 
+alias edit "fzf | xargs micro"
+
 alias GetServerLogs "scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.com/logs/ ~/Sites/; find ~/Sites/logs/ -name '*.gz' | xargs gunzip -f"
 
 alias json "python -m json.tool"
