@@ -7,3 +7,10 @@ mailboxes = ALL
 [destination]
 type = Maildir
 path = ~/Documents/email/
+
+[options]
+delivered_to = false
+received = false
+read_all = false
+verbose = 2
+message_log = ~/.config/getmail/message.log
