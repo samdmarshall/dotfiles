@@ -44,10 +44,10 @@ function fish_prompt
     printf ': '
 end
 
-function print_segment
+function print_segment --argument colour --argument string_value
     printf '<‌'
-    printf '%s' $argv[1]
-    printf '%s' $argv[2]
+    printf '%s' $colour
+    printf '%s' $string_value
     printf '%s' $__fish_prompt_normal
     printf '‌>'
 end
@@ -56,13 +56,6 @@ function path --on-variable PWD --description 'display the current host and work
     print_segment $__fish_prompt_host $__fish_prompt_hostname
     printf ' '
     print_segment $__fish_prompt_path (prompt_pwd)
-    set -l vcs (__fish_vcs_prompt)
-    if test (string length $vcs)
-        printf ' '
-        printf '<‌'
-        printf '%s' (string trim  $vcs)
-        printf '‌>'
-    end
 
     printf '\n'
 end

@@ -11,6 +11,10 @@ alias GetServerLogs "scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.c
 
 alias json "python -m json.tool"
 
+alias vcs "printf '%s\n' (__fish_vcs_prompt)"
+
+
+
 if [ "$FISH_PLATFORM_NAME" = "Darwin" ]
     alias ScreenSaver "sudo open -a ScreenSaverEngine"
     alias bundleid "mdfind kMDItemCFBundleIdentifier = "
@@ -22,13 +26,9 @@ if [ "$FISH_PLATFORM_NAME" = "Darwin" ]
     alias BTMM "echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).\$/\1/p'"
     alias backtohome "ssh -q galactica.(BTMM)"
 
-    alias ppinfo "security cms -D -i"
+    alias profileinfo "security cms -D -i"
 end
 
 if [ "$FISH_PLATFORM_NAME" = "Linux" ]
     alias UpdateSSLCert "~/letsencrypt/letsencrypt-auto certonly --apache -d pewpewthespells.com,www.pewpewthespells.com"
-end
-
-if test -e ~/Sites/markdown
-    alias UpdateSite "python $CORE_SCRIPTS_PATH/gensite.py ~/Sites/markdown/sitemap.txt -u"
 end

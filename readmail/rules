@@ -1,4 +1,4 @@
-[MailingLists]
+[Mailing Lists]
 rule1 = "any bug-texinfo@gnu.organy"
 rule2 = "any cocoaheadsboston@googlegroups.com"
 rule3 = "from security-announce-request@lists.apple.com"
@@ -12,6 +12,6 @@ rule9 = "to Women-Who-Code-Boston-list@meetup.com"
 [CircleCI]
 rule1 = "from builds@circleci.com"
 
-[OldMail]
+[Old Mail]
 rule1 = "date-recieved greater 60"
 
