@@ -1,5 +1,5 @@
 function edit --argument directory
-    if $directory != ""
+    if test ! $directory = ""
         cd $directory
     end
     set -l fzf_exec_time (date "+%s")
