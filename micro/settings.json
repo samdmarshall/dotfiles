@@ -27,6 +27,9 @@
         "*.rb": {
             "tabsize": 2
         },
+        "{R,r}akefile": {
+            "tabsize": 2
+        },
     "tabstospaces": false,
         "*.py": {
             "tabstospaces": true
@@ -34,7 +37,13 @@
         "*.rb": {
             "tabstospaces": true
         },
+        "{R,r}akefile": {
+            "tabstospaces": true
+        },
 
+	"{R,r}akefile": {
+		"commenttype": "# %s"
+	},
     "{M,m}akefile": {
         "commenttype": "# %s"
     },
