@@ -32,13 +32,13 @@ brew 'getmail'
 brew 'the_platinum_searcher'
 brew 'since'
 brew 'asciinema'
-brew 'ical-buddy'
 brew 'mdp'
 brew 'go'
+brew 'notmuch'
 
 brew 'samdmarshall/iosconsole'
 brew 'samdmarshall/aosd'
 brew 'samdmarshall/hotkeyd'
-#brew 'samdmarshall/readmail'
 
+cask 'bonjour-browser'
 
