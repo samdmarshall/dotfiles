@@ -7,5 +7,7 @@ function edit --argument directory
     fzf >$fzf_tmp_path
     set -l fzf_selected_path (cat $fzf_tmp_path)
     rm $fzf_tmp_path
-    micro $fzf_selected_path
+    if test ! $fzf_selected_path = ""
+        micro $fzf_selected_path
+    end
 end

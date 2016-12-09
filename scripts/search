@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+search_path="$2"
+: ${search_path:="."}
+
+search_string="$1"
+: ${search_string:=""}
+
+pt -l $search_string $search_path | fzf
