@@ -15,7 +15,7 @@ set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
 
 # setting up colours
-if statis --is-login
+if status --is-login
     if not set -q __fish_prompt_user
         set -g __fish_prompt_user (set_color -o d43582)
     end
