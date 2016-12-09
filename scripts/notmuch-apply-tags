@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+# Tags that get filed under "Alerts" 
+notmuch tag +Alerts +Alerts.Amazon -- from:ship-confirm@amazon.com or from:auto-confirm@apple.com
+notmuch tag -inbox -- tag:Alerts.Amazon
+
+notmuch tag +Alerts +Alerts.CircleCI -- from:builds@circleci.com
+notmuch tag -inbox -- tag:Alerts.CircleCI
+
+notmuch tag +Alerts +Alerts.Kickstarter -- from:no-reply@kickstarter.com
+notmuch tag -inbox -- tag:Alerts.Kickstarter
+
+notmuch tag +Alerts +Alerts.Meetup -- from:info@meetup.com
+notmuch tag -inbox -- tag:Alerts.Meetup
+
+notmuch tag +Alerts +Alerts.Linode -- subject:"Linode Alert"
+notmuch tag -inbox -- tag:Alerts.Linode
+
+notmuch tag +Alerts +Alerts.Synology -- from:notification@synology.com or from:no-reply@mail.synologynotification.com or from:synologynotification.com
+notmuch tag -inbox -- tag:Alerts.Synology
+
+
+# Tags that fet filed under "Billing"
+notmuch tag +Billing +Billing.Amazon -- from:order-update@amazon.com or from:noreply@amazon.com or from:@amazon.com
+notmuch tag -inbox -- tag:Billing.Amazon
+
+notmuch tag +Billing +Billing.Apple -- from:orders.apple.com or from:donotreply@apple.com or from:concierge@insideapple.com
+notmuch tag -inbox -- tag:Billing.Apple
+
+notmuch tag +Billing +Billing.ATT -- from:"AT&T Customer Care for Wireless"
+notmuch tag -inbox -- tag:Billing.ATT
+
+notmuch tag +Billing +Billing.BoA -- from:onlinebanking@ealerts.bankofamerica.com or from:merrilledge@ml.com or from:bankofamerica.com
+notmuch tag -inbox -- tag:Billing.BoA
+
+notmuch tag +Billing +Billing.Github -- from:support@github.com or subject:"[GitHub] Payment Receipt" or subject:"[Github] Payment Receipt for samdmarshall"
+notmuch tag -inbox -- tag:Billing.Github
+
+notmuch tag +Billing +Billing.Grubhub -- from:order@grubhub.com or from:orders@eat.grubhub.com
+notmuch tag -inbox -- tag:Billing.Grubhub
+
+notmuch tag +Billing +Billing.iTunesReceipts -- from:do_not_reply@itunes.com or from:"iTunes Store" or from:no_reply@email.apple.com
+notmuch tag -inbox -- tag:Billing.iTunesReceipts
+
+notmuch tag +Billing +Billing.JetBlue -- from:notifications@jetblue.com or from:jetblueairways@email.jetblue.com
+notmuch tag -inbox -- tag:Billing.JetBlue
+
+notmuch tag +Billing +Billing.Linode -- from:billing@linode.com
+notmuch tag -inbox -- tag:Billing.Linode
+
+notmuch tag +Billing +Billing.NameDotCom -- from:support@name.com or from:noreply@name.com
+notmuch tag -inbox -- tag:Billing.NameDotCome
+
+notmuch tag +Billing +Billing.Simple -- from:notify@e.simple.com or from:support@simple.com or from:notify@simple.com
+notmuch tag -inbox -- tag:Billing.Simple
+
+# Tags that file under "Developer"
+notmuch tag +Developer +Developer.Apple -- from:noreply-appledev@apple.com or from:developer@insideapple.com
+notmuch tag -inbox -- tag:Developer.Apple
+
+notmuch tag +Developer +Developer.Github -- from:notifications@github.com or from:noreply@github.com
+notmuch tag -inbox -- tag:Developer.Github
+
+notmuch tag +Developer +Developer.Radar -- from:devbugs@apple.com
+notmuch tag -inbox -- tag:Developer.Radar
+
+notmuch tag +Developer +Developer.Seed -- from:seedsu@apple.com or from:seedx@apple.com or subject:"AppleSeed" or subject:"Seed Notice"
+notmuch tag -inbox -- tag:Developer.Seed
+
+notmuch tag -inbox +MailingList -- from:security-announce-request@lists.apple.com or from:macbeta@list.valvesoftware.com or from:product-security-noreply@lists.apple.com or from:darwin-dev@lists.apple.com or to:Women-Who-Code-Boston-list@meetup.com or to:darwin-dev@lists.apple.com or to:cocoaheadsboston@googlegroups.com or to:bug-texinfo@gnu.org or to:Women-Who-Code-Boston
+
+notmuch tag +spam -- subject:SPAM
+
+notmuch tag -inbox -- tag:deleted or tag:spam
+
+
+

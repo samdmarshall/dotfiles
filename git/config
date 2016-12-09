@@ -1,0 +1,31 @@
+[user]
+	email = me@samdmarshall.com
+	name = Samantha Marshall
+	signingkey = 4434EFA2
+[core]
+	editor = micro
+[pull]
+	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[push]
+	default = simple
+[http]
+
+[transfer]
+	fsckobjects = true
+[fetch]
+	fsckobjects = true
+[receive]
+	fsckobjects = true
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
+[help]
+	autocorrect = 10
+[diff]
+	compatctionHeuristic = true
+[commit]
+	gpgsign = true
