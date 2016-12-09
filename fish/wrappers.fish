@@ -33,3 +33,7 @@ function cat --wraps=pygmentize
         command cat $argv
     end
 end
+
+function brew --wraps=brew
+    command env -u GIT_CONFIG brew $argv
+end

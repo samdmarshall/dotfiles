@@ -13,7 +13,7 @@ notmuch tag -inbox -- tag:Alerts.Kickstarter
 notmuch tag +Alerts +Alerts.Meetup -- from:info@meetup.com
 notmuch tag -inbox -- tag:Alerts.Meetup
 
-notmuch tag +Alerts +Alerts.Linode -- subject:"Linode Alert"
+notmuch tag +Alerts +Alerts.Linode -- subject:"Linode Alert" or subject:"Linode Events Notification"
 notmuch tag -inbox -- tag:Alerts.Linode
 
 notmuch tag +Alerts +Alerts.Synology -- from:notification@synology.com or from:no-reply@mail.synologynotification.com or from:synologynotification.com
