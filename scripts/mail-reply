@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# get the thread identifier to reply to
+thread="$1"
+if [[ ! "$thread" == "thread:*" ]]; then
+thread="thread:$1"
+fi
+
+# ask for notmuch to create a reply template and pipe it over to micro for composing a response
+notmuch reply $thread | micro

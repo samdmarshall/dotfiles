@@ -13,6 +13,9 @@ source ~/.config/fish/prompt.fish
 # common aliases
 source ~/.config/fish/aliases.fish
 
+# wrapper commands
+source ~/.config/fish/wrappers.fish
+
 if test -e ~/.profile
     source ~/.profile
 end

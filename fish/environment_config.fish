@@ -8,3 +8,5 @@ end
 
 set -xg FZF_DEFAULT_COMMAND "pt --hidden --ignore=.git -g=''"
 set -xg FZF_DEFAULT_OPTS "--preview=\"echo -e '' ; file {}; echo -e '' ; head -50 {}\""
+
+set -xg NOTMUCH_CONFIG "~/.config/notmuch/notmuch-config"
