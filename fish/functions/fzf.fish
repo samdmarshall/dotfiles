@@ -1,6 +1,6 @@
 function fzf
     set -l epoch (date "+%s")
-    set -l file_path $TMPDIR/fzf-$epoch.result
+    set -l file_path (mktemp)
     command fzf $argv >$file_path
     if test $status -eq 0 -a -s $file_path
         cat $file_path

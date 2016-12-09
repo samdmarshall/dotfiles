@@ -3,7 +3,7 @@ function msmtp --wraps=msmtp
 end
 
 function goaccess --wraps=goaccess
-    command goaccess --config-file $HOME/.config/goaccess/goaccessrc $argv
+    command goaccess --config-file=$HOME/.config/goaccess/goaccessrc $argv
 end
 
 function bundleid --wraps=mdfind

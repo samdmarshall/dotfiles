@@ -1,13 +1,13 @@
-#!/usr/bin/env sh
+#!/usr/bin/env fish
 
 mkdir -p ~/Sites/logs
 
 pushd ~/Sites/logs
 
-log_file="access.log"
-if [ "$#" -eq 1 ]; then
-	log_file="$1"
-fi
+set -l log_file "access.log"
+if test count $argv -eq 1
+    set log_file $argv
+end
 
 goaccess --no-global-config -f $log_file --geoip-database=/usr/local/var/GeoIP/GeoIP.dat -g --real-os -o ~/Desktop/Report.html
 open -a Safari ~/Desktop/Report.html

@@ -1,0 +1,9 @@
+#!/usr/bin/env fish
+
+set -l temp_file (mktemp)
+set -l temp_html "$temp_file.html"
+mv "$temp_file" "$temp_html"
+set -l part $argv[1]
+set -l message $argv[1..-1]
+notmuch show --part=$part $message >$temp_html
+open -a Safari "file://$temp_html"
