@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.com/logs/ $HOME/Sites/
+
+find ~/Sites/logs -name '*.gz' -exec gunzip -f {} \;
+

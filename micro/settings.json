@@ -30,7 +30,7 @@
         "{R,r}akefile": {
             "tabsize": 2
         },
-    "tabstospaces": false,
+    "tabstospaces": true,
         "*.py": {
             "tabstospaces": true
         },
@@ -41,6 +41,9 @@
             "tabstospaces": true
         },
 
+	"*.fish": {
+		"commenttype": "# %s"
+	},
 	"{R,r}akefile": {
 		"commenttype": "# %s"
 	},

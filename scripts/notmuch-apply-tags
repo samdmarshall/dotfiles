@@ -73,5 +73,3 @@ notmuch tag +spam -- subject:SPAM
 
 notmuch tag -inbox -- tag:deleted or tag:spam
 
-
-
