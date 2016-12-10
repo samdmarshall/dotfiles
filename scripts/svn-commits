@@ -1,2 +1,0 @@
-#!/usr/bin/env sh
-svn log -v --xml | grep '<author./*author>' | sort | uniq -c | sort -rn | sed -e 's/<author>//g' -e 's/</author>//g'

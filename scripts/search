@@ -1,9 +1,15 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
-search_path="$2"
-: ${search_path:="."}
+if test (count $argv) -eq 2
+    set search_path $argv[2]
+else
+    set search_path "."
+end
 
-search_string="$1"
-: ${search_string:=""}
+if test (count $argv) -ge 1
+    set search_string $argv[1]
+else
+    set search_string ""
+end
 
 pt -l $search_string $search_path | fzf

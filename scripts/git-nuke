@@ -1,2 +1,2 @@
-#!/usr/bin/env sh
+#!/usr/bin/env fish
 git status | grep "deleted:" | sed -e 's=deleted:==' -e 's=^	    ==' | tr '\n'  '\0' | xargs -0 git rm 

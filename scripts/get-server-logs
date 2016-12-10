@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
 scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.com/logs/ $HOME/Sites/
 

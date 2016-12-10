@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
 # Tags that get filed under "Alerts" 
 notmuch tag +Alerts +Alerts.Amazon -- from:ship-confirm@amazon.com or from:auto-confirm@apple.com
