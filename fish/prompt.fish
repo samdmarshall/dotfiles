@@ -34,6 +34,12 @@ if not set -q __fish_prompt_hostname
     set -g __fish_prompt_hostname (hostname -s)
 end
 
+function fish_right_prompt
+    if test (defaults read com.pewpewthespells.notmuch-notifier hasmail) -ne 0
+        printf '!'
+    end
+end
+
 function fish_prompt
     if set -q SSH_CONNECTION
         printf 'Connected to -> %s\n' $__fish_prompt_hostname
