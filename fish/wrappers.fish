@@ -81,8 +81,18 @@ function notmuch --wraps=notmuch
             for draft in (ls $drafts_dir)
                 notmuch send $draft
             end
+        case read
+            command notmuch tag -unread -- $arg[2]
+        case readall
+            for thread_id in (notmuch search tag:unread | awk '{print $1}')
+                notmuch read $thread_id
+            end
         case apply-tags
-            notmuch-apply-tags
+            command notmuch-apply-tags
+        case today
+            command notmuch search date:today
+        case yesterday
+            command notmuch search date:yesterday
         case '*'
             command notmuch $argv
     end

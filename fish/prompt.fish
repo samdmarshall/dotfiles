@@ -29,6 +29,7 @@ if status --is-login
         set -g __fish_prompt_normal (set_color normal)
     end
 end
+
 if not set -q __fish_prompt_hostname
     set -g __fish_prompt_hostname (hostname -s)
 end
