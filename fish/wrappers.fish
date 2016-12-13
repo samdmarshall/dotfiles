@@ -82,7 +82,7 @@ function notmuch --wraps=notmuch
                 notmuch send $draft
             end
         case read
-            command notmuch tag -unread -- $arg[2]
+            command notmuch tag -unread -- $argv[2]
         case readall
             for thread_id in (notmuch search tag:unread | awk '{print $1}')
                 notmuch read $thread_id
@@ -93,6 +93,8 @@ function notmuch --wraps=notmuch
             command notmuch search date:today
         case yesterday
             command notmuch search date:yesterday
+        case unread
+            command notmuch search tag:unread
         case '*'
             command notmuch $argv
     end
@@ -104,5 +106,14 @@ function otool --wraps=otool
             command otool -s __TEXT __info_plist $argv[2] | xxd -r
         case '*'
             command otool $argv
+    end
+end
+
+function mktemp --wraps=mktemp
+    switch (echo $argv[1])
+        case '--suffix'
+            python -c 'import tempfile; print(tempfile.mktemp(suffix="'$argv[2]'"))'
+        case '*'
+            command mktemp $argv
     end
 end

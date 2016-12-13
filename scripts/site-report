@@ -1,15 +1,7 @@
 #!/usr/bin/env fish
 
-mkdir -p ~/Sites/logs
+set -l temp_file (mktemp --suffix ".html")
 
-pushd ~/Sites/logs
+goaccess --no-global-config --log-file $argv[1] --geoip-database /usr/local/var/GeoIP/GeoIP.dat --std-geoip --real-os --output="$temp_file"
 
-set -l log_file "access.log"
-if test count $argv -eq 1
-    set log_file $argv
-end
-
-goaccess --no-global-config -f $log_file --geoip-database=/usr/local/var/GeoIP/GeoIP.dat -g --real-os -o ~/Desktop/Report.html
-open -a Safari ~/Desktop/Report.html
-
-popd
+command open -a Safari $temp_file
