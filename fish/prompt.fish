@@ -58,7 +58,7 @@ function print_segment --argument colour --argument string_value
     printf '‌>'
 end
 
-function path --on-variable PWD --description 'display the current host and working path'
+function where --on-variable PWD --description 'display the current host and working path'
     if status --is-login
         print_segment $__fish_prompt_host $__fish_prompt_hostname
         printf ' '

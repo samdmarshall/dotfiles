@@ -26,7 +26,4 @@ if status --is-login
 
     # configuring event handlers
     source $HOME/.config/fish/handlers.fish
-
-    # print the current path and host
-    path
 end
