@@ -1,0 +1,49 @@
+[general]
+status_path = "~/.config/vdirsyncer/status"
+
+[pair icloud]
+a = "local_icloud"
+b = "remote_icloud"
+collections = ["from a", "from b"]
+
+[storage local_icloud]
+type = "filesystem"
+path = "~/Calendars/icloud"
+fileext = ".ics"
+
+[storage remote_icloud]
+type = "caldav"
+url = "https://caldav.icloud.com/"
+username.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-icloud-username", "-w", "/Users/Samantha/.config/storage/keys.keychain"]
+password.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-icloud-password", "-w", "/Users/Samantha/.config/storage/keys.keychain"]
+verify_fingerprint = "F5:CC:B1:A7:24:13:36:07:54:8B:00:D8:EB:40:2E:FC:A3:07:6D:58"
+
+[pair cocoaheads]
+a = "remote_cocoaheads"
+b = "local_cocoaheads"
+collections = null
+
+[storage local_cocoaheads]
+type = "filesystem"
+path = "~/Calendars/cocoaheads"
+fileext = ".ics"
+
+[storage remote_cocoaheads]
+type = "http"
+url = "http://www.cocoaheads.org//us/BostonMassachusetts/events.ics"
+read_only = "true"
+
+[pair ellen]
+a = "remote_ellen"
+b = "local_ellen"
+collections = null
+
+[storage local_ellen]
+type = "filesystem"
+path = "~/Calendars/ellen"
+fileext = ".ics"
+
+[storage remote_ellen]
+type = "http"
+url.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-ellen-calendar", "-w", "/Users/Samantha/.config/storage/keys.keychain"]
+read_only = "true"

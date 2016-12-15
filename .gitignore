@@ -16,3 +16,8 @@ micro/buffers/
 getmail/*
 !getmail/getmailrc
 
+hub
+
+vdirsyncer/*
+!vdirsyncer/config
+
