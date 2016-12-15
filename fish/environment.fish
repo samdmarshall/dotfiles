@@ -35,4 +35,4 @@ set -u LOCAL_PYTHON_PATH (command python -m site --user-base)"/bin"
 set -u LOCAL_RUBY_PATH (command gem environment gempath | sed -e 's=:.*$=/bin=')
 
 # setting $PATH
-set PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/MacGPG2/bin $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $CORE_SCRIPTS_PATH
+set fish_user_paths $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $CORE_SCRIPTS_PATH

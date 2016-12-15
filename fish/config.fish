@@ -1,7 +1,7 @@
 # setting up the basic environment
 source $HOME/.config/fish/environment.fish
 
-switch (echo "$FISH_PLATFORM_NAME")
+switch (command echo "$FISH_PLATFORM_NAME")
     case 'Darwin'
         source $HOME/.config/fish/darwin.fish
     case 'Linux'
@@ -12,7 +12,7 @@ end
 source $HOME/.config/fish/prompt.fish
 
 # wrapper commands
-for wrapper in (ls $HOME/.config/fish/wrappers)
+for wrapper in (command ls $HOME/.config/fish/wrappers)
     source $HOME/.config/fish/wrappers/$wrapper
 end
 
