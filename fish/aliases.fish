@@ -7,7 +7,6 @@ alias json "python -m json.tool"
 alias vcs "printf '%s\n' (__fish_vcs_prompt)"
 
 
-
 if [ "$FISH_PLATFORM_NAME" = "Darwin" ]
     alias ScreenSaver "sudo open -a ScreenSaverEngine"
 

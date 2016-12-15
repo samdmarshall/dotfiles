@@ -1,18 +1,3 @@
-# disable greeting
-set fish_greeting ""
-
-set -u HOME_CONFIG_PATH ~/.config
-set -u FISH_CONFIG_PATH $HOME_CONFIG_PATH/fish
-set -u GIT_DEFAULTS_DIR $HOME_CONFIG_PATH/defaults
-set -u CORE_SCRIPTS_PATH $HOME_CONFIG_PATH/scripts
-set -u LLDB_DEFAULTS_DIR $HOME_CONFIG_PATH/lldb
-set -u KEY_STORAGE_KEYCHAIN_NAME keys.keychain
-set -u KEY_STORAGE_PATH $HOME_CONFIG_PATH/storage
-set -u KEY_STORAGE_KEYCHAIN_PATH $KEY_STORAGE_PATH/$KEY_STORAGE_KEYCHAIN_NAME
-set -x HOMEBREW_INSTALL_BADGE 🌈
-set -x HOMEBREW_NO_INSECURE_REDIRECT true
-set -x HOMEBREW_VERBOSE true
-
 if [ $FISH_PLATFORM_NAME = "Darwin" ]
 
     function unlock_login_keychain_if_necessary
