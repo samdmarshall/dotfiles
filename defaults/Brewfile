@@ -35,6 +35,8 @@ brew 'asciinema'
 brew 'mdp'
 brew 'go'
 brew 'notmuch'
+brew 'vdirsyncer'
+brew 'khal'
 
 brew 'samdmarshall/iosconsole'
 brew 'samdmarshall/aosd'
