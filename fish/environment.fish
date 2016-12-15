@@ -1,5 +1,5 @@
 # disable greeting
-set fish_greeting ""
+set fish_greeting
 
 # know what platform this is running on
 set -u FISH_PLATFORM_NAME (uname -s)
@@ -13,7 +13,7 @@ set -u KEY_STORAGE_KEYCHAIN_PATH $KEY_STORAGE_PATH/$KEY_STORAGE_KEYCHAIN_NAME
 
 set -xg EDITOR micro
 
-set -xg GOPATH $HOME/.go
+set -xg GOPATH "$HOME/.go"
 
 set -xg FZF_DEFAULT_COMMAND "pt --hidden --ignore=.git -g=''"
 set -xg FZF_DEFAULT_OPTS "--preview=\"echo -e '' ; file {}; echo -e '' ; head -50 {}\""
@@ -35,4 +35,4 @@ set -u LOCAL_PYTHON_PATH (command python -m site --user-base)"/bin"
 set -u LOCAL_RUBY_PATH (command gem environment gempath | sed -e 's=:.*$=/bin=')
 
 # setting $PATH
-set PATH $PATH $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $CORE_SCRIPTS_PATH
+set PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/MacGPG2/bin $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $CORE_SCRIPTS_PATH

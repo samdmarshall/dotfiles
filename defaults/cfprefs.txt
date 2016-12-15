@@ -1,0 +1,2 @@
+# disables image-capture app from opening automatically when a device is plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES

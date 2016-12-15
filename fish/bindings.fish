@@ -7,8 +7,12 @@ function invoke_xmanlist
 end
 
 function fish_user_key_bindings
-    bind -k f1 invoke_xman
-    bind -k f2 invoke_xmanlist
     bind \cc 'commandline ""'
+
+    switch (echo $FISH_PLATFORM_NAME)
+    case 'Darwin'
+        bind -k f1 invoke_xman
+        bind -k f2 invoke_xmanlist
+    end
 end
 
