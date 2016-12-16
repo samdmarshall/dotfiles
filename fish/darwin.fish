@@ -1,4 +1,4 @@
-function secure_note_storage --argument name
+function secure_storage --argument name
     set keys_keychain_password (command security find-generic-password -l $KEY_STORAGE_KEYCHAIN_NAME -w)
     command security unlock-keychain -p $keys_keychain_password $KEY_STORAGE_KEYCHAIN_PATH
     set note_contents (command security find-internet-password -a $name -w $KEY_STORAGE_KEYCHAIN_PATH)
@@ -13,4 +13,5 @@ function unlock_keychain_if_necessary --argument keychain_name
 end
 
 unlock_keychain_if_necessary login.keychain
-set -xg HOMEBREW_GITHUB_API_TOKEN (secure_note_storage HOMEBREW_GITHUB_API_TOKEN)
+set -xg HOMEBREW_GITHUB_API_TOKEN (secure_storage HOMEBREW_GITHUB_API_TOKEN)
+set -xg GITHUB_TOKEN (secure_storage GITHUB_TOKEN)
