@@ -1,7 +1,7 @@
 function secure_note_storage --argument name
     set keys_keychain_password (command security find-generic-password -l $KEY_STORAGE_KEYCHAIN_NAME -w)
     command security unlock-keychain -p $keys_keychain_password $KEY_STORAGE_KEYCHAIN_PATH
-    set note_contents (command security find-generic-password -C note -w -l $name $KEY_STORAGE_KEYCHAIN_PATH | command xxd -r -p | command plutil -p - | command grep "NOTE" | command awk '{gsub(/"/, "", $3); print $3}')
+    set note_contents (command security find-internet-password -a $name -w $KEY_STORAGE_KEYCHAIN_PATH)
     echo $note_contents
 end
 
