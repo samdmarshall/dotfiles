@@ -7,7 +7,7 @@ function notmuch --wraps=notmuch
             command rm $temp_file
             set -l email_draft "$drafts_dir/$random_name"
             # ask for notmuch to create a reply template and pipe it over to micro for composing a response
-            command notmuch reply $argv[2..-1] >$email_draft
+            command notmuch reply $argv[2..-1] > $email_draft
             command micro $email_draft
         case send
             set -l message_path $drafts_dir/$argv[2]
@@ -15,13 +15,13 @@ function notmuch --wraps=notmuch
                 command cat $message_path | msmtp
             end
         case sendall
-            for draft in (ls $drafts_dir)
+            for draft in (command ls $drafts_dir)
                 notmuch send $draft
             end
         case read
-            command notmuch tag -unread -- $argv[2]
+            command notmuch tag -unread -- $argv[2..-1]
         case readall
-            for thread_id in (notmuch search tag:unread | awk '{print $1}')
+            for thread_id in (command notmuch search tag:unread | command awk '{print $1}')
                 notmuch read $thread_id
             end
         case apply-tags
