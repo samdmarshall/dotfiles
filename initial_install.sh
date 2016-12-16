@@ -8,13 +8,27 @@ pushd ~/.config/defaults
 brew bundle
 sudo easy_install pip
 pip install -r requirements.txt --user
+gem install bundler --user-install
 popd
 
 sudo xcode-select --install
 
 cp ~/.config/lldb/lldbinit ~/.lldbinit
 
-mkdir -p ~/Documents/email/
-mkdir -p ~/Documents/email/cur/
-mkdir -p ~/Documents/email/new/
-mkdir -p ~/Documents/email/tmp/
+mkdir -p ~/eMail/
+mkdir -p ~/eMail/cur/
+mkdir -p ~/eMail/new/
+mkdir -p ~/eMail/tmp/
+
+mkdir -p ~/Calendars/
+mkdir -p ~/Calendars/icloud/
+mkdir -p ~/Calendars/ellen/
+mkdir -p ~/Calendars/cocoaheads/
+
+for file in `ls ~/.config/defaults/LaunchAgents/`; do
+    cp ~/.config/defaults/LaunchAgents/$file ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/$file
+done
+
+chsh -s /usr/local/bin/fish
+
