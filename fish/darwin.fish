@@ -13,5 +13,6 @@ function unlock_keychain_if_necessary --argument keychain_name
 end
 
 unlock_keychain_if_necessary login.keychain
+
 set -xg HOMEBREW_GITHUB_API_TOKEN (secure_storage HOMEBREW_GITHUB_API_TOKEN)
 set -xg GITHUB_TOKEN (secure_storage GITHUB_TOKEN)

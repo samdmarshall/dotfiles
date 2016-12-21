@@ -6,7 +6,7 @@ set __fish_prompt_normal normal
 set __fish_prompt_hostname (hostname -s)
 
 function fish_right_prompt
-    if test (defaults read com.pewpewthespells.notmuch-notifier hasmail) -ne 0
+    if test (command defaults read com.pewpewthespells.notmuch-notifier hasmail) -ne 0
         printf '!'
     end
 end
@@ -30,11 +30,9 @@ function print_segment --argument colour --argument string_value
 end
 
 function where --on-variable PWD --description 'display the current host and working path'
-    if status --is-login
-        print_segment $__fish_prompt_host $__fish_prompt_hostname
-        printf ' '
-        print_segment $__fish_prompt_path (prompt_pwd)
+    print_segment $__fish_prompt_host $__fish_prompt_hostname
+    printf ' '
+    print_segment $__fish_prompt_path (prompt_pwd)
 
-        printf '\n'
-    end
+    printf '\n'
 end

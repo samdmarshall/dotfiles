@@ -1,21 +1,33 @@
 function notmuch --wraps=notmuch
     set -l drafts_dir "$HOME/eMail-drafts"
+    set -l date_time (command date "+%s")
     switch (echo $argv[1])
+        case reply
+            set -l parameters (string join "-" $argv[2..-1])
+            set -l new_draft "$drafts_dir/draft-$parameters.txt"
+            command notmuch reply $argv[2..-1] > $new_draft
+            command micro $new_draft
         case compose
-            set -l temp_file (mktemp)
-            set -l random_name (basename $temp_file)
-            command rm $temp_file
-            set -l email_draft "$drafts_dir/$random_name"
-            # ask for notmuch to create a reply template and pipe it over to micro for composing a response
-            command notmuch reply $argv[2..-1] > $email_draft
-            command micro $email_draft
+            set -l parameters (string join "-" $argv[2..-1])
+            set -l new_draft "$drafts_dir/draft-$parameters.txt"
+            command micro $new_draft
         case send
-            set -l message_path $drafts_dir/$argv[2]
+            set -l today (command date "+%Y.%m.%d")
+            set -l file_name_array (string split . (basename $argv[2]))
+            set -l file_name $file_name_array[1]
+            set -l extension $file_name_array[-1]
+            set -l message_path "$drafts_dir/$file_name"
             if test -s $message_path
                 command cat $message_path | msmtp
+                if test $status -eq 0
+                    command mkdir -p "~/eMail-outbox/$today"
+                    command mv "$message_path" "~/eMail-outbox/$today/$file_name-$date_time.$extension"
+                else
+                    command echo "an error occured while sending $draft !"
+                end
             end
         case sendall
-            for draft in (command ls $drafts_dir)
+            for draft in (command find $drafts_dir -name "reply-*" -or -name "mail-*")
                 notmuch send $draft
             end
         case read

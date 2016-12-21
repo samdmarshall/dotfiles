@@ -5,6 +5,8 @@ status_path = "~/.config/vdirsyncer/status"
 a = "local_icloud"
 b = "remote_icloud"
 collections = ["from a", "from b"]
+conflict_resolution = "a wins"
+metadata = ["color", "displayname"]
 
 [storage local_icloud]
 type = "filesystem"
@@ -17,6 +19,7 @@ url = "https://caldav.icloud.com/"
 username.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-icloud-username", "-w", "/Users/Samantha/.config/storage/keys.keychain"]
 password.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-icloud-password", "-w", "/Users/Samantha/.config/storage/keys.keychain"]
 verify_fingerprint = "F5:CC:B1:A7:24:13:36:07:54:8B:00:D8:EB:40:2E:FC:A3:07:6D:58"
+
 
 [pair cocoaheads]
 a = "remote_cocoaheads"
@@ -33,6 +36,7 @@ type = "http"
 url = "http://www.cocoaheads.org//us/BostonMassachusetts/events.ics"
 read_only = "true"
 
+
 [pair ellen]
 a = "remote_ellen"
 b = "local_ellen"
@@ -47,3 +51,51 @@ fileext = ".ics"
 type = "http"
 url.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-ellen-calendar", "-w", "/Users/Samantha/.config/storage/keys.keychain"]
 read_only = "true"
+
+
+[pair us_holidays]
+a = "us_holiday_remote"
+b = "us_holiday_local"
+collections = null
+
+[storage us_holiday_remote]
+type = "http"
+url = "https://p09-calendars.icloud.com/holidays/us_en.ics"
+read_only = "true"
+
+[storage us_holiday_local]
+type = "filesystem"
+path = "~/Calendars/us-holiday"
+fileext = ".ics"
+
+
+[pair chronicle]
+a = "chronicle_ical"
+b = "chronicle_khal"
+collections = null
+
+[storage chronicle_ical]
+type = "filesystem"
+path = "~/Library/Calendars/019AA509-13C1-4887-BB5F-BCD632068918.calendar/Events"
+fileext = ".ics"
+
+[storage chronicle_khal]
+type = "filesystem"
+path = "~/Calendars/chronicle"
+fileext = ".ics"
+
+
+[pair birthdays]
+a = "birthdays_ical"
+b = "birthdays_khal"
+collections = null
+
+[storage birthdays_ical]
+type = "filesystem"
+path = "~/Library/Calendars/BCD5BB2D-2DD8-4F92-A8DE-935F5453C262.calendar/Events"
+fileext = ".ics"
+
+[storage birthdays_khal]
+type = "filesystem"
+path = "~/Calendars/birthdays"
+fileext = ".ics"

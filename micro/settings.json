@@ -6,7 +6,6 @@
     "colorscheme": "solarized-light",
     "cursorline": true,
     "eofnewline": true,
-    "fishfmt": true,
     "ignorecase": true,
     "indentchar": " ",
     "infobar": true,
@@ -14,7 +13,9 @@
     "pluginchannels": [
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
     ],
-    "pluginrepos": [],
+    "pluginrepos": [
+        
+    ],
     "ruler": true,
     "savecursor": false,
     "saveundo": true,

@@ -2,4 +2,5 @@
 	"CtrlShiftZ": "Redo",
 	"CtrlSpace": "fzf.fzf",
 	"CtrlUnderscore": "comment.comment",
+	"F1": "filetree.OpenTree",
 }
