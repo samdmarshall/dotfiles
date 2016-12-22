@@ -6,7 +6,7 @@ mailboxes = ALL
 
 [destination]
 type = Maildir
-path = ~/eMail/
+path = ~/eMail/Inbox/
 
 [options]
 delivered_to = false
