@@ -16,15 +16,18 @@ function notmuch --wraps=notmuch
             set -l file_name_array (string split . (basename $argv[2]))
             set -l file_name $file_name_array[1]
             set -l extension $file_name_array[-1]
-            set -l message_path "$drafts_dir/$file_name"
+            set -l message_path "$drafts_dir/$file_name.$extension"
             if test -s $message_path
                 command cat $message_path | msmtp
                 if test $status -eq 0
-                    command mkdir -p "~/eMail-outbox/$today"
-                    command mv "$message_path" "~/eMail-outbox/$today/$file_name-$date_time.$extension"
+                    command mkdir -p ~/eMail-outbox/$today
+                    command echo "sent $message_path !"
+                    command mv $message_path ~/eMail-outbox/$today/$file_name-$date_time.$extension
                 else
                     command echo "an error occured while sending $draft !"
                 end
+            else
+                command echo "failure in getting message: $message_path" 
             end
         case sendall
             for draft in (command find $drafts_dir -name "reply-*" -or -name "mail-*")
