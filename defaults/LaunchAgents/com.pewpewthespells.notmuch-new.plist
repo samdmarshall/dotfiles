@@ -10,6 +10,11 @@
 	<dict>
 		<key>Label</key>
 		<string>com.pewpewthespells.notmuch-new</string>
+		<key>EnvironmentVariables</key>
+		<dict>
+		    <key>NOTMUCH_CONFIG</key>
+		    <string>/Users/Samantha/.config/notmuch/notmuch-config</string>
+	    </dict>
 		<key>ProgramArguments</key>
 		<array>
 			<string>/usr/local/bin/notmuch</string>

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+export NOTMUCH_CONFIG="/Users/Samantha/.config/notmuch/notmuch-config"
+
+timestamp=`date "+%s"`
+output_path="/Users/Samantha/eMail-backups/$timestamp.gz"
+/usr/local/bin/notmuch dump --gzip --output="$output_path"

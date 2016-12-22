@@ -14,7 +14,6 @@
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
     ],
     "pluginrepos": [
-        
     ],
     "ruler": true,
     "savecursor": false,
@@ -31,6 +30,9 @@
         "{R,r}akefile": {
             "tabsize": 2
         },
+        "Brewfile": {
+            "tabsize": 2
+        },
     "tabstospaces": true,
         "*.py": {
             "tabstospaces": true
@@ -39,6 +41,9 @@
             "tabstospaces": true
         },
         "{R,r}akefile": {
+            "tabstospaces": true
+        },
+        "Brewfile": {
             "tabstospaces": true
         },
 

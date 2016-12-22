@@ -7,12 +7,14 @@ end
 
 function unlock_keychain_if_necessary --argument keychain_name
     string match --ignore-case "User interaction is not allowed" (command security show-keychain-info $keychain_name 2>&1)
-    if test $status -eq 0
+    if test ! $status -eq 0
         command security unlock-keychain $keychain_name
     end
 end
 
-unlock_keychain_if_necessary login.keychain
+if set -q SSH_CONNECTION
+   unlock_keychain_if_necessary login.keychain
+end
 
 set -xg HOMEBREW_GITHUB_API_TOKEN (secure_storage HOMEBREW_GITHUB_API_TOKEN)
 set -xg GITHUB_TOKEN (secure_storage GITHUB_TOKEN)
