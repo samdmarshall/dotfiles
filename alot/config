@@ -21,100 +21,99 @@ honor_followup_to = True
                 
 
 [bindings]
-k = 
-j =
-page up =
-page down = 
-'g g' = 
-G =
-'ctrl d' =
-@ = 
-I = 
-'#' =
-shift tab = bprevious
-U = 
-tab =
-\ =
-d = 
-$ = 
-m = 
-o = 
-q = 
-. = 
+    k = 
+    j =
+    page up =
+    page down = 
+    'g g' = 
+    G =
+    'ctrl d' =
+    @ = 
+    I = 
+    '#' =
+    shift tab = bprevious
+    U = 
+    tab =
+    \ =
+    d = 
+    $ = 
+    m = 
+    o = 
+    q = 
+    . = 
+    up = move up
+    down = move down
+    ' ' = move page down
+    'ctrl r' = refresh
+    'ctrl q' = exit
+    'ctrl t' = taglist
+    'ctrl s' = prompt 'search '
+    'ctrl n' = compose
+    'ctrl u' = search tag:unread AND NOT (tag:spam OR tag:deleted)
+    'ctrl e' = search tag:inbox AND NOT (tag:spam OR tag:deleted)
 
-up = move up
-down = move down
-' ' = move page down
-'ctrl r' = refresh
-'ctrl q' = exit
-'ctrl t' = taglist
-'ctrl s' = prompt 'search '
-'ctrl n' = compose
-'ctrl u' = search tag:unread AND NOT (tag:spam OR tag:deleted)
-'ctrl e' = search tag:inbox AND NOT (tag:spam OR tag:deleted)
+    [[bufferlist]]
+        x =
+        enter = open
+        'ctrl w' = close
 
-[[bufferlist]]
-x =
-enter = open
-'ctrl w' = close
+    [[search]]
+        a = 
+        & = 
+        ! = 
+        s = 
+        l = 
+        O = 
+        | = 
+        enter = select
 
-[[search]]
-a = 
-& = 
-! = 
-s = 
-l = 
-O = 
-| = 
-enter = select
-
-[[envelope]]
-a = 
-y = 
-P = 
-s = 
-f = 
-t = 
-b = 
-c = 
-S = 
-'g f' =
-'ctrl a' = prompt 'attach '
-'ctrl s' = save
+    [[envelope]]
+        a = 
+        y = 
+        P = 
+        s = 
+        f = 
+        t = 
+        b = 
+        c = 
+        S = 
+        'g f' =
+        'ctrl a' = prompt 'attach '
+        'ctrl s' = save
 
 
-[[taglist]]
-enter = select
+    [[taglist]]
+        enter = select
 
-[[thread]]
-enter = select
-E = 
-e = 
-> =
-C = 
-c = 
-< = 
-left = fold
-right = unfold
-'g f' =
-'ctrl t' = togglesource
-H = 
-P = 
-S = 
-'ctrl s' = save --all
-g =
-'ctrl r' = reply
-f = 
-'ctrl f' = forward
-p = 
-n =
-b = 
-'ctrl b' = bounce
-s = 
-r = 
-| = 
-'g j' =
-'g k' = 
-'g h' =
-'g l' =
-' ' = move next
+    [[thread]]
+        enter = select
+        E = 
+        e = 
+        > =
+        C = 
+        c = 
+        < = 
+        left = fold
+        right = unfold
+        'g f' =
+        'ctrl t' = togglesource
+        H = 
+        P = 
+        S = 
+        'ctrl s' = save --all
+        g =
+        'ctrl r' = reply
+        f = 
+        'ctrl f' = forward
+        p = 
+        n =
+        b = 
+        'ctrl b' = bounce
+        s = 
+        r = 
+        | = 
+        'g j' =
+        'g k' = 
+        'g h' =
+        'g l' =
+        ' ' = move next
