@@ -31,8 +31,8 @@ set -xg HOMEBREW_VERBOSE true
 set -xg GEM_HOME $GEM_HOME $HOME/.gem
 
 # setting up local search paths
-set -u LOCAL_PYTHON_PATH (command python -m site --user-base)"/bin"
+set -u LOCAL_PYTHON2_PATH (command python -m site --user-base)"/bin"
 set -u LOCAL_RUBY_PATH (command gem environment gempath | sed -e 's=:.*$=/bin=')
 
 # setting $PATH
-set fish_user_paths $LOCAL_PYTHON_PATH $LOCAL_RUBY_PATH $CORE_SCRIPTS_PATH
+set fish_user_paths $LOCAL_PYTHON2_PATH $LOCAL_RUBY_PATH $CORE_SCRIPTS_PATH

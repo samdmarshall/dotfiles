@@ -1,10 +1,10 @@
 #!/usr/bin/env fish
 
-set -l current_branch (git rev-parse --abbrev-ref HEAD)
-for ref in (git rev-list --first-parent $current_branch)
-	if test (git branch --contains $ref | wc -l) -eq 2
-		set -l parent_branch (git branch --contains $ref | grep -v "$current_branch" | cut -c 3- )
-		echo (git rev-list $parent_branch.. --count)
+set -l current_branch (command git rev-parse --abbrev-ref HEAD)
+for ref in (command git rev-list --first-parent $current_branch)
+	if test (command git branch --contains $ref | wc -l) -eq 2
+		set -l parent_branch (command git branch --contains $ref | command grep -v "$current_branch" | command cut -c 3- )
+		echo (command git rev-list $parent_branch.. --count)
 		break
 	end
 end

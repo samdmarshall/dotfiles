@@ -1,10 +1,11 @@
 # setting up the basic environment
 source "$HOME/.config/fish/environment.fish"
 
+# load the platform specific configurations
 switch (command echo "$FISH_PLATFORM_NAME")
-    case 'Darwin'
+    case 'Darwin' 'darwin'
         source "$HOME/.config/fish/darwin.fish"
-    case 'Linux'
+    case 'Linux' 'linux'
         source "$HOME/.config/fish/linux.fish"
 end
 

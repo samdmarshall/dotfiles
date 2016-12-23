@@ -1,2 +1,5 @@
 #!/usr/bin/env fish
-git status | grep "deleted:" | sed -e 's=deleted:==' -e 's=^	    ==' | tr '\n'  '\0' | xargs -0 git rm 
+
+for remove_path in (command git status | command grep "deleted:" | command sed -e 's=deleted:==' -e 's=^	    ==')
+    command git rm "$remove_path"
+end 
