@@ -4,7 +4,7 @@ editor_cmd = micro
 initial_command = "search tag:unread AND NOT (tag:spam OR tag:deleted)"
 tabwidth = 4
 theme = tomorrow
-bug_on_exit = True
+bug_on_exit = False
 honor_followup_to = True
 
 [accounts]
