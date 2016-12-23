@@ -13,7 +13,10 @@ popd
 
 sudo xcode-select --install
 
-cp ~/.config/lldb/lldbinit ~/.lldbinit
+cp ~/.config/defaults/lldbinit ~/.lldbinit
+cp ~/.config/defaults/mailcap  ~/.mailcap
+cp ~/.config/defaults/pypirc   ~/.pypirc
+
 
 mkdir -p ~/eMail/
 mkdir -p ~/eMail/cur/
