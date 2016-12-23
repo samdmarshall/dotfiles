@@ -18,3 +18,9 @@ end
 
 set -xg HOMEBREW_GITHUB_API_TOKEN (secure_storage HOMEBREW_GITHUB_API_TOKEN)
 set -xg GITHUB_TOKEN (secure_storage GITHUB_TOKEN)
+
+function fish_right_prompt
+    if test (command defaults read com.pewpewthespells.notmuch-notifier hasmail) -ne 0
+        printf '!'
+    end
+end
