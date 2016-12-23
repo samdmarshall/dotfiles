@@ -12,9 +12,9 @@
 		<string>com.pewpewthespells.notmuch-tag-backup</string>
 		<key>ProgramArguments</key>
 		<array>
-			<string>/Users/Samantha/.config/scripts/backup-notmuch-db</string>
+			<string>/Users/Samantha/.config/scripts/backup-notmuch-tags</string>
 		</array>
 		<key>StartInterval</key>
-		<integer>43200</integer>
+		<integer>3600</integer>
 	</dict>
 </plist>

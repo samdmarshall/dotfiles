@@ -15,6 +15,6 @@
 			<string>/usr/local/bin/notmuch-notifier</string>
 		</array>
 		<key>StartInterval</key>
-		<integer>30</integer>
+		<integer>15</integer>
 	</dict>
 </plist>
