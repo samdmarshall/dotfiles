@@ -6,4 +6,4 @@ Pygments
 tox
 voltron
 pyparsing
-
+portalocker

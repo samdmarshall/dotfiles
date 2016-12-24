@@ -1,0 +1,11 @@
+{
+    "plugins": [
+        {
+            "name": "notmuch",
+            "command": ["/usr/local/bin/notmuch", "search", "tag:unread"],
+            "env": {
+                "NOTMUCH_CONFIG": "/Users/Samantha/.config/notmuch/notmuch-config"
+            }
+        }
+    ]
+}

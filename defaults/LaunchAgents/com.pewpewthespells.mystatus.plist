@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-	com.pewpewthespells.notmuch-new.plist
+	com.pewpewthespells.mystatus.plist
 
 	Created by Samantha Marshall on 11/29/2016.
 	Copyright (c) 2016 Samantha Marshall. All rights reserved.
@@ -9,10 +9,10 @@
 <plist version="1.0">
 	<dict>
 		<key>Label</key>
-		<string>com.pewpewthespells.notmuch-notifier</string>
+		<string>com.pewpewthespells.mystatus</string>
 		<key>ProgramArguments</key>
 		<array>
-			<string>/usr/local/bin/notmuch-notifier</string>
+			<string>/Users/Samantha/.config/scripts/mystatus.py</string>
 		</array>
 		<key>StartInterval</key>
 		<integer>15</integer>
