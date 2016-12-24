@@ -8,6 +8,7 @@ pushd ~/.config/defaults
 brew bundle
 sudo easy_install pip
 pip install -r requirements.txt --user
+pip3 install -r requirements.txt
 gem install bundler --user-install
 popd
 
