@@ -19,3 +19,4 @@ getmail/*
 vdirsyncer/*
 !vdirsyncer/config
 
+mystatus/lockfile
