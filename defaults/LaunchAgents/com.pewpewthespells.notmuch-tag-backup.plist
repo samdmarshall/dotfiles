@@ -15,6 +15,6 @@
 			<string>/Users/Samantha/.config/scripts/backup-notmuch-tags</string>
 		</array>
 		<key>StartInterval</key>
-		<integer>3600</integer>
+		<integer>10</integer>
 	</dict>
 </plist>

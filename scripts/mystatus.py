@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/local/bin/python3
 
 import os
 import sys
@@ -43,8 +43,8 @@ class Settings(object):
 
 def main(argv=sys.argv[1:]):
     lockfile_path = os.path.expanduser('~/.config/mystatus/lockfile')
-    lock_fd = portalocker.Lock(lockfile_path, mode='r+')
     if 'status' in argv:
+        lock_fd = portalocker.Lock(lockfile_path, mode='r')
         has_status = False
         data = json.load(lock_fd.acquire())
         for key in list(data.keys()):
@@ -54,6 +54,7 @@ def main(argv=sys.argv[1:]):
         if has_status is True:
             print('!')
     else:
+        lock_fd = portalocker.Lock(lockfile_path, mode='w')
         data = {}
         prefs = Settings()
         for plugin_data in prefs.plugins:
@@ -61,9 +62,7 @@ def main(argv=sys.argv[1:]):
             result = prefs.run(plugin_data)
             data[name] = result
         json.dump(data, lock_fd.acquire())
-    lock_fd.release()
-    sys.exit(0)
-    
+    lock_fd.release()    
 
 if __name__ == '__main__':
     main()

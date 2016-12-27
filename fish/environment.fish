@@ -2,7 +2,7 @@
 set fish_greeting
 
 # know what platform this is running on
-set -u FISH_PLATFORM_NAME (uname -s)
+set -u FISH_PLATFORM_NAME (command uname -s)
 
 set -u SHELL_CONFIG_PATH $HOME/.config
 set -u CORE_SCRIPTS_PATH $SHELL_CONFIG_PATH/scripts
@@ -32,7 +32,7 @@ set -xg GEM_HOME $GEM_HOME $HOME/.gem
 
 # setting up local search paths
 set -u LOCAL_PYTHON2_PATH (command python -m site --user-base)"/bin"
-set -u LOCAL_RUBY_PATH (command gem environment gempath | sed -e 's=:.*$=/bin=')
+set -u LOCAL_RUBY_PATH (command gem environment gempath | command sed -e 's=:.*$=/bin=')
 
 # setting $PATH
 set fish_user_paths $LOCAL_PYTHON2_PATH $LOCAL_RUBY_PATH $CORE_SCRIPTS_PATH
