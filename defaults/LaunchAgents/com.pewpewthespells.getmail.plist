@@ -18,6 +18,6 @@
 			<string>--new</string>
 		</array>
 		<key>StartInterval</key>
-		<integer>60</integer>
+		<integer>900</integer>
 	</dict>
 </plist>
