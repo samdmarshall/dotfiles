@@ -14,5 +14,6 @@ function launchctl --wraps=launchctl
     end
 end
 
-complete --command launchctl --arguments "list-system" --description "list only services provided by the system"
-complete --command launchctl --arguments "list-other" --description "list only services not provided by the system"
+complete --command launchctl -n '__fish_use_subcommand' -xa 'list-system\t"'(_ "list only services not provided by the system")'"'
+complete --command launchctl -n '__fish_use_subcommand' -xa 'list-other\t"'(_ "list only services not provided by the system")'"'
+

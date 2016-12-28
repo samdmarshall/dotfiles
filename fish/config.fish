@@ -13,9 +13,7 @@ end
 source "$HOME/.config/fish/prompt.fish"
 
 # wrapper commands
-for wrapper in (command ls "$HOME/.config/fish/wrappers")
-    source "$HOME/.config/fish/wrappers/$wrapper"
-end
+set fish_function_path $fish_function_path "$HOME/.config/fish/wrappers"
 
 # load the user's .profile file if it exists
 if test -e "$HOME/.profile"

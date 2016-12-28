@@ -18,6 +18,7 @@ end
 
 set -xg HOMEBREW_GITHUB_API_TOKEN (secure_storage HOMEBREW_GITHUB_API_TOKEN)
 set -xg GITHUB_TOKEN (secure_storage GITHUB_TOKEN)
+set -xg ASCIINEMA_TOKEN (secure_storage ASCIINEMA_TOKEN)
 
 function __fish_man_page --argument name --argument section
     set -l open_string ""

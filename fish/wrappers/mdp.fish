@@ -1,3 +1,3 @@
 function mdp --wrap=mdp
-    command mdp --invert $argv
+    command mdp --invert --noslidenum $argv
 end
