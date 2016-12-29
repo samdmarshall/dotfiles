@@ -4,19 +4,15 @@ set fish_greeting
 # know what platform this is running on
 set -u FISH_PLATFORM_NAME (command uname -s)
 
-set -u SHELL_CONFIG_PATH $HOME/.config
-set -u CORE_SCRIPTS_PATH $SHELL_CONFIG_PATH/scripts
-
 set -u KEY_STORAGE_KEYCHAIN_NAME keys.keychain
-set -u KEY_STORAGE_PATH $SHELL_CONFIG_PATH/storage
-set -u KEY_STORAGE_KEYCHAIN_PATH $KEY_STORAGE_PATH/$KEY_STORAGE_KEYCHAIN_NAME
+set -u KEY_STORAGE_KEYCHAIN_PATH $HOME/.config/storage/$KEY_STORAGE_KEYCHAIN_NAME
 
 set -xg EDITOR micro
 
 set -xg GOPATH "$HOME/.go"
 
 set -xg FZF_DEFAULT_COMMAND "pt --hidden --ignore=.git -g=''"
-set -xg FZF_DEFAULT_OPTS "--preview=\"echo -e '' ; file {}; echo -e '' ; head -50 {}\""
+set -xg FZF_DEFAULT_OPTS "--preview=\"echo -e '' ; file {}; echo -e '' ; cat {} \""
 
 set -xg NOTMUCH_CONFIG "$HOME/.config/notmuch/notmuch-config"
 
@@ -31,8 +27,7 @@ set -xg HOMEBREW_VERBOSE true
 set -xg GEM_HOME $GEM_HOME $HOME/.gem
 
 # setting up local search paths
-set -u LOCAL_PYTHON2_PATH (command python -m site --user-base)"/bin"
 set -u LOCAL_RUBY_PATH (command gem environment gempath | command sed -e 's=:.*$=/bin=')
 
 # setting $PATH
-set fish_user_paths $LOCAL_PYTHON2_PATH $LOCAL_RUBY_PATH $CORE_SCRIPTS_PATH
+set fish_user_paths $LOCAL_RUBY_PATH "$HOME/.config/scripts"

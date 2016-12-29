@@ -37,10 +37,17 @@ brew 'go'
 brew 'notmuch'
 brew 'vdirsyncer'
 brew 'khal'
+brew 'gnupg2'
+brew 'pinentry-mac'
 
 brew 'samdmarshall/iosconsole'
 brew 'samdmarshall/aosd'
 brew 'samdmarshall/hotkeyd'
 
 cask 'bonjour-browser'
+cask 'qlcolorcode'
+cask 'qlimagesize'
+cask 'qlmarkdown'
+cask 'qlstephen'
+cask 'quicklook-json'
 
