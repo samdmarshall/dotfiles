@@ -17,6 +17,7 @@ if set -q SSH_CONNECTION
 end
 
 set -xg HOMEBREW_GITHUB_API_TOKEN (secure_storage HOMEBREW_GITHUB_API_TOKEN)
+set -xg DANGER_GITHUB_API_TOKEN (secure_storage DANGER_GITHUB_API_TOKEN)
 set -xg GITHUB_TOKEN (secure_storage GITHUB_TOKEN)
 set -xg ASCIINEMA_TOKEN (secure_storage ASCIINEMA_TOKEN)
 

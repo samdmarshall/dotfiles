@@ -30,4 +30,4 @@ set -xg GEM_HOME $GEM_HOME $HOME/.gem
 set -u LOCAL_RUBY_PATH (command gem environment gempath | command sed -e 's=:.*$=/bin=')
 
 # setting $PATH
-set fish_user_paths $LOCAL_RUBY_PATH "$HOME/.config/scripts"
+set fish_user_paths $LOCAL_RUBY_PATH "$HOME/.config/scripts" $GEM_HOME/bin

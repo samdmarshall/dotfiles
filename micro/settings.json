@@ -1,7 +1,7 @@
 {
-    "autoclose": true,
+    "autoclose": false,
     "autoindent": true,
-    "autosave": true,
+    "autosave": false,
     "colorcolumn": 0,
     "colorscheme": "solarized-light",
     "cursorline": true,
@@ -14,10 +14,12 @@
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
     ],
     "pluginrepos": [
+        "https://raw.githubusercontent.com/samdmarshall/micro-stringops-plugin/master/repo.json",
+        "https://raw.githubusercontent.com/samdmarshall/micro-solarized-light-colortheme/master/repo.json"
     ],
     "ruler": true,
     "savecursor": false,
-    "saveundo": true,
+    "saveundo": false,
     "scrollmargin": 3,
     "scrollspeed": 2,
     "softwrap": true,

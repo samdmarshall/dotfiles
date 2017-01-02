@@ -22,5 +22,5 @@ vdirsyncer/*
 mystatus/lockfile
 
 
-storage/
+storage/*
 !storage/keys.keychain

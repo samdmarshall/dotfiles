@@ -3,4 +3,9 @@
 	"CtrlSpace": "fzf.fzf",
 	"CtrlUnderscore": "comment.comment",
 	"F1": "filetree.OpenTree",
+	"CtrlW": "Close",
+
+    "CtrlD": "CutLine",
+
+    "CtrlK": "stringops.CutToStartOfLine",
 }
