@@ -15,7 +15,8 @@
     ],
     "pluginrepos": [
         "https://raw.githubusercontent.com/samdmarshall/micro-stringops-plugin/master/repo.json",
-        "https://raw.githubusercontent.com/samdmarshall/micro-solarized-light-colortheme/master/repo.json"
+        "https://raw.githubusercontent.com/samdmarshall/micro-solarized-light-colortheme/master/repo.json",
+        "https://raw.githubusercontent.com/samdmarshall/micro-mdp-plugin/master/repo.json"
     ],
     "ruler": true,
     "savecursor": false,

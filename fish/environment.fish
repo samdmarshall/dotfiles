@@ -26,6 +26,8 @@ set -xg HOMEBREW_VERBOSE true
 
 set -xg GEM_HOME $GEM_HOME $HOME/.gem
 
+set -xg MICRO_PLUGIN_MDP_DEFAULT_FLAGS "--invert --noslidenum"
+
 # setting up local search paths
 set -u LOCAL_RUBY_PATH (command gem environment gempath | command sed -e 's=:.*$=/bin=')
 
