@@ -6,6 +6,7 @@
 	"CtrlW": "Close",
 
     "CtrlD": "CutLine",
+    "CtrlG": "UnbindKey",
 
-    "CtrlK": "stringops.CutToStartOfLine",
+    "CtrlK": "SelectToEndOfLine,Delete",
 }
