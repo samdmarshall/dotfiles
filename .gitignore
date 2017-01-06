@@ -24,4 +24,6 @@ mystatus/lockfile
 storage/*
 !storage/keys.keychain
 
-weechat/**/*.log
+weechat/logs/*
+
+weechat/*.log
