@@ -1,6 +1,7 @@
 [default]
 highlight_event_days = true
 default_calendar = "iCloud"
+default_command = "interactive"
 
 [calendars]
 [[cocoaheads]]
@@ -53,6 +54,6 @@ frame = True
 theme = light
 
 [keybindings]
-delete = 
+delete = D
 duplicate = 
 

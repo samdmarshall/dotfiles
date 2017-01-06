@@ -21,6 +21,7 @@ vdirsyncer/*
 
 mystatus/lockfile
 
-
 storage/*
 !storage/keys.keychain
+
+weechat/**/*.log

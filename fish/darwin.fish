@@ -20,6 +20,7 @@ set -xg HOMEBREW_GITHUB_API_TOKEN (secure_storage HOMEBREW_GITHUB_API_TOKEN)
 set -xg DANGER_GITHUB_API_TOKEN (secure_storage DANGER_GITHUB_API_TOKEN)
 set -xg GITHUB_TOKEN (secure_storage GITHUB_TOKEN)
 set -xg ASCIINEMA_TOKEN (secure_storage ASCIINEMA_TOKEN)
+set -xg WEECHAT_PASSPHRASE (secure_storage WEECHAT_PASSPHRASE)
 
 function __fish_man_page --argument name --argument section
     set -l open_string ""

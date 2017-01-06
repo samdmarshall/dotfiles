@@ -24,7 +24,7 @@ notmuch tag -inbox -- tag:Alerts.Synology
 notmuch tag +Billing +Billing.Amazon -- from:order-update@amazon.com or from:noreply@amazon.com or from:@amazon.com
 notmuch tag -inbox -- tag:Billing.Amazon
 
-notmuch tag +Billing +Billing.Apple -- from:orders.apple.com or from:donotreply@apple.com or from:concierge@insideapple.com
+notmuch tag +Billing +Billing.Apple -- from:orders.apple.com or from:donotreply@apple.com or from:concierge@insideapple.com or from:AMR_Payment_Processing_US@apple.com or from:order_change@store.apple.com
 notmuch tag -inbox -- tag:Billing.Apple
 
 notmuch tag +Billing +Billing.ATT -- from:"AT&T Customer Care for Wireless"
@@ -49,10 +49,16 @@ notmuch tag +Billing +Billing.Linode -- from:billing@linode.com
 notmuch tag -inbox -- tag:Billing.Linode
 
 notmuch tag +Billing +Billing.NameDotCom -- from:support@name.com or from:noreply@name.com
-notmuch tag -inbox -- tag:Billing.NameDotCome
+notmuch tag -inbox -- tag:Billing.NameDotCom
 
 notmuch tag +Billing +Billing.Simple -- from:notify@e.simple.com or from:support@simple.com or from:notify@simple.com
 notmuch tag -inbox -- tag:Billing.Simple
+
+notmuch tag +Billing +Billing.PlayStation -- from:Sony@email.sonyentertainmentnetwork.com
+notmuch tag -inbox -- tag:Billing.PlayStation
+
+notmuch tag +Billing +Billing.PayPal -- from:service@paypal.com
+notmuch tag -inbox -- tag:Billing.PayPal
 
 # Tags that file under "Developer"
 notmuch tag +Developer +Developer.Apple -- from:noreply-appledev@apple.com or from:developer@insideapple.com

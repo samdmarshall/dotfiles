@@ -3,7 +3,8 @@
 	"CtrlSpace": "fzf.fzf",
 	"CtrlUnderscore": "comment.comment",
 	"F1": "filetree.OpenTree",
-	"CtrlW": "Close",
+	"CtrlW": "Quit",
+	"CtrlQ": "QuitAll",
 
     "CtrlD": "CutLine",
     "CtrlG": "UnbindKey",
