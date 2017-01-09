@@ -120,7 +120,7 @@ def urlbuf_print_cb(data, buffer, date, tags, displayed, highlight, prefix, mess
                 continue
 
         if weechat.config_get_plugin("display_buffer_number") == "on":
-            output += "%s%-2d " % (weechat.color("reset"), weechat.buffer_get_integer(buffer, "number"))
+            output += "%s%s " % (weechat.color("reset"), weechat.buffer_get_string(buffer, "name"))
 
         if weechat.config_get_plugin("display_nick") == "on":
             output += "%s " % (prefix)

@@ -22,6 +22,9 @@ set -xg GITHUB_TOKEN (secure_storage GITHUB_TOKEN)
 set -xg ASCIINEMA_TOKEN (secure_storage ASCIINEMA_TOKEN)
 set -xg WEECHAT_PASSPHRASE (secure_storage WEECHAT_PASSPHRASE)
 
+# the `gost` command line utility, reuse the github token used by homebrew
+set -xg GOST $HOMEBREW_GITHUB_API_TOKEN
+
 function __fish_man_page --argument name --argument section
     set -l open_string ""
     set -l grep_string ""
