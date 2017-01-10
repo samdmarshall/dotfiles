@@ -26,6 +26,8 @@ set -xg HOMEBREW_VERBOSE true
 
 set -xg GEM_HOME $GEM_HOME $HOME/.gem
 
+set -xg XDG_CONFIG_HOME ~/.config/
+
 set -xg WEECHAT_HOME ~/.config/weechat/
 
 set -xg MICRO_PLUGIN_MDP_DEFAULT_FLAGS "--invert --noslidenum"

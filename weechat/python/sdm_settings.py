@@ -10,6 +10,12 @@ SCRIPT_DESC    = "setting values back to specific channels"
 
 
 settings = {
+    'weechat': {
+        'notify': '0',
+    },
+    'urlbuf': {
+        'notify': '0',
+    },
     'irc.server.freenode': {
         'notify': '2',
     },
@@ -29,7 +35,7 @@ settings = {
         'notify': '3',
     },
     'irc.freenode.#python': {
-        'notify': '1',
+        'notify': '0',
     },
     'irc.cocoapods-slack.#gripes': {
         'notify': '3',
@@ -48,7 +54,13 @@ settings = {
         'notify': '3',
     },
     'irc.freenode.#weechat': {
-        'notify': '1',
+        'notify': '0',
+    },
+    'irc.freenode.#alot': {
+        'notify': '0',
+    },
+    'irc.freenode.#notmuch': {
+        'notify': '0',
     },
 }
 
