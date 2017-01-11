@@ -4,6 +4,5 @@ scp
 pbPlist>=1.0.2
 Pygments
 tox
-voltron
 pyparsing
 portalocker

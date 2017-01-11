@@ -1,1 +1,25 @@
-text/html;  w3m -dump -o document_charset=%{charset} '%s'; nametemplate=%s.html; copiousoutput
+# view
+text/html; w3m -dump -o document_charset=%{charset} '%s'; nametemplate=%s.html; copiousoutput
+text/*; micro %s ; needsterminal
+
+# calendar
+application/ics; khal import --include-calendar iCloud %s; needsterminal
+
+# images
+image/*; open -a Preview %s
+
+# pdfs
+application/pdf; open -a Preview %s
+
+# archive formats
+application/zip; dtrx %s
+application/x-tar; dtrx %s
+application/x-bzip2; dtrx %s
+application/gzip; dtrx %s
+application/x-lzma; dtrx %s
+application/x-lzip; dtrx %s
+application/x-xz; dtrx %s 
+application/x-7z-compressed; dtrx %s
+application/x-rar-compressed; dtrx %s
+application/x-gtar; dtrx %s
+
