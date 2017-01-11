@@ -1,53 +1,112 @@
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
-tap 'samdmarshall/formulae'
+tap 'homebrew/services'
 tap 'mistydemeo/formulae'
+tap 'samdmarshall/formulae'
 
-brew 'git'
-brew 'fish'
-brew 'ffmpeg'
-brew 'pandoc'
+
+# email/communications
+brew 'alot'
+brew 'getmail'
+brew 'msmtmp'
+brew 'notmuch'
+brew 'weechat', args: ['with-aspell', 'with-lua', 'with-perl', 'with-python']
+
+
+# security
+brew 'gnupg2'
+brew 'pinentry-mac'
+brew 'keybase'
+brew 'tor', restart_service: true
 brew 'nmap'
+
+
+# calendar
+brew 'khal'
+brew 'vdirsyncer'
+
+
+# applications
+brew 'graphviz'
+brew 'mdp'
+
+
+# terminal
+brew 'fish'
+brew 'asciinema'
+brew 'since'
+brew 'fsevent_watch'
+
+
+# utilities
 brew 'goaccess', args: ['with-geoip']
-brew 'cmake'
-brew 'automake'
-brew 'autoconf'
 brew 'lynx'
 brew 'mas'
 brew 'httpie'
-brew 'micro'
-brew 'fzf'
-brew 'mypy'
-brew 'pyenv'
-brew 'keybase'
+brew 'w3m'
+brew 'socat'
+
+
+# development
+brew 'diff-so-fancy'
+brew 'git'
+brew 'cmake'
+brew 'autoconf'
+brew 'automake'
 brew 'python'
 brew 'python3'
-brew 'cloc'
-brew 'youtube-dl'
-brew 'diff-so-fancy'
-brew 'tor'
-brew 'fsevent_watch'
-brew 'getmail'
-brew 'the_platinum_searcher'
-brew 'since'
-brew 'asciinema'
-brew 'mdp'
 brew 'go'
-brew 'notmuch'
-brew 'vdirsyncer'
-brew 'khal'
-brew 'gnupg2'
-brew 'pinentry-mac'
+brew 'the_platinum_searcher'
+brew 'fzf'
+brew 'github-release'
+brew 'gost'
+brew 'jid'
+brew 'mypy', args: ['without-sphinx-doc']
+brew 'pyenv'
+brew 'cloc'
+brew 'dasht'
 
-brew 'samdmarshall/iosconsole'
-brew 'samdmarshall/aosd'
-brew 'samdmarshall/hotkeyd'
 
+# media
+brew 'cmus'
+brew 'ffmpeg'
+brew 'youtube-dl'
+
+
+# writing
+brew 'micro', args: ['HEAD']
+brew 'jrnl'
+brew 'pandoc'
+brew 'aspell'
+
+
+# personal formulae
+brew 'samdmarshall/formulae/aosd'
+brew 'samdmarshall/formulae/hotkeyd'
+brew 'samdmarshall/formulae/iosconsole'
+brew 'samdmarshall/formulae/nslocalizer'
+
+
+# additional cask-based installs
 cask 'bonjour-browser'
 cask 'qlcolorcode'
 cask 'qlimagesize'
 cask 'qlmarkdown'
 cask 'qlstephen'
 cask 'quicklook-json'
+
+
+# mac app store apps
+mas 'Pastebot', id: 1179623856
+mas 'CloudApp', id: 417602904
+mas 'FruitJuice', id: 671736912
+mas 'Snipposé', id: 1140313689
+mas 'Acorn', id: 634108295
+mas 'Deliveries', id: 924726344
+mas 'CARROT Weather', id: 993487541
+mas '1Blocker', id: 1107421413
+mas 'Tweetbot', id: 557168941
+mas 'Chronicle', id: 402355593
+mas 'Scrivener', id: 418889511
 

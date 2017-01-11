@@ -35,6 +35,9 @@
         "Brewfile": {
             "tabsize": 2
         },
+        "*.yml": {
+            "tabsize": 2
+        },
     "tabstospaces": true,
         "*.py": {
             "tabstospaces": true

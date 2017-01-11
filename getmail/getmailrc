@@ -3,6 +3,7 @@ type = SimpleIMAPSSLRetriever
 server = mail.messagingengine.com
 username = samdm@mailc.net
 mailboxes = ALL
+use_peek = false
 
 [destination]
 type = Maildir
