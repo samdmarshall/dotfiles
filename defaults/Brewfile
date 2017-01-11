@@ -9,7 +9,7 @@ tap 'samdmarshall/formulae'
 # email/communications
 brew 'alot'
 brew 'getmail'
-brew 'msmtmp'
+brew 'msmtp'
 brew 'notmuch'
 brew 'weechat', args: ['with-aspell', 'with-lua', 'with-perl', 'with-python']
 
