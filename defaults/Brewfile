@@ -1,10 +1,10 @@
 tap 'caskroom/cask'
+tap 'caskroom/fonts'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'mistydemeo/formulae'
 tap 'samdmarshall/formulae'
-
 
 # email/communications
 brew 'alot'
@@ -95,7 +95,7 @@ cask 'qlimagesize'
 cask 'qlmarkdown'
 cask 'qlstephen'
 cask 'quicklook-json'
-
+cask 'font-fira-code'
 
 # mac app store apps
 mas 'Pastebot', id: 1179623856
