@@ -27,4 +27,5 @@ storage/*
 weechat/logs/*
 
 weechat/*.log
-/weechat/sec.conf
+weechat/sec.conf
+weechat/script/plugins.xml.gz
