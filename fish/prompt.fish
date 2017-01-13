@@ -6,7 +6,10 @@ set __fish_prompt_normal normal
 set __fish_prompt_hostname (hostname -s)
 
 function fish_right_prompt
-    ~/.config/scripts/mystatus.py status
+    set -l unread_emails (notmuch count tag:unread)
+    if test $unread_emails -gt 0
+        printf '!'
+    end
 end
 
 function fish_prompt
