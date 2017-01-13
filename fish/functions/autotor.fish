@@ -3,7 +3,7 @@ function autotor
         case 'Darwin'
             set port "9050"
 
-            set service_name (scutil service-name)
+            set service_name (scutil --service-name)
             command sed -i -e "s=^#   ProxyCommand.*=    ProxyCommand            nc -x localhost:$port %h %p=" ~/.ssh/config
             command sudo networksetup -setsocksfirewallproxy "$service_name" localhost $port
             command sudo networksetup -setsocksfirewallproxystate "$service_name" on

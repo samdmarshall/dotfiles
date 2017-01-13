@@ -5,7 +5,7 @@ function tunnel --argument port
                 set port "1234"
             end
 
-            set service_name (scutil service-name)
+            set service_name (scutil --service-name)
             command sed -i -e "s=^#   ProxyCommand.*=    ProxyCommand            nc -x localhost:$port %h %p=" ~/.ssh/config
             command sudo networksetup -setsocksfirewallproxy "$service_name" localhost $port
             and ssh btmm -D $port
