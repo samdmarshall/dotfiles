@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/Users/Samantha/.config/scripts/notmuch-apply-tags
