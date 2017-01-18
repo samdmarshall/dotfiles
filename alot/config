@@ -1,7 +1,7 @@
 attachment_prefix = /Users/Samantha/Downloads/
 colourmode = 256
 editor_cmd = micro
-initial_command = "search tag:unread AND NOT (tag:spam OR tag:deleted)"
+initial_command = "search tag:unread"
 tabwidth = 4
 theme = tomorrow
 bug_on_exit = False
@@ -49,13 +49,12 @@ honor_followup_to = True
     'ctrl t' = taglist
     'ctrl s' = prompt 'search '
     'ctrl n' = compose
-    'ctrl u' = search tag:unread AND NOT (tag:spam OR tag:deleted)
-    'ctrl e' = search tag:inbox AND NOT (tag:spam OR tag:deleted)
-
+    'ctrl u' = search tag:unread
+    'ctrl e' = search tag:inbox
+    
     [[bufferlist]]
-        x =
+        x = close
         enter = open
-        'ctrl w' = close
 
     [[search]]
         a = 

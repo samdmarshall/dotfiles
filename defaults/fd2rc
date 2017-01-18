@@ -14,22 +14,32 @@ EDITOR=micro
 SHELL=/usr/local/bin/fish
 
 
-DEFCOLUMNS=1
+DEFCOLUMNS=2
 # TMPDIR=/tmp
 SORTTYPE=0
 
 
 # keybindings
 bind F1	EDIT_FILE	:Edit
-bind F2	"fuzzyfind %K"	:Find
+bind  1 EDIT_FILE
+bind F2	"fuzzyfind %K"	:Go\ To
+bind  2 "fuzzyfind %K"
 bind F3	EXECUTE_SH	:Shell
-bind F4
-bind F5
-bind F6
-bind F7
+bind  3 EXECUTE_SH
+bind F4 SORT_DIR    :Sort
+bind  4 SORT_DIR
+bind F5 MARK_FILE   :Mark
+bind  5 MARK_FILE
+bind F6 "cd ~%N%K" :Home
+bind  6 "cd ~%N%K"
+bind F7 REREAD_DIR  :Reload
+bind  7 REREAD_DIR
 bind F8
-bind F9
-bind F10
+# bind  8
+bind F9 EDIT_CONFIG :Config
+bind  9 EDIT_CONFIG
+bind F10 HELP_MESSAGE :Help
+bind   0 HELP_MESSAGE
 bind F11
 bind F12
 bind F13
@@ -46,11 +56,11 @@ bind a
 bind b
 bind C	COPY_FILE
 bind c
-bind D	DELETE_FILE
+bind D
 bind d
-# bind 'E' EDIT_CONFIG
+bind E
 bind e
-bind F
+bind F  FIND_FILE
 bind f
 bind H
 bind h
@@ -67,12 +77,11 @@ bind m
 bind N	MAKE_DIR
 bind O	EDIT_FILE
 bind p
-bind Q
+bind Q  QUIT_SYSTEM
 bind q
 bind R	RENAME_FILE
-bind ^R	REREAD_DIR
+bind ^R
 bind r
-# bind '^r' REREAD_DIR
 bind S
 bind ^S
 bind s
@@ -86,13 +95,9 @@ bind w
 bind X	EXECUTE_FILE
 bind x
 
-# bind '1' ONE_COLUMN
-bind 2
 bind ^@
-bind 3
-bind 5
 bind ^
-bind "*"	MARK_FILE
+bind "*"
 bind "("
 bind ")"
 
@@ -103,10 +108,10 @@ bind +
 bind "]"
 bind "["
 bind "\\"
-# bind '?' HELP_MESSAGE
+bind '?'
 bind /
-# bind 'BS' OUT_DIR
-# bind 'RET' LAUNCH_FILE IN_DIR 
+bind 'BS' DELETE_FILE
+bind 'RET' LAUNCH_FILE IN_DIR 
 
 bind DEL
 bind INS
@@ -118,13 +123,12 @@ bind HELP
 bind NPAGE
 bind PPAGE
 
-bind "~"	"cd ~%N%K"
 
 # functions
 
 fuzzyfind() {
-    result=`find . -type d -not -path "*/.git/*" | fzf --preview="ls -A {}"`
-    if [ $result ]; then
-        cd $result
-    fi
+    result=`find . -type d -not \( -path "*/.git" -or -path "*/.git/*" \) | fzf --preview="ls -A {}"`
+        if [ $result ]; then
+            cd $result
+        fi
 }
