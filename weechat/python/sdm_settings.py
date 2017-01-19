@@ -25,6 +25,9 @@ settings = {
     'irc.server.cocoapods-slack': {
         'notify': '2',
     },
+    'irc.server.gitter': {
+        'notify': '2',
+    },
     'irc.freenode.##steam': {
         'notify': '3',
     },
@@ -49,7 +52,9 @@ settings = {
     'irc.cocoapods-slack.#noise': {
         'notify': '3',
     },
-    'irc.adelais.#podtacular': {},
+    'irc.adelais.#podtacular': {
+        'notify': '3',
+    },
     'irc.freenode.#machomebrew': {
         'notify': '3',
     },
@@ -61,6 +66,9 @@ settings = {
     },
     'irc.freenode.#notmuch': {
         'notify': '0',
+    },
+    'irc.gitter.#zyedidia/micro': {
+        'notify': '3',
     },
 }
 
