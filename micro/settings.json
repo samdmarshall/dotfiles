@@ -25,42 +25,34 @@
     "statusline": true,
     "syntax": true,
     "tabsize": 4,
+    "tabstospaces": true,
         "*.rb": {
-            "tabsize": 2
+            "tabsize": 2,
+            "tabstospaces": true
         },
         "{R,r}akefile": {
-            "tabsize": 2
+            "tabsize": 2,
+            "commenttype": "# %s",
+            "tabstospaces": true
         },
         "Brewfile": {
-            "tabsize": 2
+            "tabsize": 2,
+            "commenttype": "# %s",
+            "tabstospaces": true
         },
         "*.yml": {
             "tabsize": 2
         },
-    "tabstospaces": true,
         "*.py": {
             "tabstospaces": true
         },
-        "*.rb": {
-            "tabstospaces": true
+        "*.fish": {
+	        "commenttype": "# %s"
+	    },
+        "{M,m}akefile": {
+            "commenttype": "# %s"
         },
-        "{R,r}akefile": {
-            "tabstospaces": true
-        },
-        "Brewfile": {
-            "tabstospaces": true
-        },
-
-	"*.fish": {
-		"commenttype": "# %s"
-	},
-	"{R,r}akefile": {
-		"commenttype": "# %s"
-	},
-    "{M,m}akefile": {
-        "commenttype": "# %s"
-    },
-    "*.mk": {
-        "commenttype": "# %s"
-    }
+        "*.mk": {
+            "commenttype": "# %s"
+        }
 }

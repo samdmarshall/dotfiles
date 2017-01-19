@@ -49,8 +49,8 @@ datetimeformat = %m.%d.%Y %H:%M
 longdatetimeformat = %m.%d.%Y %H:%M
 
 [view]
-frame = True
-#frame = color
+#frame = True
+frame = color
 theme = light
 
 [keybindings]
