@@ -15,3 +15,4 @@ received = false
 read_all = false
 verbose = 2
 message_log = ~/.config/getmail/message.log
+delete_after = 73000

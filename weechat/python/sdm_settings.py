@@ -77,8 +77,21 @@ def restore_buffer_settings(data, signal, signal_buffer):
     if buffer_name in list(settings.keys()):
         for key, value in settings[buffer_name].items():
             weechat.buffer_set(signal_buffer, key, value)
-    
+    return weechat.WEECHAT_RC_OK
+
+selectable_buffers = [
+    'python.urlbuf'
+]
+
+def handle_mouse_for_selection(data, signal, signal_buffer):
+    buffer_name = weechat.buffer_get_string(signal_buffer, 'full_name')
+    mouse_option = weechat.config_get('weechat.look.mouse')
+    if buffer_name in selectable_buffers:
+        weechat.config_option_set(mouse_option, 'off', 1)
+    else:
+        weechat.config_option_set(mouse_option, 'on', 1)
     return weechat.WEECHAT_RC_OK
 
 if weechat.register(SCRIPT_NAME, SCRIPT_AUTHOR, SCRIPT_VERSION, SCRIPT_LICENSE, SCRIPT_DESC, "", ""):
     weechat.hook_signal('buffer_opened', 'restore_buffer_settings', '')
+    weechat.hook_signal('buffer_switch', 'handle_mouse_for_selection', '')

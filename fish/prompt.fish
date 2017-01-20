@@ -5,12 +5,34 @@ set __fish_prompt_path 299e95
 set __fish_prompt_normal normal
 set __fish_prompt_hostname (hostname -s)
 
+function battery_level --argument percentage
+    set -l percentage (string trim $percentage --chars " %")
+    echo $percentage
+end
+
 function fish_right_prompt
     if test -e ~/eMail/Inbox/.notmuch/
         set -l unread_emails (notmuch count tag:unread)
         if test $unread_emails -gt 0
-            printf '!'
+            printf '! '
         end
+    end
+    set -l raw_data (string split ';' (pmset -g rawbatt))
+    if test (count $raw_data) -gt 4
+        set -l level (battery_level $raw_data[4])
+        set -l battery_color green
+        if test $level -lt 10
+            set battery_color red --bold
+        else if test $level -lt 25
+            set battery_color red
+        else if test $level -lt 50
+            set battery_color yellow
+        end
+        printf '['
+        printf '%s' (set_color $battery_color)
+        printf '%s%%' $level
+        printf '%s' (set_color $__fish_prompt_normal)
+        printf ']'
     end
 end
 
