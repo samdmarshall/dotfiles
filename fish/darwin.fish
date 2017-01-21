@@ -7,7 +7,7 @@ end
 
 function unlock_keychain_if_necessary --argument keychain_name
     string match --ignore-case "User interaction is not allowed" (command security show-keychain-info $keychain_name 2>&1)
-    if test ! $status -eq 1
+    if test $status -eq 1
         command security unlock-keychain $keychain_name
     end
 end
