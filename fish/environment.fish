@@ -24,13 +24,11 @@ set -xg HOMEBREW_INSTALL_BADGE 🌈
 set -xg HOMEBREW_NO_INSECURE_REDIRECT true
 set -xg HOMEBREW_VERBOSE true
 
-set -xg GEM_HOME $GEM_HOME $HOME/.gem
+set -xg GEM_HOME $HOME/.gem
 
 set -xg XDG_CONFIG_HOME ~/.config/
 
 set -xg WEECHAT_HOME ~/.config/weechat/
-
-set -xg MICRO_PLUGIN_MDP_DEFAULT_FLAGS "--invert --noslidenum"
 
 # setting up local search paths
 set -u LOCAL_RUBY_PATH (command gem environment gempath | command sed -e 's=:.*$=/bin=')

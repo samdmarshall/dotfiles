@@ -7,7 +7,7 @@ tap 'mistydemeo/formulae'
 tap 'samdmarshall/formulae'
 
 # email/communications
-brew 'alot'
+brew 'alot', args: ['HEAD']
 brew 'getmail'
 brew 'msmtp'
 brew 'notmuch'
@@ -23,13 +23,12 @@ brew 'nmap'
 
 
 # calendar
-brew 'khal'
+brew 'khal', args: ['HEAD']
 brew 'vdirsyncer'
 
 
 # applications
 brew 'graphviz'
-brew 'mdp'
 
 
 # terminal
@@ -46,6 +45,7 @@ brew 'mas'
 brew 'httpie'
 brew 'w3m'
 brew 'socat'
+brew 'tmux'
 
 
 # development
@@ -66,6 +66,7 @@ brew 'mypy', args: ['without-sphinx-doc']
 brew 'pyenv'
 brew 'cloc'
 brew 'dasht'
+brew 'pre-commit'
 
 
 # media
