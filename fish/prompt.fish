@@ -10,13 +10,7 @@ function battery_level --argument percentage
     echo $percentage
 end
 
-function fish_right_prompt
-    if test -e ~/eMail/Inbox/.notmuch/
-        set -l unread_emails (notmuch count tag:unread)
-        if test $unread_emails -gt 0
-            printf '! '
-        end
-    end
+function display_battery_level
     set -l raw_data (string split ';' (pmset -g rawbatt))
     if test (count $raw_data) -gt 4
         set -l level (battery_level $raw_data[4])
@@ -35,6 +29,19 @@ function fish_right_prompt
             set battery_color $battery_color --underline
         end
         printf '[%s%s%%%s]' (set_color $battery_color) $level (set_color $__fish_prompt_normal)
+    end
+end
+
+function fish_right_prompt
+    if test -e ~/eMail/Inbox/.notmuch/
+        set -l unread_emails (notmuch count tag:unread)
+        if test $unread_emails -gt 0
+            printf '! '
+        end
+    end
+    switch (command echo "$FISH_PLATFORM_NAME")
+        case 'Darwin' 'darwin'
+            display_battery_level
     end
 end
 
