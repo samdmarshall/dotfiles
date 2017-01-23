@@ -127,7 +127,7 @@ bind PPAGE
 # functions
 
 fuzzyfind() {
-    result=`find . -type d -not \( -path "*/.git" -or -path "*/.git/*" \) | fzf --preview="ls -A {}"`
+    result=`find . -type d -not \( -path "*/.git" -or -path "*/.git/*" \) | fzf`
         if [ $result ]; then
             cd $result
         fi
