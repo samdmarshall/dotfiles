@@ -23,7 +23,7 @@ brew 'nmap'
 
 
 # calendar
-brew 'khal', args: ['HEAD']
+brew 'khal'
 brew 'vdirsyncer'
 
 
@@ -88,7 +88,7 @@ brew 'samdmarshall/formulae/aosd'
 brew 'samdmarshall/formulae/hotkeyd'
 brew 'samdmarshall/formulae/iosconsole'
 brew 'samdmarshall/formulae/nslocalizer'
-
+brew 'samdmarshall/formulae/secure-env'
 
 # additional cask-based installs
 cask 'bonjour-browser'

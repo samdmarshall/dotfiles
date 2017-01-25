@@ -40,6 +40,9 @@ settings = {
     'irc.freenode.#python': {
         'notify': '0',
     },
+    'irc.freenode.#pimutils': {
+        'notify': '0',
+    },
     'irc.cocoapods-slack.#gripes': {
         'notify': '3',
     },
@@ -64,6 +67,9 @@ settings = {
     'irc.freenode.#alot': {
         'notify': '0',
     },
+    'irc.freenode.#nim': {
+        'notify': '0',
+    },
     'irc.freenode.#notmuch': {
         'notify': '0',
     },
@@ -80,7 +86,7 @@ def restore_buffer_settings(data, signal, signal_buffer):
     return weechat.WEECHAT_RC_OK
 
 selectable_buffers = [
-    'python.urlbuf'
+    'python.urlbuf',
 ]
 
 def handle_mouse_for_selection(data, signal, signal_buffer):

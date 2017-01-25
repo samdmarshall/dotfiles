@@ -1,10 +1,3 @@
-function secure_storage --argument name
-    set keys_keychain_password (command security find-generic-password -l $KEY_STORAGE_KEYCHAIN_NAME -w)
-    command security unlock-keychain -p $keys_keychain_password $KEY_STORAGE_KEYCHAIN_PATH
-    set note_contents (command security find-internet-password -a $name -w $KEY_STORAGE_KEYCHAIN_PATH)
-    echo $note_contents
-end
-
 function unlock_keychain_if_necessary --argument keychain_name
     string match --ignore-case "User interaction is not allowed" (command security show-keychain-info $keychain_name 2>&1)
     if test $status -eq 1
@@ -16,11 +9,11 @@ if set -q SSH_CONNECTION
    unlock_keychain_if_necessary login.keychain
 end
 
-set -xg HOMEBREW_GITHUB_API_TOKEN (secure_storage HOMEBREW_GITHUB_API_TOKEN)
-set -xg DANGER_GITHUB_API_TOKEN (secure_storage DANGER_GITHUB_API_TOKEN)
-set -xg GITHUB_TOKEN (secure_storage GITHUB_TOKEN)
-set -xg ASCIINEMA_TOKEN (secure_storage ASCIINEMA_TOKEN)
-set -xg WEECHAT_PASSPHRASE (secure_storage WEECHAT_PASSPHRASE)
+set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:HOMEBREW_GITHUB_API_TOKEN)
+set -xg DANGER_GITHUB_API_TOKEN     (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:DANGER_GITHUB_API_TOKEN)
+set -xg GITHUB_TOKEN                (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:GITHUB_TOKEN)
+set -xg ASCIINEMA_TOKEN             (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:ASCIINEMA_TOKEN)
+set -xg WEECHAT_PASSPHRASE          (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:WEECHAT_PASSPHRASE)
 
 # the `gost` command line utility, reuse the github token used by homebrew
 set -xg GOST $HOMEBREW_GITHUB_API_TOKEN

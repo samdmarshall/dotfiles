@@ -25,6 +25,10 @@ set -xg HOMEBREW_NO_INSECURE_REDIRECT true
 set -xg HOMEBREW_VERBOSE true
 
 set -xg GEM_HOME $HOME/.gem
+set -u GEM_HOME_BIN $GEM_HOME/bin
+if test ! -e $GEM_HOME_BIN
+    set -e GEM_HOME_BIN
+end
 
 set -xg XDG_CONFIG_HOME ~/.config/
 
@@ -32,6 +36,9 @@ set -xg WEECHAT_HOME ~/.config/weechat/
 
 # setting up local search paths
 set -u LOCAL_RUBY_PATH (command gem environment gempath | command sed -e 's=:.*$=/bin=')
+if test ! -e $LOCAL_RUBY_PATH
+    set -e LOCAL_RUBY_PATH
+end
 
 # setting $PATH
-set fish_user_paths $LOCAL_RUBY_PATH "$HOME/.config/scripts" $GEM_HOME/bin
+set fish_user_paths $LOCAL_RUBY_PATH "$HOME/.config/scripts" $GEM_HOME_BIN

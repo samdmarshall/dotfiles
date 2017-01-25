@@ -54,5 +54,8 @@
         },
         "*.mk": {
             "commenttype": "# %s"
+        },
+        "*.nim": {
+            "tabsize": 2
         }
 }
