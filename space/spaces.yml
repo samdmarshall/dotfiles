@@ -1,6 +1,9 @@
 ~/Projects/space:
   build:
-    - python3 setup.py install        
+    - python3 setup.py install
+~/Projects/sli:
+  build:
+    - python3 setup.py install
 ~/Projects/micro-fzf-plugin:
   release:
     - if [ -z $TAG ]; then echo "please define a tag by passing --env='TAG=#.#'"; exit; fi;

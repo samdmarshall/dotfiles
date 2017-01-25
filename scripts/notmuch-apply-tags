@@ -41,7 +41,7 @@ apply_tags "+Billing +Billing.Blizzard"         "from:noreply@em.blizzard.com or
 apply_tags "+Billing +Billing.Github"           "from:support@github.com or subject:'[GitHub] Payment Receipt'"
 apply_tags "+Billing +Billing.Github"           "subject:'[Github] Payment Receipt for samdmarshall'"
 apply_tags "+Billing +Billing.Grubhub"          "from:order@grubhub.com or from:orders@eat.grubhub.com"
-apply_tags "+Billing +Billing.iTunesReceipts"   "from:do_not_reply@itunes.com or from:'iTunes Store' or from:no_reply@email.apple.com"
+apply_tags "+Billing +Billing.iTunesReceipts"   "from:do_not_reply@itunes.com or from:no_reply@email.apple.com"
 apply_tags "+Billing +Billing.JetBlue"          "from:notifications@jetblue.com or from:jetblueairways@email.jetblue.com"
 apply_tags "+Billing +Billing.Linode"           "from:billing@linode.com"
 apply_tags "+Billing +Billing.NameDotCom"       "from:support@name.com or from:noreply@name.com"

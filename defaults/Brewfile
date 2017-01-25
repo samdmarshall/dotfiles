@@ -46,6 +46,7 @@ brew 'httpie'
 brew 'w3m'
 brew 'socat'
 brew 'tmux'
+brew 'extract_url'
 
 
 # development
