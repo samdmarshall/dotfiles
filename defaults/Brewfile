@@ -6,6 +6,7 @@ tap 'homebrew/services'
 tap 'mistydemeo/formulae'
 tap 'samdmarshall/formulae'
 
+
 # email/communications
 brew 'alot', args: ['HEAD']
 brew 'getmail'
@@ -47,6 +48,7 @@ brew 'w3m'
 brew 'socat'
 brew 'tmux'
 brew 'extract_url'
+brew 'dtrx'
 
 
 # development
@@ -55,9 +57,6 @@ brew 'git'
 brew 'cmake'
 brew 'autoconf'
 brew 'automake'
-brew 'python'
-brew 'python3'
-brew 'go'
 brew 'the_platinum_searcher'
 brew 'fzf'
 brew 'github-release'
@@ -68,6 +67,8 @@ brew 'pyenv'
 brew 'cloc'
 brew 'dasht'
 brew 'pre-commit'
+brew 'hexcurse'
+brew 'ansible'
 
 
 # media
@@ -90,6 +91,15 @@ brew 'samdmarshall/formulae/iosconsole'
 brew 'samdmarshall/formulae/nslocalizer'
 brew 'samdmarshall/formulae/secure-env'
 
+
+# languages
+brew 'python'
+brew 'python3'
+brew 'lua'
+brew 'go'
+brew 'nim'
+
+
 # additional cask-based installs
 cask 'bonjour-browser'
 cask 'qlcolorcode'
@@ -98,6 +108,18 @@ cask 'qlmarkdown'
 cask 'qlstephen'
 cask 'quicklook-json'
 cask 'font-fira-code'
+cask 'little-snitch'
+cask 'micro-snitch'
+cask 'hopper-disassembler'
+cask 'bartender'
+cask '0xed'
+cask 'hex-fiend'
+cask '1password'
+cask 'cornerstone'
+cask 'tower'
+cask 'launchbar'
+cask 'netshade'
+
 
 # mac app store apps
 mas 'Pastebot', id: 1179623856
