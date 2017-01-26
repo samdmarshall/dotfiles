@@ -60,7 +60,7 @@ brew 'automake'
 brew 'the_platinum_searcher'
 brew 'fzf'
 brew 'github-release'
-brew 'gost'
+brew 'gistit'
 brew 'jid'
 brew 'mypy', args: ['without-sphinx-doc']
 brew 'pyenv'
