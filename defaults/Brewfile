@@ -62,14 +62,14 @@ brew 'fzf'
 brew 'github-release'
 brew 'gistit'
 brew 'jid'
-brew 'mypy', args: ['without-sphinx-doc']
+brew 'mypy'
 brew 'pyenv'
 brew 'cloc'
 brew 'dasht'
 brew 'pre-commit'
 brew 'hexcurse'
 brew 'ansible'
-
+brew 'tig'
 
 # media
 brew 'cmus'
@@ -90,6 +90,7 @@ brew 'samdmarshall/formulae/hotkeyd'
 brew 'samdmarshall/formulae/iosconsole'
 brew 'samdmarshall/formulae/nslocalizer'
 brew 'samdmarshall/formulae/secure-env'
+brew 'samdmarshall/formulae/scan-build'
 
 
 # languages
