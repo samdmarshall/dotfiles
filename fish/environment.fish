@@ -12,7 +12,7 @@ set -xg EDITOR micro
 set -xg GOPATH "$HOME/.go"
 
 set -xg FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
-set -xg FZF_DEFAULT_OPTS "--preview=\"preview.py --metadata {} \""
+set -xg FZF_DEFAULT_OPTS "--preview=\"preview --metadata {} \""
 
 set -xg NOTMUCH_CONFIG "$HOME/.config/notmuch/notmuch-config"
 

@@ -91,6 +91,7 @@ brew 'samdmarshall/formulae/iosconsole'
 brew 'samdmarshall/formulae/nslocalizer'
 brew 'samdmarshall/formulae/secure-env'
 brew 'samdmarshall/formulae/scan-build'
+brew 'samdmarshall/formulae/preview'
 
 
 # languages
