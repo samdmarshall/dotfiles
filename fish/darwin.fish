@@ -14,9 +14,8 @@ set -xg DANGER_GITHUB_API_TOKEN     (secure-env --keychain:$KEY_STORAGE_KEYCHAIN
 set -xg GITHUB_TOKEN                (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:GITHUB_TOKEN)
 set -xg ASCIINEMA_API_TOKEN         (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:ASCIINEMA_API_TOKEN)
 set -xg WEECHAT_PASSPHRASE          (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:WEECHAT_PASSPHRASE)
-
-# the gist command line utility, reuse the github token used by homebrew
-set -xg GISTIT_TOKEN $HOMEBREW_GITHUB_API_TOKEN
+set -xg HOMEBREW_PIPELINE_API_TOKEN (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:HOMEBREW_PIPELINE_API_TOKEN)
+set -xg GISTIT_TOKEN                (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:GISTIT_TOKEN)
 
 function __fish_man_page --argument name --argument section
     set -l open_string ""
