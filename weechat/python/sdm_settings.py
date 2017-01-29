@@ -68,7 +68,7 @@ settings = {
         'notify': '0',
     },
     'irc.freenode.#nim': {
-        'notify': '0',
+        'notify': '2',
     },
     'irc.freenode.#notmuch': {
         'notify': '0',

@@ -34,7 +34,7 @@ brew 'graphviz'
 
 # terminal
 brew 'fish'
-brew 'asciinema'
+brew 'asciinema'. args: ['HEAD']
 brew 'since'
 brew 'fsevent_watch'
 
@@ -92,6 +92,10 @@ brew 'samdmarshall/formulae/nslocalizer'
 brew 'samdmarshall/formulae/secure-env'
 brew 'samdmarshall/formulae/scan-build'
 brew 'samdmarshall/formulae/preview'
+brew 'samdmarshall/formulae/images2pdf'
+brew 'samdmarshall/formulae/html2pdf'
+brew 'samdmarshall/formulae/c2nim'
+brew 'samdmarshall/formulae/battery-level'
 
 
 # languages

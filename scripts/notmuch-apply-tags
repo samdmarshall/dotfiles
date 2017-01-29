@@ -26,6 +26,7 @@ apply_tags "+Alerts +Alerts.Prey"           "from:@preyproject.com"
 apply_tags "+Alerts +Alerts.IFTTT"          "from:alerts@ifttt.com or from:support@ifttt.com"
 apply_tags "+Alerts +Alerts.asciinema"      "from:hello@asciinema.org"
 apply_tags "+Alerts +Alerts.IndieGoGo"      "from:noreply@indiegogo.com"
+apply_tags "+Alerts +Alerts.TurboTax"       "from:do_not_reply@intuit.com or from:turbotax@notification.intuit.com"
 
 # Tags that get filed under "Billing"
 apply_tags "+Billing +Billing.Amazon"           "from:order-update@amazon.com or from:noreply@amazon.com"

@@ -12,7 +12,7 @@ end
 set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:HOMEBREW_GITHUB_API_TOKEN)
 set -xg DANGER_GITHUB_API_TOKEN     (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:DANGER_GITHUB_API_TOKEN)
 set -xg GITHUB_TOKEN                (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:GITHUB_TOKEN)
-set -xg ASCIINEMA_TOKEN             (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:ASCIINEMA_TOKEN)
+set -xg ASCIINEMA_API_TOKEN         (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:ASCIINEMA_API_TOKEN)
 set -xg WEECHAT_PASSPHRASE          (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:WEECHAT_PASSPHRASE)
 
 # the gist command line utility, reuse the github token used by homebrew

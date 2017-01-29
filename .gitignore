@@ -1,7 +1,5 @@
 .DS_Store
 
-asciinema/
-
 keybase/
 
 fish/fish_history
@@ -18,8 +16,6 @@ getmail/*
 
 vdirsyncer/*
 !vdirsyncer/config
-
-mystatus/lockfile
 
 storage/*
 !storage/keys.keychain

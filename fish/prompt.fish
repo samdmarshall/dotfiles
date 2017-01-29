@@ -6,25 +6,18 @@ set __fish_prompt_normal normal
 set __fish_prompt_hostname (hostname -s)
 
 function display_battery_level
-    set -l raw_data (string split ';' (pmset -g rawbatt))
-    if test (count $raw_data) -gt 4
-        set -l level (string trim $raw_data[4] --chars " %")
-        set -l battery_color brgreen
-        if test $level -lt 10
-            set battery_color brred
-        else if test $level -lt 25
-            set battery_color red
-        else if test $level -lt 50
-            set battery_color yellow
-        else if test $level -lt 75
-            set battery_color green
-        end
-        set -l battery_status (string trim "$raw_data[3]" --chars " %")
-        if [ $battery_status  = "Charging" ]
-            set battery_color $battery_color --bold
-        end
-        printf '[%s%s%%%s]' (set_color $battery_color) $level (set_color $__fish_prompt_normal)
+    set -l level (battery-level --default)
+    set -l battery_color brgreen
+    if test $level -lt 10
+        set battery_color brred
+    else if test $level -lt 25
+        set battery_color red
+    else if test $level -lt 50
+        set battery_color yellow
+    else if test $level -lt 75
+        set battery_color green
     end
+    printf '[%s%s%%%s]' (set_color $battery_color) $level (set_color $__fish_prompt_normal)
 end
 
 function fish_right_prompt

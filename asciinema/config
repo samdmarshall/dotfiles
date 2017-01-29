@@ -1,0 +1,7 @@
+[api]
+
+[play]
+maxwait = 1
+
+[record]
+maxwait = 2
