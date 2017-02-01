@@ -9,6 +9,7 @@ if set -q SSH_CONNECTION
    unlock_keychain_if_necessary login.keychain
 end
 
+set -xg GITHUB_HOST                 (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:GITHUB_HOST)
 set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:HOMEBREW_GITHUB_API_TOKEN)
 set -xg DANGER_GITHUB_API_TOKEN     (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:DANGER_GITHUB_API_TOKEN)
 set -xg GITHUB_TOKEN                (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:GITHUB_TOKEN)

@@ -1,7 +1,7 @@
 [user]
-	email = me@samdmarshall.com
+	email = samantha.marshall@mlb.com
 	name = Samantha Marshall
-	signingkey = 4434EFA2
+	signingkey = F919C18D
 [core]
 	editor = micro
 [pull]
@@ -29,3 +29,6 @@
 	compatctionHeuristic = true
 [commit]
 	gpgsign = true
+
+[hub]
+    host = github.mlbam.net

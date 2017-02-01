@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-export NOTMUCH_CONFIG="/Users/Samantha/.config/notmuch/notmuch-config"
+export NOTMUCH_CONFIG="/Users/samantha.marshall/.config/notmuch/notmuch-config"
 
 timestamp=`date "+%s"`
-output_path="/Users/Samantha/eMail-backups/$timestamp.gz"
+output_path="/Users/samantha.marshall/eMail-backups/$timestamp.gz"
 /usr/local/bin/notmuch dump --gzip --output="$output_path"
 
-backup_files=`ls /Users/Samantha/eMail-backups/`
+backup_files=`ls /Users/samantha.marshall/eMail-backups/`
 for backup in $backup_files ; do
     extension="${backup##*.}"
     filename="${backup%.*}"
 
     backup_age=`echo "$timestamp - $filename" | bc`
     if [[ $backup_age -gt 86400 ]]; then
-        rm "/Users/Samantha/eMail-backups/$backup"
+        rm "/Users/samantha.marshall/eMail-backups/$backup"
     fi
 done

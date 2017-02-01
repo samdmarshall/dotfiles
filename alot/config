@@ -1,4 +1,4 @@
-attachment_prefix = /Users/Samantha/Downloads/
+attachment_prefix = /Users/samantha.marshall/Downloads/
 colourmode = 256
 editor_cmd = micro
 initial_command = "search tag:unread"
@@ -11,13 +11,11 @@ prefer_plaintext = True
 [accounts]
     [[default]]
         realname = Samantha Marshall
-        address = hello@pewpewthespells.com
-        aliases = hello@pewpewthespells.com,me@samdmarshall.com
-        sendmail_command = msmtp --file /Users/Samantha/.config/msmtp/msmtprc --read-recipients --read-envelope-from 
+        address = samantha.marshall@mlb.com
+        sendmail_command = msmtp --file /Users/samantha.marshall/.config/msmtp/msmtprc --read-recipients --read-envelope-from 
         sign_by_default = True
-        gpg_key = 0BFD99A4
-        sent_box = maildir:///Users/Samantha/eMail/Outbox/
-        draft_box = maildir:///Users/Samantha/eMail/Drafts/
+        sent_box = maildir:///Users/samantha.marshall/eMail/Outbox/
+        draft_box = maildir:///Users/samantha.marshall/eMail/Drafts/
         signature_as_attachment = False
                 
 

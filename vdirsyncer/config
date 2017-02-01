@@ -1,57 +1,20 @@
 [general]
 status_path = "~/.config/vdirsyncer/status"
 
-[pair icloud]
-a = "local_icloud"
-b = "remote_icloud"
-collections = ["from a", "from b"]
-conflict_resolution = "a wins"
+[pair mlb]
+a = "local_mlb"
+b = "remote_mlb"
+collections = null
 metadata = ["color", "displayname"]
 
-[storage local_icloud]
+[storage local_mlb]
 type = "filesystem"
-path = "~/Calendars/icloud"
+path = "~/Calendars/MLB"
 fileext = ".ics"
 
-[storage remote_icloud]
-type = "caldav"
-url = "https://caldav.icloud.com/"
-username.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-icloud-username", "-w", "/Users/Samantha/.config/storage/keys.keychain"]
-password.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-icloud-password", "-w", "/Users/Samantha/.config/storage/keys.keychain"]
-verify_fingerprint = "F5:CC:B1:A7:24:13:36:07:54:8B:00:D8:EB:40:2E:FC:A3:07:6D:58"
-
-
-[pair cocoaheads]
-a = "remote_cocoaheads"
-b = "local_cocoaheads"
-collections = null
-
-[storage local_cocoaheads]
-type = "filesystem"
-path = "~/Calendars/cocoaheads"
-fileext = ".ics"
-
-[storage remote_cocoaheads]
+[storage remote_mlb]
 type = "http"
-url = "http://www.cocoaheads.org//us/BostonMassachusetts/events.ics"
-read_only = "true"
-
-
-[pair ellen]
-a = "remote_ellen"
-b = "local_ellen"
-collections = null
-
-[storage local_ellen]
-type = "filesystem"
-path = "~/Calendars/ellen"
-fileext = ".ics"
-
-[storage remote_ellen]
-type = "http"
-url.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-ellen-calendar", "-w", "/Users/Samantha/.config/storage/keys.keychain"]
-read_only = "true"
-
+url.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-work-calendar", "-w", "login.keychain"]
 
 [pair us_holidays]
 a = "us_holiday_remote"
@@ -66,36 +29,4 @@ read_only = "true"
 [storage us_holiday_local]
 type = "filesystem"
 path = "~/Calendars/us-holiday"
-fileext = ".ics"
-
-
-[pair chronicle]
-a = "chronicle_ical"
-b = "chronicle_khal"
-collections = null
-
-[storage chronicle_ical]
-type = "filesystem"
-path = "~/Library/Calendars/019AA509-13C1-4887-BB5F-BCD632068918.calendar/Events"
-fileext = ".ics"
-
-[storage chronicle_khal]
-type = "filesystem"
-path = "~/Calendars/chronicle"
-fileext = ".ics"
-
-
-[pair birthdays]
-a = "birthdays_ical"
-b = "birthdays_khal"
-collections = null
-
-[storage birthdays_ical]
-type = "filesystem"
-path = "~/Library/Calendars/BCD5BB2D-2DD8-4F92-A8DE-935F5453C262.calendar/Events"
-fileext = ".ics"
-
-[storage birthdays_khal]
-type = "filesystem"
-path = "~/Calendars/birthdays"
 fileext = ".ics"

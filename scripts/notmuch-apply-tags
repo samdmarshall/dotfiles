@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export NOTMUCH_CONFIG="/Users/Samantha/.config/notmuch/notmuch-config"
+export NOTMUCH_CONFIG="/Users/samantha.marshall/.config/notmuch/notmuch-config"
 
 
 
@@ -13,53 +13,8 @@ function apply_tags {
 
 # Tags that get filed under "Alerts" 
 apply_tags "+Alerts +Alerts.Apple"          "from:noreply@email.apple.com"
-apply_tags "+Alerts +Alerts.Amazon"         "from:-confirm@amazon.com"
 apply_tags "+Alerts +Alerts.CircleCI"       "from:@circleci.com"
-apply_tags "+Alerts +Alerts.Kickstarter"    "from:no-reply@kickstarter.com"
-apply_tags "+Alerts +Alerts.Meetup"         "from:info@meetup.com"
-apply_tags "+Alerts +Alerts.Linode"         "subject:'Linode Alert' or subject:'Linode Events Notification' or from:noreply@linode.com"
-apply_tags "+Alerts +Alerts.Synology"       "from:notification@synology.com or from:@synologynotification.com"
-apply_tags "+Alerts +Alerts.KeyBase"        "from:notify@keybase.io"
-apply_tags "+Alerts +Alerts.LetsEncrypt"    "from:expiry@letsencrypt.org"
-apply_tags "+Alerts +Alerts.UPS"            "from:mcinfo@ups.com"
-apply_tags "+Alerts +Alerts.Prey"           "from:@preyproject.com"
-apply_tags "+Alerts +Alerts.IFTTT"          "from:alerts@ifttt.com or from:support@ifttt.com"
 apply_tags "+Alerts +Alerts.asciinema"      "from:hello@asciinema.org"
-apply_tags "+Alerts +Alerts.IndieGoGo"      "from:noreply@indiegogo.com"
-apply_tags "+Alerts +Alerts.TurboTax"       "from:do_not_reply@intuit.com or from:turbotax@notification.intuit.com"
-
-# Tags that get filed under "Billing"
-apply_tags "+Billing +Billing.Amazon"           "from:order-update@amazon.com or from:noreply@amazon.com"
-apply_tags "+Billing +Billing.Apple"            "from:orders.apple.com"
-apply_tags "+Billing +Billing.Apple"            "from:donotreply@apple.com"
-apply_tags "+Billing +Billing.Apple"            "from:concierge@insideapple.com"
-apply_tags "+Billing +Billing.Apple"            "from:AMR_Payment_Processing_US@apple.com"
-apply_tags "+Billing +Billing.Apple"            "from:order_change@store.apple.com"
-apply_tags "+Billing +Billing.Apple"            "from:do_not_reply@apple.com"
-apply_tags "+Billing +Billing.ATT"              "from:'AT&T Customer Care for Wireless'"
-apply_tags "+Billing +Billing.BoA"              "from:onlinebanking@ealerts.bankofamerica.com or from:merrilledge@ml.com or from:bankofamerica.com"
-apply_tags "+Billing +Billing.Blizzard"         "from:noreply@em.blizzard.com or from:noreply@blizzard.com"
-apply_tags "+Billing +Billing.Github"           "from:support@github.com or subject:'[GitHub] Payment Receipt'"
-apply_tags "+Billing +Billing.Github"           "subject:'[Github] Payment Receipt for samdmarshall'"
-apply_tags "+Billing +Billing.Grubhub"          "from:order@grubhub.com or from:orders@eat.grubhub.com"
-apply_tags "+Billing +Billing.iTunesReceipts"   "from:do_not_reply@itunes.com or from:no_reply@email.apple.com"
-apply_tags "+Billing +Billing.JetBlue"          "from:notifications@jetblue.com or from:jetblueairways@email.jetblue.com"
-apply_tags "+Billing +Billing.Linode"           "from:billing@linode.com"
-apply_tags "+Billing +Billing.NameDotCom"       "from:support@name.com or from:noreply@name.com"
-apply_tags "+Billing +Billing.Simple"           "from:notify@e.simple.com or from:support@simple.com or from:notify@simple.com"
-apply_tags "+Billing +Billing.PlayStation"      "from:Sony@email.sonyentertainmentnetwork.com or from:PlayStation@playstationemail.com"
-apply_tags "+Billing +Billing.PayPal"           "from:service@paypal.com or from:member@paypal.com or from:paypal@paypal.com"
-apply_tags "+Billing +Billing.Patreon"          "from:bingo@patreon.com"
-apply_tags "+Billing +Billing.StudentLoans"     "from:info@borrowerservices.mygreatlakes.org"
-apply_tags "+Billing +Billing.HumbleBundle"     "from:contact@humblebundle.com or subject:'Your Humble Bundle receipt'"
-apply_tags "+Billing +Billing.SquareCash"       "from:cash@square.com"
-apply_tags "+Billing +Billing.Bandcamp"         "from:noreply@bandcamp.com"
-apply_tags "+Billing +Billing.Fidelity"         "from:Fidelity.Investments.email@workplacedocs.fidelity.com"
-apply_tags "+Billing +Billing.Fidelity"         "from:Fidelity.Investments@mail.fidelity.com"
-apply_tags "+Billing +Billing.TurboTax"         "from:TurboTax@e.turbotax.intuit.com"
-apply_tags "+Billing +Billing.Subscriptions"    "from:support@getcloudapp.com"
-apply_tags "+Billing +Billing.Subscriptions"    "from:support@raynersw.com or from:support@raynersoftware.com"
-apply_tags "+Billing +Billing.Fangamer"         "from:orders@fangamer.com"
 
 # Tags that file under "Developer"
 apply_tags "+Developer +Developer.Apple"        "from:noreply-appledev@apple.com or from:developer@insideapple.com"
@@ -67,44 +22,33 @@ apply_tags "+Developer +Developer.Github"       "from:notifications@github.com"
 apply_tags "+Developer +Developer.Github"       "from:noreply@github.com or to:@noreply.github.com or cc:mentions@noreply.github.com"
 apply_tags "+Developer +Developer.Radar"        "from:devbugs@apple.com or from:dts-bugmail@group.apple.com"
 apply_tags "+Developer +Developer.Seed"         "from:seedsu@apple.com or from:seedx@apple.com or subject:'AppleSeed' or subject:'Seed Notice'"
-apply_tags "+Developer +Developer.CodeClimate"  "from:hello@codeclimate.com"
 
-# Various mailing lists
-apply_tags "+MailingList" "from:security-announce-request@lists.apple.com"
-apply_tags "+MailingList" "from:macbeta@list.valvesoftware.com"
-apply_tags "+MailingList" "from:product-security-noreply@lists.apple.com"
-apply_tags "+MailingList" "from:darwin-dev@lists.apple.com"
-apply_tags "+MailingList" "to:Women-Who-Code-Boston-list@meetup.com"
-apply_tags "+MailingList" "to:darwin-dev@lists.apple.com"
-apply_tags "+MailingList" "to:cocoaheadsboston@googlegroups.com"
-apply_tags "+MailingList" "to:bug-texinfo@gnu.org"
-apply_tags "+MailingList" "to:Women-Who-Code-Boston"
-apply_tags "+MailingList" "from:AppleTeacher@InsideApple.apple.com"
-apply_tags "+MailingList" "from:getmail-help@lists.pyropus.ca or from:getmail@lists.pyropus.ca or to:getmail@lists.pyropus.ca"
+# WFH/OoO
+apply_tags "+WFH" "subject:WFH or subject:OOO"
 
-# Tags about employment
-apply_tags "+Employment" "tag:Employment.iRobot"
+# Pivotal
+apply_tags "+Pivotal" "from:notifications@pivotaltracker.com"
 
-# garbage
-apply_tags "+spam" "subject:SPAM"
-apply_tags "+spam" "from:happybirthday@movies.fandango.com"
-apply_tags "+spam" "from:customer-reviews-messages@amazon.com"
-apply_tags "+spam" "from:store-news@amazon.com"
-apply_tags "+spam" "from:@marketplace.amazon.com"
-apply_tags "+spam" "from:recommendations@ifttt.com"
+# Github
+
+# Slack
+apply_tags "+Slack" "from:no-reply@slack.com"
 
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"
 apply_tags "-inbox"     "tag:Alerts"
-apply_tags "-inbox"     "tag:Billing"
 apply_tags "-inbox"     "tag:Developer"
-apply_tags "-inbox"     "tag:MailingList"
 apply_tags "-inbox"     "tag:Archive"
-apply_tags "-inbox"     "tag:Employment"
+apply_tags "-inbox"     "tag:WFH"
+apply_tags "-inbox"     "tag:Pivotal"
+apply_tags "-inbox"     "tag:Github"
 apply_tags "-inbox"     "tag:deleted"
 apply_tags "-inbox"     "tag:spam"
+apply_tags "-inbox"     "tag:Slack"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"
 apply_tags "-unread" "tag:spam"
 apply_tags "-unread" "tag:MailingList"
+apply_tags "-unread" "tag:WFH"
+apply_tags "-unread" "tag:Slack"

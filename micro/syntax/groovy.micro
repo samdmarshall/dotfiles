@@ -1,0 +1,22 @@
+## Here is an example for Groovy.
+
+syntax "groovy" "\.(groovy|gradle)$"
+
+# Keywords
+color statement "\b(boolean|byte|char|double|enum|float|int|long|new|short|super|this|transient)\b"
+color statement  "\b(as|assert|break|case|catch|continue|default|do|else|finally|for|goto|if|in|return|switch|throw|try|while)\b"
+color statement  "\b(abstract|class|extends|implements|import|interface|native|package|private|protected|public|static|strictfp|synchronized|throws|trait|void|volatile)\b"
+color statement "\b(const|def|final|instanceof)\b"
+color statement "\b(true|false|null)\b"
+
+# Strings
+color constant.string ""(\\.|[^"])*"" "'(\\.|[^'])*'"
+
+# Interpolation
+color identifier "\$\{[^\}]*}"
+
+# Comments
+color comment "^//.*"
+color comment "\s//.*"
+color comment start="^/\*(\*)?" end="\*/"
+color comment start="\s/\*(\*)?" end="\*/"

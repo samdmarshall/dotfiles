@@ -34,7 +34,7 @@ brew 'graphviz'
 
 # terminal
 brew 'fish'
-brew 'asciinema'. args: ['HEAD']
+brew 'asciinema', args: ['HEAD']
 brew 'since'
 brew 'fsevent_watch'
 
