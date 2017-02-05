@@ -5,7 +5,7 @@ function unlock_keychain_if_necessary --argument keychain_name
     end
 end
 
-if set -q SSH_CONNECTION
+if set -q SSH_CONNECTION and status --is-login
    unlock_keychain_if_necessary login.keychain
 end
 

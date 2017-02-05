@@ -1,5 +1,5 @@
 # disable greeting
-set fish_greeting
+set fish_greeting "くコ:彡 welcome to fish"
 
 # know what platform this is running on
 set -u FISH_PLATFORM_NAME (command uname -s)
@@ -14,11 +14,11 @@ set -xg GOPATH "$HOME/.go"
 set -xg FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
 set -xg FZF_DEFAULT_OPTS "--preview=\"preview --metadata {} \""
 
-set -xg NOTMUCH_CONFIG "$HOME/.config/notmuch/notmuch-config"
+set -xg NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch/notmuch-config"
 
-set -xg HTTPIE_CONFIG_DIR "$HOME/.config/httpie"
+set -xg HTTPIE_CONFIG_DIR "$XDG_CONFIG_HOME/httpie"
 
-set -xg GIT_CONFIG "$HOME/.config/git/config"
+set -xg GIT_CONFIG "$XDG_CONFIG_HOME/git/config"
 
 set -xg HOMEBREW_INSTALL_BADGE 🌈
 set -xg HOMEBREW_NO_INSECURE_REDIRECT true
@@ -30,9 +30,7 @@ if test ! -e $GEM_HOME_BIN
     set -e GEM_HOME_BIN
 end
 
-set -xg XDG_CONFIG_HOME ~/.config/
-
-set -xg WEECHAT_HOME ~/.config/weechat/
+set -xg WEECHAT_HOME $XDG_CONFIG_HOME/weechat/
 
 # setting up local search paths
 set -u LOCAL_RUBY_PATH (command gem environment gempath | command sed -e 's=:.*$=/bin=')

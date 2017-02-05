@@ -9,4 +9,5 @@
     "CtrlG": "UnbindKey",
 
     "CtrlK": "SelectToEndOfLine,Delete",
+    "F1": "UnbindKey",
 }

@@ -17,6 +17,9 @@ function display_battery_level
     else if test $level -lt 75
         set battery_color green
     end
+    if test (battery-level --default --charging) -eq 1
+        set battery_color $battery_color --bold
+    end
     printf '[%s%s%%%s]' (set_color $battery_color) $level (set_color $__fish_prompt_normal)
 end
 
@@ -29,7 +32,9 @@ function fish_right_prompt
     end
     switch (command echo "$FISH_PLATFORM_NAME")
         case 'Darwin' 'darwin'
-            display_battery_level
+            if test (battery-level --list) -gt 0
+                display_battery_level
+            end
     end
 end
 
