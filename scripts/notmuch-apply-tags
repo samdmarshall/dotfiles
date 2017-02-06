@@ -30,6 +30,7 @@ apply_tags "+WFH" "subject:WFH or subject:OOO"
 apply_tags "+Pivotal" "from:notifications@pivotaltracker.com"
 
 # Github
+apply_tags "+Github" "from:noreply@mlb.com and to:noreply@mlb.com"
 
 # Slack
 apply_tags "+Slack" "from:no-reply@slack.com"

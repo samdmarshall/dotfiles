@@ -56,6 +56,7 @@
             "commenttype": "# %s"
         },
         "*.nim": {
-            "tabsize": 2
+            "tabsize": 2,
+            "commenttype": "# %s"
         }
 }
