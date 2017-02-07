@@ -7,7 +7,7 @@
   "default_minute": 0, 
   "highlight": true, 
   "journals": {
-    "default": "/Users/Samantha/Documents/jrnl.txt"
+    "default": "/Users/samantha.marshall/Documents/jrnl.txt"
   }, 
   "tagsymbols": "@"
 }

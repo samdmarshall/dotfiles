@@ -11,6 +11,7 @@ color statement "\b(true|false|null)\b"
 
 # Strings
 color constant.string ""(\\.|[^"])*"" "'(\\.|[^'])*'"
+color constant.number "\b[0-9]+\b"
 
 # Interpolation
 color identifier "\$\{[^\}]*}"
