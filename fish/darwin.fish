@@ -1,21 +1,11 @@
-function unlock_keychain_if_necessary --argument keychain_name
-    string match --ignore-case "User interaction is not allowed" (command security show-keychain-info $keychain_name 2>&1)
-    if test $status -eq 1
-        command security unlock-keychain $keychain_name
-    end
-end
 
-if set -q SSH_CONNECTION and status --is-login
-   unlock_keychain_if_necessary login.keychain
-end
-
-set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:HOMEBREW_GITHUB_API_TOKEN)
-set -xg DANGER_GITHUB_API_TOKEN     (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:DANGER_GITHUB_API_TOKEN)
-set -xg GITHUB_TOKEN                (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:GITHUB_TOKEN)
-set -xg ASCIINEMA_API_TOKEN         (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:ASCIINEMA_API_TOKEN)
-set -xg WEECHAT_PASSPHRASE          (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:WEECHAT_PASSPHRASE)
-set -xg HOMEBREW_PIPELINE_API_TOKEN (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:HOMEBREW_PIPELINE_API_TOKEN)
-set -xg GISTIT_TOKEN                (secure-env --keychain:$KEY_STORAGE_KEYCHAIN_PATH --name:GISTIT_TOKEN)
+set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env get --key:HOMEBREW_GITHUB_API_TOKEN)
+set -xg DANGER_GITHUB_API_TOKEN     (secure-env get --key:DANGER_GITHUB_API_TOKEN)
+set -xg GITHUB_TOKEN                (secure-env get --key:GITHUB_TOKEN)
+set -xg ASCIINEMA_API_TOKEN         (secure-env get --key:ASCIINEMA_API_TOKEN)
+set -xg WEECHAT_PASSPHRASE          (secure-env get --key:WEECHAT_PASSPHRASE)
+set -xg HOMEBREW_PIPELINE_API_TOKEN (secure-env get --key:HOMEBREW_PIPELINE_API_TOKEN)
+set -xg GISTIT_TOKEN                (secure-env get --key:GISTIT_TOKEN)
 
 function __fish_man_page --argument name --argument section
     set -l open_string ""

@@ -32,7 +32,7 @@ settings = {
         'notify': '3',
     },
     'irc.freenode.#macdev': {
-        'notify': '3',
+        'notify': '0',
     },
     'irc.freenode.#OSXRE': {
         'notify': '3',

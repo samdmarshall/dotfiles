@@ -5,7 +5,7 @@ function ssh --wraps=ssh
             set additional_arguments $argv[2..-1]
         end
         switch $argv[1]
-            case 'demi'
+            case 'tolva'
                 command ssh Demi.local $additional_arguments
             case 'galactica'
                 command ssh Galactica.local $additional_arguments
@@ -22,4 +22,4 @@ function ssh --wraps=ssh
     end
 end
 
-complete --command ssh --arguments "demi galactica server btmm"
+complete --command ssh --arguments "tolva galactica server btmm"

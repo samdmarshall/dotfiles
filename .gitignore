@@ -19,6 +19,7 @@ vdirsyncer/*
 
 storage/*
 !storage/keys.keychain
+!storage/secure
 
 weechat/logs/*
 
