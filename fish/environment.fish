@@ -41,7 +41,7 @@ end
 # setting $PATH
 set fish_user_paths $LOCAL_RUBY_PATH "$HOME/.config/scripts" $GEM_HOME_BIN
 
-if test command -v secure-env
+if command -s secure-env > /dev/null
     set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env get --key:HOMEBREW_GITHUB_API_TOKEN)
     set -xg DANGER_GITHUB_API_TOKEN     (secure-env get --key:DANGER_GITHUB_API_TOKEN)
     set -xg GITHUB_TOKEN                (secure-env get --key:GITHUB_TOKEN)
