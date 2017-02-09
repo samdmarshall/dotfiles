@@ -1,3 +1,0 @@
-## Here is an example for xml files.
-
-syntax "xml" "Xcode Workspace" "\.xcworkspacedata$"
