@@ -11,8 +11,6 @@ switch (command echo "$FISH_PLATFORM_NAME")
         source "$XDG_CONFIG_HOME/fish/linux.fish"
 end
 
-alias reload "source ~/.config/fish/config.fish"
-
 # building prompt
 source "$XDG_CONFIG_HOME/fish/prompt.fish"
 
