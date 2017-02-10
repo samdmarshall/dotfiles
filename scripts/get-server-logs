@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-scp -r samdm@pewpewthespells.com:/var/www/pewpewthespells.com/logs/ /Users/Samantha/Sites/
+scp -r web-server:/var/www/pewpewthespells.com/logs/ /Users/Samantha/Sites/
 
 find ~/Sites/logs -name "*.gz" | xargs gunzip -f

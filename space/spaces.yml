@@ -4,12 +4,6 @@
 ~/Projects/sli:
   build:
     - python3 setup.py install
-~/Projects/secure-env:
-  build:
-    - nim compile --out:secure-env --app:console --passL:"-framework Foundation -framework Security" secureEnv.nim
-    - codesign -s "Developer ID" secure-env
-  check:
-    - nim check --verbosity:2 secureEnv.nim
 ~/Projects/micro-fzf-plugin:
   release:
     - if [ -z $TAG ]; then echo "please define a tag by passing --env='TAG=#.#'"; exit; fi;
