@@ -10,4 +10,7 @@
 
     "CtrlK": "SelectToEndOfLine,Delete",
     "F1": "UnbindKey",
+
+    "Up": "UnbindKey,natural_navigation.NavigateUp",
+    "Down": "UnbindKey,natural_navigation.NavigateDown",
 }

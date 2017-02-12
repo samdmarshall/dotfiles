@@ -14,7 +14,9 @@
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
     ],
     "pluginrepos": [
-        "https://raw.githubusercontent.com/samdmarshall/micro-solarized-light-colortheme/master/repo.json"
+        "https://raw.githubusercontent.com/samdmarshall/micro-solarized-light-colortheme/master/repo.json",
+        "https://raw.githubusercontent.com/samdmarshall/micro-natural-navigation-plugin/master/repo.json",
+        "https://raw.githubusercontent.com/samdmarshall/micro-scratch-plugin/master/repo.json"
     ],
     "ruler": true,
     "savecursor": false,
@@ -47,8 +49,8 @@
             "tabstospaces": true
         },
         "*.fish": {
-	        "commenttype": "# %s"
-	    },
+            "commenttype": "# %s"
+        },
         "{M,m}akefile": {
             "commenttype": "# %s"
         },
@@ -56,6 +58,7 @@
             "commenttype": "# %s"
         },
         "*.nim": {
-            "tabsize": 2
+            "tabsize": 2,
+            "commenttype": "# %s"
         }
 }
