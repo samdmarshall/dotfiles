@@ -83,6 +83,7 @@ apply_tags "+MailingList" "to:bug-texinfo@gnu.org"
 apply_tags "+MailingList" "to:Women-Who-Code-Boston"
 apply_tags "+MailingList" "from:AppleTeacher@InsideApple.apple.com"
 apply_tags "+MailingList" "from:getmail-help@lists.pyropus.ca or from:getmail@lists.pyropus.ca or to:getmail@lists.pyropus.ca"
+apply_tags "+MailingList" "from:@bountysource.com"
 
 # Tags about employment
 apply_tags "+Employment" "tag:Employment.iRobot"
