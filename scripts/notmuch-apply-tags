@@ -38,7 +38,7 @@ apply_tags "+Billing +Billing.Apple"            "from:concierge@insideapple.com"
 apply_tags "+Billing +Billing.Apple"            "from:AMR_Payment_Processing_US@apple.com"
 apply_tags "+Billing +Billing.Apple"            "from:order_change@store.apple.com"
 apply_tags "+Billing +Billing.Apple"            "from:do_not_reply@apple.com"
-apply_tags "+Billing +Billing.ATT"              "from:'AT&T Customer Care for Wireless'"
+apply_tags "+Billing +Billing.ATT"              "from:'AT&T Customer Care for Wireless' or from:att-mail.com"
 apply_tags "+Billing +Billing.BoA"              "from:onlinebanking@ealerts.bankofamerica.com or from:merrilledge@ml.com or from:bankofamerica.com"
 apply_tags "+Billing +Billing.Blizzard"         "from:noreply@em.blizzard.com or from:noreply@blizzard.com"
 apply_tags "+Billing +Billing.Github"           "from:support@github.com or subject:'[GitHub] Payment Receipt'"
@@ -97,6 +97,10 @@ apply_tags "+spam" "from:store-news@amazon.com"
 apply_tags "+spam" "from:@marketplace.amazon.com"
 apply_tags "+spam" "from:recommendations@ifttt.com"
 
+# from me
+apply_tags "+sent" "from:@pewpewthespells.com or from:me@samdmarshall.com"
+
+
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"
 apply_tags "-inbox"     "tag:Alerts"
@@ -108,8 +112,10 @@ apply_tags "-inbox"     "tag:Employment"
 apply_tags "-inbox"     "tag:deleted"
 apply_tags "-inbox"     "tag:spam"
 apply_tags "-inbox"     "tag:Employment"
+apply_tags "-inbox"     "tag:sent"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"
 apply_tags "-unread" "tag:spam"
 apply_tags "-unread" "tag:MailingList"
+apply_tags "-unread" "tag:sent"

@@ -7,6 +7,8 @@ theme = tomorrow
 bug_on_exit = False
 honor_followup_to = True
 prefer_plaintext = True
+auto_remove_unread = True
+
 
 [accounts]
     [[default]]
@@ -119,4 +121,4 @@ prefer_plaintext = True
         'g h' =
         'g l' =
         ' ' = move next
-        v = pipeto extract_url
+        v = pipeto extract_url --shell
