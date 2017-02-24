@@ -1,6 +1,8 @@
 
-set -xg GITHUB_HOST                 (secure-env get --key:GITHUB_HOST)
+set -xg DANGER_GITHUB_HOST          (secure-env get --key:GITHUB_HOST)
+set -xg DANGER_GITHUB_API_HOST      (secure-env get --key:DANGER_GITHUB_API_HOST)
 set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env get --key:HOMEBREW_GITHUB_API_TOKEN)
+set -xg DANGER_GITHUB_API_TOKEN 	(secure-env get --key:DANGER_GITHUB_API_TOKEN)
 set -xg GITHUB_TOKEN                (secure-env get --key:GITHUB_TOKEN)
 set -xg ASCIINEMA_API_TOKEN         (secure-env get --key:ASCIINEMA_API_TOKEN)
 set -xg WEECHAT_PASSPHRASE          (secure-env get --key:WEECHAT_PASSPHRASE)

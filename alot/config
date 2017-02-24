@@ -6,7 +6,6 @@ tabwidth = 4
 theme = tomorrow
 bug_on_exit = False
 honor_followup_to = True
-prefer_plaintext = True
 
 [accounts]
     [[default]]

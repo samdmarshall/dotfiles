@@ -1,4 +1,8 @@
 ---
 database: ~/.config/storage/secure
-encrypt_cmd: "gpg --output {output} --recipient samantha.marshall@mlb.com --encrypt {input}"
-decrypt_cmd: "gpg --no-tty --quiet --output {output} --decrypt {input}"
+encrypt: 
+  cmd: "/usr/local/bin/gpg"
+  args: ["--armor", "--recipient", "samantha.marshall@mlb.com", "--encrypt"]
+decrypt:
+  cmd: "/usr/local/bin/gpg"
+  args: ["--no-tty", "--quiet", "--decrypt"]

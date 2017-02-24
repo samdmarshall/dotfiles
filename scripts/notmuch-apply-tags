@@ -30,10 +30,11 @@ apply_tags "+WFH" "subject:WFH or subject:OOO"
 apply_tags "+Pivotal" "from:notifications@pivotaltracker.com"
 
 # Github
-apply_tags "+Github" "from:noreply@mlb.com and to:noreply@mlb.com"
+apply_tags "+Github" "from:noreply@mlbam.com and to:noreply@mlbam.com"
 
 # Slack
 apply_tags "+Slack" "from:no-reply@slack.com"
+
 
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"
@@ -46,6 +47,8 @@ apply_tags "-inbox"     "tag:Github"
 apply_tags "-inbox"     "tag:deleted"
 apply_tags "-inbox"     "tag:spam"
 apply_tags "-inbox"     "tag:Slack"
+apply_tags "-inbox"     "tag:Accounts"
+apply_tags "-inbox"     "tag:News"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"

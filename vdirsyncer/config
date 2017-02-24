@@ -14,7 +14,7 @@ fileext = ".ics"
 
 [storage remote_mlb]
 type = "http"
-url.fetch = ["command", "/usr/bin/security", "find-internet-password", "-a", "vdirsyncer-work-calendar", "-w", "login.keychain"]
+url.fetch = ["command", "/usr/local/bin/secure-env", "get", "--key:vdirsyncer-work-calendar"]
 
 [pair us_holidays]
 a = "us_holiday_remote"
