@@ -1,6 +1,5 @@
 # setting up the basic environment
 set -xg XDG_CONFIG_HOME "$HOME/.config"
-set -xg XDG_DATA_HOME "$HOME/.config"
 
 source "$XDG_CONFIG_HOME/fish/environment.fish"
 
