@@ -13,9 +13,6 @@ readonly = True
 path = ~/Calendars/icloud/DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8/
 type = discover
 color = dark magenta
-[[Bus Schedules]]
-path = ~/Calendars/icloud/86565acaa4d7449fa6330e4ad993d96d/
-type = discover
 [[Deliveries]]
 path = ~/Calendars/icloud/1147A1C2-EC2C-4373-AD36-54378CBC3824/
 type = discover
@@ -40,6 +37,9 @@ path = ~/Calendars/birthdays
 type = discover
 color = light gray
 readonly = True
+[[Work Events]]
+path = ~/Calendars/icloud/94ff4eb9bc104fdfa44b2e1acd03ba8b/
+type = discover
 
 [locale]
 timeformat = %H:%M
