@@ -33,6 +33,7 @@ function NavigateDown()
             CurView().Cursor:Down()
         end
     end
+    CurView():Relocate()
 end
 
 function MoveUp()
@@ -61,4 +62,5 @@ function NavigateUp()
             CurView().Cursor:Up()
         end
     end
+    CurView():Relocate()
 end
