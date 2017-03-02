@@ -37,7 +37,7 @@ if test ! -e $LOCAL_RUBY_PATH
 end
 
 # setting $PATH
-set fish_user_paths $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN
+set fish_user_paths $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN "$GOPATH/bin"
 
 if command -s secure-env > /dev/null
     set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env get --key:HOMEBREW_GITHUB_API_TOKEN)

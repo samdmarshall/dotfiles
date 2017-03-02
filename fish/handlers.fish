@@ -53,10 +53,6 @@ end
 function log_exec_to_influx --on-event fish_preexec
     set -l command_list (string split ' ' $argv)
     if test (count $command_list) -gt 1
-        set -l command_list $command_list ""
-        set -l arguments (string trim --right "$command_list[2..-1]")
-        set -l arguments (string replace --all "'" "\'" "$arguments")
-        set -l arguments (string replace --all '"' '\"' "$arguments")
-        command influx -database "fish_history" -execute "insert cmd_hist command=\"$command_list[1]\",arguments=\"$arguments\",location=\"$PWD\""
+        command influx -database "fish_history" -execute "insert cmd_hist command=\"$command_list[1]\""
     end
 end
