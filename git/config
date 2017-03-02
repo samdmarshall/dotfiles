@@ -29,5 +29,5 @@
 	compatctionHeuristic = true
 [commit]
 	gpgsign = true
-[url "ssh://git@"]
+[url "ssh://"]
     insteadOf = https://
