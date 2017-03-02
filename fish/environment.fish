@@ -30,8 +30,6 @@ end
 
 set -xg WEECHAT_HOME "$XDG_CONFIG_HOME/weechat/"
 
-set -xg WATSON_DIR "$XDG_CONFIG_HOME/watson/"
-
 # setting up local search paths
 set -u LOCAL_RUBY_PATH (command gem environment gempath | command sed -e 's=:.*$=/bin=')
 if test ! -e $LOCAL_RUBY_PATH
