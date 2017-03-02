@@ -53,6 +53,6 @@ end
 function log_exec_to_influx --on-event fish_preexec
     set -l command_list (string split ' ' $argv) ""
     if test (count $command_list) -gt 1
-        command influx -database "fish_history" -execute "insert cmd_hist command=\"$command_list[1]\""
+        echo $argv | cmdparse --database:"fish_history"
     end
 end
