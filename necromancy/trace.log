@@ -1,0 +1,9 @@
+[DEBUG] [preferences.nim:33] Loading preference data...
+[INFO] [preferences.nim:42] Mapping '<ctrl-q>' to 'quit'
+[INFO] [preferences.nim:42] Mapping ':' to 'command-prompt'
+[INFO] [preferences.nim:42] Mapping '<left>' to 'navigate-left'
+[INFO] [preferences.nim:42] Mapping '<ctrl-z>' to 'suspend'
+[INFO] [preferences.nim:42] Mapping '<up>' to 'navigate-up'
+[INFO] [preferences.nim:42] Mapping '' to 'help'
+[INFO] [preferences.nim:42] Mapping '<down>' to 'navigate-down'
+[INFO] [preferences.nim:42] Mapping '<right>' to 'navigate-right'
