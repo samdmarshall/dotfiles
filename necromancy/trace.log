@@ -1,9 +1,15 @@
-[DEBUG] [preferences.nim:33] Loading preference data...
-[INFO] [preferences.nim:42] Mapping '<ctrl-q>' to 'quit'
-[INFO] [preferences.nim:42] Mapping ':' to 'command-prompt'
-[INFO] [preferences.nim:42] Mapping '<left>' to 'navigate-left'
-[INFO] [preferences.nim:42] Mapping '<ctrl-z>' to 'suspend'
-[INFO] [preferences.nim:42] Mapping '<up>' to 'navigate-up'
-[INFO] [preferences.nim:42] Mapping '' to 'help'
-[INFO] [preferences.nim:42] Mapping '<down>' to 'navigate-down'
-[INFO] [preferences.nim:42] Mapping '<right>' to 'navigate-right'
+[DEBUG] [settings/preferences.nim:35] Loading preference data...
+[INFO] [settings/preferences.nim:44] Mapping '<ctrl-q>' to 'quit'
+[INFO] [settings/preferences.nim:44] Mapping ':' to 'command-prompt'
+[INFO] [settings/preferences.nim:44] Mapping '<left>' to 'navigate-left'
+[INFO] [settings/preferences.nim:44] Mapping '<ctrl-z>' to 'suspend'
+[INFO] [settings/preferences.nim:44] Mapping '<up>' to 'navigate-up'
+[INFO] [settings/preferences.nim:44] Mapping '' to 'help'
+[INFO] [settings/preferences.nim:44] Mapping '<down>' to 'navigate-down'
+[INFO] [settings/preferences.nim:44] Mapping '<right>' to 'navigate-right'
+[WARN] [events/eventhandler.nim:50] unknown command!
+[WARN] [events/eventhandler.nim:50] unknown command!
+[WARN] [events/eventhandler.nim:50] unknown command!
+[WARN] [events/eventhandler.nim:50] unknown command!
+[WARN] [events/eventhandler.nim:50] unknown command!
+[WARN] [events/eventhandler.nim:50] unknown command!
