@@ -8,6 +8,10 @@ set -xg EDITOR micro
 set -xg PAGER w3m
 
 set -xg GOPATH "$HOME/.go"
+set -u GOPATH_BIN "$GOPATH/bin/"
+if test ! -e $GOPATH_BIN
+    set -e GOPATH_BIN
+end
 
 set -xg FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
 set -xg FZF_DEFAULT_OPTS "--preview=\"preview --metadata {} \""
@@ -37,7 +41,7 @@ if test ! -e $LOCAL_RUBY_PATH
 end
 
 # setting $PATH
-set fish_user_paths $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN "$GOPATH/bin"
+set fish_user_paths $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $GOPATH_BIN
 
 if command -s secure-env > /dev/null
     set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env get --key:HOMEBREW_GITHUB_API_TOKEN)
