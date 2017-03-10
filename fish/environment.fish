@@ -8,7 +8,7 @@ set -xg EDITOR micro
 set -xg PAGER w3m
 
 set -xg GOPATH "$HOME/.go"
-set -u GOPATH_BIN "$GOPATH/bin/"
+set -u GOPATH_BIN "$GOPATH/bin"
 if test ! -e $GOPATH_BIN
     set -e GOPATH_BIN
 end
