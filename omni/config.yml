@@ -5,4 +5,5 @@ send:
 msgTemplate: |
   To: {maildrop}
   Subject: {name}
+  
   {body}

@@ -2,6 +2,6 @@
 
 set -l temp_file (mktemp --suffix ".html")
 
-goaccess --no-global-config --log-file $argv[1] --geoip-database /usr/local/var/GeoIP/GeoIP.dat --std-geoip --real-os --output="$temp_file"
+goaccess --no-global-config --log-file $argv[1] --real-os --output="$temp_file" # --std-geoip --geoip-database /usr/local/var/GeoIP/GeoIP.dat
 
 command open -a Safari $temp_file
