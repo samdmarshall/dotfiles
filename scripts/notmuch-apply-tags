@@ -103,6 +103,10 @@ apply_tags "+sent" "from:@pewpewthespells.com or from:me@samdmarshall.com"
 # charity donation related emails
 apply_tags "+Charity" "to:charities@"
 
+# looking for apartments
+apply_tags "+Apartment" "to:properties@"
+
+
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"
 apply_tags "-inbox"     "tag:Alerts"
@@ -116,6 +120,7 @@ apply_tags "-inbox"     "tag:spam"
 apply_tags "-inbox"     "tag:Employment"
 apply_tags "-inbox"     "tag:sent"
 apply_tags "-inbox"     "tag:Charity"
+apply_tags "-inbox"     "tag:Apartment"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"

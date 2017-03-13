@@ -52,4 +52,5 @@ if command -s secure-env > /dev/null
     set -xg HOMEBREW_PIPELINE_API_TOKEN (secure-env get --key:HOMEBREW_PIPELINE_API_TOKEN)
     set -xg GISTIT_TOKEN                (secure-env get --key:GISTIT_TOKEN)
     set -xg OMNI_SYNC_MAILDROP_ADDR     (secure-env get --key:OMNI_SYNC_MAILDROP_ADDR)
+    set -xg NIMBLE_GITHUB_API_TOKEN     (secure-env get --key:NIMBLE_GITHUB_API_TOKEN)
 end
