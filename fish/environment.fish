@@ -43,6 +43,8 @@ end
 # setting $PATH
 set fish_user_paths $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $GOPATH_BIN
 
+set -xg PASSWORD_STORE_ENABLE_EXTENSIONS true
+
 if command -s secure-env > /dev/null
     set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env get --key:HOMEBREW_GITHUB_API_TOKEN)
     set -xg DANGER_GITHUB_API_TOKEN     (secure-env get --key:DANGER_GITHUB_API_TOKEN)
