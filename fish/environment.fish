@@ -45,14 +45,10 @@ set fish_user_paths $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $G
 
 set -xg PASSWORD_STORE_ENABLE_EXTENSIONS true
 
-if command -s secure-env > /dev/null
-    set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env get --key:HOMEBREW_GITHUB_API_TOKEN)
-    set -xg DANGER_GITHUB_API_TOKEN     (secure-env get --key:DANGER_GITHUB_API_TOKEN)
-    set -xg GITHUB_TOKEN                (secure-env get --key:GITHUB_TOKEN)
-    set -xg ASCIINEMA_API_TOKEN         (secure-env get --key:ASCIINEMA_API_TOKEN)
-    set -xg WEECHAT_PASSPHRASE          (secure-env get --key:WEECHAT_PASSPHRASE)
-    set -xg HOMEBREW_PIPELINE_API_TOKEN (secure-env get --key:HOMEBREW_PIPELINE_API_TOKEN)
-    set -xg GISTIT_TOKEN                (secure-env get --key:GISTIT_TOKEN)
-    set -xg OMNI_SYNC_MAILDROP_ADDR     (secure-env get --key:OMNI_SYNC_MAILDROP_ADDR)
-    set -xg NIMBLE_GITHUB_API_TOKEN     (secure-env get --key:NIMBLE_GITHUB_API_TOKEN)
+if command -s rune > /dev/null
+    set -xg GITHUB_TOKEN                (rune get --key:GITHUB_TOKEN)
+    set -xg ASCIINEMA_API_TOKEN         (rune get --key:ASCIINEMA_API_TOKEN)
+    set -xg WEECHAT_PASSPHRASE          (rune get --key:WEECHAT_PASSPHRASE)
+    set -xg HOMEBREW_PIPELINE_API_TOKEN (rune get --key:HOMEBREW_PIPELINE_API_TOKEN)
+    set -xg OMNI_SYNC_MAILDROP_ADDR     (rune get --key:OMNI_SYNC_MAILDROP_ADDR)
 end

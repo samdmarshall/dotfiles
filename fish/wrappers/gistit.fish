@@ -1,3 +1,3 @@
 function gistit --wraps=gistit
-    command gistit -priv $argv
+    grimoire gistit gistit -priv $argv
 end
