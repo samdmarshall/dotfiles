@@ -4,8 +4,8 @@ set fish_greeting "くコ:彡 welcome to fish"
 # know what platform this is running on
 set -u FISH_PLATFORM_NAME (command uname -s)
 
-set -xg EDITOR micro
-set -xg PAGER w3m
+set -xg EDITOR "micro"
+set -xg PAGER "w3m"
 
 set -xg GOPATH "$HOME/.go"
 set -u GOPATH_BIN "$GOPATH/bin"
@@ -16,14 +16,9 @@ end
 set -xg FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
 set -xg FZF_DEFAULT_OPTS "--preview=\"preview --metadata {} \""
 
-set -xg NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch/notmuch-config"
-
-set -xg HTTPIE_CONFIG_DIR "$XDG_CONFIG_HOME/httpie"
-
 set -xg GIT_CONFIG "$XDG_CONFIG_HOME/git/config"
 
 set -xg WEECHAT_HOME "$XDG_CONFIG_HOME/weechat/"
-
 
 set -xg GEM_HOME "$HOME/.gem"
 set -u GEM_HOME_BIN "$GEM_HOME/bin"
@@ -39,8 +34,6 @@ end
 
 # setting $PATH
 set fish_user_paths $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $GOPATH_BIN
-
-set -xg PASSWORD_STORE_ENABLE_EXTENSIONS true
 
 if command -s rune > /dev/null
     set -xg GITHUB_TOKEN                (rune get --key:GITHUB_TOKEN)
