@@ -1,0 +1,29 @@
+
+[danger]
+secure = ["DANGER_GITHUB_API_TOKEN"]
+
+[nimble]
+secure = ["NIMBLE_GITHUB_API_TOKEN"]
+
+[brew]
+secure = ["HOMEBREW_GITHUB_API_TOKEN"]
+remove = ["GIT_CONFIG"]
+  [brew.additional]
+  HOMEBREW_INSTALL_BADGE = "🌈"
+  HOMEBREW_VERBOSE = true
+  HOMEBREW_NO_INSECURE_REDIRECT = true
+
+[gistit]
+secure = ["GISTIT_TOKEN"]
+
+[pass]
+  [pass.additional]
+  PASSWORD_STORE_ENABLE_EXTENSIONS = true
+
+[http]
+  [http.additional]
+  HTTPIE_CONFIG_DIR = "/Users/Samantha/.config/httpie/"
+
+[notmuch]
+  [notmuch.additional]
+  NOTMUCH_CONFIG = "/Users/Samantha/.config/notmuch/notmuch-config"

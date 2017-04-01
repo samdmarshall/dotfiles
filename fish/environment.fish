@@ -20,6 +20,8 @@ set -xg GIT_CONFIG "$XDG_CONFIG_HOME/git/config"
 
 set -xg WEECHAT_HOME "$XDG_CONFIG_HOME/weechat/"
 
+set -xg NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch/notmuch-config"
+
 set -xg GEM_HOME "$HOME/.gem"
 set -u GEM_HOME_BIN "$GEM_HOME/bin"
 if test ! -e $GEM_HOME_BIN

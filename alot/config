@@ -8,6 +8,7 @@ bug_on_exit = False
 honor_followup_to = True
 prefer_plaintext = True
 auto_remove_unread = True
+handle_mouse = True
 
 
 [accounts]
@@ -104,15 +105,15 @@ auto_remove_unread = True
         S = 
         R = untag unread
         U = tag unread
-        'ctrl s' = save --all
+        'ctrl s' = 
         g =
-        'ctrl r' = reply
+        'ctrl r' = 
         f = 
-        'ctrl f' = forward
+        'ctrl f' = 
         p = 
         n =
         b = 
-        'ctrl b' = bounce
+        'ctrl b' = 
         s = 
         r = 
         | = 

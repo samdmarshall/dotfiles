@@ -29,6 +29,8 @@ apply_tags "+Alerts +Alerts.IndieGoGo"      "from:noreply@indiegogo.com"
 apply_tags "+Alerts +Alerts.TurboTax"       "from:do_not_reply@intuit.com or from:turbotax@notification.intuit.com"
 apply_tags "+Alerts +Alerts.JetBlue"        "from:do-not-reply@change.jetblue.com"
 apply_tags "+Alerts +Alerts.JetBlueCard"    "from:service@alerts.jetbluemastercard.com"
+apply_tags "+Alerts +Alerts.Gitter"         "from:support@gitter.im"
+apply_tags "+Alerts +Alerts.Taxi"           "from:donotreply@taxihail.com"
 
 # Tags that get filed under "Billing"
 apply_tags "+Billing +Billing.Amazon"           "from:order-update@amazon.com or from:noreply@amazon.com"
@@ -62,6 +64,7 @@ apply_tags "+Billing +Billing.TurboTax"         "from:TurboTax@e.turbotax.intuit
 apply_tags "+Billing +Billing.Subscriptions"    "from:support@getcloudapp.com"
 apply_tags "+Billing +Billing.Subscriptions"    "from:support@raynersw.com or from:support@raynersoftware.com"
 apply_tags "+Billing +Billing.Fangamer"         "from:orders@fangamer.com"
+apply_tags "+Billing +Billing.GameStop"         "from:orders@gamestop.com"
 
 # Tags that file under "Developer"
 apply_tags "+Developer +Developer.Apple"        "from:noreply-appledev@apple.com or from:developer@insideapple.com"
