@@ -1,3 +1,7 @@
+#
+
+[asciinema]
+secure = ["ASCIINEMA_API_TOKEN"]
 
 [danger]
 secure = ["DANGER_GITHUB_API_TOKEN"]
@@ -27,3 +31,18 @@ secure = ["GISTIT_TOKEN"]
 [notmuch]
   [notmuch.additional]
   NOTMUCH_CONFIG = "/Users/Samantha/.config/notmuch/notmuch-config"
+
+[alot]
+  [alot.additional]
+  NOTMUCH_CONFIG = "/Users/Samantha/.config/notmuch/notmuch-config"
+
+[weechat]
+secure = ["WEECHAT_PASSPHRASE"]
+  [weechat.additional]
+  WEECHAT_HOME = "/Users/Samantha/.config/weechat/"
+
+[omni]
+secure = ["OMNI_SYNC_MAILDROP_ADDR"]
+
+[hub]
+secure = ["GITHUB_TOKEN"]
