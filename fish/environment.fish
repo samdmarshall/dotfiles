@@ -31,4 +31,4 @@ if test ! -e $LOCAL_RUBY_PATH
 end
 
 # setting $PATH
-set fish_user_paths $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $GOPATH_BIN
+set fish_user_paths $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $GOPATH_BIN "/usr/local/sbin"

@@ -10,12 +10,13 @@ secure = ["DANGER_GITHUB_API_TOKEN"]
 secure = ["NIMBLE_GITHUB_API_TOKEN"]
 
 [brew]
-secure = ["HOMEBREW_GITHUB_API_TOKEN"]
+secure = ["HOMEBREW_GITHUB_API_TOKEN", "HOMEBREW_PIPELINE_API_TOKEN"]
 remove = ["GIT_CONFIG"]
   [brew.additional]
   HOMEBREW_INSTALL_BADGE = "🌈"
   HOMEBREW_VERBOSE = true
   HOMEBREW_NO_INSECURE_REDIRECT = true
+  HOMEBREW_PIPELINE_FORMULA_REPO = "samdmarshall/homebrew-formulae"
 
 [gistit]
 secure = ["GISTIT_TOKEN"]
