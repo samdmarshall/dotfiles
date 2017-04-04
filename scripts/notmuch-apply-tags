@@ -65,6 +65,7 @@ apply_tags "+Billing +Billing.Subscriptions"    "from:support@getcloudapp.com"
 apply_tags "+Billing +Billing.Subscriptions"    "from:support@raynersw.com or from:support@raynersoftware.com"
 apply_tags "+Billing +Billing.Fangamer"         "from:orders@fangamer.com"
 apply_tags "+Billing +Billing.GameStop"         "from:orders@gamestop.com"
+apply_tags "+Billing"                           "tag:Billing.UPS"
 
 # Tags that file under "Developer"
 apply_tags "+Developer +Developer.Apple"        "from:noreply-appledev@apple.com or from:developer@insideapple.com"
@@ -91,6 +92,9 @@ apply_tags "+MailingList" "from:@bountysource.com"
 # Tags about employment
 apply_tags "+Employment" "tag:Employment.iRobot"
 apply_tags "+Employment" "tag:Employment.MLB"
+
+# Social Network emails
+apply_tags "+Social +Social.Mastodon" "from:@awoo.space"
 
 # garbage
 apply_tags "+spam" "subject:SPAM"
@@ -124,6 +128,7 @@ apply_tags "-inbox"     "tag:Employment"
 apply_tags "-inbox"     "tag:sent"
 apply_tags "-inbox"     "tag:Charity"
 apply_tags "-inbox"     "tag:Apartment"
+apply_tags "-inbox"     "tag:Social"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"
