@@ -47,3 +47,4 @@ secure = ["OMNI_SYNC_MAILDROP_ADDR"]
 
 [hub]
 secure = ["GITHUB_TOKEN"]
+
