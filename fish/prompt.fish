@@ -27,7 +27,7 @@ function fish_right_prompt
     if test -e ~/eMail/Inbox/.notmuch/
         set -l unread_emails (notmuch count tag:unread)
         if test $unread_emails -gt 0
-            printf '! '
+            printf '@ '
         end
     end
     switch (command echo "$FISH_PLATFORM_NAME")

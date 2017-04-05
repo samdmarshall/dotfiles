@@ -1,12 +1,13 @@
 
-set -xg DANGER_GITHUB_HOST          (secure-env get --key:GITHUB_HOST)
-set -xg DANGER_GITHUB_API_HOST      (secure-env get --key:DANGER_GITHUB_API_HOST)
-set -xg HOMEBREW_GITHUB_API_TOKEN   (secure-env get --key:HOMEBREW_GITHUB_API_TOKEN)
-set -xg DANGER_GITHUB_API_TOKEN 	(secure-env get --key:DANGER_GITHUB_API_TOKEN)
-set -xg GITHUB_TOKEN                (secure-env get --key:GITHUB_TOKEN)
-set -xg ASCIINEMA_API_TOKEN         (secure-env get --key:ASCIINEMA_API_TOKEN)
-set -xg WEECHAT_PASSPHRASE          (secure-env get --key:WEECHAT_PASSPHRASE)
-set -xg GISTIT_TOKEN                (secure-env get --key:GISTIT_TOKEN)
+# set -xg DANGER_GITHUB_HOST          (rune get --key:GITHUB_HOST)
+# set -xg DANGER_GITHUB_API_HOST      (rune get --key:DANGER_GITHUB_API_HOST)
+# set -xg HOMEBREW_GITHUB_API_TOKEN   (rune get --key:HOMEBREW_GITHUB_API_TOKEN)
+# set -xg DANGER_GITHUB_API_TOKEN 	(rune get --key:DANGER_GITHUB_API_TOKEN)
+# set -xg GITHUB_TOKEN                (rune get --key:GITHUB_TOKEN)
+# set -xg ASCIINEMA_API_TOKEN         (rune get --key:ASCIINEMA_API_TOKEN)
+# set -xg WEECHAT_PASSPHRASE          (rune get --key:WEECHAT_PASSPHRASE)
+# set -xg GISTIT_TOKEN                (rune get --key:GISTIT_TOKEN)
+
 
 function __fish_man_page --argument name --argument section
     set -l open_string ""

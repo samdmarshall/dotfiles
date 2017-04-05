@@ -35,6 +35,12 @@ apply_tags "+Github" "from:noreply@mlbam.com and to:noreply@mlbam.com"
 # Slack
 apply_tags "+Slack" "from:no-reply@slack.com"
 
+# Timecard
+apply_tags "+TimeCard" "from:admin@empiresuite.com"
+
+# Talks
+apply_tags "+Events +Events.TechTalk" "subject:'Tech Talk @ BAM'"
+
 
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"
@@ -49,6 +55,10 @@ apply_tags "-inbox"     "tag:spam"
 apply_tags "-inbox"     "tag:Slack"
 apply_tags "-inbox"     "tag:Accounts"
 apply_tags "-inbox"     "tag:News"
+apply_tags "-inbox"     "tag:TimeCard"
+apply_tags "-inbox"     "tag:Events"
+apply_tags "-inbox"     "tag:HR"
+apply_tags "-inbox"     "tag:Elastic"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"
@@ -56,3 +66,4 @@ apply_tags "-unread" "tag:spam"
 apply_tags "-unread" "tag:MailingList"
 apply_tags "-unread" "tag:WFH"
 apply_tags "-unread" "tag:Slack"
+apply_tags "-unread" "tag:Events"

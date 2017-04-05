@@ -1,6 +1,6 @@
 switch (command echo "$FISH_PLATFORM_NAME")
     case 'Darwin' 'darwin'
-        function gistit --wraps=gistit
-            grimoire gistit -priv \"$argv\"
+        function asciinema --wraps=asciicema
+            grimoire asciinema $argv
         end
 end
