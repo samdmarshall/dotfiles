@@ -26,7 +26,7 @@
     "softwrap": true,
     "statusline": true,
     "syntax": true,
-    "tabsize": 4,
+    "tabsize": 2,
     "tabstospaces": true,
         "*.rb": {
             "tabsize": 2,

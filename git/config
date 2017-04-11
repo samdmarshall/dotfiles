@@ -29,5 +29,6 @@
 	compatctionHeuristic = true
 [commit]
 	gpgsign = true
+	template = ~/.config/git/template.txt
 [url "ssh://github.com"]
     insteadOf = https://github.com

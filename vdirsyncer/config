@@ -99,3 +99,22 @@ fileext = ".ics"
 type = "filesystem"
 path = "~/Calendars/birthdays"
 fileext = ".ics"
+
+
+[pair task_list]
+a = "task_list_local"
+b = "task_list_remote"
+collections = ["from a", "from b"]
+conflict_resolution = "a wins"
+metadata = ["color", "displayname"]
+
+[storage task_list_local]
+type = "filesystem"
+path = "~/Tasks/primary"
+fileext = ".ics"
+
+[storage task_list_remote]
+type = "caldav"
+url.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-url"]
+username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-username"]
+password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
