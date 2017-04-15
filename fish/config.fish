@@ -14,7 +14,7 @@ end
 source "$XDG_CONFIG_HOME/fish/prompt.fish"
 
 # wrapper commands
-set fish_function_path $fish_function_path "$XDG_CONFIG_HOME/fish/wrappers"
+set fish_function_path $fish_function_path "$XDG_CONFIG_HOME/fish/wrappers" /usr/local/share/fish/vendor_completions.d 
 
 # load the user's .profile file if it exists
 if test -e "$HOME/.profile"
