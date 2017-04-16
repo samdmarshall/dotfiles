@@ -4,6 +4,7 @@
 	signingkey = 4434EFA2
 [core]
 	editor = micro
+	excludesfile = ~/.config/git/excludes
 [pull]
 	rebase = true
 [filter "lfs"]
@@ -12,8 +13,6 @@
 	required = true
 [push]
 	default = simple
-[http]
-
 [transfer]
 	fsckobjects = true
 [fetch]
