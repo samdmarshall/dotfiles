@@ -69,22 +69,6 @@ path = "~/Calendars/us-holiday"
 fileext = ".ics"
 
 
-[pair chronicle]
-a = "chronicle_ical"
-b = "chronicle_khal"
-collections = null
-
-[storage chronicle_ical]
-type = "filesystem"
-path = "~/Library/Calendars/019AA509-13C1-4887-BB5F-BCD632068918.calendar/Events"
-fileext = ".ics"
-
-[storage chronicle_khal]
-type = "filesystem"
-path = "~/Calendars/chronicle"
-fileext = ".ics"
-
-
 [pair birthdays]
 a = "birthdays_ical"
 b = "birthdays_khal"

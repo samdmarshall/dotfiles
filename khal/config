@@ -27,11 +27,6 @@ path = ~/Calendars/us-holiday
 type = discover
 color = yellow
 readonly = True
-[[chronicle]]
-path = ~/Calendars/chronicle
-type = discover
-color = dark blue
-readonly = True
 [[birthdays]]
 path = ~/Calendars/birthdays
 type = discover

@@ -48,3 +48,12 @@ secure = ["OMNI_SYNC_MAILDROP_ADDR"]
 [hub]
 secure = ["GITHUB_TOKEN"]
 
+
+[yarn]
+  [yarn.additional]
+  DATABASE_URL = "postgres://localhost:5432/peril-dev"
+  PERIL_INTEGRATION_ID = 2155
+  PERIL_BOT_USER_ID = 2155
+  WEB_URL = "http://localhost:8080"
+  PAPERTRAIL_URL = "localhost"
+  PAPERTRAIL_PORT = 9090
