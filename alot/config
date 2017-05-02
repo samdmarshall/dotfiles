@@ -1,7 +1,7 @@
 attachment_prefix = /Users/Samantha/Downloads/
 colourmode = 256
 editor_cmd = micro
-initial_command = "search tag:unread or tag:flagged"
+initial_command = "search tag:unread"
 tabwidth = 4
 theme = tomorrow
 bug_on_exit = False
@@ -54,6 +54,7 @@ handle_mouse = True
     'ctrl s' = prompt 'search '
     'ctrl n' = compose
     'ctrl u' = search tag:unread
+    'ctrl f' = search tag:flagged
     'ctrl e' = search tag:inbox
     
     [[bufferlist]]

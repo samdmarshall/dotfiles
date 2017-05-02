@@ -8,10 +8,10 @@ tap 'samdmarshall/formulae'
 
 
 # email/communications
-brew 'alot', args: ['HEAD']
+brew 'alot'
 brew 'getmail'
 brew 'msmtp'
-brew 'notmuch'
+brew 'notmuch', args: ['with-python3', 'with-ruby']
 brew 'weechat', args: ['with-aspell', 'with-lua', 'with-perl', 'with-python']
 
 
@@ -21,6 +21,7 @@ brew 'pinentry-mac'
 brew 'keybase'
 brew 'tor', restart_service: true
 brew 'nmap'
+brew 'paperkey'
 
 
 # calendar
@@ -96,6 +97,9 @@ brew 'samdmarshall/formulae/images2pdf'
 brew 'samdmarshall/formulae/html2pdf'
 brew 'samdmarshall/formulae/c2nim'
 brew 'samdmarshall/formulae/battery-level'
+brew 'samdmarshall/formulae/coven'
+brew 'samdmarshall/formulae/grimoire'
+brew 'samdmarshall/formulae/hero'
 
 
 # languages
@@ -104,6 +108,7 @@ brew 'python3'
 brew 'lua'
 brew 'go'
 brew 'nim'
+brew 'ruby'
 
 
 # additional cask-based installs

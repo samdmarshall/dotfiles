@@ -24,24 +24,7 @@ function display_battery_level
 end
 
 function fish_right_prompt
-  set -l display_elements
-  set -l calendar_events (khal list --notstarted --day-format "" today today ^ /dev/null | wc -l)
-  if test $calendar_events -gt 0
-    set display_elements '#' $display_elements
-  end
-  if test -e ~/eMail/Inbox/.notmuch/
-    set -l unread_emails (notmuch count tag:unread)
-    set -l flagged_emails (notmuch count tag:flagged)
-    if test $unread_emails -gt 0
-      set display_elements $display_elements '@'
-    end
-    if test $flagged_emails -gt 0
-      set display_elements '!' $display_elements
-    end
-  end
-  for element in $display_elements
-    printf '%s ' $element
-  end
+  printf '%s ' (coven)
   switch (command echo "$FISH_PLATFORM_NAME")
       case 'Darwin' 'darwin'
         if test (battery-level --list) -gt 0
