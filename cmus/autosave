@@ -203,6 +203,7 @@ fset Deadmau5=artist="*Deadmau5*"
 fset Dirty-Pretty-Things=artist="Dirty Pretty Things"
 fset Disturbed=artist="*Disturbed*"
 fset Dropkick-Murphys=artist="Dropkick Murphys"
+fset Dua-Lipa=artist="Dua Lipa"
 fset Eels=artist="Eels"
 fset FSR=(artist="Futuristic Sex Robotz"|artist="PC Speaker")
 fset Fall-Out-Boy=artist="*Fall Out Boy*"
@@ -265,6 +266,7 @@ fset The-Libertines=artist="The Libertines"
 fset The-Limousines=artist="The Limousines"
 fset The-Prodigy=artist="*The Prodigy*"
 fset The-Vincent-Black-Shadow=artist="The Vincent Black Shadow"
+fset Tove-Lo=artist="Tove Lo"
 fset Trans-Siberian-Orchestra=artist="Trans-Siberian Orchestra"
 fset Two-Door-Cinema-Club=artist="Two Door Cinema Club"
 fset U2=artist="U2"
@@ -279,4 +281,4 @@ fset mp3=filename="*.mp3"
 fset ogg=filename="*.ogg"
 fset ogg-or-mp3=ogg|mp3
 fset unheard=play_count=0
-factivate Icona-Pop
+factivate Tove-Lo

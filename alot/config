@@ -1,7 +1,7 @@
 attachment_prefix = /Users/Samantha/Downloads/
 colourmode = 256
 editor_cmd = micro
-initial_command = "search tag:unread"
+initial_command = "search tag:unread or tag:flagged"
 tabwidth = 4
 theme = tomorrow
 bug_on_exit = False
