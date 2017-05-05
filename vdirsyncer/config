@@ -18,7 +18,6 @@ type = "caldav"
 url = "https://caldav.icloud.com/"
 username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-icloud-username"]
 password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-icloud-password"]
-#verify_fingerprint = "F5:CC:B1:A7:24:13:36:07:54:8B:00:D8:EB:40:2E:FC:A3:07:6D:58"
 
 
 [pair cocoaheads]
@@ -102,3 +101,22 @@ type = "caldav"
 url.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-url"]
 username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-username"]
 password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
+
+
+[pair contacts_list]
+a = "address_book_local"
+b = "address_book_remote"
+collections = ["from a", "from b"]
+conflict_resolution = "a wins"
+
+[storage address_book_local]
+type = "filesystem"
+path = "~/Contacts/"
+fileext = ".vcf"
+
+[storage address_book_remote]
+type = "carddav"
+url = "https://contacts.icloud.com/"
+username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-icloud-username"]
+password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-icloud-password"]
+
