@@ -22,6 +22,11 @@ handle_mouse = True
         sent_box = maildir:///Users/Samantha/eMail/Outbox/
         draft_box = maildir:///Users/Samantha/eMail/Drafts/
         signature_as_attachment = False
+        [[[abook]]]
+            type = shellcommand
+            command = khard email --parsable
+            regexp = '^(?P<email>[^@]+@[^\t]+)\t+(?P<name>[^\t]+)'
+            ignorecase = True
                 
 
 [bindings]
