@@ -32,6 +32,7 @@ apply_tags "+Alerts +Alerts.JetBlueCard"    "from:service@alerts.jetbluemasterca
 apply_tags "+Alerts +Alerts.Gitter"         "from:support@gitter.im"
 apply_tags "+Alerts +Alerts.Taxi"           "from:donotreply@taxihail.com"
 apply_tags "+Alerts +Alerts.NameDotCom"     "from:no-reply@name.com"
+apply_tags "+Alerts +Alerts.Synology"       "from:Synology@NAS.local"
 
 # Tags that get filed under "Billing"
 apply_tags "+Billing +Billing.Amazon"           "from:order-update@amazon.com or from:noreply@amazon.com"
