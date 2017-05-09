@@ -98,7 +98,7 @@ fileext = ".ics"
 
 [storage task_list_remote]
 type = "caldav"
-url.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-url"]
+url = "https://caldav.messagingengine.com/"
 username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-username"]
 password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
 
