@@ -68,22 +68,6 @@ path = "~/Calendars/us-holiday"
 fileext = ".ics"
 
 
-[pair birthdays]
-a = "birthdays_ical"
-b = "birthdays_khal"
-collections = null
-
-[storage birthdays_ical]
-type = "filesystem"
-path = "~/Library/Calendars/BCD5BB2D-2DD8-4F92-A8DE-935F5453C262.calendar/Events"
-fileext = ".ics"
-
-[storage birthdays_khal]
-type = "filesystem"
-path = "~/Calendars/birthdays"
-fileext = ".ics"
-
-
 [pair task_list]
 a = "task_list_local"
 b = "task_list_remote"

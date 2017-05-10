@@ -115,6 +115,8 @@ apply_tags "+Charity" "to:charities@"
 # looking for apartments
 apply_tags "+Apartment" "to:properties@"
 
+# movers
+apply_tags "+Moving" "to:moving@"
 
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"
@@ -131,6 +133,7 @@ apply_tags "-inbox"     "tag:sent"
 apply_tags "-inbox"     "tag:Charity"
 apply_tags "-inbox"     "tag:Apartment"
 apply_tags "-inbox"     "tag:Social"
+apply_tags "-inbox"     "tag:Moving"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"

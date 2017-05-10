@@ -28,10 +28,9 @@ type = discover
 color = yellow
 readonly = True
 [[birthdays]]
-path = ~/Calendars/birthdays
-type = discover
+path = ~/Contacts/card
+type = birthdays
 color = light gray
-readonly = True
 [[Work Events]]
 path = ~/Calendars/icloud/94ff4eb9bc104fdfa44b2e1acd03ba8b/
 type = discover
