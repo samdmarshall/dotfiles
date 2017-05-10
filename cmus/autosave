@@ -83,7 +83,7 @@ set pl_sort=
 set play_library=true
 set play_sorted=false
 set repeat=true
-set repeat_current=false
+set repeat_current=true
 set replaygain=disabled
 set replaygain_limit=true
 set replaygain_preamp=0.000000
@@ -281,4 +281,4 @@ fset mp3=filename="*.mp3"
 fset ogg=filename="*.ogg"
 fset ogg-or-mp3=ogg|mp3
 fset unheard=play_count=0
-factivate Tove-Lo
+factivate Halestorm
