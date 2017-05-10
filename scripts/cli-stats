@@ -1,0 +1,3 @@
+#!/usr/bin/env fish
+
+influx -database fish_history -execute "select command from commands" | tail -n +4 | awk '{ if (length($2) > 0) {print $2 } }' | sort | uniq -c | sort
