@@ -33,7 +33,7 @@ apply_tags "+Alerts +Alerts.Gitter"         "from:support@gitter.im"
 apply_tags "+Alerts +Alerts.Taxi"           "from:donotreply@taxihail.com"
 apply_tags "+Alerts +Alerts.NameDotCom"     "from:no-reply@name.com"
 apply_tags "+Alerts +Alerts.Synology"       "from:Synology@NAS.local"
-apply_tags "+Alerts +Alerts.Comcast"        "from:@alerts.comcast.net"
+apply_tags "+Alerts +Alerts.Comcast +Comcast"        "from:@alerts.comcast.net"
 
 # Tags that get filed under "Billing"
 apply_tags "+Billing +Billing.Amazon"           "from:order-update@amazon.com or from:noreply@amazon.com"
@@ -118,6 +118,9 @@ apply_tags "+Apartment" "to:properties@"
 
 # movers
 apply_tags "+Moving" "to:moving@"
+
+# comcast crap
+apply_tags "+Comcast" "to:comcast-junk@"
 
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"

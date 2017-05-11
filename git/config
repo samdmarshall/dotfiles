@@ -19,13 +19,15 @@
 	fsckobjects = true
 [receive]
 	fsckobjects = true
-[pager]
-	diff = diff-so-fancy | $PAGER
-	show = diff-so-fancy | $PAGER
 [help]
 	autocorrect = 10
 [diff]
-	compatctionHeuristic = true
+  compatctionHeuristic = true
+  external = ~/.config/git/diffoscope.sh
+[pager]
+  diff =
+[difftool]
+  prompt = false
 [commit]
 	gpgsign = true
 	template = ~/.config/git/template.txt
