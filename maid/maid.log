@@ -1,0 +1,32 @@
+# Logfile created on 2017-05-11 23:33:47 -0400 by logger.rb/56815
+I, [2017-05-11T23:33:47.318862 #51309]  INFO -- Maid: v0.7.0
+I, [2017-05-11T23:33:47.318923 #51309]  INFO -- Maid: Started
+I, [2017-05-11T23:33:47.318965 #51309]  INFO -- Maid: Finished
+I, [2017-05-11T23:34:11.838935 #51356]  INFO -- Maid: v0.7.0
+I, [2017-05-11T23:34:11.839016 #51356]  INFO -- Maid: Started
+I, [2017-05-11T23:34:11.839040 #51356]  INFO -- Maid: Rule: Misc Screenshots
+I, [2017-05-11T23:34:11.839131 #51356]  INFO -- Maid: Finished
+I, [2017-05-11T23:47:19.905957 #52537]  INFO -- Maid: v0.7.0
+I, [2017-05-11T23:47:19.906686 #52537]  INFO -- Maid: Started
+I, [2017-05-11T23:47:19.906746 #52537]  INFO -- Maid: Rule: Misc Screenshots
+I, [2017-05-11T23:47:19.907561 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.70BuIJ8r
+I, [2017-05-11T23:47:19.907622 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.8hGz1yfC
+I, [2017-05-11T23:47:19.907667 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.9aEYnVRS
+I, [2017-05-11T23:47:19.907708 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.BFAFyBJb
+I, [2017-05-11T23:47:19.907747 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.BuxGQCNP
+I, [2017-05-11T23:47:19.907785 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.G2d2tt9t
+I, [2017-05-11T23:47:19.907824 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.JAqSW9Gf
+I, [2017-05-11T23:47:19.907890 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.PoBn1aye
+I, [2017-05-11T23:47:19.907937 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.TkCniVAt
+I, [2017-05-11T23:47:19.907975 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.WhKnM3Vg
+I, [2017-05-11T23:47:19.908025 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.YNb6hcLa
+I, [2017-05-11T23:47:19.908073 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.a2IkDbrQ
+I, [2017-05-11T23:47:19.908112 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.dYqoJwkO
+I, [2017-05-11T23:47:19.908151 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.iAz9gMKh
+I, [2017-05-11T23:47:19.908205 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.k41VjTwV
+I, [2017-05-11T23:47:19.908244 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.kCCdNO9E
+I, [2017-05-11T23:47:19.908283 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.mj8VAxJd
+I, [2017-05-11T23:47:19.908321 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.rGVZtmGb
+I, [2017-05-11T23:47:19.908359 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.uqJSRJoD
+I, [2017-05-11T23:47:19.908397 #52537]  INFO -- Maid: Removing /var/folders/m5/j4zdc7f9157659_pd5p0_n980000gn/T/tmp.xVUimGAM
+I, [2017-05-11T23:47:19.908423 #52537]  INFO -- Maid: Finished
