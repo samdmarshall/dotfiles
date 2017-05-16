@@ -92,6 +92,9 @@ apply_tags "+MailingList" "from:AppleTeacher@InsideApple.apple.com"
 apply_tags "+MailingList" "from:getmail-help@lists.pyropus.ca or from:getmail@lists.pyropus.ca or to:getmail@lists.pyropus.ca"
 apply_tags "+MailingList" "from:@bountysource.com"
 
+# Support conversations
+apply_tags "+Support +Support.Apple"        "from:AppleSupport@email.apple.com"
+
 # Tags about employment
 apply_tags "+Employment" "tag:Employment.iRobot"
 apply_tags "+Employment" "tag:Employment.MLB"
@@ -138,6 +141,7 @@ apply_tags "-inbox"     "tag:Charity"
 apply_tags "-inbox"     "tag:Apartment"
 apply_tags "-inbox"     "tag:Social"
 apply_tags "-inbox"     "tag:Moving"
+apply_tags "-inbox"     "tag:Support"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"

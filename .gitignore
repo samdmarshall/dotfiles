@@ -27,6 +27,7 @@ weechat/*.log
 weechat/sec.conf
 weechat/script/plugins.xml.gz
 
+maid/maid.log
 
 cmus/cache
 cmus/command-history
