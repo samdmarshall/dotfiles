@@ -4,8 +4,6 @@
              )
 (package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/ergoemacs-mode")
-(add-to-list 'load-path "~/.emacs.d/color-theme")
 (add-to-list 'load-path "~/.emacs.d/emacs-colors-solarized")
 
 (require 'color-theme-solarized)
@@ -17,22 +15,28 @@
     (set-face-background 'linum "light grey" (selected-frame))
     ))
 (add-hook 'window-setup-hook 'on-after-init)
- 
+
 ;; enabling indent guide to show where indents are
 (require 'indent-guide)
 (indent-guide-global-mode)
 
-;;(require 'ergoemacs-mode)
+(require 'ergoemacs-mode)
 
-;;(setq ergoemacs-theme nil) ;; Uses Standard Ergoemacs keyboard theme
-;;(setq ergoemacs-keyboard-layout "us") ;; Assumes QWERTY keyboard layout
-;;(ergoemacs-mode 1)
+(setq ergoemacs-theme nil) ;; Uses Standard Ergoemacs keyboard theme
+(setq ergoemacs-keyboard-layout "us") ;; Assumes QWERTY keyboard layout
+(ergoemacs-mode 1)
+
+(define-key global-map (kbd "M-O") nil)
 
 ;; re-enable the arrow keys for navigation
-(global-set-key [(left)] 'left-char)
+(global-set-key [(left)]  'left-char)
 (global-set-key [(right)] 'right-char)
-(global-set-key [(up)] 'previous-line)
-(global-set-key [(down)] 'next-line)
+(global-set-key [(up)]    'previous-line)
+(global-set-key [(down)]  'next-line)
+
+(global-set-key (kbd "C-K") 'kill-line)
+(global-set-key (kbd "C-D") 'kill-whole-line)
+(global-set-key (kbd "C-Q") 'save-buffers-kill-terminal)
 
 ;; enabling support for nimsuggest completions
 (setq nim-nimsuggest-path "/usr/local/bin/nimsuggest")
@@ -146,7 +150,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (hlinum vlf vdiff spinner solarized-theme rainbow-mode on-screen nlinum nim-mode indent-guide fish-mode ergoemacs-mode)))
+    (color-theme hlinum vlf vdiff spinner solarized-theme rainbow-mode on-screen nlinum nim-mode indent-guide fish-mode ergoemacs-mode)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(show-paren-mode t)

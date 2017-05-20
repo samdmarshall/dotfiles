@@ -1,50 +1,44 @@
-;;; -*-emacs-lisp-*-
-
-;; Copyright (C) 2002 Free Software Foundation, Inc.
-
-(defvar generated-autoload-file)
-(defvar command-line-args-left)
-(defun color-theme-generate-autoloads ()
-  (interactive)
-  (require 'autoload)
-  (setq generated-autoload-file (car command-line-args-left))
-  (setq command-line-args-left (cdr command-line-args-left))
-  (batch-update-autoloads))
-
-(provide 'color-theme-autoloads)
-;;; Generated autoloads follow (made by autoload.el).
+;;; color-theme-autoloads.el --- automatically extracted autoloads
+;;
+;;; Code:
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads (color-theme-initialize color-theme-submit color-theme-install
-;;;;;;  color-theme-compare color-theme-make-snapshot color-theme-analyze-defun
-;;;;;;  color-theme-print color-theme-install-at-point-for-current-frame
-;;;;;;  color-theme-install-at-mouse color-theme-describe color-theme-select)
-;;;;;;  "color-theme" "color-theme.el" (17529 41105))
+;;;### (autoloads nil "color-theme" "color-theme.el" (22816 8968
+;;;;;;  0 0))
 ;;; Generated autoloads from color-theme.el
 
-(autoload (quote color-theme-select) "color-theme" "\
+(autoload 'color-theme-select "color-theme" "\
 Displays a special buffer for selecting and installing a color theme.
 With optional prefix ARG, this buffer will include color theme libraries
 as well.  A color theme library is in itself not complete, it must be
 used as part of another color theme to be useful.  Thus, color theme
-libraries are mainly useful for color theme authors." t nil)
+libraries are mainly useful for color theme authors.
 
-(autoload (quote color-theme-describe) "color-theme" "\
+\(fn &optional ARG)" t nil)
+
+(autoload 'color-theme-describe "color-theme" "\
 Describe color theme listed at point.
 This shows the documentation of the value of text-property color-theme
 at point.  The text-property color-theme should be a color theme
-function.  See `color-themes'." t nil)
+function.  See `color-themes'.
 
-(autoload (quote color-theme-install-at-mouse) "color-theme" "\
+\(fn)" t nil)
+
+(autoload 'color-theme-install-at-mouse "color-theme" "\
 Install color theme clicked upon using the mouse.
 First argument EVENT is used to set point.  Then
-`color-theme-install-at-point' is called." t nil)
+`color-theme-install-at-point' is called.
 
-(autoload (quote color-theme-install-at-point-for-current-frame) "color-theme" "\
+\(fn EVENT)" t nil)
+
+(autoload 'color-theme-install-at-point-for-current-frame "color-theme" "\
 Install color theme at point for current frame only.
 Binds `color-theme-is-global' to nil and calls
-`color-theme-install-at-point'." t nil)
+`color-theme-install-at-point'.
 
-(autoload (quote color-theme-print) "color-theme" "\
+\(fn)" t nil)
+
+(autoload 'color-theme-print "color-theme" "\
 Print the current color theme function.
 
 You can contribute this function to <URL:news:gnu.emacs.sources> or
@@ -69,28 +63,36 @@ color theme function in your .emacs directly.
 Example:
 
     (require 'color-theme)
-    (color-theme-gnome2)" t nil)
+    (color-theme-gnome2)
 
-(autoload (quote color-theme-analyze-defun) "color-theme" "\
+\(fn &optional BUF)" t nil)
+
+(autoload 'color-theme-analyze-defun "color-theme" "\
 Once you have a color-theme printed, check for missing faces.
 This is used by maintainers who receive a color-theme submission
 and want to make sure it follows the guidelines by the color-theme
-author." t nil)
+author.
 
-(autoload (quote color-theme-make-snapshot) "color-theme" "\
+\(fn)" t nil)
+
+(autoload 'color-theme-make-snapshot "color-theme" "\
 Return the definition of the current color-theme.
-The function returned will recreate the color-theme in use at the moment." nil nil)
+The function returned will recreate the color-theme in use at the moment.
 
-(autoload (quote color-theme-compare) "color-theme" "\
+\(fn)" nil nil)
+
+(autoload 'color-theme-compare "color-theme" "\
 Compare two color themes.
 This will print the differences between installing THEME-A and
 installing THEME-B.  Note that the order is important: If a face is
 defined in THEME-A and not in THEME-B, then this will not show up as a
 difference, because there is no reset before installing THEME-B.  If a
 face is defined in THEME-B and not in THEME-A, then this will show up as
-a difference." t nil)
+a difference.
 
-(autoload (quote color-theme-install) "color-theme" "\
+\(fn THEME-A THEME-B)" t nil)
+
+(autoload 'color-theme-install "color-theme" "\
 Install a color theme defined by frame parameters, variables and faces.
 
 The theme is installed for all present and future frames; any missing
@@ -121,12 +123,29 @@ FACE-DEFINITIONS is an alist of face definitions.  These are installed
 with `color-theme-install-faces'.
 
 If `color-theme-is-cumulative' is nil, a color theme will undo face and
-frame-parameter settings of previous color themes." nil nil)
+frame-parameter settings of previous color themes.
 
-(autoload (quote color-theme-submit) "color-theme" "\
-Submit your color-theme to the maintainer." t nil)
+\(fn THEME)" nil nil)
 
-(autoload (quote color-theme-initialize) "color-theme" "\
-Initialize the color theme package by loading color-theme-libraries." t nil)
+(autoload 'color-theme-submit "color-theme" "\
+Submit your color-theme to the maintainer.
+
+\(fn)" t nil)
+
+(autoload 'color-theme-initialize "color-theme" "\
+Initialize the color theme package by loading color-theme-libraries.
+
+\(fn)" t nil)
 
 ;;;***
+
+;;;### (autoloads nil nil ("color-theme-pkg.el") (22816 8968 0 0))
+
+;;;***
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; no-update-autoloads: t
+;; End:
+;;; color-theme-autoloads.el ends here
