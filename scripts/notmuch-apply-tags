@@ -33,7 +33,8 @@ apply_tags "+Alerts +Alerts.Gitter"         "from:support@gitter.im"
 apply_tags "+Alerts +Alerts.Taxi"           "from:donotreply@taxihail.com"
 apply_tags "+Alerts +Alerts.NameDotCom"     "from:no-reply@name.com"
 apply_tags "+Alerts +Alerts.Synology"       "from:Synology@NAS.local"
-apply_tags "+Alerts +Alerts.Comcast +Comcast"        "from:@alerts.comcast.net"
+apply_tags "+Alerts +Alerts.Comcast"        "from:@alerts.comcast.net"
+apply_tags "+Alerts +Alerts.Twitter"        "from:notify@twitter.com"
 
 # Tags that get filed under "Billing"
 apply_tags "+Billing +Billing.Amazon"           "from:order-update@amazon.com or from:noreply@amazon.com"
@@ -69,6 +70,7 @@ apply_tags "+Billing +Billing.Subscriptions"    "from:support@raynersw.com or fr
 apply_tags "+Billing +Billing.Fangamer"         "from:orders@fangamer.com"
 apply_tags "+Billing +Billing.GameStop"         "from:orders@gamestop.com"
 apply_tags "+Billing"                           "tag:Billing.UPS"
+apply_tags "+Billing +Billing.Redbubble"        "from:aboutmyorder@redbubble.com"
 
 # Tags that file under "Developer"
 apply_tags "+Developer +Developer.Apple"        "from:noreply-appledev@apple.com or from:developer@insideapple.com"
