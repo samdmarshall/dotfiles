@@ -4,7 +4,7 @@ set fish_greeting "くコ:彡 welcome to fish"
 # know what platform this is running on
 set -u FISH_PLATFORM_NAME (command uname -s)
 
-set -xg EDITOR "micro"
+set -xg EDITOR "emacs"    # "micro"
 set -xg PAGER "w3m"
 
 set -xg GOPATH "$HOME/.go"
