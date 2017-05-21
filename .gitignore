@@ -38,3 +38,7 @@ cmus/resume
 cmus/search-history
 
 necromancy/trace.log
+
+*~
+emacs.d/elpa/archives/
+emacs.d/recentf
