@@ -127,6 +127,9 @@ apply_tags "+Moving" "to:moving@"
 # comcast crap
 apply_tags "+Comcast" "to:comcast-junk@"
 
+# medical emails
+apply_tags "+Medical" "to:medical@"
+
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"
 apply_tags "-inbox"     "tag:Alerts"
@@ -143,7 +146,7 @@ apply_tags "-inbox"     "tag:Charity"
 apply_tags "-inbox"     "tag:Apartment"
 apply_tags "-inbox"     "tag:Social"
 apply_tags "-inbox"     "tag:Moving"
-apply_tags "-inbox"     "tag:Support"
+apply_tags "-inbox"     "tag:Medical"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"

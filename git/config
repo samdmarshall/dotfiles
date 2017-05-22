@@ -1,26 +1,22 @@
 [user]
-	email = me@samdmarshall.com
-	name = Samantha Marshall
-	signingkey = 4434EFA2
+  email = me@samdmarshall.com
+  name = Samantha Marshall
+  signingkey = 4434EFA2
 [core]
-	editor = micro
-	excludesfile = ~/.config/git/excludes
+  editor = emacs
+  excludesfile = ~/.config/git/excludes
 [pull]
-	rebase = true
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  rebase = true
 [push]
-	default = simple
+  default = simple
 [transfer]
-	fsckobjects = true
+  fsckobjects = true
 [fetch]
-	fsckobjects = true
+  fsckobjects = true
 [receive]
-	fsckobjects = true
+  fsckobjects = true
 [help]
-	autocorrect = 10
+  autocorrect = 10
 [diff]
   compatctionHeuristic = true
   external = ~/.config/git/diffoscope.sh
@@ -29,7 +25,12 @@
 [difftool]
   prompt = false
 [commit]
-	gpgsign = true
-	template = ~/.config/git/template.txt
+  gpgsign = true
+  template = ~/.config/git/template.txt
+
 [url "ssh://github.com"]
-    insteadOf = https://github.com
+  insteadOf = https://github.com
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
