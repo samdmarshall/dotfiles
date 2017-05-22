@@ -1,6 +1,6 @@
 attachment_prefix = /Users/Samantha/Downloads/
 colourmode = 256
-editor_cmd = micro
+editor_cmd = emacs
 initial_command = "search tag:unread"
 tabwidth = 4
 theme = tomorrow

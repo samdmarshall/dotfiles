@@ -153,7 +153,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (git-commit pass markdown-mode markdown-mode+ tabbar-ruler color-theme hlinum vlf vdiff spinner solarized-theme rainbow-mode on-screen nlinum nim-mode indent-guide fish-mode ergoemacs-mode)))
+    (pass markdown-mode markdown-mode+ tabbar-ruler color-theme hlinum vlf solarized-theme rainbow-mode on-screen nlinum nim-mode indent-guide fish-mode ergoemacs-mode)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(show-paren-mode t)
