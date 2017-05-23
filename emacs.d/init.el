@@ -59,13 +59,7 @@
 (global-set-key [(mouse-5)] 'next-line)
 
 ;; now disable bells for most things because this is annoying af
-(defun my-bell-function ()
-  (unless (memq this-command
-        '(isearch-abort abort-recursive-edit exit-minibuffer
-              keyboard-quit mwheel-scroll down up next-line previous-line
-              backward-char forward-char))
-    (ding)))
-(setq ring-bell-function 'my-bell-function)
+(setq ring-bell-function 'ignore)
 
 ;; enabling line numbers for files
 (defun linum-format-func (line)
@@ -107,6 +101,10 @@
   (local-set-key (kbd "<right>") 'nav-open-file-under-cursor)
   (local-set-key (kbd "<left>")  'nav-go-up-one-dir))
 (add-hook 'nav-mode-hook 'nav-mode-hl-hook)
+
+;; configure auto-save and backup files:
+(setq backup-directory-alist `(("." . "~/.cache/emacs/")))
+(setq backup-by-copying t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -156,7 +154,6 @@
     (pass markdown-mode markdown-mode+ tabbar-ruler color-theme hlinum vlf solarized-theme rainbow-mode on-screen nlinum nim-mode indent-guide fish-mode ergoemacs-mode)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
- '(show-paren-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(term-default-bg-color "#fdf6e3")
  '(term-default-fg-color "#657b83")
