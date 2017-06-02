@@ -73,6 +73,8 @@ apply_tags "+Billing +Billing.GameStop"         "from:orders@gamestop.com"
 apply_tags "+Billing"                           "tag:Billing.UPS"
 apply_tags "+Billing +Billing.Redbubble"        "from:aboutmyorder@redbubble.com"
 apply_tags "+Billing +Billing.Eversource"       "to:eversource@"
+apply_tags "+Billing +Billing.Lyft"             "from:@lyftmail.com"
+apply_tags "+Billing +Billing.Instacart"        "from:orders@instacart.com"
 
 # Tags that file under "Developer"
 apply_tags "+Developer +Developer.Apple"        "from:noreply-appledev@apple.com or from:developer@insideapple.com"
@@ -98,6 +100,7 @@ apply_tags "+MailingList" "from:@bountysource.com"
 
 # Support conversations
 apply_tags "+Support +Support.Apple"        "from:AppleSupport@email.apple.com"
+apply_tags "+Support +Support.Fastmail"     "from:support@fastmail.com"
 
 # Tags about employment
 apply_tags "+Employment" "tag:Employment.iRobot"
@@ -132,6 +135,9 @@ apply_tags "+Comcast" "to:comcast-junk@"
 # medical emails
 apply_tags "+Medical" "to:medical@"
 
+# games
+apply_tags "+Games +Games.Blizzard"    "from:email@em.blizzard.com"
+
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"
 apply_tags "-inbox"     "tag:Alerts"
@@ -150,6 +156,8 @@ apply_tags "-inbox"     "tag:Social"
 apply_tags "-inbox"     "tag:Moving"
 apply_tags "-inbox"     "tag:Medical"
 apply_tags "-inbox"     "tag:Comcast"
+apply_tags "-inbox"     "tag:Support"
+apply_tags "-inbox"     "tag:Games"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"

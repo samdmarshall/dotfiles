@@ -82,7 +82,7 @@ fileext = ".ics"
 
 [storage task_list_remote]
 type = "caldav"
-url = "https://caldav.messagingengine.com/"
+url = "https://caldav.fastmail.com/"
 username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-username"]
 password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
 
@@ -90,6 +90,12 @@ password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-tas
 [pair contacts_list]
 a = "address_book_local"
 b = "address_book_remote"
+collections = ["from a", "from b"]
+conflict_resolution = "a wins"
+
+[pair fastmail_contacts_list]
+a = "address_book_local"
+b = "address_book_remote_fastmail"
 collections = ["from a", "from b"]
 conflict_resolution = "a wins"
 
@@ -104,3 +110,8 @@ url = "https://contacts.icloud.com/"
 username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-icloud-username"]
 password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-icloud-password"]
 
+[storage address_book_remote_fastmail]
+type = "carddav"
+url = "https://carddav.fastmail.com/"
+username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-khard-username"]
+password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-khard-password"]

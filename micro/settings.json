@@ -1,4 +1,29 @@
 {
+    "*.fish": {
+        "commenttype": "# %s"
+    },
+    "*.mk": {
+        "commenttype": "# %s"
+    },
+    "*.nim": {
+        "commenttype": "# %s",
+        "tabsize": 2
+    },
+    "*.py": {
+        "tabstospaces": true
+    },
+    "*.rb": {
+        "tabsize": 2,
+        "tabstospaces": true
+    },
+    "*.yml": {
+        "tabsize": 2
+    },
+    "Brewfile": {
+        "commenttype": "# %s",
+        "tabsize": 2,
+        "tabstospaces": true
+    },
     "autoclose": false,
     "autoindent": true,
     "autosave": false,
@@ -6,9 +31,11 @@
     "colorscheme": "solarized-light",
     "cursorline": true,
     "eofnewline": true,
+    "ftoptions": true,
     "ignorecase": true,
     "indentchar": " ",
     "infobar": true,
+    "keepautoindent": false,
     "linter": true,
     "pluginchannels": [
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
@@ -18,47 +45,28 @@
         "https://raw.githubusercontent.com/samdmarshall/micro-natural-navigation-plugin/master/repo.json",
         "https://raw.githubusercontent.com/samdmarshall/micro-scratch-plugin/master/repo.json"
     ],
+    "rmtrailingws": false,
     "ruler": true,
     "savecursor": false,
     "saveundo": false,
     "scrollmargin": 3,
     "scrollspeed": 2,
     "softwrap": true,
+    "splitBottom": true,
+    "splitRight": true,
     "statusline": true,
     "syntax": true,
+    "tabmovement": false,
     "tabsize": 2,
     "tabstospaces": true,
-        "*.rb": {
-            "tabsize": 2,
-            "tabstospaces": true
-        },
-        "{R,r}akefile": {
-            "tabsize": 2,
-            "commenttype": "# %s",
-            "tabstospaces": true
-        },
-        "Brewfile": {
-            "tabsize": 2,
-            "commenttype": "# %s",
-            "tabstospaces": true
-        },
-        "*.yml": {
-            "tabsize": 2
-        },
-        "*.py": {
-            "tabstospaces": true
-        },
-        "*.fish": {
-            "commenttype": "# %s"
-        },
-        "{M,m}akefile": {
-            "commenttype": "# %s"
-        },
-        "*.mk": {
-            "commenttype": "# %s"
-        },
-        "*.nim": {
-            "tabsize": 2,
-            "commenttype": "# %s"
-        }
+    "termtitle": false,
+    "useprimary": true,
+    "{M,m}akefile": {
+        "commenttype": "# %s"
+    },
+    "{R,r}akefile": {
+        "commenttype": "# %s",
+        "tabsize": 2,
+        "tabstospaces": true
+    }
 }
