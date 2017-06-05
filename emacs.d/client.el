@@ -1,6 +1,0 @@
-(defun on-after-init ()
-  (unless (display-graphic-p (selected-frame))
-    (set-face-background 'default "unspecified-bg" (selected-frame))
-    (set-face-background 'linum "light grey" (selected-frame))
-    ))
-(add-hook 'window-setup-hook 'on-after-init)

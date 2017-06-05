@@ -75,6 +75,7 @@ apply_tags "+Billing +Billing.Redbubble"        "from:aboutmyorder@redbubble.com
 apply_tags "+Billing +Billing.Eversource"       "to:eversource@"
 apply_tags "+Billing +Billing.Lyft"             "from:@lyftmail.com"
 apply_tags "+Billing +Billing.Instacart"        "from:orders@instacart.com"
+apply_tags "+Billing +Billing.Peapod"           "to:peapod@"
 
 # Tags that file under "Developer"
 apply_tags "+Developer +Developer.Apple"        "from:noreply-appledev@apple.com or from:developer@insideapple.com"
