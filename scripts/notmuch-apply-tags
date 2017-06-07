@@ -139,6 +139,9 @@ apply_tags "+Medical" "to:medical@"
 # games
 apply_tags "+Games +Games.Blizzard"    "from:email@em.blizzard.com"
 
+apply_tags "+Notes" "from:notes@"
+apply_tags "-sent"  "tag:Notes"
+
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"
 apply_tags "-inbox"     "tag:Alerts"
@@ -159,9 +162,11 @@ apply_tags "-inbox"     "tag:Medical"
 apply_tags "-inbox"     "tag:Comcast"
 apply_tags "-inbox"     "tag:Support"
 apply_tags "-inbox"     "tag:Games"
+apply_tags "-inbox"     "tag:Notes"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"
 apply_tags "-unread" "tag:spam"
 apply_tags "-unread" "tag:MailingList"
 apply_tags "-unread" "tag:sent"
+apply_tags "-unread" "tag:Notes"
