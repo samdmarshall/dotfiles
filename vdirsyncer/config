@@ -1,25 +1,6 @@
 [general]
 status_path = "~/.config/vdirsyncer/status"
 
-[pair icloud]
-a = "local_icloud"
-b = "remote_icloud"
-collections = ["from a", "from b"]
-conflict_resolution = "a wins"
-metadata = ["color", "displayname"]
-
-[storage local_icloud]
-type = "filesystem"
-path = "~/Calendars/icloud"
-fileext = ".ics"
-
-[storage remote_icloud]
-type = "caldav"
-url = "https://caldav.icloud.com/"
-username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-icloud-username"]
-password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-icloud-password"]
-
-
 [pair cocoaheads]
 a = "remote_cocoaheads"
 b = "local_cocoaheads"
@@ -51,7 +32,6 @@ type = "http"
 url.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-ellen-calendar"]
 read_only = "true"
 
-
 [pair us_holidays]
 a = "us_holiday_remote"
 b = "us_holiday_local"
@@ -67,13 +47,31 @@ type = "filesystem"
 path = "~/Calendars/us-holiday"
 fileext = ".ics"
 
+[pair fastmail]
+a = "fastmail_calendar_local"
+b = "fastmail_calendar_remote"
+collections = ["5f96f604-51c0-4db7-a0ec-2eb60e27f300", "DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8", "94ff4eb9bc104fdfa44b2e1acd03ba8b"]
+conflict_resolution = "a wins"
+metadata = ["color", "displayname"]
+
+[storage fastmail_calendar_local]
+type = "filesystem"
+path = "~/Calendars/fastmail"
+fileext = ".ics"
+
+[storage fastmail_calendar_remote]
+type = "caldav"
+url = "https://caldav.fastmail.com"
+username.fetch = ["command", "rune", "get", "--key:vdirsyncer-task-list-username"]
+password.fetch = ["command", "rune", "get", "--key:vdirsyncer-task-list-password"]
 
 [pair task_list]
 a = "task_list_local"
 b = "task_list_remote"
-collections = ["from a", "from b"]
+collections = ["7556A1FD-A464-4BBE-AD7A-489899DC5FA4", "a8e3ef64-273d-4ae5-a9c4-9cf0640fae93", "b57cb34c-fcea-4df8-a32b-6614fa0ae787", "C95E1A75-1024-4047-9839-B720C25A1733", "DB2631CB-AE5B-4DA7-B0F4-00415EA87273", "F302A85A-3DE4-4619-9D47-9F5A98F0973B"]
 conflict_resolution = "a wins"
 metadata = ["color", "displayname"]
+
 
 [storage task_list_local]
 type = "filesystem"
@@ -90,13 +88,13 @@ password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-tas
 [pair contacts_list]
 a = "address_book_local"
 b = "address_book_remote"
-collections = ["from a", "from b"]
+collections = ["card"]
 conflict_resolution = "a wins"
 
 [pair fastmail_contacts_list]
 a = "address_book_local"
 b = "address_book_remote_fastmail"
-collections = ["from a", "from b"]
+collections = ["Default"]
 conflict_resolution = "a wins"
 
 [storage address_book_local]

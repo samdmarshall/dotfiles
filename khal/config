@@ -1,6 +1,6 @@
 [default]
 highlight_event_days = true
-default_calendar = "iCloud"
+default_calendar = "Personal"
 default_command = "interactive"
 
 [calendars]
@@ -9,12 +9,12 @@ path = ~/Calendars/cocoaheads
 type = discover
 color = dark red
 readonly = True
-[[iCloud]]
-path = ~/Calendars/icloud/DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8/
+[[Personal]]
+path = ~/Calendars/fastmail/DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8/
 type = discover
 color = dark magenta
 [[Deliveries]]
-path = ~/Calendars/icloud/1147A1C2-EC2C-4373-AD36-54378CBC3824/
+path = ~/Calendars/fastmail/5f96f604-51c0-4db7-a0ec-2eb60e27f300/
 type = discover
 readonly = True
 [[ellen]]
@@ -32,7 +32,7 @@ path = ~/Contacts/card
 type = birthdays
 color = light gray
 [[Work Events]]
-path = ~/Calendars/icloud/94ff4eb9bc104fdfa44b2e1acd03ba8b/
+path = ~/Calendars/fastmail/94ff4eb9bc104fdfa44b2e1acd03ba8b/
 type = discover
 
 [locale]
@@ -43,7 +43,6 @@ datetimeformat = %m.%d.%Y %H:%M
 longdatetimeformat = %m.%d.%Y %H:%M
 
 [view]
-#frame = True
 frame = color
 theme = light
 
