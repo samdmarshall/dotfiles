@@ -1,9 +1,0 @@
----
-send:
-  cmd: "/usr/local/bin/msmtp"
-  arg: ["--file", "/Users/Samantha/.config/msmtp/msmtprc", "--read-recipients"]
-msgTemplate: |
-  To: {maildrop}
-  Subject: {name}
-  
-  {body}

@@ -62,8 +62,8 @@ fileext = ".ics"
 [storage fastmail_calendar_remote]
 type = "caldav"
 url = "https://caldav.fastmail.com"
-username.fetch = ["command", "rune", "get", "--key:vdirsyncer-task-list-username"]
-password.fetch = ["command", "rune", "get", "--key:vdirsyncer-task-list-password"]
+username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-username"]
+password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
 
 [pair task_list]
 a = "task_list_local"
