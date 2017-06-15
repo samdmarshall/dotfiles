@@ -65,13 +65,13 @@ url = "https://caldav.fastmail.com"
 username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-username"]
 password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
 
+
 [pair task_list]
 a = "task_list_local"
 b = "task_list_remote"
 collections = ["7556A1FD-A464-4BBE-AD7A-489899DC5FA4", "a8e3ef64-273d-4ae5-a9c4-9cf0640fae93", "b57cb34c-fcea-4df8-a32b-6614fa0ae787", "C95E1A75-1024-4047-9839-B720C25A1733", "DB2631CB-AE5B-4DA7-B0F4-00415EA87273", "F302A85A-3DE4-4619-9D47-9F5A98F0973B"]
 conflict_resolution = "a wins"
 metadata = ["color", "displayname"]
-
 
 [storage task_list_local]
 type = "filesystem"
