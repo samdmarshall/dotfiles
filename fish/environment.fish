@@ -4,7 +4,7 @@ set fish_greeting "please run 'security unlock-keychain' to unlock the keychain!
 # know what platform this is running on
 set -u FISH_PLATFORM_NAME (command uname -s)
 
-set -xg EDITOR micro
+set -xg EDITOR emacs
 set -xg PAGER w3m
 
 set -xg GOPATH "$HOME/.go"

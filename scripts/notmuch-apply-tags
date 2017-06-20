@@ -29,6 +29,9 @@ apply_tags "+WFH" "subject:WFH or subject:OOO"
 # Pivotal
 apply_tags "+Pivotal" "from:notifications@pivotaltracker.com"
 
+# Jira
+apply_tags "+JIRA" "from:jira-notification-1@mlb.com"
+
 # Github
 apply_tags "+Github" "from:noreply@mlbam.com and to:noreply@mlbam.com"
 
@@ -40,6 +43,8 @@ apply_tags "+TimeCard" "from:admin@empiresuite.com"
 
 # Talks
 apply_tags "+Events +Events.TechTalk" "subject:'Tech Talk @ BAM'"
+
+apply_tags "+AWS" "from:@amazon.com"
 
 
 # Things that don't go under "Inbox"
@@ -59,6 +64,8 @@ apply_tags "-inbox"     "tag:TimeCard"
 apply_tags "-inbox"     "tag:Events"
 apply_tags "-inbox"     "tag:HR"
 apply_tags "-inbox"     "tag:Elastic"
+apply_tags "-inbox"     "tag:JIRA"
+apply_tags "-inbox"     "tag:AWS"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"
@@ -66,4 +73,3 @@ apply_tags "-unread" "tag:spam"
 apply_tags "-unread" "tag:MailingList"
 apply_tags "-unread" "tag:WFH"
 apply_tags "-unread" "tag:Slack"
-apply_tags "-unread" "tag:Events"

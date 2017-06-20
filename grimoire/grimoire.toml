@@ -41,4 +41,5 @@ remove = ["GIT_CONFIG"]
   HOMEBREW_PIPELINE_FORMULA_REPO = "samdmarshall/homebrew-formulae"
 
 [carthage]
+secure = ["GITHUB_ACCESS_TOKEN"]
 remove = ["GIT_CONFIG"]

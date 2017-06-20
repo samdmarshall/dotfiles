@@ -1,0 +1,3 @@
+#settings set target.load-script-from-symbol-file true
+#log enable -v -f ~/lldb.log lldb all
+#log enable -v -f ~/gdb-remote.log gdb-remote all

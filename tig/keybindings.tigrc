@@ -1,0 +1,79 @@
+#set commit-title-graph = v2
+
+set blame-view = \
+	date:default \
+	author:abbreviated \
+	file-name:auto \
+	id:yes,color \
+	line-number:yes,interval=5 text
+
+
+bind generic q none
+bind generic <Ctrl-W> view-close
+bind generic Q none
+bind generic <Ctrl-Q> quit
+bind generic O none
+bind generic <F5> none
+bind generic <Ctrl-R> refresh
+bind generic - none
+bind generic <Space> none
+
+bind generic j none
+bind generic J none
+bind generic k none
+bind generic K none
+
+bind generic e none
+bind generic E edit
+
+bind generic ~ none
+bind generic i none
+bind generic I none
+bind generic <Hash> none
+bind generic D none
+bind generic A none
+bind generic F none
+bind generic W none
+bind generic X none
+bind generic $ none
+bind generic % none
+
+bind generic / none
+bind generic <Ctrl-S> search
+bind generic ? none
+bind generic n none
+bind generic N none
+
+bind generic v none
+bind generic <Ctrl-L> none
+bind generic <Ctrl-R> screen-redraw
+
+bind search <Ctrl-K> none
+bind search <Ctrl-J> none
+bind search <Ctrl-N> find-next
+bind search <Ctrl-P> find-prev
+
+
+bind main G none
+bind main F none
+bind main C none
+
+bind refs C none
+bind refs ! none
+
+bind diff @ none
+
+bind status u none
+bind status ! none
+bind status M none
+bind status C none
+
+bind stage u none
+bind stage ! none
+bind stage 1 none
+bind stage \ none
+bind stage @ none
+
+bind stash A none
+bind stash P none
+bind stash ! none

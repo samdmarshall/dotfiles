@@ -3,7 +3,7 @@
 	name = Samantha Marshall
 	signingkey = F919C18D
 [core]
-	editor = micro
+	editor = emacs
 [pull]
 	rebase = true
 [filter "lfs"]
@@ -29,7 +29,7 @@
 	compatctionHeuristic = true
 [commit]
 	gpgsign = true
-
+    template = ~/.config/git/template.txt
 [hub]
     host = github.mlbam.net
 
