@@ -48,11 +48,3 @@ function logout_message --on-process-exit %self
     printf "$COL_21  \"Y8888P\"   \"Y88888P\"  888P     Y888 8888888P\"   \"Y88888P\"     888\n"
     printf "$RESET"
 end
-
-
-function log_exec_to_influx --on-event fish_preexec
-    set -l command_list (string split ' ' $argv) ""
-    if test (count $command_list) -gt 1
-        echo $argv | cmdparse --database:"fish_history"
-    end
-end

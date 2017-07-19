@@ -9,15 +9,6 @@ secure = ["DANGER_GITHUB_API_TOKEN"]
 [nimble]
 secure = ["NIMBLE_GITHUB_API_TOKEN"]
 
-[brew]
-secure = ["HOMEBREW_GITHUB_API_TOKEN", "HOMEBREW_PIPELINE_API_TOKEN"]
-remove = ["GIT_CONFIG"]
-  [brew.additional]
-  HOMEBREW_INSTALL_BADGE = "🌈"
-  HOMEBREW_VERBOSE = true
-  HOMEBREW_NO_INSECURE_REDIRECT = true
-  HOMEBREW_PIPELINE_FORMULA_REPO = "samdmarshall/homebrew-formulae"
-
 [gistit]
 secure = ["GISTIT_TOKEN"]
 
@@ -27,33 +18,18 @@ secure = ["GISTIT_TOKEN"]
 
 [http]
   [http.additional]
-  HTTPIE_CONFIG_DIR = "/Users/Samantha/.config/httpie/"
+  HTTPIE_CONFIG_DIR = "/home/samantha/.config/httpie/"
 
 [notmuch]
   [notmuch.additional]
-  NOTMUCH_CONFIG = "/Users/Samantha/.config/notmuch/notmuch-config"
+  NOTMUCH_CONFIG = "/home/samantha/.config/notmuch/notmuch-config"
 
 [alot]
   [alot.additional]
-  NOTMUCH_CONFIG = "/Users/Samantha/.config/notmuch/notmuch-config"
+  NOTMUCH_CONFIG = "/home/samantha/.config/notmuch/notmuch-config"
 
 [weechat]
 secure = ["WEECHAT_PASSPHRASE"]
   [weechat.additional]
-  WEECHAT_HOME = "/Users/Samantha/.config/weechat/"
+  WEECHAT_HOME = "/home/samantha/.config/weechat/"
 
-[omni]
-secure = ["OMNI_SYNC_MAILDROP_ADDR"]
-
-[hub]
-secure = ["GITHUB_TOKEN"]
-
-
-[yarn]
-  [yarn.additional]
-  DATABASE_URL = "postgres://localhost:5432/peril-dev"
-  PERIL_INTEGRATION_ID = 2155
-  PERIL_BOT_USER_ID = 2155
-  WEB_URL = "http://localhost:8080"
-  PAPERTRAIL_URL = "localhost"
-  PAPERTRAIL_PORT = 9090

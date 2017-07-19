@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export NOTMUCH_CONFIG="/Users/Samantha/.config/notmuch/notmuch-config"
+export NOTMUCH_CONFIG="/home/samantha/.config/notmuch/notmuch-config"
 
 
 
@@ -8,7 +8,7 @@ function apply_tags {
     _tags=$1
     _conditions=$2
     
-    /usr/local/bin/notmuch tag $_tags -- $_conditions
+    /usr/bin/notmuch tag $_tags -- $_conditions
 }
 
 # Tags that get filed under "Alerts" 
@@ -139,6 +139,7 @@ apply_tags "+Medical" "to:medical@"
 
 # games
 apply_tags "+Games +Games.Blizzard"    "from:email@em.blizzard.com"
+apply_tags "+Games +Games.Bungie"      "to:bungie@"
 
 apply_tags "+Notes" "from:notes@"
 apply_tags "-sent"  "tag:Notes"

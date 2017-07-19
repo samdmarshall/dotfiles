@@ -1,4 +1,4 @@
-attachment_prefix = /Users/Samantha/Downloads/
+attachment_prefix = /home/samantha/Downloads/
 colourmode = 256
 editor_cmd = emacs
 initial_command = "search tag:unread"
@@ -16,11 +16,11 @@ handle_mouse = True
         realname = Samantha Marshall
         address = hello@pewpewthespells.com
         aliases = hello@pewpewthespells.com,me@samdmarshall.com
-        sendmail_command = msmtp --file /Users/Samantha/.config/msmtp/msmtprc --read-recipients --read-envelope-from 
+        sendmail_command = msmtp --file /home/samantha/.config/msmtp/msmtprc --read-recipients --read-envelope-from 
         sign_by_default = True
         gpg_key = 0BFD99A4
-        sent_box = maildir:///Users/Samantha/eMail/Outbox/
-        draft_box = maildir:///Users/Samantha/eMail/Drafts/
+        sent_box = maildir:///home/samantha/eMail/Outbox/
+        draft_box = maildir:///home/samantha/eMail/Drafts/
         signature_as_attachment = False
         [[[abook]]]
             type = shellcommand
@@ -128,4 +128,4 @@ handle_mouse = True
         'g h' =
         'g l' =
         ' ' = move next
-        v = pipeto extract_url --shell
+        v = #pipeto extract_url --shell

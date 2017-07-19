@@ -4,14 +4,12 @@ set fish_greeting "くコ:彡 welcome to fish"
 # know what platform this is running on
 set -u FISH_PLATFORM_NAME (command uname -s)
 
+set -e LS_COLORS
+
 set -xg EDITOR "emacs"    # "micro"
 set -xg PAGER "w3m"
 
-set -xg GOPATH "$HOME/.go"
-set -u GOPATH_BIN "$GOPATH/bin"
-if test ! -e $GOPATH_BIN
-    set -e GOPATH_BIN
-end
+set -xg GPG_TTY (tty)
 
 set -xg FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
 set -xg FZF_DEFAULT_OPTS "--preview=\"preview --metadata {} \""
@@ -31,4 +29,4 @@ if test ! -e $LOCAL_RUBY_PATH
 end
 
 # setting $PATH
-set fish_user_paths $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $GOPATH_BIN
+set fish_user_paths "$HOME/.local/bin" "$HOME/.nimble/bin" $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $GOPATH_BIN

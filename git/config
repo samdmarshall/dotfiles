@@ -19,7 +19,6 @@
   autocorrect = 10
 [diff]
   compatctionHeuristic = true
-  external = ~/.config/git/diffoscope.sh
 [pager]
   diff =
 [difftool]

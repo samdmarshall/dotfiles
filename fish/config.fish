@@ -18,7 +18,7 @@ set fish_function_path $fish_function_path "$XDG_CONFIG_HOME/fish/wrappers" /usr
 
 # load the user's .profile file if it exists
 if test -e "$HOME/.profile"
-    source "$HOME/.profile"
+	  source "$HOME/.profile"
 end
 
 # load keybindings

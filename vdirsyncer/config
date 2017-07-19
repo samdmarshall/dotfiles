@@ -29,7 +29,7 @@ fileext = ".ics"
 
 [storage remote_ellen]
 type = "http"
-url.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-ellen-calendar"]
+url.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-ellen-calendar"]
 read_only = "true"
 
 [pair us_holidays]
@@ -62,8 +62,8 @@ fileext = ".ics"
 [storage fastmail_calendar_remote]
 type = "caldav"
 url = "https://caldav.fastmail.com"
-username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-username"]
-password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
+username.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-task-list-username"]
+password.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
 
 
 [pair task_list]
@@ -81,8 +81,8 @@ fileext = ".ics"
 [storage task_list_remote]
 type = "caldav"
 url = "https://caldav.fastmail.com/"
-username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-username"]
-password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
+username.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-task-list-username"]
+password.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
 
 
 [pair contacts_list]
@@ -105,11 +105,11 @@ fileext = ".vcf"
 [storage address_book_remote]
 type = "carddav"
 url = "https://contacts.icloud.com/"
-username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-icloud-username"]
-password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-icloud-password"]
+username.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-icloud-username"]
+password.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-icloud-password"]
 
 [storage address_book_remote_fastmail]
 type = "carddav"
 url = "https://carddav.fastmail.com/"
-username.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-khard-username"]
-password.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-khard-password"]
+username.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-khard-username"]
+password.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-khard-password"]
