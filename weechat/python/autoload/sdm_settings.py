@@ -1,1 +1,0 @@
-../sdm_settings.py

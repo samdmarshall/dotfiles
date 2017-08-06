@@ -140,6 +140,10 @@ apply_tags "+Medical" "to:medical@"
 # games
 apply_tags "+Games +Games.Blizzard"    "from:email@em.blizzard.com"
 apply_tags "+Games +Games.Bungie"      "to:bungie@"
+apply_tags "+Games +Games.FinalFantasyhXIV" "to:ffxiv@"
+
+apply_tags "+Comics" "to:sparkler@"
+apply_tags "+Comics" "from:@chromaticpress.com"
 
 apply_tags "+Notes" "from:notes@"
 apply_tags "-sent"  "tag:Notes"
@@ -165,6 +169,7 @@ apply_tags "-inbox"     "tag:Comcast"
 apply_tags "-inbox"     "tag:Support"
 apply_tags "-inbox"     "tag:Games"
 apply_tags "-inbox"     "tag:Notes"
+apply_tags "-inbox"     "tag:Comics"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"

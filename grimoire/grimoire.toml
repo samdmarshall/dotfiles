@@ -12,14 +12,6 @@ secure = ["NIMBLE_GITHUB_API_TOKEN"]
 [gistit]
 secure = ["GISTIT_TOKEN"]
 
-[pass]
-  [pass.additional]
-  PASSWORD_STORE_ENABLE_EXTENSIONS = true
-
-[http]
-  [http.additional]
-  HTTPIE_CONFIG_DIR = "/home/samantha/.config/httpie/"
-
 [notmuch]
   [notmuch.additional]
   NOTMUCH_CONFIG = "/home/samantha/.config/notmuch/notmuch-config"
