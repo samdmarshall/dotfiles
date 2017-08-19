@@ -3,7 +3,7 @@ export NOTMUCH_CONFIG="/home/samantha/.config/notmuch/notmuch-config"
 
 timestamp=`date "+%s"`
 output_path="/home/samantha/eMail-backups/$timestamp.gz"
-/usr/local/bin/notmuch dump --gzip --output="$output_path"
+/usr/bin/notmuch dump --gzip --output="$output_path"
 
 backup_files=`ls /home/samantha/eMail-backups/`
 for backup in $backup_files ; do
