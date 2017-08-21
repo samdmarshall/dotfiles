@@ -85,12 +85,6 @@ username.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdi
 password.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-task-list-password"]
 
 
-[pair contacts_list]
-a = "address_book_local"
-b = "address_book_remote"
-collections = ["card"]
-conflict_resolution = "a wins"
-
 [pair fastmail_contacts_list]
 a = "address_book_local"
 b = "address_book_remote_fastmail"
@@ -101,12 +95,6 @@ conflict_resolution = "a wins"
 type = "filesystem"
 path = "~/Contacts/"
 fileext = ".vcf"
-
-[storage address_book_remote]
-type = "carddav"
-url = "https://contacts.icloud.com/"
-username.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-icloud-username"]
-password.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdirsyncer-icloud-password"]
 
 [storage address_book_remote_fastmail]
 type = "carddav"

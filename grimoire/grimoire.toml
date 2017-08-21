@@ -3,6 +3,10 @@
 [asciinema]
 secure = ["ASCIINEMA_API_TOKEN"]
 
+[buku]
+	[buku.additional]
+	XDG_DATA_HOME = "/home/samantha/.config/"
+
 [danger]
 secure = ["DANGER_GITHUB_API_TOKEN"]
 
