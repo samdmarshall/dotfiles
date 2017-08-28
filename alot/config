@@ -128,4 +128,4 @@ handle_mouse = True
         'g h' =
         'g l' =
         ' ' = move next
-        v = #pipeto extract_url --shell
+        v = pipeto --separately --shell --format=filepath -- email-url-export

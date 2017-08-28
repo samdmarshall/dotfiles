@@ -28,7 +28,7 @@ type = discover
 color = yellow
 readonly = True
 [[birthdays]]
-path = ~/Contacts/card
+path = ~/Contacts/Default
 type = birthdays
 color = light gray
 [[Work Events]]
