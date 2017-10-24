@@ -1,3 +1,3 @@
-function nimble --wraps=nimble
-	grimoire nimble $argv
-end
+#function nimble --wraps=nimble
+#	grimoire nimble $argv
+#end

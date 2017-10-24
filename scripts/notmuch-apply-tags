@@ -36,6 +36,7 @@ apply_tags "+Alerts +Alerts.Synology"       "from:Synology@NAS.local"
 apply_tags "+Alerts +Alerts.Comcast"        "from:@alerts.comcast.net"
 apply_tags "+Alerts +Alerts.Twitter"        "from:notify@twitter.com"
 apply_tags "+Alerts +Alerts.USPS"           "to:usps@"
+apply_tags "+Alerts +Alerts.iHealth"        "to:ihealth@"
 
 # Tags that get filed under "Billing"
 apply_tags "+Billing +Billing.Amazon"           "from:order-update@amazon.com or from:noreply@amazon.com"
@@ -140,6 +141,7 @@ apply_tags "+Medical" "to:medical@"
 # games
 apply_tags "+Games +Games.Blizzard"    "from:email@em.blizzard.com"
 apply_tags "+Games +Games.Bungie"      "to:bungie@"
+apply_tags "+Games +Games.Destiny2 +Games.The100"    "from:the100@the100.io"
 apply_tags "+Games +Games.FinalFantasyhXIV" "to:ffxiv@"
 
 apply_tags "+Comics" "to:sparkler@"
@@ -178,4 +180,5 @@ apply_tags "-unread" "tag:spam"
 apply_tags "-unread" "tag:MailingList"
 apply_tags "-unread" "tag:sent"
 apply_tags "-unread" "tag:Notes"
+apply_tags "-unread" "tag:Games.The100"
 
