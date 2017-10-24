@@ -7,7 +7,7 @@ set --export --global FISH_PLATFORM_NAME (command uname -s)
 set --erase LS_COLORS
 set --export --global LC_COLLATE C
 
-set --export --global EDITOR "emacs"    # "micro"
+set --export --global EDITOR "emacs"
 set --export --global PAGER "w3m"
 
 set --export --global GPG_TTY (tty)
