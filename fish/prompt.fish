@@ -6,7 +6,7 @@ set __fish_prompt_normal normal
 set __fish_prompt_hostname (hostname -s)
 
 function fish_right_prompt
-	command --search coven
+	command --search coven > /dev/null
 	if test $status -eq 0
 		printf '%s' (coven)
 	end

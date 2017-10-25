@@ -37,6 +37,8 @@ cmus/search-history
 
 necromancy/trace.log
 
+yarn/
+
 *~
 emacs.d/elpa/archives/
 emacs.d/recentf
