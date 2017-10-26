@@ -37,6 +37,7 @@ apply_tags "+Alerts +Alerts.Comcast"        "from:@alerts.comcast.net"
 apply_tags "+Alerts +Alerts.Twitter"        "from:notify@twitter.com"
 apply_tags "+Alerts +Alerts.USPS"           "to:usps@"
 apply_tags "+Alerts +Alerts.iHealth"        "to:ihealth@"
+apply_tags "+Alerts +Alerts.Patreon"        "to:patreon@"
 
 # Tags that get filed under "Billing"
 apply_tags "+Billing +Billing.Amazon"           "from:order-update@amazon.com or from:noreply@amazon.com"
