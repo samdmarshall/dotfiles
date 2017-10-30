@@ -1,7 +1,7 @@
 [user]
   email = me@samdmarshall.com
   name = Samantha Marshall
-  signingkey = 4434EFA2
+#  signingkey = 4434EFA2
 [core]
   editor = emacs
   excludesfile = ~/.config/git/excludes
@@ -19,13 +19,13 @@
   autocorrect = 10
 [diff]
   compatctionHeuristic = true
-  external = ~/.config/git/diffoscope.sh
+
 [pager]
   diff =
 [difftool]
   prompt = false
-[commit]
-  gpgsign = true
+#[commit]
+#  gpgsign = true
   template = ~/.config/git/template.txt
 
 [url "ssh://github.com"]
