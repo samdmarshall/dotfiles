@@ -79,6 +79,7 @@ apply_tags "+Billing +Billing.Lyft"             "from:@lyftmail.com"
 apply_tags "+Billing +Billing.Instacart"        "from:orders@instacart.com"
 apply_tags "+Billing +Billing.Peapod"           "to:peapod@"
 apply_tags "+Billing +Billing.Ringly"           "to:ringly@"
+apply_tags "+Billing +Billing.The100"           "subject:'Your Resonant Ventures LLC receipt'"
 
 # Tags that file under "Developer"
 apply_tags "+Developer +Developer.Apple"        "from:noreply-appledev@apple.com or from:developer@insideapple.com"

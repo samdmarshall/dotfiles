@@ -4,6 +4,7 @@
   signingkey = 4434EFA2
 [core]
   editor = emacs
+  pager = w3m
   excludesfile = ~/.config/git/excludes
 [pull]
   rebase = true
@@ -20,7 +21,7 @@
 [diff]
   compatctionHeuristic = true
 [pager]
-  diff =
+  diff = true
 [difftool]
   prompt = false
 [commit]

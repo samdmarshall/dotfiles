@@ -69,7 +69,7 @@ password.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdi
 [pair task_list]
 a = "task_list_local"
 b = "task_list_remote"
-collections = ["7556A1FD-A464-4BBE-AD7A-489899DC5FA4", "a8e3ef64-273d-4ae5-a9c4-9cf0640fae93", "b57cb34c-fcea-4df8-a32b-6614fa0ae787", "C95E1A75-1024-4047-9839-B720C25A1733", "DB2631CB-AE5B-4DA7-B0F4-00415EA87273", "F302A85A-3DE4-4619-9D47-9F5A98F0973B"]
+collections = ["C8C53C1C-3446-420D-9E6A-4EED5FCD2E9C", "E0334A13-59D2-4AEC-97DA-0680CA7390F6", "6CEDCD93-9E42-4FA8-AF29-6C90FD19637E", "5794BCF3-20F0-49B3-A8C7-283E7A3DB33E", "66EEEE9F-F501-4728-85AB-DF502C4E98F5"]
 conflict_resolution = "a wins"
 metadata = ["color", "displayname"]
 
