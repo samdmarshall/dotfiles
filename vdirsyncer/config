@@ -50,7 +50,10 @@ fileext = ".ics"
 [pair fastmail]
 a = "fastmail_calendar_local"
 b = "fastmail_calendar_remote"
-collections = ["5f96f604-51c0-4db7-a0ec-2eb60e27f300", "DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8", "94ff4eb9bc104fdfa44b2e1acd03ba8b"]
+# DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8 == Personal
+# 94ff4eb9bc104fdfa44b2e1acd03ba8b 		 == Work Events
+# 5f96f604-51c0-4db7-a0ec-2eb60e27f300 == Deliveries
+collections = ["DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8", "94ff4eb9bc104fdfa44b2e1acd03ba8b", "5f96f604-51c0-4db7-a0ec-2eb60e27f300"]
 conflict_resolution = "a wins"
 metadata = ["color", "displayname"]
 
@@ -69,7 +72,13 @@ password.fetch = ["command", "/home/samantha/.local/bin/rune", "get", "--key:vdi
 [pair task_list]
 a = "task_list_local"
 b = "task_list_remote"
-collections = ["C8C53C1C-3446-420D-9E6A-4EED5FCD2E9C", "E0334A13-59D2-4AEC-97DA-0680CA7390F6", "6CEDCD93-9E42-4FA8-AF29-6C90FD19637E", "5794BCF3-20F0-49B3-A8C7-283E7A3DB33E", "66EEEE9F-F501-4728-85AB-DF502C4E98F5"]
+# 4A631FE3-CCD4-43C0-8608-886BB8D098A6 == Chores
+# 7ADB9A58-ECE5-43F4-A8A9-F4B194B0905B == Financial
+# 7D6A8EAC-017F-487D-B1B9-EACB65905EC3 == Medical
+# 9FDD3FE4-7F20-43B5-A96C-74C8913448C7 == Low Priority
+# 186B2FF1-7AA2-488B-B3A4-4CBFDAB41C24 == Work
+# 17246F82-BBAE-48C6-9901-E8D6AC71C626 == Tasks
+collections = ["4A631FE3-CCD4-43C0-8608-886BB8D098A6", "7ADB9A58-ECE5-43F4-A8A9-F4B194B0905B", "7D6A8EAC-017F-487D-B1B9-EACB65905EC3", "9FDD3FE4-7F20-43B5-A96C-74C8913448C7", "186B2FF1-7AA2-488B-B3A4-4CBFDAB41C24", "17246F82-BBAE-48C6-9901-E8D6AC71C626"]
 conflict_resolution = "a wins"
 metadata = ["color", "displayname"]
 

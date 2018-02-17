@@ -161,7 +161,7 @@
 		("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
 	 (quote
-		(yaml-mode elscreen electric-case fzf homebrew-mode json-reformat markdown-mode redo+ pass color-theme hlinum solarized-theme nlinum nim-mode indent-guide fish-mode)))
+		(tide tss npm-mode yaml-mode elscreen electric-case fzf homebrew-mode json-reformat markdown-mode redo+ pass color-theme hlinum solarized-theme nlinum nim-mode indent-guide fish-mode)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))

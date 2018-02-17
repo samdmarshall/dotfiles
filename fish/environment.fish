@@ -23,6 +23,11 @@ if test ! -e $GEM_HOME_BIN
     set --erase GEM_HOME_BIN
 end
 
+set --export --global NVM_DIR "$HOME/.nvm"
+if test ! -e $NVM_DIR
+ 	set --erase NVM_DIR
+end
+
 # setting up local search paths
 set -u LOCAL_RUBY_PATH (gem environment gempath | sed -e 's=:.*$=/bin=')
 if test ! -e $LOCAL_RUBY_PATH
