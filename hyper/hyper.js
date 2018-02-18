@@ -139,22 +139,24 @@ module.exports = {
 								'rgb(245, 169, 184)',
 						],
 				},
-  },
+		},
 
-  // a list of plugins to fetch and install from npm
-  // format: [@org/]project[#version]
-  plugins: [
-			'hyper-solarized-light',
-			'hyperlinks',
-			'hyperterm-alternatescroll',
-			'hyperborder',
-			'hyper-blink',
-	],
+		// a list of plugins to fetch and install from npm
+		// format: [@org/]project[#version]
+		plugins: [
+				'hyperminimal',
+				'hyper-solarized-light',
+				'hyperlinks',
+				'hyperterm-alternatescroll',
+				'hyperborder',
+				'hyper-blink',
+				'hyper-tab-icons',
+		],
 
-  // in development, you can create a directory under
-  // `~/.hyper_plugins/local/` and include it here
-  // to load it and avoid it being `npm install`ed
-  localPlugins: [],
+		// in development, you can create a directory under
+		// `~/.hyper_plugins/local/` and include it here
+		// to load it and avoid it being `npm install`ed
+		localPlugins: [],
 
-	keymaps: {},
+		keymaps: {},
 };
