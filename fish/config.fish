@@ -28,3 +28,10 @@ if status --is-login
     # configuring event handlers
     source "$XDG_CONFIG_HOME/fish/handlers.fish"
 end
+
+if test "$PWD" != "$HOME"
+	if test "$START_UP" != "1"
+		cd $HOME
+		set -xg START_UP 1
+	end
+end

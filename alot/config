@@ -1,4 +1,4 @@
-attachment_prefix = /home/samantha/Downloads/
+attachment_prefix = /home/demi/Downloads/
 colourmode = 256
 editor_cmd = emacs
 initial_command = "search tag:unread"
@@ -13,14 +13,14 @@ handle_mouse = True
 
 [accounts]
     [[default]]
-        realname = Samantha Marshall
+        realname = Samantha Demi
         address = hello@pewpewthespells.com
         aliases = hello@pewpewthespells.com,me@samdmarshall.com
-        sendmail_command = msmtp --file /home/samantha/.config/msmtp/msmtprc --read-recipients --read-envelope-from 
+        sendmail_command = msmtp --file /home/demi/.config/msmtp/msmtprc --read-recipients --read-envelope-from 
         sign_by_default = True
         gpg_key = 0BFD99A4
-        sent_box = maildir:///home/samantha/eMail/Outbox/
-        draft_box = maildir:///home/samantha/eMail/Drafts/
+        sent_box = maildir:///home/demi/eMail/Outbox/
+        draft_box = maildir:///home/demi/eMail/Drafts/
         signature_as_attachment = False
         [[[abook]]]
             type = shellcommand

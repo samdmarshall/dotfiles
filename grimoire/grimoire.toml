@@ -5,7 +5,7 @@ secure = ["ASCIINEMA_API_TOKEN"]
 
 [buku]
 	[buku.additional]
-	XDG_DATA_HOME = "/home/samantha/.config/"
+	XDG_DATA_HOME = "/home/demi/.config/"
 
 [danger]
 secure = ["DANGER_GITHUB_API_TOKEN"]
@@ -18,14 +18,14 @@ secure = ["GISTIT_TOKEN"]
 
 [notmuch]
   [notmuch.additional]
-  NOTMUCH_CONFIG = "/home/samantha/.config/notmuch/notmuch-config"
+  NOTMUCH_CONFIG = "/home/demi/.config/notmuch/notmuch-config"
 
 [alot]
   [alot.additional]
-  NOTMUCH_CONFIG = "/home/samantha/.config/notmuch/notmuch-config"
+  NOTMUCH_CONFIG = "/home/demi/.config/notmuch/notmuch-config"
 
 [weechat]
 secure = ["WEECHAT_PASSPHRASE"]
   [weechat.additional]
-  WEECHAT_HOME = "/home/samantha/.config/weechat/"
+  WEECHAT_HOME = "/home/demi/.config/weechat/"
 
