@@ -25,8 +25,11 @@ end
 source "$XDG_CONFIG_HOME/fish/bindings.fish"
 
 if status --is-login
+	string match --quiet "*Microsoft*" (uname --all)
+	if test $status != 0
     # configuring event handlers
     source "$XDG_CONFIG_HOME/fish/handlers.fish"
+	end
 end
 
 if test "$PWD" != "$HOME"
