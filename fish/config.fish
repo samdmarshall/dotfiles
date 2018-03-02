@@ -14,7 +14,11 @@ end
 source "$XDG_CONFIG_HOME/fish/prompt.fish"
 
 # wrapper commands
-set fish_function_path $fish_function_path "$XDG_CONFIG_HOME/fish/wrappers" /usr/local/share/fish/vendor_completions.d 
+set VENDOR_COMPLETIONS ""
+if test -e /usr/local/share/fish/vendor_completions.d
+	set VENDOR_COMPLETIONS /usr/local/share/fish/vendor_completions.d
+end
+set fish_function_path $fish_function_path "$XDG_CONFIG_HOME/fish/wrappers" "$VENDOR_COMPLETIONS"
 
 # load the user's .profile file if it exists
 if test -e "$HOME/.profile"
@@ -38,3 +42,4 @@ if test "$PWD" != "$HOME"
 		set -xg START_UP 1
 	end
 end
+

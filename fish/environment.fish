@@ -4,7 +4,7 @@ set fish_greeting "くコ:彡 welcome to fish"
 # know what platform this is running on
 set --export --global FISH_PLATFORM_NAME (command uname -s)
 
-set --erase LS_COLORS
+set --erase --unexport LS_COLORS
 set --export --global LC_COLLATE C
 
 set --export --global EDITOR "emacs"

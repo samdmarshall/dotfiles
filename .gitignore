@@ -42,3 +42,5 @@ yarn/
 *~
 emacs.d/elpa/archives/
 emacs.d/recentf
+
+configstore
