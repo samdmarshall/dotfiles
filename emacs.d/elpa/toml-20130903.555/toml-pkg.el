@@ -1,0 +1,1 @@
+(define-package "toml" "20130903.555" "TOML (Tom's Obvious, Minimal Language) parser" 'nil :commit "9633a6872928e737a2335aae1065768b23d8c3b3" :url "https://github.com/gongo/emacs-toml" :keywords '("toml" "parser"))

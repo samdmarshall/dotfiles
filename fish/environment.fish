@@ -17,6 +17,10 @@ set --export --global FZF_DEFAULT_OPTS "--preview=\"preview --metadata {} \""
 
 set --export --global GIT_CONFIG "$XDG_CONFIG_HOME/git/config"
 
+set --export --global DOCKER_HOST "tcp://172.20.247.219:2376"
+set --export --global DOCKER_CERT_PATH "/mnt/c/Users/Demi/.docker/machine/machines/default/"
+set --export --global COMPOSE_CONVERT_WINDOWS_PATHS true
+
 set --export --global GEM_HOME "$HOME/.gem"
 set --local GEM_HOME_BIN "$GEM_HOME/bin"
 if test ! -e $GEM_HOME_BIN
