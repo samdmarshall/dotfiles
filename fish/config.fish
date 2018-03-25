@@ -1,13 +1,15 @@
 # setting up the basic environment
-set -xg XDG_CONFIG_HOME "$HOME/.config"
+set --export --global XDG_CONFIG_HOME "$HOME/.config"
 
 source "$XDG_CONFIG_HOME/fish/environment.fish"
+source "$XDG_CONFIG_HOME/fish/platform.fish"
 
 # load the platform specific configurations
 switch (echo "$FISH_PLATFORM_NAME")
-    case 'Darwin' 'darwin'
-        source "$XDG_CONFIG_HOME/fish/darwin.fish"
-    # case 'Linux' 'linux'
+  case 'Darwin'
+    source "$XDG_CONFIG_HOME/fish/darwin.fish"
+  case 'Windows'
+    source "$XDG_CONFIG_HOME/fish/windows.fish"
 end
 
 # building prompt
@@ -22,24 +24,24 @@ set fish_function_path $fish_function_path "$XDG_CONFIG_HOME/fish/wrappers" "$VE
 
 # load the user's .profile file if it exists
 if test -e "$HOME/.profile"
-	  source "$HOME/.profile"
+	source "$HOME/.profile"
 end
 
 # load keybindings
 source "$XDG_CONFIG_HOME/fish/bindings.fish"
 
 if status --is-login
-	string match --quiet "*Microsoft*" (uname --all)
-	if test $status != 0
+	if test $FISH_PLATFORM_NAME != "Windows"
     # configuring event handlers
     source "$XDG_CONFIG_HOME/fish/handlers.fish"
 	end
 end
 
+# this is to ensure we start in the linux home dir rather than the windows home dir when working in WSL
 if test "$PWD" != "$HOME"
 	if test "$START_UP" != "1"
 		cd $HOME
-		set -xg START_UP 1
+		set --export --global START_UP 1
 	end
 end
 
