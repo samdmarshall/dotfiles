@@ -1,7 +1,7 @@
 #
 
 [asciinema]
-secure = ["ASCIINEMA_API_TOKEN"]
+secure = ["ASCIINEMA_INSTALL_ID"]
 
 [buku]
 	[buku.additional]
