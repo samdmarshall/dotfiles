@@ -6,20 +6,16 @@
 
 ; ========================================================== ;
 
-(add-to-list 'load-path "~/.emacs.d/emacs-colors-solarized")
 (add-to-list 'load-path "~/.emacs.d/emacs-nav")
 
 (require 'nav)
 (require 'redo+)
-(require 'color-theme-solarized)
 (require 'indent-guide)
 (require 'mouse)
 (require 'hlinum)
 
 ; ========================================================== ;
 
-; # Theme
-(color-theme-solarized-light)
 
 (defun on-after-init ()
   (unless (display-graphic-p (selected-frame))
@@ -33,7 +29,7 @@
 (indent-guide-global-mode)
 
 ;; # Tab-complete for Nim
-(setq nim-nimsuggest-path "/home/samantha/.nimble/bin/nimsuggest")
+(setq nim-nimsuggest-path "/home/demi/.nimble/bin/nimsuggest")
 (add-hook 'nim-mode-hook 'nimsuggest-mode)
 
 ;; # Tab settings
@@ -123,6 +119,7 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
 	 ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#839496"])
+ '(column-number-mode t)
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#657b83")
@@ -135,7 +132,6 @@
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
 	 (--map
-		(solarized-color-blend it "#fdf6e3" 0.25)
 		(quote
 		 ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
  '(highlight-symbol-foreground-color "#586e75")
@@ -164,6 +160,7 @@
 		(tide tss npm-mode yaml-mode elscreen electric-case fzf homebrew-mode json-reformat markdown-mode redo+ pass color-theme hlinum solarized-theme nlinum nim-mode indent-guide fish-mode)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
+ '(size-indication-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(term-default-bg-color "#fdf6e3")
  '(term-default-fg-color "#657b83")
@@ -189,7 +186,7 @@
 		 (320 . "#0097b7")
 		 (340 . "#008fc7")
 		 (360 . "#268bd2"))))
- '(vc-annotate-very-old-color nil)
+ '(vc-annotate-very-old-color nil t)
  '(weechat-color-list
 	 (quote
 		(unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496")))
