@@ -13,7 +13,7 @@ function apply_tags {
 
 # Tags that get filed under "Alerts" 
 apply_tags "+Alerts +Alerts.Apple"          "from:noreply@email.apple.com"
-apply_tags "+Alerts +Alerts.Amazon"         "from:-confirm@amazon.com"
+apply_tags "+Alerts +Alerts.Amazon"         "from:-confirm@amazon.com or from:shipment-tracking@amazon.com"
 apply_tags "+Alerts +Alerts.CircleCI"       "from:@circleci.com"
 apply_tags "+Alerts +Alerts.Kickstarter"    "from:no-reply@kickstarter.com"
 apply_tags "+Alerts +Alerts.Meetup"         "from:info@meetup.com"

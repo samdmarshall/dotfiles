@@ -15,3 +15,14 @@ else
 	echo "  $USER ALL=(root) NOPASSWD: /usr/sbin/service"
 end
 
+if test (count (ls ~/Documents)) = 0
+	sudo mount --bind /mnt/c/Users/Demi/Documents ~/Documents
+end
+
+if test (count (ls ~/Downloads)) = 0
+	sudo mount --bind /mnt/c/Users/Demi/Downloads ~/Downloads
+end
+
+if test (count (ls ~/Projects)) = 0
+	sudo mount --bind /mnt/c/Users/Demi/Development ~/Projects
+end

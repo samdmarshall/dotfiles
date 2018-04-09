@@ -44,4 +44,3 @@ if test "$PWD" != "$HOME"
 		set --export --global START_UP 1
 	end
 end
-

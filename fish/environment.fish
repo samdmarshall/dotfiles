@@ -1,7 +1,6 @@
 # disable greeting
 set fish_greeting "くコ:彡 welcome to fish"
 
-set --erase --unexport LS_COLORS
 set --export --global LC_COLLATE C
 
 set --export --global EDITOR "emacs"
