@@ -3,160 +3,175 @@
 // See https://hyper.is#cfg for all currently supported options.
 
 module.exports = {
-		config: {
-				// Choose either "stable" for receiving highly polished,
-				// or "canary" for less polished but more frequent updates
-				updateChannel: 'stable',
+  config: {
+    // choose either `'stable'` for receiving highly polished,
+    // or `'canary'` for less polished but more frequent updates
+    updateChannel: 'canary',
 
-				// default font size in pixels for all tabs
-				fontSize: 18,
-				
-				// font family with optional fallbacks
-				fontFamily: 'Consolas, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
-				
-				// terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-				cursorColor: 'rgba(248,28,229,0.8)',
+    // default font size in pixels for all tabs
+    fontSize: 18,
 
-				// `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
-				cursorShape: 'BLOCK',
+    // font family with optional fallbacks
+    fontFamily: '"Fira Code Retina", Consolas, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
-				// set to true for blinking cursor
-				cursorBlink: false,
+    // default font weight: 'normal' or 'bold'
+    fontWeight: 'normal',
 
-				// color of the text
-				foregroundColor: '#fff',
+    // font weight for bold characters: 'normal' or 'bold'
+    fontWeightBold: 'bold',
 
-				// terminal background color
-				backgroundColor: '#000',
+    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
+    cursorColor: '#EEAABE',
 
-				// border color (window, tabs)
-				borderColor: '#333',
+    // terminal text color under BLOCK cursor
+    cursorAccentColor: '#d6d5d4',
 
-				// custom css to embed in the main window
-				css: '',
+    // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
+    cursorShape: 'BLOCK',
 
-				// custom css to embed in the terminal window
-				termCSS: '',
+    // set to `true` (without backticks and without quotes) for blinking cursor
+    cursorBlink: false,
 
-				// set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
-				// default: `false` on Linux, `true` on Windows (ignored on macOS)
-				showHamburgerMenu: true,
+    // color of the text
+    foregroundColor: '#C8B3B3',
 
-				// set to `false` if you want to hide the minimize, maximize and close buttons
-				// additionally, set to `'left'` if you want them on the left, like in Ubuntu
-				// default: `true` on windows and Linux (ignored on macOS)
-				showWindowControls: false,
+    // terminal background color
+    // opacity is only supported on macOS
+    backgroundColor: '#F9F5F5',
 
-				// custom padding (css format, i.e.: `top right bottom left`)
-				padding: '12px 14px',
+    // terminal selection color
+    selectionColor: 'rgba(236, 234, 250, 0.5)',
 
-				// the full list. if you're going to provide the full color palette,
-				// including the 6 x 6 color cubes and the grayscale map, just provide
-				// an array here instead of a color map object
-				colors: {
-						black: '#000000',
-						red: '#ff0000',
-						green: '#33ff00',
-						yellow: '#ffff00',
-						blue: '#0066ff',
-						magenta: '#cc00ff',
-						cyan: '#00ffff',
-						white: '#d0d0d0',
-						lightBlack: '#808080',
-						lightRed: '#ff0000',
-						lightGreen: '#33ff00',
-						lightYellow: '#ffff00',
-						lightBlue: '#0066ff',
-						lightMagenta: '#cc00ff',
-						lightCyan: '#00ffff',
-						lightWhite: '#ffffff'
-				},
+    // border color (window, tabs)
+    borderColor: '#F9F5F5',
 
-				// the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
-				// if left empty, your system's login shell will be used by default
-				//
-				// Windows
-				// - Make sure to use a full path if the binary name doesn't work
-				// - Remove `--login` in shellArgs
-				//
-				// Bash on Windows
-				// - Example: `C:\\Windows\\System32\\bash.exe`
-				//
-				// Powershell on Windows
-				// - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-				shell: 'ubuntu.exe',
+    // custom CSS to embed in the main window
+    css: `
+	* {
+		-webkit-font-feature-settings: "liga" on, "calt" on, "dlig" on !important;      
+		text-rendering: optimizeLegibility !important;
+	}
 
-				// for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
-				// by default ['--login'] will be used
-				shellArgs: ['run', 'fish'],
+	.tabs_nav {
+		color: #C8B3B3;
+	}
 
-				// for environment variables
-				env: { },
+	.tab_text {
+		font: '"Fira Code Retina", monospace';
+		font-size: 16;
+	}
 
-				// set to false for no bell
-				bell: 'SOUND',
+	.tab_active, .header_appTitle {
+		color: #e2d1d1;
+		font-style: bold;
+	}
+	`,
 
-				// if true, selected text will automatically be copied to the clipboard
-				copyOnSelect: false,
+    // custom CSS to embed in the terminal window
+    termCSS: '',
 
-				// if true, on right click selected text will be copied or pasted if no
-				// selection is present (true by default on Windows)
-				// quickEdit: true
+    // set to `true` (without backticks and without quotes) if you're using a
+    // Linux setup that doesn't show native menus
+    // default: `false` on Linux, `true` on Windows, ignored on macOS
+    showHamburgerMenu: true,
 
-				// URL to custom bell
-				// bellSoundURL: 'http://example.com/bell.mp3',
+    // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
+    // additionally, set to `'left'` if you want them on the left, like in Ubuntu
+    // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
+    showWindowControls: false,
 
-				// for advanced config flags please refer to https://hyper.is/#cfg
+    // custom padding (CSS format, i.e.: `top right bottom left`)
+    padding: '0px',
 
-				hyperBorder: {
-						borderColors: [
-								'rgb(91, 206, 250)',
-								'rb(245, 169, 184)',
-								'rgb(255, 255, 255)',
-								'rgb(245, 169, 184)',
-								'rgb(91, 206, 250)',
-						],
-						borderAngle: '135deg',
-  				  adminBorderColors: [
-								'rgb(91, 206, 250)',
-								'rgb(245, 169, 184)',
-								'rgb(255, 255, 255)',
-								'rgb(245, 169, 184)',
-								'rgb(91, 206, 250)',
-					  ],
-						blurredColors: [
-								'rgb(245, 169, 184)',
-								'rgb(91, 206, 250)',
-								'rgb(255, 255, 255)',
-								'rgb(91, 206, 250)',
-								'rgb(245, 169, 184)',
-						],
-						blurredAdminColors: [
-								'rgb(245, 169, 184)',
-								'rgb(91, 206, 250)',
-								'rgb(255, 255, 255)',
-								'rgb(91, 206, 250)',
-								'rgb(245, 169, 184)',
-						],
-				},				
+    // the full list. if you're going to provide the full color palette,
+    // including the 6 x 6 color cubes and the grayscale map, just provide
+    // an array here instead of a color map object
+    colors: {
+      black: '#000000',
+      red: '#C51E14',
+      green: '#1DC121',
+      yellow: '#C7C329',
+      blue: '#0A2FC4',
+      magenta: '#C839C5',
+      cyan: '#20C5C6',
+      white: '#C7C7C7',
+      lightBlack: '#686868',
+      lightRed: '#FD6F6B',
+      lightGreen: '#67F86F',
+      lightYellow: '#FFFA72',
+      lightBlue: '#6A76FB',
+      lightMagenta: '#FD7CFC',
+      lightCyan: '#68FDFE',
+      lightWhite: '#FFFFFF',
+    },
+
+    // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
+    // if left empty, your system's login shell will be used by default
+    //
+    // Windows
+    // - Make sure to use a full path if the binary name doesn't work
+    // - Remove `--login` in shellArgs
+    //
+    // Bash on Windows
+    // - Example: `C:\\Windows\\System32\\bash.exe`
+    //
+    // PowerShell on Windows
+    // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
+    shell: 'wsl.exe',
+
+    // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
+    // by default `['--login']` will be used
+    shellArgs: ['fish'],
+
+    // for environment variables
+    env: {},
+
+    // set to `false` for no bell
+    bell: 'SOUND',
+
+    // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
+    copyOnSelect: false,
+
+    // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
+    defaultSSHApp: true,
+
+    // if `true` (without backticks and without quotes), on right click selected text will be copied or pasted if no
+    // selection is present (`true` by default on Windows and disables the context menu feature)
+    // quickEdit: true,
+
+    // URL to custom bell
+    // bellSoundURL: 'http://example.com/bell.mp3',
+
+    // for advanced config flags please refer to https://hyper.is/#cfg
+	hyperline: {                                                                 
+    		plugins: [                                                                 
+			"hostname",
+      			"ip",
+			"time"
+    ]
+  },
+
   },
 
   // a list of plugins to fetch and install from npm
   // format: [@org/]project[#version]
+  // examples:
+  //   `hyperpower`
+  //   `@company/project`
+  //   `project#1.0.1`
 		plugins: [
 				'hyperterm-bold-tab',
-				'hyperterm-earthsong',
+				'hyper-tab-icons',
 				'hyperlinks',
 				'hyperterm-alternatescroll',
-				'hyperborder',
 				'hyper-blink',
-				'hyper-tab-icons',
-	],
+				'hyperline',
+		],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
   localPlugins: [],
 
-	keymaps: {},
+  keymaps: {},
 };

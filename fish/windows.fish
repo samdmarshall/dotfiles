@@ -26,3 +26,7 @@ end
 if test (count (ls ~/Projects)) = 0
 	sudo mount --bind /mnt/c/Users/Demi/Development ~/Projects
 end
+
+if test (count (ls ~/iCloud)) = 0
+	sudo mount --bind /mnt/c/Users/Demi/iCloudDrive/ ~/iCloud
+end
