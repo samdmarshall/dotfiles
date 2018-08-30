@@ -44,3 +44,5 @@ emacs.d/elpa/archives/
 emacs.d/recentf
 
 configstore
+
+fish/fishd.*

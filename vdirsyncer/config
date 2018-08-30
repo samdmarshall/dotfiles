@@ -53,7 +53,12 @@ b = "fastmail_calendar_remote"
 # DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8 == Personal
 # 94ff4eb9bc104fdfa44b2e1acd03ba8b 		 == Work Events
 # 5f96f604-51c0-4db7-a0ec-2eb60e27f300 == Deliveries
-collections = ["DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8", "94ff4eb9bc104fdfa44b2e1acd03ba8b", "5f96f604-51c0-4db7-a0ec-2eb60e27f300"]
+# 03380b56-6096-4b77-b465-27c44d1a9fa1 == The 100
+# 11193bb9-5bf6-4396-b373-7d8f48e64c1e == Splatoon 2 - Salmon Run
+# 23493957-b918-4a95-82ae-a13ffcb41e4c == Splatoon 2 - Festivals
+# b8d0702b-b1ed-4871-b174-77a66a70d674 == Cocoaheads Boston
+# eebd3d21-9987-4297-847c-4226592d4538 == US Holiday
+collections = ["DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8", "94ff4eb9bc104fdfa44b2e1acd03ba8b", "5f96f604-51c0-4db7-a0ec-2eb60e27f300", "03380b56-6096-4b77-b465-27c44d1a9fa1", "11193bb9-5bf6-4396-b373-7d8f48e64c1e", "23493957-b918-4a95-82ae-a13ffcb41e4c", "b8d0702b-b1ed-4871-b174-77a66a70d674", "eebd3d21-9987-4297-847c-4226592d4538"]
 conflict_resolution = "a wins"
 metadata = ["color", "displayname"]
 

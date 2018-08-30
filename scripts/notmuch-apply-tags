@@ -183,6 +183,7 @@ apply_tags "-inbox"     "tag:Games"
 apply_tags "-inbox"     "tag:Notes"
 apply_tags "-inbox"     "tag:Comics"
 apply_tags "-inbox"     "tag:Financial"
+apply_tags "-inbox"     "tag:Travel"
 
 # i don't want to read things that are garbage or deleted
 apply_tags "-unread" "tag:deleted"
