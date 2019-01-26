@@ -56,7 +56,7 @@ longdatetimeformat = %m.%d.%Y %H:%M
 
 [view]
 frame = color
-theme = light
+#theme = light
 
 [keybindings]
 delete = D
