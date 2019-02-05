@@ -1,6 +1,6 @@
 attachment_prefix = /home/demi/Downloads/
 colourmode = 256
-editor_cmd = emacs
+editor_cmd = nano
 initial_command = "search tag:unread"
 tabwidth = 4
 #theme = tomorrow

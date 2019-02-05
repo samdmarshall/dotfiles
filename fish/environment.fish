@@ -21,14 +21,25 @@ end
 
 set --export --global NVM_DIR "$HOME/.nvm"
 if test ! -e $NVM_DIR
- 	set --erase NVM_DIR
+  set --erase NVM_DIR
 end
 
 # setting up local search paths
-set -u LOCAL_RUBY_PATH (gem environment gempath | sed -e 's=:.*$=/bin=')
-if test ! -e $LOCAL_RUBY_PATH
-    set --erase LOCAL_RUBY_PATH
+if command --search gem >/dev/null do
+  set -u LOCAL_RUBY_PATH (gem environment gempath | sed -e 's=:.*$=/bin=')
+  if test ! -e $LOCAL_RUBY_PATH
+      set --erase LOCAL_RUBY_PATH
+  end
+end
+
+set -u LINUXBREW_PATH_BIN "/home/linuxbrew/.linuxbrew/bin"
+if test ! -e $LINUXBREW_PATH_BIN
+  set --erase LINUXBREW_PATH_BIN
+end
+set -u LINUXBREW_PATH_SBIN "/home/linuxbrew/.linuxbrew/sbin"
+if test ! -e $LINUXBREW_PATH_SBIN
+  set --erase LINUXBREW_PATH_SBIN
 end
 
 # setting $PATH
-set fish_user_paths "$HOME/.local/bin" "$HOME/.nimble/bin" $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $GOPATH_BIN
+set fish_user_paths "$HOME/.local/bin" "$HOME/.nimble/bin" $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $LINUXBREW_PATH_BIN $LINUXBREW_PATH_SBIN $GEM_HOME_BIN $GOPATH_BIN

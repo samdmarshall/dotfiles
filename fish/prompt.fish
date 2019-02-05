@@ -18,6 +18,9 @@ function display_battery_level
   else if test $level -lt 75
     set battery_color green
   end
+  if test (battery_level --default --charging) -eq 1
+    set battery_color $battery_color --bold
+  end
   printf '[%s%s%%%s]' (set_color $battery_color) $level (set_color $__fish_prompt_normal)
 end
 

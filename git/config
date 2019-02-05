@@ -6,7 +6,8 @@
   editor = emacs
   pager = w3m
   excludesfile = ~/.config/git/excludes
-	autocrlf = true
+  autocrlf = false
+  sparsecheckout = true
 [pull]
   rebase = true
 [push]
@@ -22,12 +23,35 @@
 [diff]
   compatctionHeuristic = true
 [pager]
-  diff = true
+  diff = diff-so-fancy | $PAGER
+  show = diff-so-fancy | $PAGER
+[diff-so-fancy]
+  rulerWidth = 80
+  markEmptyLines = false
+
+[color]
+  ui = true
+[color "diff-highlight"]
+  oldNormal = "red bold"
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"
+[color "diff"]
+  meta = "yellow"
+  frag = "magenta bold"
+  commit = "yellow bold"
+  old = "red bold"
+  new = "green bold"
+  whitespace = "red reverse"
+
 [difftool]
   prompt = false
 [commit]
   gpgsign = true
   template = ~/.config/git/template.txt
+
+[alias]
+  stat = !git --no-pager diff --stat
 
 [url "ssh://github.com"]
   insteadOf = https://github.com

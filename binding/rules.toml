@@ -87,7 +87,6 @@
   rule = "from:orders@fangamer.com"
   [Billing.Gamestop]
   rule = "from:orders@gamestop.com"
-  [Billing.UPS]
 
 [Developer]
   [Developer.Apple]
@@ -109,7 +108,7 @@ to-or = ["Women-Who-Code-Boston-list@meetup.com", "darwin-dev@lists.apple.com", 
 
 [Employment]
   [Employment.MLB]
-  from-or = ["@mlb.com", "@bamtechmedia.com"]
+  from-or = ["@mlb.com", "@bamtechmedia.com", "@disneystreaming.com"]
   [Employment.iRobot]
   rule = "from:@irobot.com"
 

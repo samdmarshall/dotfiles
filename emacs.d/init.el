@@ -7,6 +7,7 @@
 ; ========================================================== ;
 
 (add-to-list 'load-path "~/.emacs.d/emacs-nav")
+(add-to-list 'load-path "/home/linuxbrew/.linuxbrew/share/emacs/site-lisp/pass/")
 
 (require 'nav)
 (require 'redo+)
