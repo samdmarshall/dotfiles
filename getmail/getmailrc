@@ -1,7 +1,7 @@
 [retriever]
 type = SimpleIMAPSSLRetriever
 server = outlook.office365.com
-username = samantha.marshall@mlb.com
+username = samantha.marshall@disneystreaming.com
 mailboxes = ALL
 use_peek = false
 

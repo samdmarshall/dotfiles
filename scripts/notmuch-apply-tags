@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export NOTMUCH_CONFIG="/Users/samantha.marshall/.config/notmuch/notmuch-config"
+export NOTMUCH_CONFIG="/Users/samantha/.config/notmuch/notmuch-config"
 
 
 
@@ -10,6 +10,8 @@ function apply_tags {
     
     /usr/local/bin/notmuch tag $_tags -- $_conditions
 }
+
+apply_tags "+sent"      "from:samantha.marshall@disneystreaming.com"
 
 # Tags that get filed under "Alerts" 
 apply_tags "+Alerts +Alerts.Apple"          "from:noreply@email.apple.com"
@@ -40,6 +42,7 @@ apply_tags "+Slack" "from:no-reply@slack.com"
 
 # Timecard
 apply_tags "+TimeCard" "from:admin@empiresuite.com"
+apply_tags "+TimeCard +Clarizen" "from:@clarizen.com"
 
 # Talks
 apply_tags "+Events +Events.TechTalk" "subject:'Tech Talk @ BAM'"
@@ -47,8 +50,12 @@ apply_tags "+Events +Events.TechTalk" "subject:'Tech Talk @ BAM'"
 apply_tags "+AWS" "from:@amazon.com"
 
 
+apply_tags "+Asana" "from:@asana.com"
+apply_tags "+Monthly" "from:DSSMonthly@"
+
 # Things that don't go under "Inbox"
 apply_tags "+Archive"   "tag:inbox and not date:-1month..today"
+apply_tags "-inbox"     "tag:sent"
 apply_tags "-inbox"     "tag:Alerts"
 apply_tags "-inbox"     "tag:Developer"
 apply_tags "-inbox"     "tag:Archive"
@@ -66,8 +73,12 @@ apply_tags "-inbox"     "tag:HR"
 apply_tags "-inbox"     "tag:Elastic"
 apply_tags "-inbox"     "tag:JIRA"
 apply_tags "-inbox"     "tag:AWS"
+apply_tags "-inbox"     "tag:Asana"
+apply_tags "-inbox"     "tag:Monthly"
+apply_tags "-inbox"     "tag:Calendar"
 
 # i don't want to read things that are garbage or deleted
+apply_tags "-unread" "tag:sent"
 apply_tags "-unread" "tag:deleted"
 apply_tags "-unread" "tag:spam"
 apply_tags "-unread" "tag:MailingList"

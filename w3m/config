@@ -1,4 +1,4 @@
-tabstop 4
+tabstop 2
 frame 0
 open_tab_blank 1
 display_link 1
@@ -19,13 +19,16 @@ keymap_file ~/.config/w3m/keymap
 document_root /
 personal_doument_root ~/
 
-editor micro
+editor emacs
 mailer alot
+mailto_options 1
+mailcap ~/.mailcap
 
 argv_is_url 0
 retry_http 0
 
-
+show_lnum 1
+fold_line 1
 
 ssl_verify_server 1
 
@@ -34,3 +37,6 @@ use_cookie 0
 follow_locale 1
 use_wide 1
 use_combining 1
+
+extbrowser "open"
+use_lessopen 1

@@ -1,6 +1,6 @@
-attachment_prefix = /Users/samantha.marshall/Downloads/
+attachment_prefix = /Users/samantha/Downloads/
 colourmode = 256
-editor_cmd = micro
+editor_cmd = emacs
 initial_command = "search tag:unread"
 tabwidth = 4
 theme = tomorrow
@@ -10,11 +10,11 @@ honor_followup_to = True
 [accounts]
     [[default]]
         realname = Samantha Marshall
-        address = samantha.marshall@mlb.com
-        sendmail_command = msmtp --file /Users/samantha.marshall/.config/msmtp/msmtprc --read-recipients --read-envelope-from 
+        address = samantha.marshall@disneystreaming.com #bamtechmedia.com #mlb.com
+        sendmail_command = msmtp --file /Users/samantha/.config/msmtp/msmtprc --read-recipients --read-envelope-from 
         sign_by_default = True
-        sent_box = maildir:///Users/samantha.marshall/eMail/Outbox/
-        draft_box = maildir:///Users/samantha.marshall/eMail/Drafts/
+        sent_box = maildir:///Users/samantha/eMail/Outbox/
+        draft_box = maildir:///Users/samantha/eMail/Drafts/
         signature_as_attachment = False
                 
 

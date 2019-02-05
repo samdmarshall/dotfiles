@@ -1,20 +1,20 @@
 [general]
 status_path = "~/.config/vdirsyncer/status"
 
-[pair mlb]
-a = "local_mlb"
-b = "remote_mlb"
+[pair bamtechmedia]
+a = "local_bamtech"
+b = "remote_bamtech"
 collections = null
 metadata = ["color", "displayname"]
 
-[storage local_mlb]
+[storage local_bamtech]
 type = "filesystem"
-path = "~/Calendars/MLB"
+path = "~/Calendars/BamtechMedia"
 fileext = ".ics"
 
-[storage remote_mlb]
+[storage remote_bamtech]
 type = "http"
-url.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-work-calendar"]
+url.fetch = ["command", "/usr/local/bin/rune", "get", "--key:vdirsyncer-bamtech-calendar"]
 
 [pair us_holidays]
 a = "us_holiday_remote"
@@ -29,4 +29,19 @@ read_only = "true"
 [storage us_holiday_local]
 type = "filesystem"
 path = "~/Calendars/us-holiday"
+fileext = ".ics"
+
+[pair asana]
+a = "asana_remote"
+b = "asana_local"
+collections = null
+
+[storage asana_remote]
+type = "http"
+url = "https://app.asana.com/-/0/ical?user=938662206915859&lists=938662206915863&hash=b43657d8c18e83caf9ab9714c20cd1632152a7312c18fcfb3dc9a778307af508"
+read_only = "true"
+
+[storage asana_local]
+type = "filesystem"
+path = "~/Calendars/asana"
 fileext = ".ics"

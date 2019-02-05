@@ -15,15 +15,15 @@ secure = ["GISTIT_TOKEN"]
 
 [http]
   [http.additional]
-  HTTPIE_CONFIG_DIR = "/Users/samantha.marshall/.config/httpie/"
+  HTTPIE_CONFIG_DIR = "/Users/Samantha/.config/httpie/"
 
 [notmuch]
   [notmuch.additional]
-  NOTMUCH_CONFIG = "/Users/samantha.marshall/.config/notmuch/notmuch-config"
+  NOTMUCH_CONFIG = "/Users/Samantha/.config/notmuch/notmuch-config"
 
 [alot]
   [alot.additional]
-  NOTMUCH_CONFIG = "/Users/samantha.marshall/.config/notmuch/notmuch-config"
+  NOTMUCH_CONFIG = "/Users/samantha/.config/notmuch/notmuch-config"
 
 [asciinema]
 secure = ["ASCIINEMA_API_TOKEN"]
@@ -36,6 +36,7 @@ secure = ["HOMEBREW_GITHUB_API_TOKEN"]
 remove = ["GIT_CONFIG"]
   [brew.additional]
   HOMEBREW_INSTALL_BADGE = "🌈"
+  HOMEBREW_NO_ANALYTICS = true
   HOMEBREW_VERBOSE = true
   HOMEBREW_NO_INSECURE_REDIRECT = true
   HOMEBREW_PIPELINE_FORMULA_REPO = "samdmarshall/homebrew-formulae"
@@ -43,3 +44,13 @@ remove = ["GIT_CONFIG"]
 [carthage]
 secure = ["GITHUB_ACCESS_TOKEN"]
 remove = ["GIT_CONFIG"]
+
+[go]
+secure = ["GITHUB_ACCESS_TOKEN"]
+remove = ["GIT_CONFIG"]
+
+[ruby]
+secure = ["GITHUB_ACCESS_TOKEN"]
+  [ruby.additional]
+  GITHUB_USER = "smarshall"
+  

@@ -1,0 +1,7 @@
+
+
+
+keymap C-w CLOSE_TAB
+keymap C-q QUIT
+keymap Null EXIT
+keymap Null ABORT

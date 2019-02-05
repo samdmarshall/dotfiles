@@ -4,6 +4,10 @@ default_calendar = "MLB"
 default_command = "interactive"
 
 [calendars]
+[[Bamtech]]
+path = ~/Calendars/BamtechMedia
+type = discover
+color = light green
 [[MLB]]
 path = ~/Calendars/MLB
 type = discover

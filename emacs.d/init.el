@@ -125,6 +125,7 @@
    ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#839496"])
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
+ '(cua-mode t nil (cua-base))
  '(cua-normal-cursor-color "#657b83")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
@@ -132,6 +133,7 @@
    (quote
     ("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "c5798c93000c3ababfe11a0d7cd2c82ca2167241ff6b99136506aade4ae8a03e" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(fci-rule-color "#eee8d5")
+ '(groovy-indent-offset 2)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
@@ -161,9 +163,10 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (groovy-mode elscreen electric-case fzf homebrew-mode json-reformat markdown-mode redo+ pass color-theme hlinum solarized-theme nlinum nim-mode indent-guide fish-mode)))
+    (flycheck rubocop groovy-mode elscreen electric-case fzf homebrew-mode json-reformat markdown-mode redo+ pass color-theme hlinum solarized-theme nlinum nim-mode indent-guide fish-mode)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
+ '(safe-local-variable-values (quote ((encoding . utf-8))))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(term-default-bg-color "#fdf6e3")
  '(term-default-fg-color "#657b83")

@@ -29,6 +29,10 @@ function fish_right_prompt
         if test $unread_emails -gt 0
             printf '@ '
         end
+        set -l flagged_emails (notmuch count tag:flagged)
+        if test $flagged_emails -gt 0
+          printf '! '
+        end
     end
     switch (command echo "$FISH_PLATFORM_NAME")
         case 'Darwin' 'darwin'

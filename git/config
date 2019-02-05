@@ -4,15 +4,12 @@
 	signingkey = F919C18D
 [core]
 	editor = emacs
+	autocrlf = false
+  hooksPath = ~/Projects/github-migration-hooks/
 [pull]
 	rebase = true
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
 [push]
 	default = simple
-[http]
 
 [transfer]
 	fsckobjects = true
@@ -23,15 +20,42 @@
 [pager]
 	diff = diff-so-fancy | $PAGER
 	show = diff-so-fancy | $PAGER
+
+[diff-so-fancy]
+  rulerWidth = 80
+  markEmptyLines = false
+
 [help]
 	autocorrect = 10
+[color]
+  ui = true
+[color "diff-highlight"]
+  oldNormal = "red bold"
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"
+[color "diff"]
+  meta = "yellow"
+  frag = "magenta bold"
+  commit = "yellow bold"
+  old = "red bold"
+  new = "green bold"
+  whitespace = "red reverse"
+
 [diff]
 	compatctionHeuristic = true
 [commit]
 	gpgsign = true
     template = ~/.config/git/template.txt
 [hub]
-    host = github.mlbam.net
+    host = github.bamtech.co
 
-[url "ssh://git@github.mlbam.net"]
-    insteadOf = https://github.mlbam.net
+[alias]
+  stat = !git --no-pager diff --stat
+
+[url "ssh://git@github"]
+    insteadOf = https://github
+[url "github.bamtech.co"]
+     insteadOf = github.mlbam.net
+[pr]
+	defaultremote = github.bamtech.co

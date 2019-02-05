@@ -12,7 +12,7 @@
 #
 
 [database]
-path=/Users/samantha.marshall/eMail/Inbox/
+path=/Users/Samantha/eMail/Inbox/
 
 # User configuration
 #
@@ -32,7 +32,7 @@ path=/Users/samantha.marshall/eMail/Inbox/
 
 [user]
 name=Samantha Marshall
-primary_email=samantha.marshall@mlb.com
+primary_email=samantha.marshall@disneystreaming.com
 
 # Configuration for "notmuch new"
 #
