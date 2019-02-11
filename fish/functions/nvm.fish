@@ -1,3 +1,3 @@
 function nvm
-	bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+	bass source $NVM_DIR/nvm.sh --no-use ';' nvm $argv
 end

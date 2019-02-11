@@ -1,5 +1,7 @@
 .DS_Store
 
+insight-nodejs/
+
 asciinema/install-id
 keybase/
 
@@ -47,3 +49,7 @@ emacs.d/recentf
 configstore
 
 fish/fishd.*
+
+w3m/history
+
+nano/search_history

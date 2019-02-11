@@ -1,7 +1,7 @@
 # disable greeting
 set fish_greeting "くコ:彡 welcome to fish"
 
-set --export --global LC_COLLATE C
+set --export --global LC_COLLATE C #en_US.UTF-8
 
 set --export --global EDITOR "emacs"
 set --export --global PAGER "w3m"

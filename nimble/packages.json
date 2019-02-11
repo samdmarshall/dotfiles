@@ -1,0 +1,27 @@
+[
+  {
+    "name": "rune",
+    "url": "https://github.com/samdmarshall/rune",
+    "method": "git",
+    "tags": [
+      "rune"
+    ],
+    "description": "getting secure environment values",
+    "license": "MIT",
+    "web": "https://github.com/samdmarshall/rune"
+  },
+  {
+    "name": "binding",
+    "url": "https://github.com/samdmarshall/binding",
+    "method": "git",
+    "tags": [
+      "binding",
+      "notmuch",
+      "tag",
+      "tagging"
+    ],
+    "description": "software for tagging mail using notmuch mail client",
+    "license": "MIT",
+    "web": "https://github.com/samdmarshall/binding"
+  }
+]

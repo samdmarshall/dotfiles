@@ -33,7 +33,7 @@ path=/home/demi/eMail/Inbox/
 [user]
 name=Samantha Marshall
 primary_email=hello@pewpewthespells.com
-other_email=me@samdmarshall.com;sam@pewpewthespells.com;
+other_email="me@samdmarshall.com;demi@pewpewthespells.com"
 
 # Configuration for "notmuch new"
 #
@@ -51,7 +51,7 @@ other_email=me@samdmarshall.com;sam@pewpewthespells.com;
 #
 
 [new]
-tags=unread;inbox;
+tags="unread;inbox"
 ignore=
 
 # Search configuration
@@ -65,7 +65,7 @@ ignore=
 #
 
 [search]
-exclude_tags=deleted;spam;
+exclude_tags="deleted;spam"
 
 # Maildir compatibility configuration
 #

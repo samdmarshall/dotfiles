@@ -1,3 +1,5 @@
+[binding]
+rules = "new-rules.toml"
+
 [notmuch]
 config = "~/.config/notmuch/notmuch-config"
-initial_tag = "unread"

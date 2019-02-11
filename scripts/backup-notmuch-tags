@@ -4,7 +4,7 @@ export NOTMUCH_CONFIG="/home/demi/.config/notmuch/notmuch-config"
 pushd /home/demi/eMail-backup/
 timestamp=`date "+%s"`
 output_path="$timestamp.gz"
-/usr/bin/notmuch dump --gzip --output="$output_path"
+/home/linuxbrew/.linuxbrew/bin/notmuch dump --gzip --output="$output_path"
 
 backup_files=`ls .`
 for backup in $backup_files ; do

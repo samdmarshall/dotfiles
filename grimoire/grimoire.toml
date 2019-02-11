@@ -12,6 +12,10 @@ secure = ["DANGER_GITHUB_API_TOKEN"]
 [nimble]
 secure = ["NIMBLE_GITHUB_API_TOKEN"]
 
+[choosenim]
+  [choosenim.additional]
+  CHOOSENIM_NO_ANALYTICS = 1
+
 [gistit]
 secure = ["GISTIT_TOKEN"]
 
