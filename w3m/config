@@ -19,7 +19,7 @@ keymap_file ~/.config/w3m/keymap
 document_root /
 personal_doument_root ~/
 
-editor micro
+editor emacs
 mailer alot
 mailto_options 1
 mailcap ~/.mailcap
