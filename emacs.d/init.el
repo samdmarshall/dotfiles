@@ -14,17 +14,13 @@
 (require 'indent-guide)
 (require 'mouse)
 (require 'hlinum)
+(require 'color-theme)
+(color-theme-initialize)
+(require 'moe-theme)
+(moe-light)
+
 
 ; ========================================================== ;
-
-
-(defun on-after-init ()
-  (unless (display-graphic-p (selected-frame))
-    (set-face-background 'default "unspecified-bg" (selected-frame))
-    (set-face-background 'linum "light grey" (selected-frame))
-    ))
-(add-hook 'window-setup-hook 'on-after-init)
-
 
 ;; # Indent Guides
 (indent-guide-global-mode)
@@ -115,3 +111,17 @@
 
 
 ;;(set-default 'cursor-type 'box)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+	 (quote
+		(guess-language helpful how-many-lines-in-project link nasm-mode nav nm password-store password-store-otp path-helper moe-theme yaml-mode tss toml-mode toml tide redo+ pass npm-mode nlinum nim-mode markdown-mode indent-guide homebrew-mode hlinum fzf fish-mode elscreen electric-case color-theme))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

@@ -62,6 +62,7 @@
 
   [Alerts.Comcast]
   from-or = ["@alerts.comcast.net"]
+  to-or = ["comcast-junk@"]
 
   [Alerts.Twitter]
   from-or = ["notify@twitter.com"]
@@ -241,14 +242,11 @@ from-or = ["happybirthday@movies.fandango.com", "customer-reviews-messages@amazo
 [Charity]
 to-or = ["charities@"]
 
-[Appartment]
+[Apartment]
 to-or = ["properties@"]
 
 [Moving]
 to-or = ["moving@"]
-
-[Comcast]
-to-or = ["comcast-junk@"]
 
 [Medical]
 to-or = ["medical@"]

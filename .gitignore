@@ -1,23 +1,15 @@
 .DS_Store
 
 insight-nodejs/
-
 asciinema/install-id
 keybase/
-
 fish/fish_history
-
 transmission/
-
 sdkbuild/
-
 micro/buffers/
-
 getmail/*
-
 vdirsyncer/*
 !vdirsyncer/config
-
 storage/*
 !storage/keys.keychain
 !storage/secure
