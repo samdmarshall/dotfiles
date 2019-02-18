@@ -45,3 +45,5 @@ fish/fishd.*
 w3m/history
 
 nano/search_history
+
+htop/
