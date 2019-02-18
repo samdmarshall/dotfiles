@@ -36,6 +36,7 @@ secure = ["WEECHAT_PASSPHRASE"]
 secure = ["HOMEBREW_GITHUB_API_TOKEN"]
 remove = ["GIT_CONFIG"]
   [brew.additional]
+  HOMEBREW_INSTALL_BADGE = ":rainbow:"
   HOMEBREW_NO_ANALYTICS = true
   HOMEBREW_VERBOSE = true
   HOMEBREW_NO_INSECURE_REDIRECT = true

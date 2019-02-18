@@ -1,5 +1,8 @@
 [binding]
 rules = "new-rules.toml"
+  [binding.mark]
+  unread = ["MailingList"]
+  inbox = ["Alerts", "Apartment", "Archive", "Billing", "Charity", "Comics", "Developer", "Employment", "Events", "Financial", "Games", "HealthInsurance", "Medical", "Notes", "Social", "Support", "Travel"]
 
 [notmuch]
 config = "~/.config/notmuch/notmuch-config"

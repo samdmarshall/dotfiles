@@ -49,7 +49,7 @@
   from-or = ["do-not-reply@change.jetblue.com"]
 
   [Alerts.JetBlueCard]
-  from-or = ["service@alerts.jetbluemastercard.com"]
+  from-or = ["service@alerts.jetbluemastercard.com", "alerts@service.jetbluemastercard.com"]
 
   [Alerts.Gitter]
   from-or = ["support@gitter.im"]
@@ -66,7 +66,7 @@
   [Alerts.Twitter]
   from-or = ["notify@twitter.com"]
 
-  [Alert.USPS]
+  [Alerts.USPS]
   to-or = ["usps@"]
 
   [Alerts.iHealth]
@@ -80,6 +80,9 @@
 
   [Alerts.Goodreads]
   from-or = ["@mail.goodreads.com"]
+
+  [Alerts.PayPal]
+  from-or = ["paypal@mail.paypal.com"]
 
 
 [Billing]
@@ -249,6 +252,11 @@ to-or = ["comcast-junk@"]
 
 [Medical]
 to-or = ["medical@"]
+  [Medical.Therapy]
+  from-or = ["@therapyportal.com", "@thriveworks.com"]
+  subject-or = ["Thriveworks Appointment Confirmation"]
+  [Medical.FenwayHealth]
+  [Medical.BrighamWomens]
 
 [Games]
   [Games.Blizzard]
@@ -272,6 +280,9 @@ to-or = ["medical@"]
   [Games.Aspyr]
   from-or = ["aspyr.com"]
 
+[Financial]
+  [Financial.LincolnInvestments]
+  from-or = ["LINCOLN INVESTMENT", "id@proxyvote.com"]
 
 [Comics]
   [Comics.Sparkler]
