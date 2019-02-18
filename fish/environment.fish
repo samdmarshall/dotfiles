@@ -7,6 +7,7 @@ set --export --global DISPLAY "127.0.0.1:0"
 
 set --export --global EDITOR "emacs"
 set --export --global PAGER "w3m"
+set --export --global TERM xterm
 
 set --export --global GPG_TTY (tty)
 
