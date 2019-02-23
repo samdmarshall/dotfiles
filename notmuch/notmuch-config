@@ -31,9 +31,9 @@ path=/home/demi/eMail/Inbox/
 #
 
 [user]
-name=Samantha Marshall
+name=Samantha Demi
 primary_email=hello@pewpewthespells.com
-other_email=me@samdmarshall.com;demi@pewpewthespells.com
+other_email=me@samdmarshall.com;demi@pewpewthespells.com;
 
 # Configuration for "notmuch new"
 #

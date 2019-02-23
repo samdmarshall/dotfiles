@@ -38,6 +38,7 @@ remove = ["GIT_CONFIG"]
   [brew.additional]
   HOMEBREW_INSTALL_BADGE = "🌈"
   HOMEBREW_NO_ANALYTICS = true
+  HOMEBREW_AUTO_UPDATE = true
   HOMEBREW_VERBOSE = true
   HOMEBREW_NO_INSECURE_REDIRECT = true
   HOMEBREW_PIPELINE_FORMULA_REPO = "samdmarshall/homebrew-formulae"
