@@ -1,8 +1,12 @@
 [binding]
 rules = "rules.toml"
   [binding.mark]
-  unread = ["MailingList"]
+  unread = ["MailingList", "spam", "deleted"]
   inbox = ["Alerts", "Apartment", "Archive", "Billing", "Charity", "Comics", "Developer", "Employment", "Events", "Financial", "Games", "HealthInsurance", "Medical", "Notes", "Social", "Support", "Travel", "MailingList"]
 
 [notmuch]
 config = "~/.config/notmuch/notmuch-config"
+#  [notmuch.database]
+#  path = "/blah/blah/blah"
+  [notmuch.new]
+  tags = ["unread", "inbox"]

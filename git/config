@@ -6,7 +6,7 @@
   editor = emacs
   pager = w3m
   excludesfile = ~/.config/git/excludes
-  autocrlf = false
+  autocrlf = input
 	sparsecheckout = true
 [pull]
   rebase = true

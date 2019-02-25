@@ -14,13 +14,14 @@
 (require 'indent-guide)
 (require 'mouse)
 (require 'hlinum)
-(require 'color-theme)
-(color-theme-initialize)
+;;(require 'color-theme)
+;;(color-theme-initialize)
 (require 'moe-theme)
-(moe-light)
+
 
 
 ; ========================================================== ;
+
 
 ;; # Indent Guides
 (indent-guide-global-mode)
@@ -116,9 +117,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+	 (quote
+		("13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" default)))
  '(package-selected-packages
 	 (quote
-		(guess-language helpful how-many-lines-in-project link nasm-mode nav nm password-store password-store-otp path-helper moe-theme yaml-mode tss toml-mode toml tide redo+ pass npm-mode nlinum nim-mode markdown-mode indent-guide homebrew-mode hlinum fzf fish-mode elscreen electric-case color-theme))))
+		(guess-language helpful how-many-lines-in-project link nasm-mode nav nm password-store password-store-otp path-helper moe-theme yaml-mode tss toml-mode toml tide redo+ pass npm-mode nlinum nim-mode markdown-mode indent-guide homebrew-mode hlinum fzf fish-mode elscreen electric-case color-theme)))
+ '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

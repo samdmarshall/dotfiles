@@ -18,6 +18,7 @@ set --export --global GIT_CONFIG "$XDG_CONFIG_HOME/git/config"
 
 set --export --global GEM_HOME "$HOME/.gem"
 set --local GEM_HOME_BIN "$GEM_HOME/bin"
+
 if test ! -e $GEM_HOME_BIN
     set --erase GEM_HOME_BIN
 end
@@ -34,6 +35,10 @@ if command --search gem >/dev/null do
       set --erase LOCAL_RUBY_PATH
   end
 end
+set -u GOPATH_BIN "~/.go/bin"
+if test ! -e $GOPATH_BIN
+	set --erase GOPATH_BIN
+end
 
 set -u LINUXBREW_PATH_BIN "/home/linuxbrew/.linuxbrew/bin"
 if test ! -e $LINUXBREW_PATH_BIN
@@ -45,4 +50,4 @@ if test ! -e $LINUXBREW_PATH_SBIN
 end
 
 # setting $PATH
-set fish_user_paths "$HOME/.local/bin" "$HOME/.nimble/bin" $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $LINUXBREW_PATH_BIN $LINUXBREW_PATH_SBIN $GEM_HOME_BIN $GOPATH_BIN
+set fish_user_paths "$HOME/.local/bin" "$HOME/.nimble/bin" $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $GOPATH_BIN $LINUXBREW_PATH_BIN $LINUXBREW_PATH_SBIN

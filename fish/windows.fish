@@ -1,3 +1,4 @@
+umask 002
 
 set --export --global DOCKER_HOST "tcp://127.0.0.1:2375"
 set --export --global DOCKER_CERT_PATH "/mnt/c/Users/Demi/.docker/machine/machines/default/"
@@ -50,4 +51,13 @@ end
 
 if test (count (ls ~/.vscode)) = 0
 	sudo mount --bind /mnt/c/Users/Demi/.vscode/ ~/.vscode
+end
+
+if status --is-interactive
+	kitty + complete setup fish | source
+	source (pyenv init -|psub) 
+end
+
+if test "$PWD" = "/mnt/c/Windows/System32"
+	cd /home/demi
 end

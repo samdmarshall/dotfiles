@@ -1,20 +1,7 @@
 #!/usr/bin/env bash
 export NOTMUCH_CONFIG="/home/demi/.config/notmuch/notmuch-config"
 
-pushd /home/demi/eMail-backup/
 timestamp=`date "+%s"`
 output_path="$timestamp.gz"
-/home/linuxbrew/.linuxbrew/bin/notmuch dump --gzip --output="$output_path"
+/home/linuxbrew/.linuxbrew/bin/notmuch dump --gzip --output="/home/demi/eMail-backup/$output_path"
 
-#backup_files=`ls .`
-#for backup in $backup_files ; do
-#    extension="${backup##*.}"
-#    filename="${backup%.*}"
-#
-#    backup_age=`echo "$timestamp - $filename" | bc`
-#    if [[ $backup_age -gt 86400 ]]; then
-#        rm "$backup"
-#    fi
-#done
-
-popd
