@@ -1,0 +1,18 @@
+#!/usr/bin/env fish
+set -u arguments $argv
+set -u use_grimoire false
+for entry in (grimoire --list)
+    if test entry = arguments[1]
+        set use_grimoire true
+    end
+end
+
+set -u command $arguments
+if $use_grimoire
+    set command "grimoire "+ %$arguments
+end
+
+while true
+    eval $command
+    wait
+end
