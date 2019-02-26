@@ -25,7 +25,7 @@
   from-or = ["notify@keybase.io"]
 
   [Alerts.LetsEncrypt]
-  from-or = ["expiry@letsencrypt.org"]
+  from-or = ["expiry@letsencrypt.org", "noreply@letsencrypt.org"]
 
   [Alerts.UPS]
   from-or = ["mcinfo@ups.com"]
@@ -186,6 +186,9 @@
   [Billing.Bonfire]
   from-or = ["bonfire.com"]
 
+  [Billing.Microsoft]
+  from-or = ["Microsoft Store", "stremail@microsoft.com"]
+  
   [Billing.UPS]
 
 [Developer]
@@ -224,7 +227,6 @@ to-or = ["Women-Who-Code-Boston-list@meetup.com", "darwin-dev@lists.apple.com", 
 [Employment]
   [Employment.Recruiter]
   [Employment.Microsoft]
-  from-or = ["@microsoft.com"]
   [Employment.iRobot]
   from-or = ["@irobot.com"]
   [Employment.MLB]

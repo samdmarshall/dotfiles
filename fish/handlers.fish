@@ -49,7 +49,6 @@ function logout_message --on-process-exit %self
     printf "$RESET"
 end
 
-
 #function log_exec_to_influx --on-event fish_preexec
 #    set -l command_list (string split ' ' $argv) ""
 #    if test (count $command_list) -gt 1
