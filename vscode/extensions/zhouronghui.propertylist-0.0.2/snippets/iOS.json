@@ -1,0 +1,368 @@
+{
+    "CoreSpotlightContinuation": {
+        "prefix": "CoreSpotlightContinuation",
+        "body": [
+            "<key>CoreSpotlightContinuation</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app supports Spotlight query continuation. See CoreSpotlightContinuation for details."
+    },
+    "INAlternativeAppNames": {
+        "prefix": "INAlternativeAppNames",
+        "body": [
+            "<key>INAlternativeAppNames</key>",
+            "<array>",
+            "\t<dict>",
+			"\t\t<key>INAlternativeAppName</key>",
+			"\t\t<string>${1:}</string>",
+			"\t\t<key>INAlternativeAppNamePronunciationHint</key>",
+			"\t\t<string>${2:}</string>",
+		    "\t</dict>",
+            "</array>"
+        ],
+        "description": "Specifies alternative names by which users can refer to the app in Siri. See INAlternativeAppNames for details."
+    },
+    "MKDirectionsApplicationSupportedModes": {
+        "prefix": "MKDirectionsApplicationSupportedModes",
+        "body": [
+            "<key>MKDirectionsApplicationSupportedModes</key>",
+            "<array>",
+            "\t<string>${1|MKDirectionsModeCar,MKDirectionsModeBus,MKDirectionsModeTrain,MKDirectionsModeSubway,MKDirectionsModeStreetCar,MKDirectionsModePlane,MKDirectionsModeBike,MKDirectionsModeFerry,MKDirectionsModeTaxi,MKDirectionsModePedestrian,MKDirectionsModeOther|}</string>",
+            "</array>"
+        ],
+        "description": "Specifies the types of directions the app can deliver. See MKDirectionsApplicationSupportedModes for details."
+    },
+    "Fonts provided by application": {
+        "prefix": "Fonts provided by application",
+        "body": [
+            "<key>UIAppFonts</key>",
+            "<array>",
+            "\t<string>${1:FONT_NAME}</string>",
+            "</array>"
+        ],
+        "description": "Specifies a list of app-specific fonts. See UIAppFonts for details."
+    },
+    "Application does not run in background": {
+        "prefix": "Application does not run in background",
+        "body": [
+            "<key>UIApplicationExitsOnSuspend</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app terminates instead of run in the background. See UIApplicationExitsOnSuspend for details."
+    },
+    "UIApplicationShortcutItems": {
+        "prefix": "UIApplicationShortcutItems",
+        "body": [
+            "<key>UIApplicationShortcutItems</key>",
+            "<array>",
+            "\t<dict>",
+			"\t\t<key>UIApplicationShortcutItemIconFile</key>",
+            "\t\t<string>${1:}</string>",
+            "\t\t<key>UIApplicationShortcutItemIconType</key>",
+			"\t\t<string>${2:}</string>",
+			"\t\t<key>UIApplicationShortcutItemTitle</key>",
+            "\t\t<string>${3:}</string>",
+            "\t\t<key>UIApplicationShortcutItemSubtitle</key>",
+            "\t\t<string>${4:}</string>",
+            "\t\t<key>UIApplicationShortcutItemType</key>",
+            "\t\t<string>${5:}</string>",
+            "\t\t<key>UIApplicationShortcutItemUserInfo</key>",
+            "\t\t<dict>",
+            "\t\t\t<key>${6:}</key>",
+            "\t\t\t<string>${7:}</string>",
+            "\t\t</dict>",
+		    "\t</dict>",
+            "</array>"
+        ],
+        "description": "Specifies the static Home screen quick actions for the app. See UIApplicationShortcutItems for details."
+    },
+    "UIApplicationShortcutWidget": {
+        "prefix": "UIApplicationShortcutWidget",
+        "body": [
+            "<key>UIApplicationShortcutWidget</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the bundle ID of the widget to be available as a Home screen quick action, for apps that have more than one widget. See UIApplicationShortcutWidget for details."
+    },
+    "Supports HDR color mode": {
+        "prefix": "Supports HDR color mode",
+        "body": [
+            "<key>UIAppSupportsHDR</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app supports HDR mode on Apple TV 4K. See UIAppSupportsHDR for details."
+    },
+    "Required background modes": {
+        "prefix": "Required background modes",
+        "body": [
+            "<key>UIBackgroundModes</key>",
+            "<array>",
+            "\t<string>${1|audio,location,voip,fetch,remote-notification,newsstand-content,external-accessory,bluetooth-central,bluetooth-peripheral|}</string>",
+            "</array>"
+        ],
+        "description": "Specifies that the app needs to continue running in the background. See UIBackgroundModes for details."
+    },
+    "Targeted device family": {
+        "prefix": "Targeted device family",
+        "body": [
+            "<key>UIDeviceFamily</key>",
+            "<integer>${1:0}</integer>"
+        ],
+        "description": "Inserted automatically by Xcode to define the target device of the app. See UIDeviceFamily for details."
+    },
+    "Application supports iTunes file sharing": {
+        "prefix": "Application supports iTunes file sharing",
+        "body": [
+            "<key>UIFileSharingEnabled</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app shares files with the user’s computer through iTunes. See UIFileSharingEnabled for details."
+    },
+    "Initial interface orientation": {
+        "prefix": "Initial interface orientation",
+        "body": [
+            "<key>UIInterfaceOrientation</key>",
+            "<string>${1|UIInterfaceOrientationPortrait,UIInterfaceOrientationPortraitUpsideDown,UIInterfaceOrientationLandscapeLeft,UIInterfaceOrientationLandscapeRight,UIInterfaceOrientationUnknown|}</string>"
+        ],
+        "description": "Specifies the initial orientation of the app’s user interface. See UIInterfaceOrientation for details."
+    },
+    "Launch image": {
+        "prefix": "Launch image",
+        "body": [
+            "<key>UILaunchImageFile</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the name of the app’s launch image. See UILaunchImageFile for details."
+    },
+    "UILaunchImages": {
+        "prefix": "UILaunchImages",
+        "body": [
+            "<key>UILaunchImages</key>",
+            "<array>",
+            "\t<dict>",
+			"\t\t<key>UILaunchImageName</key>",
+            "\t\t<string>${1:}</string>",
+            "\t\t<key>UILaunchImageMinimumOSVersion</key>",
+			"\t\t<string>${2:}</string>",
+			"\t\t<key>UILaunchImageSize</key>",
+            "\t\t<string>${3:}</string>",
+            "\t\t<key>UILaunchImageOrientation</key>",
+            "\t\t<string>${4:}</string>",
+		    "\t</dict>",
+            "</array>"
+        ],
+        "description": "Specifies the launch images to use for the app. See UILaunchImages for details."
+    },
+    "UILaunchStoryboardName": {
+        "prefix": "UILaunchStoryboardName",
+        "body": [
+            "<key>UILaunchStoryboardName</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the storyboard from which to generate a launch image to use for the app. See UILaunchStoryboardName for details."
+    },
+    "UILaunchStoryboards": {
+        "prefix": "UILaunchStoryboards",
+        "body": [
+            "<key>UILaunchStoryboards</key>",
+            "<array>",
+            "\t<dict>",
+			"\t\t<key>UILaunchStoryboardDefinitions</key>",
+            "\t\t<dict>",
+            "\t\t\t<key>${1:}</key>",
+            "\t\t\t<string>${2:}</string>",
+            "\t\t</dict>",
+            "\t\t<key>UIDefaultLaunchStoryboard</key>",
+			"\t\t<string>${3:}</string>",
+			"\t\t<key>UIURLToLaunchStoryboardAssociations</key>",
+            "\t\t<dict>",
+            "\t\t\t<key>${4:}</key>",
+            "\t\t\t<string>${5:}</string>",
+            "\t\t</dict>",
+            "\t</dict>",
+            "</array>"
+        ],
+        "description": "Specifies information about multiple storyboards from which to generate launch images for an app. See UILaunchStoryboards for details."
+    },
+    "UIMainStoryboardFile": {
+        "prefix": "UIMainStoryboardFile",
+        "body": [
+            "<key>UIMainStoryboardFile</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "UIMainStoryboardFile"
+    },
+    "UINewsstandApp": {
+        "prefix": "UINewsstandApp",
+        "body": [
+            "<key>UINewsstandApp</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app presents its content in Newsstand. See UINewsstandApp for details."
+    },
+    "Icon already includes gloss effects": {
+        "prefix": "Icon already includes gloss effects",
+        "body": [
+            "<key>UIPrerenderedIcon</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app’s icon already includes a shine effect. See UIPrerenderedIcon for details."
+    },
+    "Required device capabilities": {
+        "prefix": "Required device capabilities",
+        "body": [
+            "<key>UIRequiredDeviceCapabilities</key>",
+            "<array>",
+            "\t<dict>",
+			"\t\t<key>accelerometer</key>",
+            "\t\t<string>${1:}</string>",
+            "\t\t<key>arkit</key>",
+			"\t\t<string>${2:}</string>",
+			"\t\t<key>armv6</key>",
+            "\t\t<string>${3:}</string>",
+            "\t\t<key>armv7</key>",
+            "\t\t<string>${4:}</string>",
+			"\t\t<key>arm64</key>",
+            "\t\t<string>${5:}</string>",
+            "\t\t<key>auto-focus-camera</key>",
+			"\t\t<string>${6:}</string>",
+			"\t\t<key>bluetooth-le</key>",
+            "\t\t<string>${7:}</string>",
+            "\t\t<key>camera-flash</key>",
+            "\t\t<string>${8:}</string>",
+			"\t\t<key>front-facing-camera</key>",
+            "\t\t<string>${9:}</string>",
+            "\t\t<key>gamekit</key>",
+			"\t\t<string>${10:}</string>",
+			"\t\t<key>gps</key>",
+            "\t\t<string>${11:}</string>",
+            "\t\t<key>gyroscope</key>",
+            "\t\t<string>${12:}</string>",
+            "\t\t<key>healthkit</key>",
+            "\t\t<string>${13:}</string>",
+            "\t\t<key>location-services</key>",
+            "\t\t<string>${14:}</string>",
+            "\t\t<key>magnetometer</key>",
+            "\t\t<string>${15:}</string>",
+            "\t\t<key>metal</key>",
+            "\t\t<string>${16:}</string>",
+            "\t\t<key>microphone</key>",
+            "\t\t<string>${17:}</string>",
+            "\t\t<key>nfc</key>",
+            "\t\t<string>${17:}</string>",
+            "\t\t<key>opengles-1</key>",
+            "\t\t<string>${18:}</string>",
+            "\t\t<key>opengles-2</key>",
+            "\t\t<string>${19:}</string>",
+            "\t\t<key>opengles-3</key>",
+            "\t\t<string>${20:}</string>",
+            "\t\t<key>peer-peer</key>",
+            "\t\t<string>${21:}</string>",
+            "\t\t<key>sms</key>",
+            "\t\t<string>${22:}</string>",
+            "\t\t<key>still-camera</key>",
+            "\t\t<string>${23:}</string>",
+            "\t\t<key>telephony</key>",
+            "\t\t<string>${24:}</string>",
+            "\t\t<key>video-camera</key>",
+            "\t\t<string>${25:}</string>",
+            "\t\t<key>wifi</key>",
+            "\t\t<string>${26:}</string>",
+		    "\t</dict>",
+            "</array>"
+        ],
+        "description": "Specifies the device-related features required for the app to run. See UIRequiredDeviceCapabilities for details."
+    },
+    "Application uses Wi-Fi": {
+        "prefix": "Application uses Wi-Fi",
+        "body": [
+            "<key>UIRequiresPersistentWiFi</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether this app requires a Wi-Fi connection. See UIRequiresPersistentWiFi for details."
+    },
+    "Status bar is initially hidden": {
+        "prefix": "Status bar is initially hidden",
+        "body": [
+            "<key>UIStatusBarHidden</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the status bar is initially hidden when the app launches. See UIStatusBarHidden for details."
+    },
+    "Status bar style": {
+        "prefix": "Status bar style",
+        "body": [
+            "<key>UIStatusBarStyle</key>",
+            "<string>${1|UIStatusBarStyleDefault,UIStatusBarStyleLightContent,UIStatusBarStyleBlackTranslucent,UIStatusBarStyleBlackOpaque|}</string>"
+        ],
+        "description": "Specifies the style of the status bar as the app launches. See UIStatusBarStyle for details."
+    },
+    "Supported external accessory protocols": {
+        "prefix": "Supported external accessory protocols",
+        "body": [
+            "<key>UISupportedExternalAccessoryProtocols</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the communications protocols supported for communication with attached hardware accessories. See UISupportedExternalAccessoryProtocols for details."
+    },
+    "Supported interface orientations": {
+        "prefix": "Supported interface orientations",
+        "body": [
+            "<key>UISupportedInterfaceOrientations</key>",
+            "<array>",
+            "\t<string>${1|UIInterfaceOrientationPortrait,UIInterfaceOrientationPortraitUpsideDown,UIInterfaceOrientationLandscapeLeft,UIInterfaceOrientationLandscapeRight|}</string>",
+            "</array>"
+        ],
+        "description": "Specifies the interface orientations that the app supports. See UISupportedInterfaceOrientations for details."
+    },
+    "Supports Document Browser": {
+        "prefix": "Supports Document Browser",
+        "body": [
+            "<key>UISupportsDocumentBrowser</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies that the app is a document-based app. See UISupportsDocumentBrowser for details."
+    },
+    "User Interface Style": {
+        "prefix": "User Interface Style",
+        "body": [
+            "<key>UIUserInterfaceStyle</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the preferred user interface appearance—light or dark—for a tvOS app. See UIUserInterfaceStyle for details."
+    },
+    "UIViewControllerBasedStatusBarAppearance": {
+        "prefix": "UIViewControllerBasedStatusBarAppearance",
+        "body": [
+            "<key>UIViewControllerBasedStatusBarAppearance</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the view controller determines the status bar style. See UIViewControllerBasedStatusBarAppearance for details."
+    },
+    "Renders with edge antialiasing": {
+        "prefix": "Renders with edge antialiasing",
+        "body": [
+            "<key>UIViewEdgeAntialiasing</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether Core Animation layers use antialiasing when drawing does not align to pixel boundaries. See UIViewEdgeAntialiasing for details."
+    },
+    "Renders with group opacity": {
+        "prefix": "Renders with group opacity",
+        "body": [
+            "<key>UIViewGroupOpacity</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether Core Animation layers inherit the opacity of their superlayer. See UIViewGroupOpacity for details."
+    },
+    "UIWhitePointAdaptivityStyle": {
+        "prefix": "UIWhitePointAdaptivityStyle",
+        "body": [
+            "<key>UIWhitePointAdaptivityStyle</key>",
+            "<array>",
+            "\t<string>${1|UIWhitePointAdaptivityStyleStandard,UIWhitePointAdaptivityStyleReading,UIWhitePointAdaptivityStylePhoto,UIWhitePointAdaptivityStyleVideo,UIWhitePointAdaptivityStyleGame|}</string>",
+            "</array>"
+        ],
+        "description": "Specifies the app’s white point adaptivity style, for use on devices with True Tone displays. See UIWhitePointAdaptivityStyle for details."
+    }
+}

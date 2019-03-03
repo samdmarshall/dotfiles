@@ -1,0 +1,85 @@
+{
+    "true": {
+        "prefix": "true",
+        "body": [
+            "<true/>"
+        ],
+        "description": "true"
+    },
+    "false": {
+        "prefix": "false",
+        "body": [
+            "<false/>"
+        ],
+        "description": "false"
+    },
+    "key": {
+        "prefix": "key",
+        "body": [
+            "<key>${1:}</key>"
+        ],
+        "description": "key"
+    },
+    "value": {
+        "prefix": "value",
+        "body": [
+            "<value>${1:}</value>"
+        ],
+        "description": "value"
+    },
+    "string": {
+        "prefix": "string",
+        "body": [
+            "<string>${1:}</string>"
+        ],
+        "description": "string"
+    },
+    "integer": {
+        "prefix": "integer",
+        "body": [
+            "<integer>${1:}</integer>"
+        ],
+        "description": "integer"
+    }
+    ,
+    "date": {
+        "prefix": "date",
+        "body": [
+            "<date>${1:}</date>"
+        ],
+        "description": "date"
+    },
+    "data": {
+        "prefix": "data",
+        "body": [
+            "<data>${1:}</data>"
+        ],
+        "description": "data"
+    },
+    "array": {
+        "prefix": "array",
+        "body": [
+            "<array>",
+            "\t${1:}",
+            "</array>"
+        ],
+        "description": "array"
+    },
+    "dict": {
+        "prefix": "dict",
+        "body": [
+            "<dict>",
+            "\t<key>${1:}</key>",
+            "\t<string>${2:}</string>",
+            "</dict>"
+        ],
+        "description": "dict"
+    },
+    "URLSchemes": {
+        "prefix": "URLSchemes",
+        "body": [
+            "<string>${1|http,ftp,mailto|}</string>"
+        ],
+        "description": "dict"
+    }
+}

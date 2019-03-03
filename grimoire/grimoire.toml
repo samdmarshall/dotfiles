@@ -50,3 +50,8 @@ secure = ["TWINE_USERNAME", "TWINE_PASSWORD"]
 [ghi]
 secure = ["GHI_TOKEN"]
 remove = ["GIT_CONFIG"]
+
+[tootstream]
+secure = ["TOOTSTREAM_DEFAULT_CLIENT_ID", "TOOTSTREAM_DEFAULT_CLIENT_SECRET", "TOOTSTREAM_DEFAULT_TOKEN"]
+  [tootstream.additional]
+  TOOTSTREAM_PROFILE = "default"

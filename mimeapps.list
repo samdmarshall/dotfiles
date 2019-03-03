@@ -1,7 +1,12 @@
-
 [Default Applications]
 text/html=wsl-open.desktop
 x-scheme-handler/http=wsl-open.desktop
 x-scheme-handler/https=wsl-open.desktop
 x-scheme-handler/about=wsl-open.desktop
 x-scheme-handler/unknown=wsl-open.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=exo-mail-reader.desktop
+x-scheme-handler/http=exo-web-browser.desktop
+x-scheme-handler/https=exo-web-browser.desktop
+

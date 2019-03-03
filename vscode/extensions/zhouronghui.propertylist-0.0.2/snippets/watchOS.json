@@ -1,0 +1,69 @@
+{
+    "CLKComplicationSupportedFamilies": {
+        "prefix": "CLKComplicationSupportedFamilies",
+        "body": [
+            "<key>CLKComplicationSupportedFamilies</key>",
+            "<array>",
+            "\t<string>${1|CLKComplicationFamilyModularSmall,CLKComplicationFamilyModularLarge,CLKComplicationFamilyUtilitarianSmall,CLKComplicationFamilyUtilitarianLarge,CLKComplicationFamilyCircular|}</string>",
+            "</array>"
+        ],
+        "description": "Specifies the complication families for which the app can provide data. See CLKComplicationSupportedFamilies for details."
+    },
+    "CLKComplicationFamily": {
+        "prefix": "CLKComplicationFamily",
+        "body": [
+            "<string>${1|CLKComplicationFamilyModularSmall,CLKComplicationFamilyModularLarge,CLKComplicationFamilyUtilitarianSmall,CLKComplicationFamilyUtilitarianLarge,CLKComplicationFamilyCircular|}</string>"
+        ],
+        "description": "Family names"
+    },
+    "CLKComplicationPrincipalClass": {
+        "prefix": "CLKComplicationPrincipalClass",
+        "body": [
+            "<key>CLKComplicationPrincipalClass</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the name of the class that implements the complication data source protocol. See CLKComplicationPrincipalClass for details."
+    },
+    "WKAppBundleIdentifier": {
+        "prefix": "WKAppBundleIdentifier",
+        "body": [
+            "<key>WKAppBundleIdentifier</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the bundle ID of the Watch app. See WKAppBundleIdentifier for details."
+    } ,
+    "WKBackgroundModes": {
+        "prefix": "WKBackgroundModes",
+        "body": [
+            "<key>WKBackgroundModes</key>",
+            "<array>",
+            "\t<string>${1:}</string>",
+            "</array>"
+        ],
+        "description": "Provides execution time, for a WatchKit extension running in the background, to update UI values in its app or to perform view navigation for workout processing. See WKBackgroundModes for details."
+    } ,
+    "WKCompanionAppBundleIdentifier": {
+        "prefix": "WKCompanionAppBundleIdentifier",
+        "body": [
+            "<key>WKCompanionAppBundleIdentifier</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the bundle ID of the companion iOS app. See WKCompanionAppBundleIdentifier for details."
+    } ,
+    "WKExtensionDelegateClassName": {
+        "prefix": "WKExtensionDelegateClassName",
+        "body": [
+            "<key>WKExtensionDelegateClassName</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the name of the class that manages lifecycle events for the WatchKit extension. See WKExtensionDelegateClassName for details."
+    } ,
+    "WKWatchKitApp": {
+        "prefix": "WKWatchKitApp",
+        "body": [
+            "<key>WKWatchKitApp</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies a Boolean indicating whether the app is the launchable Watch app. See WKWatchKitApp for details."
+    }
+}

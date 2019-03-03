@@ -1,0 +1,176 @@
+{
+    "Application Category": {
+        "prefix": "Application Category",
+        "body": [
+            "<key>LSApplicationCategoryType</key>",
+            "<string>${1|public.app-category.business,public.app-category.developer-tools,public.app-category.education,public.app-category.entertainment,public.app-category.finance,public.app-category.games,public.app-category.graphics-design,public.app-category.healthcare-fitness,public.app-category.lifestyle,public.app-category.medical,public.app-category.music,public.app-category.news,public.app-category.photography,public.app-category.productivity,public.app-category.reference,public.app-category.social-networking,public.app-category.sports,public.app-category.travel,public.app-category.utilities,public.app-category.video,public.app-category.weatherpublic.app-category.action-games,public.app-category.adventure-games,public.app-category.arcade-games,public.app-category.board-games,public.app-category.card-games,public.app-category.casino-games,public.app-category.dice-games,public.app-category.educational-games,public.app-category.family-games,public.app-category.kids-games,public.app-category.music-games,public.app-category.puzzle-games,public.app-category.racing-games,public.app-category.role-playing-games,public.app-category.simulation-games,public.app-category.sports-games,public.app-category.strategy-games,public.app-category.trivia-games,public.app-category.word-games|}</string>"
+        ],
+        "description": "Contains a string with the UTI that categorizes the app for the App Store. See LSApplicationCategoryType for details."
+    },
+    "public.app-category": {
+        "prefix": "public.app-category",
+        "body": [
+            "<string>${1|public.app-category.business,public.app-category.developer-tools,public.app-category.education,public.app-category.entertainment,public.app-category.finance,public.app-category.games,public.app-category.graphics-design,public.app-category.healthcare-fitness,public.app-category.lifestyle,public.app-category.medical,public.app-category.music,public.app-category.news,public.app-category.photography,public.app-category.productivity,public.app-category.reference,public.app-category.social-networking,public.app-category.sports,public.app-category.travel,public.app-category.utilities,public.app-category.video,public.app-category.weatherpublic.app-category.action-games,public.app-category.adventure-games,public.app-category.arcade-games,public.app-category.board-games,public.app-category.card-games,public.app-category.casino-games,public.app-category.dice-games,public.app-category.educational-games,public.app-category.family-games,public.app-category.kids-games,public.app-category.music-games,public.app-category.puzzle-games,public.app-category.racing-games,public.app-category.role-playing-games,public.app-category.simulation-games,public.app-category.sports-games,public.app-category.strategy-games,public.app-category.trivia-games,public.app-category.word-games|}</string>"
+        ],
+        "description": "public.app-category"
+    },
+    "LSApplicationQueriesSchemes": {
+        "prefix": "LSApplicationQueriesSchemes",
+        "body": [
+            "<key>LSApplicationQueriesSchemes</key>",
+            "<array>",
+            "\t<string>${1:}</string>",
+            "</array>"
+        ],
+        "description": "Specifies the URL schemes the app is able to test using the canOpenURL: method. See LSApplicationQueriesSchemes for details."
+    },
+    "Architecture priority": {
+        "prefix": "Architecture priority",
+        "body": [
+            "<key>LSArchitecturePriority</key>",
+            "<array>",
+            "\t<string>${1|i386,ppc,x86_64,ppc64|}</string>",
+            "</array>"
+        ],
+        "description": "Contains an array of strings identifying the supported code architectures and their preferred execution priority. See LSArchitecturePriority for details."
+    },
+    "Application is background only": {
+        "prefix": "Application is background only",
+        "body": [
+            "<key>LSBackgroundOnly</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app runs only in the background. (Mach-O apps only). See LSBackgroundOnly for details."
+    },
+    "Environment variables": {
+        "prefix": "Environment variables",
+        "body": [
+            "<key>LSEnvironment</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Contains a list of key/value pairs, representing environment variables and their values. See LSEnvironment for details."
+    },
+    "File quarantine enabled": {
+        "prefix": "File quarantine enabled",
+        "body": [
+            "<key>LSFileQuarantineEnabled</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the files this app creates are quarantined by default. See LSFileQuarantineEnabled."
+    },
+    "LSFileQuarantineExcludedPathPatterns": {
+        "prefix": "LSFileQuarantineExcludedPathPatterns",
+        "body": [
+            "<key>LSFileQuarantineExcludedPathPatterns</key>",
+            "<array>",
+            "\t<string>${1:}</string>",
+            "</array>"
+        ],
+        "description": "Specifies directories for which files should not be automatically quarantined. See LSFileQuarantineExcludedPathPatterns."
+    },
+    "Application should get App Died events": {
+        "prefix": "Application should get App Died events",
+        "body": [
+            "<key>LSGetAppDiedEvents</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app is notified when a child process dies. See LSGetAppDiedEvents for details."
+    },
+    "Minimum system version": {
+        "prefix": "Minimum system version",
+        "body": [
+            "<key>LSMinimumSystemVersion</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the minimum version of macOS required for the app to run. See LSMinimumSystemVersion for details."
+    },
+    "Minimum system versions, per-architecture": {
+        "prefix": "Minimum system versions, per-architecture",
+        "body": [
+            "<key>LSMinimumSystemVersionByArchitecture</key>",
+            "<dict>",
+			"\t<key>${1|i386,ppc,x86_64,ppc64|}</key>",
+            "\t<string>${2:}</string>",
+		    "</dict>"
+        ],
+        "description": "Specifies the minimum version of macOS required to run a given platform architecture. See LSMinimumSystemVersionByArchitecture for details."
+    },
+    "Architecture key value": {
+        "prefix": "Architecture key value",
+        "body": [
+			"<key>${1|i386,ppc,x86_64,ppc64|}</key>",
+            "<string>${2:}</string>"
+        ],
+        "description": "Execution architecture identifiers key value"
+    },
+    "Architecture": {
+        "prefix": "Architecture",
+        "body": [
+			"<string>${1|i386,ppc,x86_64,ppc64|}</string>"
+        ],
+        "description": "Execution architecture identifiers"
+    },
+    "Application prohibits multiple instances": {
+        "prefix": "Application prohibits multiple instances",
+        "body": [
+            "<key>LSMultipleInstancesProhibited</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether one user or multiple users can launch an app simultaneously. See LSMultipleInstancesProhibited for details."
+    },
+    "Application requires iPhone environment": {
+        "prefix": "Application requires iPhone environment",
+        "body": [
+            "<key>LSRequiresIPhoneOS</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app is an iOS app. See LSRequiresIPhoneOS for details."
+    },
+    "Application requires native environment": {
+        "prefix": "Application requires native environment",
+        "body": [
+            "<key>LSRequiresNativeExecution</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app must run natively on an Intel-based Mac, as opposed to under Rosetta emulation. See LSRequiresNativeExecution for details."
+    },
+    "LSSupportsOpeningDocumentsInPlace": {
+        "prefix": "LSSupportsOpeningDocumentsInPlace",
+        "body": [
+            "<key>LSSupportsOpeningDocumentsInPlace</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Enables your app to directly open original documents, not copies, from other apps. See LSSupportsOpeningDocumentsInPlace for details."
+    },
+    "Application is agent (UIElement)": {
+        "prefix": "Application is agent (UIElement)",
+        "body": [
+            "<key>LSUIElement</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app is an agent app, that is, an app that should not appear in the Dock or Force Quit window. See LSUIElement for details."
+    },
+    "Application UI Presentation Mode": {
+        "prefix": "Application UI Presentation Mode",
+        "body": [
+            "<key>LSUIPresentationMode</key>",
+            "<integer>${1|0,1,2,3,4|}</integer>"
+        ],
+        "description": "Sets the visibility of system UI elements when the app launches. See LSUIPresentationMode for details."
+    },
+    "LSUIPresentationMode": {
+        "prefix": "LSUIPresentationMode",
+        "body": [
+            "<integer>${1|0,1,2,3,4|}</integer>"
+        ],
+        "description": "LSUIPresentationMode"
+    },
+    "Application is visible in Classic": {
+        "prefix": "Application is visible in Classic",
+        "body": [
+            "<key>LSVisibleInClassic</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies whether an agent app or background-only app is visible to other apps in the Classic environment. See LSVisibleInClassic for details."
+    }
+}

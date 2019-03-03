@@ -1,0 +1,56 @@
+{
+    "RELATED-TO": {
+        "description": "RELATED-TO property",
+        "prefix": "rel",
+        "body": [
+            "RELATED-TO;RELTYPE=${1:PARENT|CHILD|SIBLING}:$0"
+        ]
+    },
+    "VALARM": {
+        "description": "VALARM component",
+        "prefix": "alarm",
+        "body": [
+            "BEGIN:VALARM",
+            "ACTION:${1:AUDIO|DISPLAY|EMAIL}",
+            "TRIGGER;VALUE=${2:DURATION|DATE-TIME};RELATED=${3:START|END}:-P${4:T0M}",
+            "REPEAT:${5:0}",
+            "DESCRIPTION:$TM_SELECTED_TEXT$0",
+            "END:VALARM"
+        ]
+    },
+    "VCALENDAR": {
+        "description": "VCALENDAR component",
+        "prefix": "cal",
+        "body": [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//${1: }//${2: }//EN",
+            "CALSCALE:${3:GREGORIAN}",
+            "X-WR-CALDESC;VALUE=TEXT:${4: }",
+            "X-WR-RELCALID;VALUE=TEXT:${5: }",
+            "X-WR-TIMEZONE:${6:America/New_York}",
+            "$TM_SELECTED_TEXT$0",
+            "END: VCALENDAR"
+        ]
+    },
+    "VEVENT": {
+        "description": "VEVENT component",
+        "prefix": "event",
+        "body": [
+            "BEGIN:VEVENT",
+            "UID:${1: }",
+            "STATUS:${2:CONFIRMED|TENTATIVE|CANCELLED}",
+            "SEQUENCE:0",
+            "DTSTAMP:${3:00000000}T000000Z",
+            "DTSTART;${4:VALUE=DATE|TZID=}:${5: }",
+            "SUMMARY:${6: }",
+            "LOCATION:${7: }",
+            "DESCRIPTION:${8:•–}",
+            "CATEGORIES:${9: }",
+            "CLASS:${10:PUBLIC|PRIVATE|CONFIDENTIAL}",
+            "TRANSP:${11:TRANSPARENT|OPAQUE}",
+            "PRIORITY:${12:0}",
+            "END:VEVENT"
+        ]
+    }
+}

@@ -1,0 +1,421 @@
+{
+    "GCSupportedGameControllers": {
+        "prefix": "GCSupportedGameControllers",
+        "body": [
+            "<key>GCSupportedGameControllers</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies the types of game controllers allowed or required for your app. See GCSupportedGameControllers for details."
+    },
+    "GCSupportsMultipleMicroGamepads": {
+        "prefix": "GCSupportsMultipleMicroGamepads",
+        "body": [
+            "<key>GCSupportsMultipleMicroGamepads</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies that the physical Apple TV Remote and the Apple TV Remote app should operate as separate game controllers. See GCSupportsMultipleMicroGamepads for details."
+    },
+    "GKGameCenterBadgingDisabled": {
+        "prefix": "GKGameCenterBadgingDisabled",
+        "body": [
+            "<key>GKGameCenterBadgingDisabled</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether your app is badged. See GKGameCenterBadgingDisabled for details."
+    },
+    "GKShowChallengeBanners": {
+        "prefix": "GKShowChallengeBanners",
+        "body": [
+            "<key>GKShowChallengeBanners</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether banners are shown within an app. See GKShowChallengeBannersfor details."
+    },
+    "NETestAppMapping": {
+        "prefix": "NETestAppMapping",
+        "body": [
+            "<key>NETestAppMapping</key>",
+            "<dict>",
+            "\t<key>${1:}</key>",
+            "\t<array>",
+            "\t\t<string>${2:}</string>",
+            "\t</array>",
+		    "</dict>"
+        ],
+        "description": "Enables testing of per-app VPN app extensions without using an MDM server. See NETestAppMapping for details."
+    },
+    "Privacy - NFC Reader Usage Description": {
+        "prefix": "Privacy - NFC Reader Usage Description",
+        "body": [
+            "<key>NFCReaderUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to use the device’s NFC reader. See NFCReaderUsageDescription for details."
+    },
+    "Privacy - Media Library Usage Description": {
+        "prefix": "Privacy - Media Library Usage Description",
+        "body": [
+            "<key>NSAppleMusicUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to use the media library. See NSAppleMusicUsageDescription for details."
+    },
+    "Scriptable": {
+        "prefix": "Scriptable",
+        "body": [
+            "<key>NSAppleScriptEnabled</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether AppleScript is enabled. See NSAppleScriptEnabled for details."
+    },
+    "NSAppTransportSecurity": {
+        "prefix": "NSAppTransportSecurity",
+        "body": [
+            "<key>NSAppTransportSecurity</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies changes to the default strong security for HTTP connections in iOS and macOS apps and app extensions. See NSAppTransportSecurity for details."
+    },
+    "Privacy - Bluetooth Peripheral Usage Description": {
+        "prefix": "Privacy - Bluetooth Peripheral Usage Description",
+        "body": [
+            "<key>NSBluetoothPeripheralUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to use Bluetooth. See NSBluetoothPeripheralUsageDescription for details."
+    },
+    "Privacy - Calendars Usage Description": {
+        "prefix": "Privacy - Calendars Usage Description",
+        "body": [
+            "<key>NSCalendarsUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access the user’s calendars. See NSCalendarsUsageDescription for details."
+    },
+    "Privacy - Camera Usage Description": {
+        "prefix": "Privacy - Camera Usage Description",
+        "body": [
+            "<key>NSCameraUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access the device’s camera. See NSCameraUsageDescription for details."
+    },
+    "Privacy - Contacts Usage Description": {
+        "prefix": "Privacy - Contacts Usage Description",
+        "body": [
+            "<key>NSContactsUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access the user’s contacts. See NSContactsUsageDescription for details."
+    },
+    "Dock Tile Plugin path": {
+        "prefix": "Dock Tile Plugin path",
+        "body": [
+            "<key>NSDockTilePlugIn</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the name of app’s Dock tile plug-in, if present. See NSDockTilePlugIn for details."
+    },
+    "Privacy - Face ID Usage Description": {
+        "prefix": "Privacy - Face ID Usage Description",
+        "body": [
+            "<key>NSFaceIDUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to use Face ID. See NSFaceIDUsageDescription for details."
+    },
+    "Privacy - Health Share Usage Description": {
+        "prefix": "Privacy - Health Share Usage Description",
+        "body": [
+            "<key>NSHealthShareUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to read the user’s health data. See NSHealthShareUsageDescription for details."
+    },
+    "Privacy - Health Update Usage Description": {
+        "prefix": "Privacy - Health Update Usage Description",
+        "body": [
+            "<key>NSHealthUpdateUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to make changes to the user’s health data. See NSHealthUpdateUsageDescription for details."
+    },
+    "Privacy - HomeKit Usage Description": {
+        "prefix": "Privacy - HomeKit Usage Description",
+        "body": [
+            "<key>NSHomeKitUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access the user’s HomeKit configuration data. See NSHomeKitUsageDescription for details."
+    },
+    "Copyright (human-readable)": {
+        "prefix": "Copyright (human-readable)",
+        "body": [
+            "<key>NSHumanReadableCopyright</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "(Localizable) Specifies the copyright notice for the bundle. See NSHumanReadableCopyright for details. This key replaces the obsolete CFBundleGetInfoString key."
+    },
+    "Cocoa Java application": {
+        "prefix": "Cocoa Java application",
+        "body": [
+            "<key>NSJavaNeeded</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the program requires a running Java VM. See NSJavaNeeded for details."
+    },
+    "Java classpaths": {
+        "prefix": "Java classpaths",
+        "body": [
+            "<key>NSJavaPath</key>",
+            "<array>",
+            "\t<string>${1:}</string>",
+            "</array>"
+        ],
+        "description": "An array of paths to classes whose components are preceded by NSJavaRoot. See NSJavaPath for details."
+    },
+    "Java root directory": {
+        "prefix": "Java root directory",
+        "body": [
+            "<key>NSJavaRoot</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The root directory containing the java classes. See NSJavaRoot for details."
+    },
+    "Privacy - Location Always Usage Description": {
+        "prefix": "Privacy - Location Always Usage Description",
+        "body": [
+            "<key>NSLocationAlwaysUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access the user’s location information at all times. See NSLocationAlwaysUsageDescription for details."
+    },
+    "Privacy - Location When In Use Usage Description": {
+        "prefix": "Privacy - Location When In Use Usage Description",
+        "body": [
+            "<key>NSLocationWhenInUseUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access the user’s location information while your app is in use. See NSLocationWhenInUseUsageDescription for details."
+    },
+    "Main nib file base name": {
+        "prefix": "Main nib file base name",
+        "body": [
+            "<key>NSMainNibFile</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The name of an app’s main nib file. See NSMainNibFile for details."
+    },
+    "Privacy - Microphone Usage Description": {
+        "prefix": "Privacy - Microphone Usage Description",
+        "body": [
+            "<key>NSMicrophoneUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access any of the device’s microphones. See NSMicrophoneUsageDescription for details."
+    },
+    "Privacy - Motion Usage Description": {
+        "prefix": "Privacy - Motion Usage Description",
+        "body": [
+            "<key>NSMotionUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access the device’s accelerometer. See NSMotionUsageDescription for details."
+    },
+    "Core Data persistent store type": {
+        "prefix": "Core Data persistent store type",
+        "body": [
+            "<key>NSPersistentStoreTypeKey</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The type of Core Data persistent store associated with a persistent document type. See NSPersistentStoreTypeKey for details."
+    },
+    "Privacy - Photo Library Additions Usage Description": {
+        "prefix": "Privacy - Photo Library Additions Usage Description",
+        "body": [
+            "<key>NSPhotoLibraryAddUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to get write-only access to the user’s photo library. See NSPhotoLibraryAddUsageDescription for details."
+    },
+    "Privacy - Photo Library Usage Description": {
+        "prefix": "Privacy - Photo Library Usage Description",
+        "body": [
+            "<key>NSPhotoLibraryUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access the user’s photo library. See NSPhotoLibraryUsageDescription for details."
+    },
+    "Preference Pane icon file": {
+        "prefix": "Preference Pane icon file",
+        "body": [
+            "<key>NSPrefPaneIconFile</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The name of an image file resource used to represent a preference pane in the System Preferences app. See NSPrefPaneIconFile for details."
+    },
+    "Preference Pane icon label": {
+        "prefix": "Preference Pane icon label",
+        "body": [
+            "<key>NSPrefPaneIconLabel</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The name of a preference pane displayed beneath the preference pane icon in the System Preferences app. See NSPrefPaneIconLabel for details."
+    },
+    "Principal class": {
+        "prefix": "Principal class",
+        "body": [
+            "<key>NSPrincipalClass</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The name of the bundle’s main class. See NSPrincipalClass for details."
+    },
+    "Privacy - Reminders Usage Description": {
+        "prefix": "Privacy - Reminders Usage Description",
+        "body": [
+            "<key>NSRemindersUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access the user’s reminders. See NSRemindersUsageDescription for details."
+    },
+    "Services": {
+        "prefix": "Services",
+        "body": [
+            "<key>NSServices</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "An array of dictionaries specifying the services provided by an app. See NSServices for details."
+    },
+    "NSSiriUsageDescription": {
+        "prefix": "NSSiriUsageDescription",
+        "body": [
+            "<key>NSSiriUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to send user data to Siri. See NSSiriUsageDescription for details."
+    },
+    "NSSpeechRecognitionUsageDescription": {
+        "prefix": "NSSpeechRecognitionUsageDescription",
+        "body": [
+            "<key>NSSpeechRecognitionUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to send user data to Apple’s speech recognition servers. See NSSpeechRecognitionUsageDescription for details."
+    },
+    "NSSupportsAutomaticTermination": {
+        "prefix": "NSSupportsAutomaticTermination",
+        "body": [
+            "<key>NSSupportsAutomaticTermination</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app may be killed to reclaim memory. See NSSupportsAutomaticTermination for details."
+    },
+    "NSSupportsPurgeableLocalStorage": {
+        "prefix": "NSSupportsPurgeableLocalStorage",
+        "body": [
+            "<key>NSSupportsPurgeableLocalStorage</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Declares that the app can depend on nonlocal storage for user data. See NSSupportsPurgeableLocalStorage for details."
+    },
+    "NSSupportsSuddenTermination": {
+        "prefix": "NSSupportsSuddenTermination",
+        "body": [
+            "<key>NSSupportsSuddenTermination</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app may be killed to allow for faster shut down or log out operations. See NSSupportsSuddenTermination for details."
+    },
+    "NSUbiquitousContainerIsDocumentScopePublic": {
+        "prefix": "NSUbiquitousContainerIsDocumentScopePublic",
+        "body": [
+            "<key>NSUbiquitousContainerIsDocumentScopePublic</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the iCloud Drive should share the contents of this container. See NSUbiquitousContainerIsDocumentScopePublic for details."
+    },
+    "NSUbiquitousContainerName": {
+        "prefix": "NSUbiquitousContainerName",
+        "body": [
+            "<key>NSUbiquitousContainerName</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the name that the iCloud Drive displays for your container. See NSUbiquitousContainerName for details."
+    },
+    "NSUbiquitousContainerSupportedFolderLevels": {
+        "prefix": "NSUbiquitousContainerSupportedFolderLevels",
+        "body": [
+            "<key>NSUbiquitousContainerSupportedFolderLevels</key>",
+            "<string>${1|None,One,Any|}</string>"
+        ],
+        "description": "Specifies the maximum number of folder levels inside your container’s Documents directory. See NSUbiquitousContainerSupportedFolderLevels for details."
+    },
+    "NSUbiquitousDisplaySet": {
+        "prefix": "NSUbiquitousDisplaySet",
+        "body": [
+            "<key>NSUbiquitousDisplaySet</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the mobile document data that the app can view. See NSUbiquitousDisplaySet for details."
+    },
+    "NSUserActivityTypes": {
+        "prefix": "NSUserActivityTypes",
+        "body": [
+            "<key>NSUserActivityTypes</key>",
+            "<array>",
+            "\t<string>${1:}</string>",
+            "</array>"
+        ],
+        "description": "Specifies the user activity types that the app supports. See NSUserActivityTypes for details."
+    },
+    "NSUserNotificationAlertStyle": {
+        "prefix": "NSUserNotificationAlertStyle",
+        "body": [
+            "<key>NSUserNotificationAlertStyle</key>",
+            "<string>${1|banner,alert,none|}</string>"
+        ],
+        "description": "Specifies whether the notification style should be banner, alert, or none. The default value is banner, which is the recommended style. See NSUserNotificationAlertStyle for details."
+    },
+    "Privacy - TV Provider Usage Description": {
+        "prefix": "Privacy - TV Provider Usage Description",
+        "body": [
+            "<key>NSVideoSubscriberAccountUsageDescription</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the reason for your app to access the user’s TV provider account. See NSVideoSubscriberAccountUsageDescription for details."
+    },
+    "Exported Type UTIs": {
+        "prefix": "Exported Type UTIs",
+        "body": [
+            "<key>UTExportedTypeDeclarations</key>",
+            "<array>",
+            "\t<dict>",
+            "\t\t<key>${1|UTTypeConformsTo,UTTypeDescription,UTTypeIconFile,UTTypeIdentifier,UTTypeReferenceURL,UTTypeTagSpecification|}</key>",
+            "\t\t<string>${2:}</string>",
+            "\t</dict>",
+            "</array>"
+        ],
+        "description": "An array of dictionaries specifying the UTI-based types supported (and owned) by the app. See UTExportedTypeDeclarations for details."
+    },
+    "UTType": {
+        "prefix": "UTType",
+        "body": [
+            "<key>${1|UTTypeConformsTo,UTTypeDescription,UTTypeIconFile,UTTypeIdentifier,UTTypeReferenceURL,UTTypeTagSpecification|}</key>",
+            "<string>${2:}</string>"
+        ],
+        "description": "UTType."
+    },
+    "Imported Type UTIs": {
+        "prefix": "Imported Type UTIs",
+        "body": [
+            "<key>UTImportedTypeDeclarations</key>",
+            "<array>",
+            "\t<dict>",
+            "\t\t<key>${1|UTTypeConformsTo,UTTypeDescription,UTTypeIconFile,UTTypeIdentifier,UTTypeReferenceURL,UTTypeTagSpecification|}</key>",
+            "\t\t<string>${2:}</string>",
+            "\t</dict>",
+            "</array>"
+        ],
+        "description": "An array of dictionaries specifying the UTI-based types supported (but not owned) by the app. See UTImportedTypeDeclarations for details."
+    }
+}

@@ -30,6 +30,7 @@ end
 # load keybindings
 source "$XDG_CONFIG_HOME/fish/bindings.fish"
 
-source "$XDG_CONFIG_HOME/fish/handlers.fish"
-
+if status --is-interactive
+	source "$XDG_CONFIG_HOME/fish/handlers.fish"
+end
 

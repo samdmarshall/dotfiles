@@ -47,3 +47,5 @@ w3m/history
 nano/search_history
 
 htop/
+
+**/node_modules/**

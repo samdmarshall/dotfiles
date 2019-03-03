@@ -3,8 +3,7 @@ umask 002
 set --export --global DOCKER_HOST "tcp://127.0.0.1:2375"
 set --export --global DOCKER_CERT_PATH "/mnt/c/Users/Demi/.docker/machine/machines/default/"
 set --export --global COMPOSE_CONVERT_WINDOWS_PATHS true
-
-alias code "/mnt/c/Users/Demi/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe"
+set --export --global PULSE_SERVER "tcp://127.0.0.1"
 
 # This is to automatically start specific daemons in WSL since it doesn't auto-start background services
 if contains "service" (ls /etc/sudoers.d/) 
@@ -16,6 +15,11 @@ else
 	echo "Please add entry for 'service' in '/etc/sudoers.d/'!"
 	echo "  $USER ALL=(root) NOPASSWD: /usr/sbin/service"
 end
+
+#set --unexport emacs_daemon_pid (pgrep "emacs --daemon --user demi")
+#if test -z $emacs_daemon_pid 
+#	emacs --daemon --user demi > /dev/null
+#end
 
 if test (count (ls ~/Documents)) = 0
 	sudo mount --bind /mnt/c/Users/Demi/Documents ~/Documents

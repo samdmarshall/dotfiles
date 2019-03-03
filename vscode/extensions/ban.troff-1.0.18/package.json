@@ -1,0 +1,57 @@
+{
+	"name": "troff",
+	"displayName": "TROFF Syntax",
+	"description": "TROFF Syntax Highlighter",
+	"version": "1.0.18",
+	"publisher": "ban",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Languages"
+	],
+	"keywords": [
+		"troff",
+		"nroff",
+		"groff"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "troff",
+				"aliases": [
+					"Troff",
+					"troff"
+				],
+				"extensions": [
+					".troff",
+					".nroff",
+					".groff"
+				],
+				"configuration": "./troff.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "troff",
+				"scopeName": "text.troff",
+				"path": "./syntaxes/troff.tmLanguage"
+			}
+		]
+	},
+	"icon": "icon.png",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"homepage": "https://github.com/bartosz-antosik/vscode-troff",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bartosz-antosik/vscode-troff.git"
+	},
+	"bugs": {
+		"url": "https://github.com/bartosz-antosik/vscode-troff/issues"
+	},
+	"__metadata": {
+		"id": "23d8b07b-4def-40ac-a04e-665c450f6060",
+		"publisherId": "058d2b2f-dac6-41b2-8c3e-462966d45cd6",
+		"publisherDisplayName": "Bartosz Antosik"
+	}
+}

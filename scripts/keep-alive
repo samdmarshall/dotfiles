@@ -1,11 +1,17 @@
 #!/usr/bin/env fish
 set -l arguments $argv
-string match --quiet $arguments[1] (grimoire --list)
-set -l use_grimoire (test $status -eq 0)
+set -l use_grimoire false
+
+for entry in (grimoire --list)
+	if test entry = arguments[1]
+		set use_grimoire true
+		break
+	end
+end
 
 set -l command $arguments
-if $use_grimoire
-    set command "grimoire "+ %$arguments
+if test $use_grimoire
+    set command "grimoire $arguments"
 end
 
 while true

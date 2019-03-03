@@ -8,20 +8,24 @@
 
 (add-to-list 'load-path "~/.emacs.d/emacs-nav")
 (add-to-list 'load-path "/home/linuxbrew/.linuxbrew/share/emacs/site-lisp/pass/")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/moe-theme")
+(add-to-list 'load-path "~/.emacs.d/moe-theme")
 
+(require 'moe-theme)
 (require 'nav)
 (require 'redo+)
 (require 'indent-guide)
 (require 'mouse)
 (require 'hlinum)
-;;(require 'color-theme)
-;;(color-theme-initialize)
-(require 'moe-theme)
-
 
 
 ; ========================================================== ;
 
+;; Theme
+(setq moe-theme-highlight-buffer-id t)
+(moe-theme-set-color 'black)
+;(load-theme 'moe-light t)
+(moe-light)
 
 ;; # Indent Guides
 (indent-guide-global-mode)
@@ -62,6 +66,7 @@
 (nav-disable-overeager-window-splitting)
 
 
+;; Key-Binding Overrides
 (global-set-key (kbd "M-f") 'forward-word)
 (global-set-key (kbd "M-b") 'backward-word)
 
@@ -84,7 +89,7 @@
 (global-set-key (kbd "<f8>") 'nav-toggle)
 
 
-;;
+;; commands for nav-mode
 (defun nav-mode-hl-hook ()
   (local-set-key (kbd "<right>") 'nav-open-file-under-cursor)
   (local-set-key (kbd "<left>")  'nav-go-up-one-dir))
@@ -110,6 +115,8 @@
 (setq backup-directory-alist `(("." . "~/.cache/emacs/")))
 (setq backup-by-copying t)
 
+;; Mode Line Settings
+(load "~/.emacs.d/mode-line.el")
 
 ;;(set-default 'cursor-type 'box)
 (custom-set-variables
@@ -122,7 +129,7 @@
 		("13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" default)))
  '(package-selected-packages
 	 (quote
-		(guess-language helpful how-many-lines-in-project link nasm-mode nav nm password-store password-store-otp path-helper moe-theme yaml-mode tss toml-mode toml tide redo+ pass npm-mode nlinum nim-mode markdown-mode indent-guide homebrew-mode hlinum fzf fish-mode elscreen electric-case color-theme)))
+		(wc-mode guess-language helpful how-many-lines-in-project link nasm-mode nav nm password-store password-store-otp path-helper yaml-mode tss toml-mode toml tide redo+ pass npm-mode nlinum nim-mode markdown-mode indent-guide homebrew-mode hlinum fzf fish-mode elscreen electric-case)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

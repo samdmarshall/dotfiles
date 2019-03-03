@@ -1,0 +1,28 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-immutable"
+    ],
+    "jsRules": {},
+    "rules": {
+        // Immutability rules
+        "readonly-keyword": true,
+        "readonly-array": true,
+        "no-let": true,
+        // Functional style rules
+        "no-this": true,
+        "no-class": true,
+        "no-mixed-interface": true,
+        // Style rules
+        "max-line-length": [
+            true,
+            80
+        ],
+        // Allow console, for debugging and logging purposes
+        "no-console": [
+            false
+        ]
+    },
+    "rulesDirectory": []
+}

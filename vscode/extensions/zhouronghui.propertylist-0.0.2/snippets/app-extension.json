@@ -1,0 +1,305 @@
+{
+    "IsASCIICapable": {
+        "prefix": "IsASCIICapable",
+        "body": [
+            "<key>IsASCIICapable</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Custom Keyboard: A Boolean value that specifies whether a custom keyboard supports the UIKeyboardTypeASCIICapable keyboard type trait. See IsASCIICapable for details."
+    },
+    "NSExtension": {
+        "prefix": "NSExtension",
+        "body": [
+            "<key>NSExtension</key>",
+            "<dict>",
+			"\t${1:}",
+		    "</dict>"
+        ],
+        "description": "General: A dictionary of keys and values that describe an app extension. See NSExtension for details."
+    },
+    "NSExtensionActionWantsFullScreenPresentation": {
+        "prefix": "NSExtensionActionWantsFullScreenPresentation",
+        "body": [
+            "<key>NSExtensionActionWantsFullScreenPresentation</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Action: A Boolean value that specifies whether the Action extension should be presented in full screen. See NSExtensionActionWantsFullScreenPresentation for details."
+    },
+    "NSExtensionActivationDictionaryVersion": {
+        "prefix": "NSExtensionActivationDictionaryVersion",
+        "body": [
+            "<key>NSExtensionActivationDictionaryVersion</key>",
+            "<integer>${1:}</integer>"
+        ],
+        "description": "Share, Action: An integer that specifies the activation dictionary version to employ. See NSExtensionActivationDictionaryVersion for details."
+    },
+    "NSExtensionActivationRule": {
+        "prefix": "NSExtensionActivationRule",
+        "body": [
+            "<key>NSExtensionActivationRule</key>",
+            "<dict>",
+            "\t<key>${1|NSExtensionActivationSupportsAttachmentsWithMaxCount,NSExtensionActivationSupportsAttachmentsWithMinCount,NSExtensionActivationSupportsFileWithMaxCount,NSExtensionActivationSupportsImageWithMaxCount,NSExtensionActivationSupportsMovieWithMaxCount,NSExtensionActivationSupportsText,NSExtensionActivationSupportsWebURLWithMaxCount,NSExtensionActivationSupportsWebPageWithMaxCount|}</key>",
+            "\t<string>${2:}</string>",
+		    "</dict>"
+        ],
+        "description": "Share, Action: A dictionary that specifies the semantic data types that a Share or Action extension supports. See NSExtensionActivationRule for details."
+    },
+    "NSExtensionActivationSupports": {
+        "prefix": "NSExtensionActivationSupports",
+        "body": [
+            "<key>${1|NSExtensionActivationSupportsAttachmentsWithMaxCount,NSExtensionActivationSupportsAttachmentsWithMinCount,NSExtensionActivationSupportsFileWithMaxCount,NSExtensionActivationSupportsImageWithMaxCount,NSExtensionActivationSupportsMovieWithMaxCount,NSExtensionActivationSupportsText,NSExtensionActivationSupportsWebURLWithMaxCount,NSExtensionActivationSupportsWebPageWithMaxCount|}</key>",
+            "<string>${2:}</string>"
+        ],
+        "description": "NSExtensionActivationSupports"
+    },
+    "NSExtensionActivationUsesStrictMatching": {
+        "prefix": "NSExtensionActivationUsesStrictMatching",
+        "body": [
+            "<key>NSExtensionActivationUsesStrictMatching</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Share, Action: See NSExtensionActivationUsesStrictMatching for details."
+    },
+    "NSExtensionAttributes": {
+        "prefix": "NSExtensionAttributes",
+        "body": [
+            "<key>NSExtensionAttributes</key>",
+            "<dict>",
+			"\t${1:}",
+		    "</dict>"
+        ],
+        "description": "General: A dictionary of keys and values that specify aspects of an app extension. See NSExtensionAttributes for details."
+    },
+    "NSExtensionFileProviderDocumentGroup": {
+        "prefix": "NSExtensionFileProviderDocumentGroup",
+        "body": [
+            "<key>NSExtensionFileProviderDocumentGroup</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Document Picker: A string that specifies the identifier of a shared container that can be accessed by a document picker and its associated file provider. See NSExtensionFileProviderDocumentGroup for details."
+    },
+    "NSExtensionJavaScriptPreprocessingFile": {
+        "prefix": "NSExtensionJavaScriptPreprocessingFile",
+        "body": [
+            "<key>NSExtensionJavaScriptPreprocessingFile</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Share, Action: A string that specifies the name of a JavaScript file supplied by a Share extension or an Action extension. See NSExtensionJavaScriptPreprocessingFile for details."
+    },
+    "NSExtensionMainStoryboard": {
+        "prefix": "NSExtensionMainStoryboard",
+        "body": [
+            "<key>NSExtensionMainStoryboard</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "General: A string that specifies the name of the app extension’s main storyboard file, minus the .storyboard filename extension. See NSExtensionMainStoryboard for details."
+    },
+    "NSExtensionOverridesHostUIAppearance": {
+        "prefix": "NSExtensionOverridesHostUIAppearance",
+        "body": [
+            "<key>NSExtensionOverridesHostUIAppearance</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "General: A Boolean value that specifies whether the app extension should ignore appearance updates made by the host app. See NSExtensionOverridesHostUIAppearance for details."
+    },
+    "NSExtensionPointIdentifier": {
+        "prefix": "NSExtensionPointIdentifier",
+        "body": [
+            "<key>NSExtensionPointIdentifier</key>",
+            "<string>${1|com.apple.ui-services,com.apple.services,com.apple.broadcast-services,com.apple.keyboard-service,com.apple.fileprovider-ui,com.apple.fileprovider-nonui,com.apple.fileprovider-actionsui,com.apple.FinderSync,com.apple.identitylookup.message-filter,com.apple.photo-editing,com.apple.share-services,com.apple.widget-extension,com.apple.tv-services,com.apple.watchkit|}</string>"
+        ],
+        "description": "General: A string that specifies the extension point that supports an app extension, in reverse-DNS notation. See NSExtensionPointIdentifier for details."
+    },
+    "NSExtensionPrincipalClass": {
+        "prefix": "NSExtensionPrincipalClass",
+        "body": [
+            "<key>NSExtensionPrincipalClass</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "General: A string that specifies the name of the custom class that implements an app extension’s primary view or functionality. See NSExtensionPrincipalClass for details."
+    },
+    "NSExtensionServiceAllowsToolbarItem": {
+        "prefix": "NSExtensionServiceAllowsToolbarItem",
+        "body": [
+            "<key>NSExtensionServiceAllowsToolbarItem</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Action: A Boolean value that specifies whether an Action extension can display a toolbar button in a window’s toolbar. See NSExtensionServiceAllowsToolbarItem for details."
+    },
+    "NSExtensionServiceRoleType": {
+        "prefix": "NSExtensionServiceRoleType",
+        "body": [
+            "<key>NSExtensionServiceRoleType</key>",
+            "<string>${1|NSExtensionServiceRoleTypeEditor,NSExtensionServiceRoleTypeViewer|}</string>"
+        ],
+        "description": "Action: A string that specifies the type of task an Action extension can perform. See NSExtensionServiceRoleType for details."
+    },
+    "NSExtensionServiceToolbarIconFile": {
+        "prefix": "NSExtensionServiceToolbarIconFile",
+        "body": [
+            "<key>NSExtensionServiceToolbarIconFile</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Action: A string that species the icon file for an OS X Action extension’s toolbar button. See NSExtensionServiceToolbarIconFile for details."
+    },
+    "NSExtensionServiceToolbarPaletteLabel": {
+        "prefix": "NSExtensionServiceToolbarPaletteLabel",
+        "body": [
+            "<key>NSExtensionServiceToolbarPaletteLabel</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Action: A string that specifies the toolbar item title that gets displayed in the toolbar customization dialog for an Action extension. See NSExtensionServiceToolbarPaletteLabel for details."
+    },
+    "PHSupportedMediaTypes": {
+        "prefix": "PHSupportedMediaTypes",
+        "body": [
+            "<key>PHSupportedMediaTypes</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Photo Editing: An array that specifies the types of assets a Photo Editing extension can edit. See PHSupportedMediaTypes for details."
+    },
+    "PrefersRightToLeft": {
+        "prefix": "PrefersRightToLeft",
+        "body": [
+            "<key>PrefersRightToLeft</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Custom Keyboard: A Boolean value that specifies whether a custom keyboard is for a right-to-left language. See PrefersRightToLeft for details."
+    },
+    "PrimaryLanguage": {
+        "prefix": "PrimaryLanguage",
+        "body": [
+            "<key>PrimaryLanguage</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Custom Keyboard: A string conforming to BCP 47 - Tags for Identifying Languages, that specifies the primary language for custom keyboard. See PrimaryLanguage for details."
+    },
+    "RequestsOpenAccess": {
+        "prefix": "RequestsOpenAccess",
+        "body": [
+            "<key>RequestsOpenAccess</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Custom Keyboard: A Boolean value that specifies whether a custom keyboard wants to use a shared container and wants network access. See RequestsOpenAccess for details."
+    },
+    "SFSafariContentScript": {
+        "prefix": "SFSafariContentScript",
+        "body": [
+            "<key>SFSafariContentScript</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Safari: An array used to add content scripts to the extension. Each value in the array is a dictionary, providing the filename for a content script. See SFSafariContentScript for details."
+    },
+    "SFSafariContextMenu": {
+        "prefix": "SFSafariContextMenu",
+        "body": [
+            "<key>SFSafariContextMenu</key>",
+            "<array>",
+            "\t<dict>",
+			"\t\t<key>Text</key>",
+            "\t\t<string>${1:}</string>",
+            "\t\t<key>Command</key>",
+            "\t\t<string>${2:}</string>",
+		    "\t</dict>",
+            "</array>"
+        ],
+        "description": "Safari: An array used to add items to Safari’s context menu. See SFSafariContextMenufor details."
+    },
+    "SFSafariStyleSheet": {
+        "prefix": "SFSafariStyleSheet",
+        "body": [
+            "<key>SFSafariStyleSheet</key>",
+            "<array>",
+            "\t<dict>",
+			"\t\t<key>Style Sheet</key>",
+            "\t\t<string>${1:}</string>",
+            "\t\t<key>Allowed URL Patterns</key>",
+            "\t\t<array>",
+            "\t\t\t<string>${2:}</string>",
+            "\t\t</array>",
+			"\t\t<key>Excluded URL Patterns</key>",
+            "\t\t<array>",
+            "\t\t\t<string>${3:}</string>",
+            "\t\t</array>",
+		    "\t</dict>",
+            "</array>"
+        ],
+        "description": "Safari: An array used to add style sheets to the extension. Each value in the array is a dictionary, providing the filename for a content script. See SFSafariStyleSheet for details."
+    },
+    "SFSafariToolbarItem": {
+        "prefix": "SFSafariToolbarItem",
+        "body": [
+            "<key>SFSafariToolbarItem</key>",
+            "<dict>",
+			"\t<key>Identifier</key>",
+            "\t<string>${1:}</string>",
+            "\t<key>Label</key>",
+            "\t<string>${2:}</string>",
+            "\t<key>Image</key>",
+            "\t<string>${3:}</string>",
+            "\t<key>Action</key>",
+            "\t<string>${4:}</string>",
+		    "</dict>"
+        ],
+        "description": "Safari: A dictionary used to add a toolbar item to Safari windows. See SFSafariToolbarItem for details."
+    },
+    "SFSafariWebsiteAccess": {
+        "prefix": "SFSafariWebsiteAccess",
+        "body": [
+            "<key>SFSafariWebsiteAccess</key>",
+            "<dict>",
+			"\t<key>${1:}</key>",
+            "\t<string>${2:}</string>",
+		    "</dict>"
+        ],
+        "description": "Safari: An optional dictionary that specifies which webpages the Safari app extension can access, if any. See SFSafariWebsiteAccess for details."
+    },
+    "UIDocumentPickerModes": {
+        "prefix": "UIDocumentPickerModes",
+        "body": [
+            "<key>UIDocumentPickerModes</key>",
+            "<array>",
+            "\t<string>${1|UIDocumentPickerModeImport,UIDocumentPickerModeOpen,UIDocumentPickerModeExportToService,UIDocumentPickerModeMoveToService|}</string>",
+            "</array>"
+        ],
+        "description": "Document Picker: An array that specifies the supported document picker modes. See UIDocumentPickerModes for details."
+    },
+    "UIDocumentPickerMode": {
+        "prefix": "UIDocumentPickerMode",
+        "body": [
+            "<string>${1|UIDocumentPickerModeImport,UIDocumentPickerModeOpen,UIDocumentPickerModeExportToService,UIDocumentPickerModeMoveToService|}</string>"
+        ],
+        "description": "Document Picker"
+    },
+    "UIDocumentPickerSupportedFileTypes": {
+        "prefix": "UIDocumentPickerSupportedFileTypes",
+        "body": [
+            "<key>UIDocumentPickerSupportedFileTypes</key>",
+            "<array>",
+            "\t<string>${1:}</string>",
+            "</array>"
+        ],
+        "description": "Document Picker: An array that specifies the supported Uniform Type Identifiers (UTIs) for a document picker. See UIDocumentPickerSupportedFileTypes for details."
+    },
+    "NSExtensionFileProviderActions": {
+        "prefix": "NSExtensionFileProviderActions",
+        "body": [
+            "<key>NSExtensionFileProviderActions</key>",
+            "<array>",
+            "\t<dict>",
+			"\t\t<key>${1|NSExtensionFileProviderActionIdentifier,NSExtensionFileProviderActionName,NSExtensionFileProviderActionActivationRule|}</key>",
+            "\t\t<string>${2:}</string>",
+		    "\t</dict>",
+            "</array>"
+        ],
+        "description": "Defines custom actions for a File Provider extension. Your project must contain both a File Provider extension and a File Provider UI extension."        
+    },
+    "NSExtensionFileProviderAction": {
+        "prefix": "NSExtensionFileProviderAction",
+        "body": [
+			"<key>${1|NSExtensionFileProviderActionIdentifier,NSExtensionFileProviderActionName,NSExtensionFileProviderActionActivationRule|}</key>",
+            "<string>${2:}</string>"
+        ],
+        "description": "NSExtensionFileProviderAction."        
+    }
+}

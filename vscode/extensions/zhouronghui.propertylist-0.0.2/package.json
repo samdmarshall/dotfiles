@@ -1,0 +1,75 @@
+{
+	"name": "propertylist",
+	"displayName": "PropertyList",
+	"description": "",
+	"version": "0.0.2",
+	"publisher": "zhouronghui",
+	"engines": {
+		"vscode": "^1.22.0"
+	},
+	"categories": [
+		"Languages"
+	],
+	"icon": "image/icon.png",
+	"contributes": {
+		"languages": [
+			{
+				"id": "plist",
+				"aliases": [
+					"plist",
+					"plist"
+				],
+				"extensions": [
+					".plist"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "plist",
+				"scopeName": "source.plist",
+				"path": "./syntaxes/plist.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "plist",
+				"path": "./snippets/app-extension.json"
+			},
+			{
+				"language": "plist",
+				"path": "./snippets/cocoa.json"
+			},
+			{
+				"language": "plist",
+				"path": "./snippets/core-foundation.json"
+			},
+			{
+				"language": "plist",
+				"path": "./snippets/iOS.json"
+			},
+			{
+				"language": "plist",
+				"path": "./snippets/launch-services.json"
+			},
+			{
+				"language": "plist",
+				"path": "./snippets/macOS.json"
+			},
+			{
+				"language": "plist",
+				"path": "./snippets/watchOS.json"
+			},
+			{
+				"language": "plist",
+				"path": "./snippets/others.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "bec6a8b1-31d4-4f4e-9b3c-9141285b359f",
+		"publisherId": "a839501f-142b-4195-9ce1-173f5bd52f32",
+		"publisherDisplayName": "zhouronghui"
+	}
+}

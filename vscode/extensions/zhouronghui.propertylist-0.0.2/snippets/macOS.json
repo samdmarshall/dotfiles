@@ -1,0 +1,71 @@
+{
+    "Installation directory base file URL": {
+        "prefix": "Installation directory base file URL",
+        "body": [
+            "<key>APInstallerURL</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "A URL-based path to the files you want to install. See APInstallerURL for details."
+    },
+    "Installation files": {
+        "prefix": "Installation files",
+        "body": [
+            "<key>APFiles</key>",
+            "<array>",
+            "\t<dict>",
+			"\t\t<key>${1|APFileDescriptionKey,APDisplayedAsContainer,APFileDestinationPath,APFileName,APInstallAction|}</key>",
+            "\t\t<string>${2:}</string>",
+		    "\t</dict>",
+            "</array>"
+        ],
+        "description": "An array of dictionaries describing the files or directories that can be installed. See APFiles for details."
+    },
+    "APFile": {
+        "prefix": "APFile",
+        "body": [
+            "<key>${1|APFileDescriptionKey,APDisplayedAsContainer,APFileDestinationPath,APFileName,APInstallAction|}</key>",
+            "<string>${2:}</string>"
+        ],
+        "description": "APFile"
+    },
+    "Application fonts resource path": {
+        "prefix": "Application fonts resource path",
+        "body": [
+            "<key>ATSApplicationFontsPath</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The path to a single font file or directory of font files in the bundle’s Resources directory. See ATSApplicationFontsPath for details."
+    },
+    "Resources should be file-mapped": {
+        "prefix": "Resources should be file-mapped",
+        "body": [
+            "<key>CSResourcesFileMapped</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "RIf true, Core Services routines map the bundle’s resource files into memory instead of reading them. See CSResourcesFileMapped for details."
+    },
+    "Main storyboard file base name": {
+        "prefix": "Main storyboard file base name",
+        "body": [
+            "<key>NSMainStoryboardFile</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "Specifies the name of the app’s storyboard resource file. See NSMainStoryboardFile for details."
+    },
+    "QLSandboxUnsupported": {
+        "prefix": "QLSandboxUnsupported",
+        "body": [
+            "<key>QLSandboxUnsupported</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies that a Quick Look plug-in does not support sandboxing. See for details."
+    },
+    "QuartzGLEnable": {
+        "prefix": "QuartzGLEnable",
+        "body": [
+            "<key>QuartzGLEnable</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Specifies whether the app uses Quartz GL. See QuartzGLEnable for details."
+    }
+}

@@ -1,0 +1,287 @@
+{
+    "Help file": {
+        "prefix": "Help file",
+        "body": [
+            "<key>CFAppleHelpAnchor</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The bundle’s initial HTML help file. See CFAppleHelpAnchor for details."
+    },
+    "Localized resources can be mixed": {
+        "prefix": "Localized resources can be mixed",
+        "body": [
+            "<key>CFBundleAllowMixedLocalizations</key>",
+            "<${1|true,false|}/>"
+        ],
+        "description": "Used by Foundation tools to retrieve localized resources from frameworks. See CFBundleAllowMixedLocalizations for details."
+    },
+    "Localization native development region": {
+        "prefix": "Localization native development region",
+        "body": [
+            "<key>CFBundleDevelopmentRegion</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "(Recommended) The default language and region for the bundle, as a language ID. See CFBundleDevelopmentRegion for details."
+    },
+    "Bundle display name": {
+        "prefix": "Bundle display name",
+        "body": [
+            "<key>CFBundleDisplayName</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "(Required, Localizable) The user-visible name of the bundle; used by Siri and visible on the Home screen in iOS. See CFBundleDisplayName for details."
+    },
+    "Document types": {
+        "prefix": "Document types",
+        "body": [
+            "<key>CFBundleDocumentTypes</key>",
+            "<array>",
+            "\t<dict>",
+			"\t\t<key>CFBundleTypeExtensions</key>",
+			"\t\t<string>${1:}</string>",
+			"\t\t<key>CFBundleTypeIconFile</key>",
+            "\t\t<string>${2:}</string>",
+			"\t\t<key>CFBundleTypeIconFiles</key>",
+            "\t\t<array>",
+            "\t\t\t<string>${3:}</string>",
+            "\t\t</array>",
+			"\t\t<key>CFBundleTypeMIMETypes</key>",
+            "\t\t<array>",
+            "\t\t\t<string>${4:}</string>",
+            "\t\t</array>",
+			"\t\t<key>CFBundleTypeName</key>",
+            "\t\t<string>${5:}</string>",
+			"\t\t<key>CFBundleTypeOSTypes</key>",
+            "\t\t<array>",
+            "\t\t\t<string>${6:}</string>",
+            "\t\t</array>",
+			"\t\t<key>CFBundleTypeRole</key>",
+			"\t\t<string>${7:}</string>",
+			"\t\t<key>LSItemContentTypes</key>",
+            "\t\t<array>",
+            "\t\t\t<string>${8:}</string>",
+            "\t\t</array>",
+			"\t\t<key>LSHandlerRank</key>",
+            "\t\t<string>${9:}</string>",
+			"\t\t<key>LSTypeIsPackage</key>",
+            "\t\t<${10|true,false|}/>",
+			"\t\t<key>NSDocumentClass</key>",
+            "\t\t<string>${11:}</string>",
+			"\t\t<key>NSUbiquitousDocumentUserActivityType</key>",
+			"\t\t<string>${12:}</string>",
+			"\t\t<key>NSExportableAs</key>",
+            "\t\t<array>",
+            "\t\t\t<string>${13:}</string>",
+            "\t\t</array>",
+            "\t\t<key>NSExportableTypes</key>",
+            "\t\t<array>",
+            "\t\t\t<string>${14:}</string>",
+            "\t\t</array>",
+            "\t</dict>",
+            "</array>"
+        ],
+        "description": "An array of dictionaries describing the document types supported by the bundle. See CFBundleDocumentTypes for details."
+    },
+    "Executable file": {
+        "prefix": "Executable file",
+        "body": [
+            "<key>CFBundleExecutable</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "(Recommended) Name of the bundle’s executable file. See CFBundleExecutable for details."
+    },
+    "Help Book directory name": {
+        "prefix": "Help Book directory name",
+        "body": [
+            "<key>CFBundleHelpBookFolder</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The name of the folder containing the bundle’s help files. See CFBundleHelpBookFolder for details."
+    },
+    "Help Book identifier": {
+        "prefix": "Help Book identifier",
+        "body": [
+            "<key>CFBundleHelpBookName</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The name of the help file to display when Help Viewer is launched for the bundle. See CFBundleHelpBookName for details."
+    },
+    "Icon file": {
+        "prefix": "Icon file",
+        "body": [
+            "<key>CFBundleIconFile</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "A legacy way to specify the app’s icon. Use the CFBundleIcons or CFBundleIconFiles keys instead. See CFBundleIconFile for details."
+    },
+    "Icon Name": {
+        "prefix": "Icon Name",
+        "body": [
+            "<key>CFBundleIconName</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The name of the asset, from the bundle’s Asset Catalog, that represents the icon for the bundle. If you do not specify this key, CFBundleIconFile is used to identify the file containing the icon."
+    },
+    "Icon files": {
+        "prefix": "Icon files",
+        "body": [
+            "<key>CFBundleIconFiles</key>",
+            "<array>",
+            "\t<string>${1:}</string>",
+            "</array>"
+        ],
+        "description": "A top-level key for specifying the file names of the bundle’s icon image files. See CFBundleIconFiles for details. See also CFBundleIcons as an alternative to this key."
+    },
+    "CFBundleIcons": {
+        "prefix": "CFBundleIcons",
+        "body": [
+            "<key>CFBundleIcons</key>",
+            "<dict>",
+			"\t<key>${1|CFBundlePrimaryIcon,CFBundleAlternateIcons,UINewsstandIcon|}</key>",
+            "\t<string>${1:}</string>",
+		    "</dict>"
+        ],
+        "description": "File names of the bundle’s icon image files. See CFBundleIcons for details."
+    },
+    "CFBundleIcon": {
+        "prefix": "CFBundleIcon",
+        "body": [
+			"<key>${1|CFBundlePrimaryIcon,CFBundleAlternateIcons,UINewsstandIcon|}</key>",
+            "<string>${2:}</string>"
+        ],
+        "description": "CFBundleIcon."
+    },
+    "Bundle identifier": {
+        "prefix": "Bundle identifier",
+        "body": [
+            "<key>CFBundleIdentifier</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "(Recommended) An identifier string that specifies the app type of the bundle. The string should be in reverse DNS format using only the Roman alphabet in upper and lower case (A–Z, a–z), the dot (“.”), and the hyphen (“-”). See CFBundleIdentifier for details."
+    },
+    "InfoDictionary version": {
+        "prefix": "InfoDictionary version",
+        "body": [
+            "<key>CFBundleInfoDictionaryVersion</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "(Recommended) Version information for the Info.plist format. See CFBundleInfoDictionaryVersion for details."
+    },
+    "Localizations": {
+        "prefix": "Localizations",
+        "body": [
+            "<key>CFBundleLocalizations</key>",
+            "<array>",
+            "\t<string>${1:}</string>",
+            "</array>"
+        ],
+        "description": "Contains localization information for an app that handles its own localized resources. See CFBundleLocalizations for details."
+    },
+    "Bundle name": {
+        "prefix": "Bundle name",
+        "body": [
+            "<key>CFBundleName</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "(Recommended, Localizable) The short name of the bundle. See CFBundleName for details."
+    },
+    "Bundle OS Type code": {
+        "prefix": "Bundle OS Type code",
+        "body": [
+            "<key>CFBundlePackageType</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The four-letter code identifying the bundle type. See CFBundlePackageType for details."
+    },
+    "Bundle versions string, short": {
+        "prefix": "Bundle versions string, short",
+        "body": [
+            "<key>CFBundleShortVersionString</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "(Localizable) The release-version-number string for the bundle. See CFBundleShortVersionString for details."
+    },
+    "Accessibility bundle name": {
+        "prefix": "Accessibility bundle name",
+        "body": [
+            "<key>CFBundleSpokenName</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The spoken name of the app. See CFBundleSpokenName for details."
+    },
+    "URL types": {
+        "prefix": "URL types",
+        "body": [
+            "<key>CFBundleURLTypes</key>",
+            "<array>",
+            "\t<dict>",
+            "\t\t<key>${1|CFBundleTypeRole,CFBundleURLIconFile,CFBundleURLName,CFBundleURLSchemes|}</key>",
+            "\t\t<string>${2:}</string>",
+            "\t</dict>",
+            "</array>"
+        ],
+        "description": "An array of dictionaries describing the URL schemes supported by the bundle. See CFBundleURLTypes for details."
+    },
+    "CFBundleURLType": {
+        "prefix": "CFBundleURLType",
+        "body": [
+            "<key>${1|CFBundleTypeRole,CFBundleURLIconFile,CFBundleURLName,CFBundleURLSchemes|}</key>",
+            "<string>${2:}</string>"
+        ],
+        "description": "CFBundleURLType."
+    },
+    "Bundle version": {
+        "prefix": "Bundle version",
+        "body": [
+            "<key>CFBundleVersion</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "(Recommended) The build-version-number string for the bundle. See CFBundleVersion for details."
+    },
+    "Plug-in should be registered dynamically": {
+        "prefix": "Plug-in should be registered dynamically",
+        "body": [
+            "<key>CFPlugInDynamicRegistration</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "If YES, register the plug-in dynamically; otherwise, register it statically. See CFPlugInDynamicRegistration for details."
+    },
+    "Plug-in dynamic registration function name": {
+        "prefix": "Plug-in dynamic registration function name",
+        "body": [
+            "<key>CFPlugInDynamicRegistrationFunction</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The name of the custom, dynamic registration function. See CFPlugInDynamicRegisterFunction for details."
+    },
+    "Plug-in factory interfaces": {
+        "prefix": "Plug-in factory interfaces",
+        "body": [
+            "<key>CFPlugInFactories</key>",
+            "<dict>",
+			"\t<key>${1:}</key>",
+            "\t<string>${2:}</string>",
+		    "</dict>"
+        ],
+        "description": "For static registration, this dictionary contains a list of UUIDs with matching function names. See CFPlugInFactories for details."
+    },
+    "Plug-in types": {
+        "prefix": "Plug-in types",
+        "body": [
+            "<key>CFPlugInTypes</key>",
+            "<dict>",
+			"\t<key>${1:}</key>",
+            "\t<string>${2:}</string>",
+		    "</dict>"
+        ],
+        "description": "For static registration, the list of UUIDs CFPlugInTypes for details."
+    },
+    "Plug-in unload function name": {
+        "prefix": "Plug-in unload function name",
+        "body": [
+            "<key>CFPlugInUnloadFunction</key>",
+            "<string>${1:}</string>"
+        ],
+        "description": "The name of the custom function to call when it’s time to unload the plug-in code from memory. See CFPlugInUnloadFunction for details."
+    }
+}
