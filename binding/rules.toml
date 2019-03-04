@@ -85,7 +85,6 @@
   [Alerts.PayPal]
   from-or = ["paypal@mail.paypal.com"]
 
-
 [Billing]
   [Billing.Amazon]
   from-or = ["order-update@amazon.com", "noreply@amazon.com"]
@@ -190,6 +189,9 @@
   from-or = ["Microsoft Store", "stremail@microsoft.com"]
   
   [Billing.UPS]
+
+  [Billing.TCGPlayer]
+  from-or = ["sales@tcgplayer.com"]
 
 [Developer]
   [Developer.Apple]

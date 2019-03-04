@@ -2,7 +2,7 @@
 rules = "rules.toml"
   [binding.mark]
   unread = ["MailingList", "spam", "deleted"]
-  inbox = ["Alerts", "Apartment", "Archive", "Billing", "Charity", "Comics", "Developer", "Employment", "Events", "Financial", "Games", "HealthInsurance", "Medical", "Notes", "Social", "Support", "Travel", "MailingList"]
+  inbox = ["Alerts", "Apartment", "Archive", "Billing", "Charity", "Comics", "Developer", "Employment", "Events", "Financial", "Games", "HealthInsurance", "Medical", "Notes", "Social", "Support", "Travel", "MailingList", "spam", "deleted"]
 
 [notmuch]
 config = "~/.config/notmuch/notmuch-config"

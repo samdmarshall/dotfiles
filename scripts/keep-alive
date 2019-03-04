@@ -9,7 +9,7 @@ for entry in (grimoire --list)
 	end
 end
 
-set -l command $arguments
+set -u command $arguments
 if test $use_grimoire
     set command "grimoire $arguments"
 end

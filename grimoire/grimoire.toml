@@ -14,7 +14,7 @@ secure = ["NIMBLE_GITHUB_API_TOKEN"]
 
 [choosenim]
   [choosenim.additional]
-  CHOOSENIM_NO_ANALYTICS = 1
+  CHOOSENIM_NO_ANALYTICS = true
 
 [gistit]
 secure = ["GISTIT_TOKEN"]
@@ -36,10 +36,10 @@ secure = ["WEECHAT_PASSPHRASE"]
 secure = ["HOMEBREW_GITHUB_API_TOKEN"]
 remove = ["GIT_CONFIG"]
   [brew.additional]
-  BROWSER = "/home/linuxbrew/.linuxbrew/bin/wsl-open"
+  HOMEBREW_BROWSER = "/home/linuxbrew/.linuxbrew/bin/wsl-open"
   HOMEBREW_INSTALL_BADGE = "🌈"
   HOMEBREW_NO_ANALYTICS = true
-  HOMEBREW_AUTO_UPDATE = 1
+  HOMEBREW_NO_AUTO_UPDATE = true
   HOMEBREW_VERBOSE = true
   HOMEBREW_NO_INSECURE_REDIRECT = true
   HOMEBREW_PIPELINE_FORMULA_REPO = "samdmarshall/homebrew-formulae"
