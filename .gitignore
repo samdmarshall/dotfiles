@@ -45,6 +45,7 @@ getmail/*
 ## goaccess
 
 ## grimoire
+grimoire/logs/*
 
 ## gtk-3.0
 

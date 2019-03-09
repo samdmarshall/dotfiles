@@ -1,34 +1,43 @@
 
 [asciinema]
+status = true
 secure = ["ASCIINEMA_INSTALL_ID"]
 
 [danger]
+status = true
 secure = ["DANGER_GITHUB_API_TOKEN"]
 
 [nimble]
+status = true
 secure = ["NIMBLE_GITHUB_API_TOKEN"]
 
 [choosenim]
+status = true
   [choosenim.additional]
   CHOOSENIM_NO_ANALYTICS = true
 
 [gistit]
+status = true
 secure = ["GISTIT_TOKEN"]
 
 [notmuch]
+status = true
   [notmuch.additional]
   NOTMUCH_CONFIG = "/home/demi/.config/notmuch/notmuch-config"
 
 [alot]
+status = true
   [alot.additional]
   NOTMUCH_CONFIG = "/home/demi/.config/notmuch/notmuch-config"
 
 [weechat]
+status = false
 secure = ["WEECHAT_PASSPHRASE"]
   [weechat.additional]
   WEECHAT_HOME = "/home/demi/.config/weechat/"
 
 [brew]
+status = true
 secure = ["HOMEBREW_GITHUB_API_TOKEN"]
 remove = ["GIT_CONFIG"]
   [brew.additional]
@@ -41,13 +50,16 @@ remove = ["GIT_CONFIG"]
   HOMEBREW_PIPELINE_FORMULA_REPO = "samdmarshall/homebrew-formulae"
 
 [twine]
+status = true
 secure = ["TWINE_USERNAME", "TWINE_PASSWORD"]
 
 [ghi]
+status = true
 secure = ["GHI_TOKEN"]
 remove = ["GIT_CONFIG"]
 
 [tootstream]
+status = true
 secure = ["TOOTSTREAM_DEFAULT_CLIENT_ID", "TOOTSTREAM_DEFAULT_CLIENT_SECRET", "TOOTSTREAM_DEFAULT_TOKEN"]
   [tootstream.additional]
   TOOTSTREAM_PROFILE = "default"
