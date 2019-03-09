@@ -85,6 +85,9 @@
   [Alerts.PayPal]
   from-or = ["paypal@mail.paypal.com"]
 
+  [Alerts.Discourse]
+  from-or = ["@discoursemail.com"]
+
 [Billing]
   [Billing.Amazon]
   from-or = ["order-update@amazon.com", "noreply@amazon.com"]
