@@ -17,9 +17,9 @@ if test \( ! -x $rune_path \) -o \( ! -x  $grimoire_path \)
 	exit 1
 end
 
-for app in (grimoire --list)
+for app in (grimoire --list-enabled)
 	if test -n (command --search $app)
-		abbr --add --global '$app' 'grimoire $app'
+		alias $app "grimoire $app"
 	end
 end
 
