@@ -2,10 +2,6 @@
 [asciinema]
 secure = ["ASCIINEMA_INSTALL_ID"]
 
-[buku]
-  [buku.additional]
-  XDG_DATA_HOME = "/home/demi/.config/"
-
 [danger]
 secure = ["DANGER_GITHUB_API_TOKEN"]
 

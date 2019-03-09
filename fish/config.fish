@@ -1,36 +1,31 @@
-# setting up the basic environment
-set --export --global XDG_CONFIG_HOME "$HOME/.config"
 
-source "$XDG_CONFIG_HOME/fish/environment.fish"
-source "$XDG_CONFIG_HOME/fish/platform.fish"
+set --export --global XDG_CONFIG_HOME $HOME/.config
+set --unexport --local FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
 
-# load the platform specific configurations
-switch (echo "$FISH_PLATFORM_NAME")
-  case 'Darwin'
-    source "$XDG_CONFIG_HOME/fish/darwin.fish"
-  case 'Windows'
-    source "$XDG_CONFIG_HOME/fish/windows.fish"
-end
+# ============================
+# Fish User Configuration File
+# ============================
 
-# building prompt
-source "$XDG_CONFIG_HOME/fish/prompt.fish"
+source $FISH_CONFIG_DIR/platform.fish
+source $FISH_CONFIG_DIR/{$PLATFORM_NAME}.fish
+source $FISH_CONFIG_DIR/environment-functions.fish
+source $FISH_CONFIG_DIR/environment.fish
+source $FISH_CONFIG_DIR/prompt.fish
+source $FISH_CONFIG_DIR/bindings.fish
 
-# wrapper commands
-set VENDOR_COMPLETIONS ""
-if test -e /usr/local/share/fish/vendor_completions.d
-	set VENDOR_COMPLETIONS /usr/local/share/fish/vendor_completions.d
-end
-set fish_function_path $fish_function_path "$VENDOR_COMPLETIONS"
+## Only load when attached to something, unused otherwise
+if status is-interactive
+	source $FISH_CONFIG_DIR/handlers.fish
+	source $FISH_CONFIG_DIR/wrappers.fish || true
 
-# load the user's .profile file if it exists
-if test -e "$HOME/.profile"
-	source "$HOME/.profile"
-end
+	## Kitty (Terminal) setup
+	if not functions --query __kitty_completions
+		source (kitty + complete setup fish | psub)
+	end
 
-# load keybindings
-source "$XDG_CONFIG_HOME/fish/bindings.fish"
-
-if status --is-interactive
-	source "$XDG_CONFIG_HOME/fish/handlers.fish"
+	## pyenv setup
+	if not functions --query pyenv
+		source (pyenv init -| psub)
+	end
 end
 

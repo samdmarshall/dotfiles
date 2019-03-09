@@ -1,53 +1,92 @@
-# disable greeting
-set fish_greeting "くコ:彡 welcome to fish"
 
-set --export --global LC_COLLATE C #en_US.UTF-8
+# =====================================
+# Configuration Variables (Not Exposed)
+# =====================================
 
-set --export --global DISPLAY "127.0.0.1:0"
+set --unexport --local GIT_CONFIG_DIR $XDG_CONFIG_HOME/git
+set --unexport --local SCRIPTS_DIR    $XDG_CONFIG_HOME/scripts
 
-set --export --global EDITOR "emacs"
-set --export --global PAGER "w3m"
-set --export --global TERM xterm
+# =================================
+# Configuration Variables (Exposed)
+# =================================
 
-set --export --global GPG_TTY (tty)
+begin
+	## General
+	set fish_greeting "くコ:彡 welcome to fish"
+	set fish_emoji_width 2
 
-set --export --global FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
-set --export --global FZF_DEFAULT_OPTS "--preview=\"preview --metadata {} \""
+	## System
+	set --export --global LANG "en_US.utf8"
 
-set --export --global GIT_CONFIG "$XDG_CONFIG_HOME/git/config"
+	## Default Applications
+	set --export --global EDITOR "emacs"
+	set --export --global PAGER  "w3m"
+	set --export --global TERM   "xterm"
 
-set --export --global GEM_HOME "$HOME/.gem"
-set --local GEM_HOME_BIN "$GEM_HOME/bin"
+	## Application Specific
+	begin
+		### GPG
+		set --export --global GPG_TTY (tty)
 
-if test ! -e $GEM_HOME_BIN
-    set --erase GEM_HOME_BIN
+		### fzf
+		set --export --global FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
+		set --export --global FZF_DEFAULT_OPTS    '--preview="preview --metadata {} "'
+
+		### git
+		set --export --global GIT_CONFIG $GIT_CONFIG_DIR/config
+
+		## NVM
+		set --export --global NVM_DIR    $HOME/.nvm
+
+		## Gem
+		set --export --global GEM_HOME   $HOME/.gem
+	end
 end
 
-set --export --global NVM_DIR "$HOME/.nvm"
-if test ! -e $NVM_DIR
-  set --erase NVM_DIR
+
+# ==========================
+# Platform Specific Settings
+# ==========================
+
+switch $PLATFORM_NAME
+	case 'Darwin'
+	case 'Linux*'
+		set --export --global DISPLAY      127.0.0.1:0
+		set --export --global XCURSOR_SIZE 48
+		switch $PLATFORM_NAME
+			case '*+WSL'
+				set --export --global COMPOSE_CONVERT_WINDOWS_PATHS true
+				set --export --global DOCKER_HOST 'tcp://127.0.0.1:2375'
+				set --export --global PULSE_SERVER 'tcp://127.0.0.1'
+				export (dbus-launch)
+		end
 end
 
-# setting up local search paths
-if command --search gem >/dev/null do
-  set -u LOCAL_RUBY_PATH (gem environment gempath | sed -e 's=:.*$=/bin=')
-  if test ! -e $LOCAL_RUBY_PATH
-      set --erase LOCAL_RUBY_PATH
-  end
-end
-set -u GOPATH_BIN "~/.go/bin"
-if test ! -e $GOPATH_BIN
-	set --erase GOPATH_BIN
+
+# =======================
+# Path Variable Additions
+# =======================
+
+## Portable Scripts
+__path_add $SCRIPTS_DIR
+
+## ~/.local
+__prefix_add ~/.local
+
+## Homebrew
+switch $PLATFORM_NAME
+	case "Darwin"
+		__prefix_add /usr/local
+	case "Linux*"
+		__prefix_add /home/linuxbrew/.linuxbrew
 end
 
-set -u LINUXBREW_PATH_BIN "/home/linuxbrew/.linuxbrew/bin"
-if test ! -e $LINUXBREW_PATH_BIN
-  set --erase LINUXBREW_PATH_BIN
-end
-set -u LINUXBREW_PATH_SBIN "/home/linuxbrew/.linuxbrew/sbin"
-if test ! -e $LINUXBREW_PATH_SBIN
-  set --erase LINUXBREW_PATH_SBIN
-end
+## Nimble
+__prefix_add ~/.nimble
 
-# setting $PATH
-set fish_user_paths "$HOME/.local/bin" "$HOME/.nimble/bin" $LOCAL_RUBY_PATH "$XDG_CONFIG_HOME/scripts" $GEM_HOME_BIN $GOPATH_BIN $LINUXBREW_PATH_BIN $LINUXBREW_PATH_SBIN
+## Go
+__prefix_add ~/.go
+
+## Gem
+__prefix_add $GEM_HOME
+

@@ -1,3 +1,4 @@
+
 function logout_message --on-process-exit %self
     set ESC_SEQ "\x1b[38;5;"
     set COL_01 $ESC_SEQ"160;01m"

@@ -25,9 +25,10 @@ function display_battery_level
 end
 
 function fish_right_prompt
-	command --search coven > /dev/null
-	if test $status -eq 0
+	if test -x (command --search coven)
 		printf '%s ' (coven)
+	else
+		printf '⛔ '
 	end
 	display_battery_level
 end

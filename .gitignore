@@ -1,27 +1,20 @@
+# Operating System Files
+## Mac OS X 
 .DS_Store
+## Windows
+desktop.ini
 
-insight-nodejs/
+
+
+# Directorys
+## alot
+
+## asciinema
 asciinema/install-id
-keybase/
-fish/fish_history
-transmission/
-sdkbuild/
-micro/buffers/
-getmail/*
-vdirsyncer/*
-!vdirsyncer/config
-storage/*
-!storage/keys.keychain
-!storage/secure
 
-weechat/logs/*
+## binding
 
-weechat/*.log
-weechat/sec.conf
-weechat/script/plugins.xml.gz
-
-maid/maid.log
-
+## cmus
 cmus/cache
 cmus/command-history
 cmus/lib.pl
@@ -30,22 +23,120 @@ cmus/queue.pl
 cmus/resume
 cmus/search-history
 
-necromancy/trace.log
+## coven
 
-yarn/
+## defaults
 
-*~
+## emacs
+\#*\#  # (backup file)
+*~     # (backup file)
 emacs.d/elpa/archives/
 emacs.d/recentf
 
-configstore
-
+## fish shell
+fish/fish_history
 fish/fishd.*
 
-w3m/history
+## getmail
+getmail/*
 
+## git
+
+## goaccess
+
+## grimoire
+
+## gtk-3.0
+
+## hero
+
+## htop
+htop/*
+
+## hyper
+
+## keybase
+keybase/*
+
+## khal
+
+## khard
+
+## kitty
+
+## kwpolska (upass)
+
+## lldb
+
+## mailcap
+
+## micro
+micro/buffers/*
+
+## mlvwm
+
+## msmtp
+
+## nano
 nano/search_history
 
-htop/
+## necromancy
+necromancy/trace.log
 
+## nimble
+
+## notmuch
+
+## proselint
+
+## pt
+
+## Pulse Audio
+pulse/*
+
+## pypi (pip)
+
+## rune
+
+## scripts
+
+## storage
+storage/*
+!storage/secure
+
+## tig
+
+## tmux
+
+## todoman
+
+## tootstream
+
+## Transmission
+transmission/
+
+## vdirsyncer
+vdirsyncer/status/*
+!vdirsyncer/config
+
+## voltron
+
+## w3m
+w3m/history
+
+## weechat
+weechat/logs/*
+weechat/*.log
+weechat/sec.conf
+weechat/script/plugins.xml.gz
+
+## yarn
+yarn/*
+
+# Applications
+## Node
+configstore/*
+insight-nodejs/*
 **/node_modules/**
+
+

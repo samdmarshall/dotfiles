@@ -1,14 +1,18 @@
+set --unexport --local platform
 
-set --local platform (command uname -s)
-
-switch (echo "$platform")
-	case 'Darwin' 'darwin'
-		set --export --global FISH_PLATFORM_NAME Darwin
-	case 'Linux' 'linux'
-		set --local windows (string match --index "*Microsoft*" (uname --all))
-		if test -n $windows
-			set --export --global FISH_PLATFORM_NAME Windows
-		else
-			set --export --global FISH_PLATFORM_NAME Linux
-		end
+switch (command uname --kernel-name)
+	case "Darwin" "darwin"
+		set --append platform "Darwin"
+	case "Linux" "linux"
+		set --append platform "Linux"
 end
+
+switch (command uname --kernel-release)
+	case "*-Microsoft"
+		set --append platform "WSL"
+end
+
+set --export --global PLATFORM_NAME (string join '+' $platform)
+set --export --global PLATFORM_ARCH (command uname --processor)
+set --export --global PLATFORM_OS   (command uname --operating-system)
+

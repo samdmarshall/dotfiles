@@ -226,6 +226,9 @@ to-or = ["Women-Who-Code-Boston-list@meetup.com", "darwin-dev@lists.apple.com", 
   [Support.CloudApp]
   from-or = ["support@getcloudapp.com"]
 
+  [Support.X410]
+  from-or = ["support@choung.net"]
+
 [Employment]
   [Employment.Recruiter]
   [Employment.Microsoft]
@@ -244,7 +247,7 @@ to-or = ["Women-Who-Code-Boston-list@meetup.com", "darwin-dev@lists.apple.com", 
 
 [spam]
 subject-or = ["SPAM"]
-from-or = ["happybirthday@movies.fandango.com", "customer-reviews-messages@amazon.com", "store-news@amazon.com", "@marketplace.amazon.com", "recommendations@ifttt.com", "ello.com"]
+from-or = ["happybirthday@movies.fandango.com", "customer-reviews-messages@amazon.com", "store-news@amazon.com", "@marketplace.amazon.com", "recommendations@ifttt.com", "ello.com", "ello.co"]
 
 [Charity]
 to-or = ["charities@"]
@@ -269,6 +272,7 @@ to-or = ["medical@"]
 
   [Games.Bungie]
   to-or = ["bungie@"]
+  from-or = ["bungie.net"]
 
   [Games.Destiny2]
   rule = "tag:Games.The100"

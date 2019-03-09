@@ -17,14 +17,23 @@
 (require 'indent-guide)
 (require 'mouse)
 (require 'hlinum)
-
+(require 'ido)
 
 ; ========================================================== ;
+
+;; start server-mode
+(server-start)
+
+;; over-write selection
+(delete-selection-mode)
+
+;; Tab Bar
+(ido-mode t)
 
 ;; Theme
 (setq moe-theme-highlight-buffer-id t)
 (moe-theme-set-color 'black)
-;(load-theme 'moe-light t)
+(load-theme 'moe-light t)
 (moe-light)
 
 ;; # Indent Guides
@@ -43,10 +52,6 @@
 (defun track-mouse (e))
 (setq mouse-sel-mode t)
 
-;; add support for scrolling with the mouse
-(global-set-key [(mouse-4)] 'previous-line)
-(global-set-key [(mouse-5)] 'next-line)
-
 ;; now disable bells for most things because this is annoying af
 (setq ring-bell-function 'ignore)
 
@@ -64,30 +69,6 @@
 
 ;; Loading the quick file navigator
 (nav-disable-overeager-window-splitting)
-
-
-;; Key-Binding Overrides
-(global-set-key (kbd "M-f") 'forward-word)
-(global-set-key (kbd "M-b") 'backward-word)
-
-(global-set-key (kbd "C-k") 'kill-line)
-(global-set-key (kbd "C-d") 'kill-whole-line)
-
-(global-set-key (kbd "C-s") 'save-buffer) ;; Save
-(global-set-key (kbd "C-q") 'save-buffers-kill-emacs) ;; Save & Quit
-(global-set-key (kbd "C-w") 'kill-buffer) ;; Quit
-(global-set-key (kbd "C-f") 'isearch-forward) 
-(global-set-key (kbd "C-z") 'undo)
-(global-set-key (kbd "C-y") 'redo)
-(global-set-key (kbd "C-l") 'goto-line)
-(global-set-key (kbd "C-o") 'find-file)
-
-(global-set-key (kbd "C-c") 'kill-ring-save) ;; Copy
-(global-set-key (kbd "C-x") 'kill) ;; Cut
-(global-set-key (kbd "C-v") 'yank) ;; Paste
-
-(global-set-key (kbd "<f8>") 'nav-toggle)
-
 
 ;; commands for nav-mode
 (defun nav-mode-hl-hook ()
@@ -118,22 +99,28 @@
 ;; Mode Line Settings
 (load "~/.emacs.d/mode-line.el")
 
+;; Import Keybindings
+(load "~/.emacs.d/keymap.el")
+
 ;;(set-default 'cursor-type 'box)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (moe-light)))
  '(custom-safe-themes
 	 (quote
 		("13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" default)))
+ '(font-use-system-font t)
+ '(inhibit-startup-screen t)
  '(package-selected-packages
 	 (quote
-		(wc-mode guess-language helpful how-many-lines-in-project link nasm-mode nav nm password-store password-store-otp path-helper yaml-mode tss toml-mode toml tide redo+ pass npm-mode nlinum nim-mode markdown-mode indent-guide homebrew-mode hlinum fzf fish-mode elscreen electric-case)))
+		(w3m wc-mode guess-language helpful how-many-lines-in-project link nasm-mode nav nm password-store password-store-otp path-helper yaml-mode tss toml-mode toml tide redo+ pass npm-mode nlinum nim-mode markdown-mode indent-guide homebrew-mode hlinum fzf fish-mode elscreen electric-case)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Fira Code" :foundry "CTDB" :slant normal :weight normal :height 121 :width normal)))))
