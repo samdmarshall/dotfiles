@@ -12,12 +12,12 @@ source $FISH_CONFIG_DIR/environment-functions.fish
 source $FISH_CONFIG_DIR/environment.fish
 source $FISH_CONFIG_DIR/prompt.fish
 source $FISH_CONFIG_DIR/bindings.fish
+source $FISH_CONFIG_DIR/wrappers.fish || true
 
 ## Only load when attached to something, unused otherwise
 if status is-interactive
 	source $FISH_CONFIG_DIR/handlers.fish
-	source $FISH_CONFIG_DIR/wrappers.fish || true
-
+	
 	## Kitty (Terminal) setup
 	if not functions --query __kitty_completions
 		source (kitty + complete setup fish | psub)
