@@ -67,11 +67,14 @@ end
 # Path Variable Additions
 # =======================
 
+## Go
+__prefix_add ~/.go
+
+## Gem
+__prefix_add $GEM_HOME
+
 ## Portable Scripts
 __path_add $SCRIPTS_DIR
-
-## ~/.local
-__prefix_add ~/.local
 
 ## Homebrew
 switch $PLATFORM_NAME
@@ -84,9 +87,6 @@ end
 ## Nimble
 __prefix_add ~/.nimble
 
-## Go
-__prefix_add ~/.go
-
-## Gem
-__prefix_add $GEM_HOME
+## ~/.local
+__prefix_add ~/.local
 

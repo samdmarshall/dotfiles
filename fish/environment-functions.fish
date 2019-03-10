@@ -6,7 +6,7 @@
 function __path_add --argument-names add_path
 	if not contains $add_path $PATH
 		if not contains $add_path $fish_user_paths
-			set --append fish_user_paths $add_path
+			set --global --prepend fish_user_paths $add_path
 		end
 	end
 end
