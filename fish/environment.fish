@@ -58,7 +58,6 @@ switch $PLATFORM_NAME
 				set --export --global COMPOSE_CONVERT_WINDOWS_PATHS true
 				set --export --global DOCKER_HOST 'tcp://127.0.0.1:2375'
 				set --export --global PULSE_SERVER 'tcp://127.0.0.1'
-				export (dbus-launch)
 		end
 end
 

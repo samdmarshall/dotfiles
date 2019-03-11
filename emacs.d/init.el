@@ -21,12 +21,6 @@
 
 ; ========================================================== ;
 
-;; start server-mode
-(server-start)
-
-;; over-write selection
-(delete-selection-mode)
-
 ;; Tab Bar
 (ido-mode t)
 
@@ -102,25 +96,8 @@
 ;; Import Keybindings
 (load "~/.emacs.d/keymap.el")
 
-;;(set-default 'cursor-type 'box)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (moe-light)))
- '(custom-safe-themes
-	 (quote
-		("13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" default)))
- '(font-use-system-font t)
- '(inhibit-startup-screen t)
- '(package-selected-packages
-	 (quote
-		(w3m wc-mode guess-language helpful how-many-lines-in-project link nasm-mode nav nm password-store password-store-otp path-helper yaml-mode tss toml-mode toml tide redo+ pass npm-mode nlinum nim-mode markdown-mode indent-guide homebrew-mode hlinum fzf fish-mode elscreen electric-case)))
- '(show-paren-mode t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Fira Code" :foundry "CTDB" :slant normal :weight normal :height 121 :width normal)))))
+;; Import Ligature Support
+(load "~/.emacs.d/fira-code.el")
+
+;; Import Customization Settings
+(load "~/.emacs.d/customizations.el")

@@ -52,11 +52,20 @@ end
 # Set Starting Directory
 # ======================
 
+if test $SHLVL -ne 1
+  exit 1
+end
 switch $PWD
-	case /mnt/c/Windows/System32
-		echo "Started as Windows Administrator"
-		cd ~
-	case /mnt/c/Users/Demi
-		echo "Started as Windows User" 
-		cd ~
+  case /mnt/c/Windows/System32
+	  echo "Started as Windows Administrator"
+	  cd ~
+  case /mnt/c/Users/*
+    set --unexport --local split_path (string split "/" $PWD)
+    set --unexport --local user_name_index (math (contains --index "users" $split_path) + 1)
+    if test user_name_index -lt (count $split_path)
+      echo "Started as Windows User: " $split_path[$user_name_index]
+    else
+      echo "Started as Unknown Windows User"
+    end
+	  cd ~
 end

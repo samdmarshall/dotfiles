@@ -14,5 +14,4 @@ end
 
 set --export --global PLATFORM_NAME (string join '+' $platform)
 set --export --global PLATFORM_ARCH (command uname --processor)
-set --export --global PLATFORM_OS   (command uname --operating-system)
 

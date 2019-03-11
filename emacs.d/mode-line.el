@@ -2,7 +2,7 @@
 (setq-default mode-line-format
   (list
     ; directory and buffer/file name
-    '(:propertize (:eval (shorten-directory default-directory 30)) face mode-line-folder-face)
+    ;'(:propertize (:eval (shorten-directory default-directory 30)) face mode-line-folder-face)
     '(:propertize "%b" face mode-line-filename-face)
     ; narrow [default -- keep?]
     " %n "

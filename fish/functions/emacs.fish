@@ -1,3 +1,7 @@
 function emacs --wraps=emacs
-	command emacs $argv ^&1 > /dev/null &
+  if test (contains -- "-nw" "$argv") -o (contains -- "--no-window-system" "$argv")
+    command emacs $argv
+  else
+	  command emacs $argv ^&1 > /dev/null &
+  end
 end
