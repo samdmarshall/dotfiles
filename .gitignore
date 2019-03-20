@@ -28,12 +28,19 @@ cmus/search-history
 ## defaults
 
 ## emacs
-old-emacs/  # (directory of old config, being rewritten)
-\#*\#  # (backup file)
-*~     # (backup file)
+
+old-emacs/
+# (directory of old config, being rewritten)
+
+\#*\#
+# (backup file)
+
+*~
+# (backup file)
+
 emacs.d/elpa/
 emacs.d/auto-save-list
-emacs.d/ido.last
+emacs.d/.last-package-update-day
 emacs.d/recentf
 
 ## fish shell
