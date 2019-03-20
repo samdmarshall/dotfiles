@@ -21,7 +21,7 @@ begin
 	## Default Applications
 	set --export --global EDITOR "emacs"
 	set --export --global PAGER  "w3m"
-	set --export --global TERM   "xterm"
+	set --export --global TERM   "xterm-256color"
 
 	## Application Specific
 	begin

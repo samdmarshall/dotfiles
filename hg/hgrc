@@ -1,0 +1,23 @@
+[ui]
+username = Samantha Demi <hello@pewpewthespells.com>
+interactive = true
+interface = curses
+verbose = true
+
+[gpg]
+key = 0BFD99A4
+
+[extensions]
+beautifygraph =
+churn =
+gpg = 
+graphlog =
+hggit = /home/linuxbrew/.linuxbrew/lib/python2.7/site-packages/hggit
+hgk =
+highlight =
+histedit =
+purge =
+rebase =
+shelve =
+transplant =
+zeroconf =

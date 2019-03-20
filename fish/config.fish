@@ -16,11 +16,14 @@ source $FISH_CONFIG_DIR/wrappers.fish || true
 
 ## Only load when attached to something, unused otherwise
 if status is-interactive
-	source $FISH_CONFIG_DIR/handlers.fish
+  source $FISH_CONFIG_DIR/handlers.fish
 
   switch $PLATFORM_NAME
     case '*+WSL'
-      export (dbus-launch)
+      set --query DBUS_SESSION_BUS_ADDRESS DBUS_SESSION_BUS_PID
+      if test $status -ne 0
+        export (dbus-launch)
+      end
   end
 
 	## Kitty (Terminal) setup

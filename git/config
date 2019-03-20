@@ -1,7 +1,7 @@
 [user]
-  email = me@samdmarshall.com
+  email = hello@pewpewthespells.com #me@samdmarshall.com
   name = Samantha Demi
-  signingkey = 4434EFA2
+  signingkey = 0BFD99A4 #4434EFA2
 [core]
   editor = emacs
   pager = w3m

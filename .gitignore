@@ -28,9 +28,12 @@ cmus/search-history
 ## defaults
 
 ## emacs
+old-emacs/  # (directory of old config, being rewritten)
 \#*\#  # (backup file)
 *~     # (backup file)
-emacs.d/elpa/archives/
+emacs.d/elpa/
+emacs.d/auto-save-list
+emacs.d/ido.last
 emacs.d/recentf
 
 ## fish shell
@@ -47,9 +50,10 @@ getmail/*
 ## grimoire
 grimoire/logs/*
 
-## gtk-3.0
 
 ## hero
+
+## Hg (Mercurial)
 
 ## htop
 htop/*
@@ -133,6 +137,7 @@ weechat/script/plugins.xml.gz
 
 ## yarn
 yarn/*
+!yarn/yarnrc
 
 # Applications
 ## Node

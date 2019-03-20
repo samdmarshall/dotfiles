@@ -3,8 +3,10 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil nil ("seq-24.el" "seq-25.el" "seq-pkg.el" "seq.el")
-;;;;;;  (22871 490 115229 44000))
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/seq-2.20/seq-24.el"
+;;;;;;  "../../../../.emacs.d/elpa/seq-2.20/seq-25.el" "../../../../.emacs.d/elpa/seq-2.20/seq-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/seq-2.20/seq-pkg.el" "../../../../.emacs.d/elpa/seq-2.20/seq.el")
+;;;;;;  (23692 17566 678693 300000))
 
 ;;;***
 
