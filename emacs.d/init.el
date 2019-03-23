@@ -1,24 +1,20 @@
-;; Setup Emacs Package Sources, this is vital so that `use-package` can install them if they aren't already installed locally
-(load "package")
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
+(setq gc-cons-threshold (* 50 1000 1000))
+
+(require 'package)
 (package-initialize)
 
-;; Make use of the super-convenient `use-package` to fetch and install packages as part of start-up
-(when (not (package-installed-p 'use-package))
-  (package-install 'use-package))
-(require 'use-package)
-(require 'use-package-ensure)
-(setq use-package-always-ensure t)
+(setq config-org-file (expand-file-name "config.org" user-emacs-directory))
+(setq config-el-file  (expand-file-name "config.el"  user-emacs-directory))
 
-;; Compose the path "~/.emacs.d/components/" then get all ".el" files within that directory
-(setq absolute-user-init-directory (file-name-directory user-init-file))
-(setq components-path (expand-file-name "components" absolute-user-init-directory))
-(dolist (path (directory-files components-path t "^.*\.el$"))
-  (message "%S" path)
-  (load path))
+(defun last-modified-date (path)
+  (nth 5 (file-attributes path)))
 
-;;
-(setq user-emacs-customize-file (expand-file-name "customize.el" absolute-user-init-directory))
-(load user-emacs-customize-file)
+(setq org-file-modified (last-modified-date config-org-file))
+(setq el-file-modified  (last-modified-date config-el-file))
+
+(when (time-less-p org-file-modified el-file-modified)
+  (org-babel-load-file config-org-gile))
+(load-file config-el-file)
+
+(setq gc-cons-threshold (* 2 1000 1000))
 
