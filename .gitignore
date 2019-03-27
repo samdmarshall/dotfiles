@@ -88,7 +88,8 @@ necromancy/trace.log
 ## pt
 
 ## Pulse Audio
-pulse/*
+pulse
+pavucontrol.ini
 
 ## pypi (pip)
 
