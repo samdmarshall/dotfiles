@@ -2,6 +2,14 @@
 set --unexport --local rune_path     (command --search rune)
 set --unexport --local grimoire_path (command --search grimoire)
 
+set --unexport --local command_v_node_path (command -v node)
+if test -n "$command_v_node_path" -a -x "$command_v_node_path"
+  set --unexport --local command_v_nodejs_path (command -v nodejs)
+  if test -z "$command_v_nodejs_path"
+    alias nodejs="node"
+  end
+end
+
 if test -z $rune_path
 	echo "cannot find `rune` in PATH!"
 	exit 1

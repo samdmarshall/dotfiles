@@ -1,5 +1,6 @@
 
 set --export --global XDG_CONFIG_HOME $HOME/.config
+
 set --unexport --local FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
 
 # ============================
@@ -20,8 +21,7 @@ if status is-interactive
 
   switch $PLATFORM_NAME
     case '*+WSL'
-      set --query DBUS_SESSION_BUS_ADDRESS DBUS_SESSION_BUS_PID
-      if test $status -ne 0
+      if test -z "$DBUS_SESSION_BUS_ADDRESS" -a -z "$DBUS_SESSION_BUS_PID"
         export (dbus-launch)
       end
   end

@@ -20,5 +20,5 @@ function __prefix_add --argument-names prefix
 		if test -d $bin_path
 			__path_add $bin_path
 		end
-	end		
+	end
 end

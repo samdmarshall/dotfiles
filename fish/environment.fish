@@ -17,11 +17,14 @@ begin
 
 	## System
 	set --export --global LANG "en_US.utf8"
+	set --export --global SHELL "/home/linuxbrew/.linuxbrew/bin/fish"
 
 	## Default Applications
 	set --export --global EDITOR "emacs"
 	set --export --global PAGER  "w3m"
-	set --export --global TERM   "xterm-256color"
+
+	## XDG_*
+	set --export --global XDG_CACHE_HOME $HOME/.cache
 
 	## Application Specific
 	begin
