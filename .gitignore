@@ -66,9 +66,6 @@ keybase/*
 
 ## mailcap
 
-## micro
-micro/buffers/*
-
 ## mlvwm
 
 ## msmtp
@@ -135,6 +132,5 @@ yarn/*
 ## Node
 configstore/*
 insight-nodejs/*
-**/node_modules/**
 
 
