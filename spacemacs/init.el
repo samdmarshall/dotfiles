@@ -61,6 +61,8 @@
     (calfw-cal)
     (calfw-ical)
     (calfw-org)
+
+    (toml-mode)
   )
 )
 

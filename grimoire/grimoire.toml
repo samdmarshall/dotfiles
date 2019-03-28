@@ -63,3 +63,7 @@ status = true
 secure = ["TOOTSTREAM_DEFAULT_CLIENT_ID", "TOOTSTREAM_DEFAULT_CLIENT_SECRET", "TOOTSTREAM_DEFAULT_TOKEN"]
   [tootstream.additional]
   TOOTSTREAM_PROFILE = "default"
+
+[linode-cli]
+status = true
+secure = ["LINODE_CLI_TOKEN"]
