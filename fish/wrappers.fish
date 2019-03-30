@@ -31,3 +31,13 @@ for app in (grimoire --list-enabled)
 	end
 end
 
+set --local --unexport unsupported_bash_scripts "$HOME/.nvm/nvm.sh"
+for script in $unsupported_bash_scripts
+  if test -e $script
+    set --local --unexport script_name (basename --suffix=.sh $script)
+    alias $script_name "bass source $script --no-use ';' $script_name " 
+  end
+end
+
+
+alias "proj" "emacs . &; disown"

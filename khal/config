@@ -1,7 +1,7 @@
 [default]
 highlight_event_days = true
 default_calendar = "Personal"
-default_command = "interactive"
+#default_command = "interactive"
 
 [calendars]
 [[cocoaheads]]

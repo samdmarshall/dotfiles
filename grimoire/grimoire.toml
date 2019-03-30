@@ -67,3 +67,7 @@ secure = ["TOOTSTREAM_DEFAULT_CLIENT_ID", "TOOTSTREAM_DEFAULT_CLIENT_SECRET", "T
 [linode-cli]
 status = true
 secure = ["LINODE_CLI_TOKEN"]
+
+[hub]
+status = true
+secure = ["GITHUB_TOKEN"]
