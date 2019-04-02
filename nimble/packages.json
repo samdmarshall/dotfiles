@@ -7,7 +7,7 @@
       "rune"
     ],
     "description": "getting secure environment values",
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "web": "https://github.com/samdmarshall/rune"
   },
   {
@@ -16,7 +16,7 @@
     "method": "git",
     "tags": [ "grimoire", "encryption", "secret", "tokens" ],
     "description": "command wrapper that provides secrets/sensitive data via environment variables",
-    "license": "BSD-3",
+    "license": "BSD-3-Clause",
     "web": "https://github.com/samdmarshall/grimoire"
   },
   {
@@ -30,7 +30,61 @@
       "tagging"
     ],
     "description": "software for tagging mail using notmuch mail client",
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "web": "https://github.com/samdmarshall/binding"
-  }
+  },
+    {
+        "name": "hero",
+        "url": "https://github.com/samdmarshall/hero",
+        "method": "git",
+        "tags": ["dotfiles", "symlink", "hero", "management"],
+        "description": "a small tool that creates symlinks to connect files and directories in XDG_CONFIG_HOME to the user's HOME directory.",
+        "license": "BSD-3-Clause",
+        "web": "https://github.com/samdmarshall/hero"
+    },
+    {
+        "name": "preview",
+        "url": "https://github.com/samdmarshall/preview",
+        "method": "git",
+        "tags": ["preview", "file", "magic"],
+        "description": "a quick and dirty file previewer.",
+        "license": "BSD-3-Clause",
+        "web": "https://github.com/samdmarshall/preview"
+    },
+    {
+        "name": "coven",
+        "url": "https://github.com/samdmarshall/coven",
+        "method": "git",
+        "tags": ["command-line", "command", "line", "shell", "prompt"],
+        "description": "tool for running multiple commands in parallel, specifically for generating shell prompts.",
+        "license": "BSD-3-Clause",
+        "web": "https://github.com/samdmarshall/coven"
+    },
+    {
+        "name": "when",
+        "url": "https://github.com/samdmarshall/when",
+        "method": "git",
+        "tags": ["when", "time", "date"],
+        "description": "when am i?",
+        "license": "BSD-3-Clause",
+        "web": "https://github.com/samdmarshall/when"
+    },
+    {
+        "name": "where",
+        "url": "https://github.com/samdmarshall/where",
+        "method": "git",
+        "tags": ["where", "path", "host"],
+        "description": "where am i?",
+        "license": "BSD-3-Clause",
+        "web": "https://github.com/samdmarshall/where"
+    },
+    {
+        "name": "batterylevel",
+        "url": "https://github.com/samdmarshall/battery-level",
+        "method": "git",
+        "tags": ["battery", "level", "status"],
+        "description": "tool for checking the current level and charging status of a portable-device's battery.",
+        "license": "BSD-3-Clause",
+        "web": "https://github.com/samdmarshall/battery-level"
+    }
 ]
