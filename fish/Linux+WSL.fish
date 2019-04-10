@@ -27,7 +27,9 @@ end
 # Setup directories shared from Windows
 # =====================================
 
-if test -e /etc/sudoers.d/mount
+set --local --unexport sudoers_mount_entry (test -f /etc/sudoers.d/mount; echo $status)
+
+if test $sudoers_mount_entry = 0
 	function mount_directory --argument-names local remote
 		if test (count $local/*) = 0
 			sudo mount --bind $remote $local
@@ -43,6 +45,7 @@ if test -e /etc/sudoers.d/mount
 	mount_directory ~/Videos    /mnt/c/Users/Demi/Videos
 	mount_directory ~/Desktop   /mnt/c/Users/Demi/Desktop
 	mount_directory ~/.docker   /mnt/c/Users/Demi/.docker
+
 else
 	echo "Please add entry for 'mount' in '/etc/sudoers.d/'!"
 	echo "  $USER ALL=(root) NOPASSWD: /bin/mount"

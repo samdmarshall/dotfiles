@@ -116,3 +116,15 @@ complete -c $PROG -f -A -n '__fish_pass_uses_command git' -a 'log' -d 'View chan
 
 complete -c $PROG -f -A -n '__fish_pass_needs_command' -a find -d 'Command: find a password file or directory matching pattern'
 complete -c $PROG -f -A -n '__fish_pass_needs_command' -a grep -d 'Command: search inside of decrypted password files for matching pattern'
+
+# Completions for pass-otp
+complete -c $PROG -f -A -n '__fish_pass_needs_command' -a otp -d 'Command: interact with OTP entries'
+
+complete -c $PROG -f -A -n '__fish_pass_uses_command otp' -a code -d 'Shows generated OTP code'
+complete -c $PROG -f -A -n '__fish_pass_uses_command otp code' -s c -l clip -d 'Put generated OTP code in clipboard'
+
+complete -c $PROG -f -A -n '__fish_pass_uses_command otp' -a show -d 'Shows generated OTP code'
+complete -c $PROG -f -A -n '__fish_pass_uses_command otp show' -s c -l clip -d 'Put generated OTP code in clipboard'
+
+#complete -c $PROG -f -A -n '__fish_pass_uses_command otp' -a insert -d 'Insert new OTP'
+#complete -c $PROG -f -A -n '__fish_pass_uses_command otp insert'

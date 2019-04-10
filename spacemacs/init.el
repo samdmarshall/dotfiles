@@ -62,6 +62,7 @@
     (calfw-ical)
     (calfw-org)
     (org-caldav)
+    (org-vcard)
 
     (toml-mode)
   )

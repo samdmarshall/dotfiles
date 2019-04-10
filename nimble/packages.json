@@ -86,5 +86,14 @@
         "description": "tool for checking the current level and charging status of a portable-device's battery.",
         "license": "BSD-3-Clause",
         "web": "https://github.com/samdmarshall/battery-level"
+    },
+    {
+        "name": "opt_drop",
+        "url": "https://github.com/samdmarshall/opt_drop",
+        "method": "git",
+        "tags": ["opt", "drop", "command", "line", "shell", "argument", "parser"],
+        "description": "tool for parsing a string and filtering out flag options",
+        "license": "BSD-3-Clause",
+        "web": "https://github.com/samdmarshall/opt_drop"
     }
 ]
