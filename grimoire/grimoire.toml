@@ -20,16 +20,6 @@ status = true
 status = true
 secure = ["GISTIT_TOKEN"]
 
-[notmuch]
-status = true
-  [notmuch.additional]
-  NOTMUCH_CONFIG = "/home/demi/.config/notmuch/notmuch-config"
-
-[alot]
-status = true
-  [alot.additional]
-  NOTMUCH_CONFIG = "/home/demi/.config/notmuch/notmuch-config"
-
 [weechat]
 status = false
 secure = ["WEECHAT_PASSPHRASE"]

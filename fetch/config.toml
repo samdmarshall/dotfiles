@@ -1,0 +1,52 @@
+
+# ====================
+# Application Settings
+# ====================
+
+[Settings]
+verboselogging = true
+logginglevel = "all"
+
+# ===================
+# List of Known Hosts 
+# ===================
+
+[[Remote]]
+alias = "fastmail"
+protocol = "ftp"
+host = "ftp.fastmail.com"
+path = "/samdm.mailc.net/files/"
+
+# ==============================
+# List of Records to Synchronize
+# ==============================
+
+[[Record]]
+host = "fastmail"
+remote = "MobileOrg/index.org"
+local = "~/org/index.org"
+directions = [ "pull", "push" ]
+
+[[Record]]
+host = "fastmail"
+remote = "MobileOrg/mobileorg.org"
+local = "~/org/mobileorg.org"
+directions = [ "pull", "push" ]
+
+[[Record]]
+host = "fastmail"
+remote = "MobileOrg/project-diary.org"
+local = "~/org/project-diary.org"
+directions = [ "pull", "push" ]
+
+[[Record]]
+host = "fastmail"
+remote = "MobileOrg/project-medical.org"
+local = "~/org/project-medical.org"
+directions = [ "pull", "push" ]
+
+[[Record]]
+host = "fastmail"
+remote = "MobileOrg/assets"
+local = "~/org/assets"
+directions = [ "pull", "push" ]

@@ -26,6 +26,6 @@ create-mailbox:
 
 install-hooks:
 	cp --no-clobber --verbose --target-directory=$(MAILBOX_DEST)/Inbox/.notmuch/hooks \
-		../defaults/notmuch/hooks/pre-new ../defaults/notmuch/hooks/post-new
+		./hooks/pre-new ./hooks/post-new
 
 .PHONY: all $(STEPS)

@@ -1,0 +1,19 @@
+[retriever]
+type = SimpleIMAPSSLRetriever
+server = mail.messagingengine.com
+username = samdm@mailc.net
+password_command = ("rune", "get", "--key:fastmail-password")
+mailboxes = ALL
+use_peek = false
+
+[destination]
+type = Maildir
+path = ~/eMail/Inbox/
+
+[options]
+delivered_to = false
+received = false
+read_all = false
+verbose = 1
+message_log = ~/.getmail/message.log
+

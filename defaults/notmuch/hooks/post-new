@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-echo "Applying tags..."
-/home/demi/.nimble/bin/binding --version
-/home/demi/.nimble/bin/binding --new
-/home/demi/.nimble/bin/binding --new
-
-echo "Backing up mail..."
-/home/demi/.config/scripts/backup-notmuch-tags

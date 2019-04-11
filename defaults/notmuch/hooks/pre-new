@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-/home/linuxbrew/.linuxbrew/bin/getmail --getmaildir /home/demi/.config/getmail/ --new --fingerprint
-
-exit 0

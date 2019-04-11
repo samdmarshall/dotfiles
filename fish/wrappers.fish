@@ -16,19 +16,19 @@ if test -z $rune_path
 end
 
 if test -z $grimoire_path
-	echo "cannot find `grimoire` in PATH!"
-	exit 1
+  echo "cannot find `grimoire` in PATH!"
+  exit 1
 end
 
 if test \( ! -x $rune_path \) -o \( ! -x  $grimoire_path \)
-	echo "grimoire and rune not found!! exiting early!!"
-	exit 1
+  echo "grimoire and rune not found!! exiting early!!"
+  exit 1
 end
 
 for app in (grimoire --list-enabled)
-	if test -n (command --search $app)
-		alias $app "grimoire $app"
-	end
+  if test -n (command --search $app)
+    alias $app "grimoire $app"
+  end
 end
 
 set --local --unexport unsupported_bash_scripts "$HOME/.nvm/nvm.sh"
@@ -40,4 +40,6 @@ for script in $unsupported_bash_scripts
 end
 
 
-alias "proj" "emacs . &; disown"
+abbr --add --global remove "rm --recursive --dir"
+abbr --add --global video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff -i <input> <output.gif>" 
+abbr --add --global certinfo "openssl x509 -inform DER -text -in"

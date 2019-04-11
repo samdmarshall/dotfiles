@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+	com.pewpewthespells.vdirsyncer.plist
+
+	For the purpose of having `vdirsyncer` scheduled to `sync` every 15 minutes.
+-->
+<plist version="1.0">
+	<dict>
+		<key>Label</key>
+		<string>com.pewpewthespells.vdirsyncer</string>
+		<key>EnvironmentVariables</key>
+		<dict>
+			<key>LANG</key>
+			<string>en_US.UTF-8</string>
+			<key>PATH</key>
+			<string>$(PATH)</string>
+		</dict>
+		<key>ProgramArguments</key>
+		<array>
+			<string>vdirsyncer</string>
+			<string>--config</string>
+			<string>$(HOME)/.config/vdirsyncer/config</string>
+			<string>sync</string>
+		</array>
+		<key>StartInterval</key>
+		<integer>900</integer>
+	</dict>
+</plist>

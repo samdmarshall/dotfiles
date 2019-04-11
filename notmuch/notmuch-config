@@ -102,3 +102,6 @@ synchronize_flags=true
 
 [crypto]
 gpg_path=gpg
+
+[custom]
+backup=/home/demi/eMail-backup/

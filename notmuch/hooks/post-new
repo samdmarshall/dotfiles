@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+echo "Applying tags... `binding --version`"
+binding --new
+
+echo -n "Backing up mail... "
+timestamp=`date +%Y-%m-%dT%H:%M:%S%::z`
+cmd=`which notmuch`
+backupdir=`"$cmd" config get custom.backup`
+target="$backupdir/$timestamp.gz"
+echo $target
+"$cmd" dump --gzip --output="$target"

@@ -4,7 +4,8 @@
 ## Windows
 desktop.ini
 
-
+*_history
+history
 
 # Directorys
 ## alot
@@ -34,23 +35,20 @@ fish/fishd.*
 
 ## getmail
 getmail/*
+!getmail/getmailrc
 
 ## git
 
 ## goaccess
 
 ## grimoire
-grimoire/logs/*
-
+grimoire/logs
 
 ## hero
 
 ## Hg (Mercurial)
 
 ## htop
-htop/*
-
-## hyper
 
 ## keybase
 keybase/*
@@ -61,8 +59,6 @@ keybase/*
 
 ## kitty
 
-## kwpolska (upass)
-
 ## lldb
 
 ## mailcap
@@ -72,7 +68,6 @@ keybase/*
 ## msmtp
 
 ## nano
-nano/search_history
 
 ## necromancy
 necromancy/trace.log
@@ -85,10 +80,6 @@ necromancy/trace.log
 
 ## pt
 
-## Pulse Audio
-pulse
-pavucontrol.ini
-
 ## pypi (pip)
 
 ## rune
@@ -96,8 +87,6 @@ pavucontrol.ini
 ## scripts
 
 ## storage
-storage/*
-!storage/secure
 
 ## tig
 
@@ -111,27 +100,14 @@ storage/*
 transmission/
 
 ## vdirsyncer
-vdirsyncer/status/*
-!vdirsyncer/config
+vdirsyncer/status
 
 ## voltron
 
 ## w3m
-w3m/history
-
-## weechat
-weechat/logs/*
-weechat/*.log
-weechat/sec.conf
-weechat/script/plugins.xml.gz
 
 ## yarn
 yarn/*
 !yarn/yarnrc
-
-# Applications
-## Node
-configstore/*
-insight-nodejs/*
 
 
