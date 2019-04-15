@@ -17,10 +17,9 @@ begin
 
 	## System
 	set --export --global LANG "en_US.utf8"
-	set --export --global SHELL "/home/linuxbrew/.linuxbrew/bin/fish"
 
 	## Default Applications
-	set --export --global EDITOR "emacs"
+	set --export --global EDITOR "emacsclient"
 	set --export --global PAGER  "w3m"
 
 	## XDG_*
@@ -28,9 +27,6 @@ begin
 
 	## Application Specific
 	begin
-		### GPG
-		set --export --global GPG_TTY (tty)
-
 		### fzf
 		set --export --global FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
 		set --export --global FZF_DEFAULT_OPTS    '--preview="preview --metadata {} "'
@@ -54,13 +50,11 @@ end
 switch $PLATFORM_NAME
 	case 'Darwin'
 	case 'Linux*'
-		set --export --global DISPLAY      127.0.0.1:0
 		set --export --global XCURSOR_SIZE 48
 		switch $PLATFORM_NAME
 			case '*+WSL'
 				set --export --global COMPOSE_CONVERT_WINDOWS_PATHS true
 				set --export --global DOCKER_HOST 'tcp://127.0.0.1:2375'
-				set --export --global PULSE_SERVER 'tcp://127.0.0.1'
 		end
 end
 
@@ -80,10 +74,10 @@ __path_add $SCRIPTS_DIR
 
 ## Homebrew
 switch $PLATFORM_NAME
-	case "Darwin"
-		__prefix_add /usr/local
-	case "Linux*"
-		__prefix_add /home/linuxbrew/.linuxbrew
+  case "Darwin"
+    __prefix_add /usr/local
+  case "Linux*"
+    __prefix_add /brew
 end
 
 ## Nimble

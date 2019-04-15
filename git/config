@@ -3,7 +3,7 @@
   name = Samantha Demi
   signingkey = 0BFD99A4 #4434EFA2
 [core]
-  editor = emacs
+  editor = emacsclient
   pager = w3m
   excludesfile = ~/.config/git/excludes
   autocrlf = input

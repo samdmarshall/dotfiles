@@ -39,7 +39,8 @@ for script in $unsupported_bash_scripts
   end
 end
 
-
-abbr --add --global remove "rm --recursive --dir"
+abbr --add --global emacs "emacsclient"
 abbr --add --global video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff -i <input> <output.gif>" 
-abbr --add --global certinfo "openssl x509 -inform DER -text -in"
+abbr --add --global certinfo "openssl x509 -inform DER -text -in <input>"
+
+

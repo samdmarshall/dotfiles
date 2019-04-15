@@ -4,48 +4,38 @@ default_calendar = "Personal"
 #default_command = "interactive"
 
 [calendars]
-[[cocoaheads]]
-path = ~/Calendars/cocoaheads
-type = discover
-color = dark red
-readonly = True
+
 [[Personal]]
-path = ~/Calendars/fastmail/DE44DE89-5BEF-4B6A-AD13-15F9D0C4D2D8/
+path = ~/Calendars/fastmail/Personal/*
 type = discover
-color = dark magenta
-[[Deliveries]]
-path = ~/Calendars/fastmail/5f96f604-51c0-4db7-a0ec-2eb60e27f300/
+
+[[Medical]]
+path = ~/Calendars/fastmail/Medical/*
 type = discover
-readonly = True
-[[The 100]]
-path = ~/Calendars/fastmail/03380b56-6096-4b77-b465-27c44d1a9fa1/
+
+[[Work]]
+path = ~/Calendars/fastmail/Work/*
 type = discover
-readonly = True
-[[Splatoon 2 - Salmon Run]]
-path = ~/Calendars/fastmail/11193bb9-5bf6-4396-b373-7d8f48e64c1e/
-type = discover
-readonly = True
-[[Splatoon 2 - Festivals]]
-path = ~/Calendars/fastmail/23493957-b918-4a95-82ae-a13ffcb41e4c/
+
+[[Cocoaheads]]
+path = ~/Calendars/fastmail/Cocoaheads/*
 type = discover
 readonly = True
-[[ellen]]
-path = ~/Calendars/ellen
+
+[[Games]]
+path = ~/Calendars/fastmail/Games/*/*
 type = discover
-color = dark green
 readonly = True
-[[US Holidays]]
-path = ~/Calendars/us-holiday
+
+[[Holidays]]
+path = ~/Calendars/fastmail/Holidays/*
 type = discover
-color = yellow
 readonly = True
-[[birthdays]]
-path = ~/Contacts/Default
+
+[[Birthdays]]
+path = ~/Contacts/Default/
 type = birthdays
 color = light gray
-[[Work Events]]
-path = ~/Calendars/fastmail/94ff4eb9bc104fdfa44b2e1acd03ba8b/
-type = discover
 
 [locale]
 timeformat = %H:%M

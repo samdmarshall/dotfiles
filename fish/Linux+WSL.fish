@@ -1,28 +1,5 @@
 umask 002
 
-
-# =======================
-# System Services Startup
-# =======================
-
-if test -e /etc/sudoers.d/service
-	if test (count (pgrep "avahi-daemon")) = 0
-		# start services to allow for bonjour network lookups
-		sudo service dbus start > /dev/null
-    sudo service rsyslog start > /dev/null
-		sudo service avahi-daemon start > /dev/null
-	end
-else
-	echo "Please add entry for 'service' in '/etc/sudoers.d/'!"
-	echo "  $USER ALL=(root) NOPASSWD: /usr/sbin/service"
-end
-
-#set --unexport emacs_daemon_pid (pgrep "^emacs\$")
-#if test -z "$emacs_daemon_pid"
-#	command emacs --daemon --user demi > /dev/null 2>&1 &; disown
-#end
-
-
 # =====================================
 # Setup directories shared from Windows
 # =====================================
@@ -61,8 +38,8 @@ if test "$SHLVL" -ne 1
 end
 switch "$PWD"
   case /mnt/c/Windows/System32
-	  echo "Started as Windows Administrator"
-	  cd ~
+    echo "Started as Windows Administrator"
+    cd ~
   case /mnt/c/Users/*
     set --unexport --local split_path (string split "/" $PWD)
     set --unexport --local user_name_index (math (contains --index "Users" $split_path) + 1)
@@ -72,5 +49,5 @@ switch "$PWD"
     else
       echo "Started as Unknown Windows User"
     end
-	  cd ~
+    cd ~
 end

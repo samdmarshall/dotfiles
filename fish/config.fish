@@ -18,12 +18,16 @@ source $FISH_CONFIG_DIR/wrappers.fish || true
 ## Only load when attached to something, unused otherwise
 if status is-interactive
   source $FISH_CONFIG_DIR/handlers.fish
+  source $FISH_CONFIG_DIR/process-agent.fish
 
-  switch $PLATFORM_NAME
-    case '*+WSL'
-      if test -z "$DBUS_SESSION_BUS_ADDRESS" -a -z "$DBUS_SESSION_BUS_PID"
-        export (dbus-launch)
-      end
+  setup-process-agent "emacs --daemon"
+
+  if test (pgrep -fxc "gpg-agent") -eq "0"
+    eval "gpg-agent"
+  end
+
+  if test (pgrep -fxc "ssh-agent") -eq "0"
+    eval "ssh-agent"
   end
 
 	## Kitty (Terminal) setup

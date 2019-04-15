@@ -104,4 +104,4 @@ synchronize_flags=true
 gpg_path=gpg
 
 [custom]
-backup=/home/demi/eMail-backup/
+backup=/home/demi/eMail-backup
