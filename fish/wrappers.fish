@@ -39,7 +39,10 @@ for script in $unsupported_bash_scripts
   end
 end
 
-abbr --add --global emacs "emacsclient"
+abbr --add --global emacs emacsclient
+abbr --add --global vmacs vmacsclient
+abbr --add --global tmacs tmacsclient
+
 abbr --add --global video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff -i <input> <output.gif>" 
 abbr --add --global certinfo "openssl x509 -inform DER -text -in <input>"
 

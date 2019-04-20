@@ -7,7 +7,7 @@
   pager = w3m
   excludesfile = ~/.config/git/excludes
   autocrlf = input
-	sparsecheckout = true
+  sparsecheckout = true
 [pull]
   rebase = true
 [push]

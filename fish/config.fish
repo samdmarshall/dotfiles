@@ -20,15 +20,7 @@ if status is-interactive
   source $FISH_CONFIG_DIR/handlers.fish
   source $FISH_CONFIG_DIR/process-agent.fish
 
-  setup-process-agent "emacs --daemon"
-
-  if test (pgrep -fxc "gpg-agent") -eq "0"
-    eval "gpg-agent"
-  end
-
-  if test (pgrep -fxc "ssh-agent") -eq "0"
-    eval "ssh-agent"
-  end
+  #setup-process-agent "emacs --daemon"
 
 	## Kitty (Terminal) setup
 	if not functions --query __kitty_completions

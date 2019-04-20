@@ -16,7 +16,7 @@ begin
 	set fish_emoji_width 2
 
 	## System
-	set --export --global LANG "en_US.utf8"
+  set --export --global SHELL /brew/bin/fish
 
 	## Default Applications
 	set --export --global EDITOR "emacsclient"
@@ -29,7 +29,7 @@ begin
 	begin
 		### fzf
 		set --export --global FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
-		set --export --global FZF_DEFAULT_OPTS    '--preview="preview --metadata {} "'
+#		set --export --global FZF_DEFAULT_OPTS    '--preview="preview --metadata {} "'
 
 		### git
 		set --export --global GIT_CONFIG $GIT_CONFIG_DIR/config
@@ -50,7 +50,6 @@ end
 switch $PLATFORM_NAME
 	case 'Darwin'
 	case 'Linux*'
-		set --export --global XCURSOR_SIZE 48
 		switch $PLATFORM_NAME
 			case '*+WSL'
 				set --export --global COMPOSE_CONVERT_WINDOWS_PATHS true
@@ -62,9 +61,6 @@ end
 # =======================
 # Path Variable Additions
 # =======================
-
-## Go
-__prefix_add ~/.go
 
 ## Gem
 __prefix_add $GEM_HOME
@@ -81,8 +77,8 @@ switch $PLATFORM_NAME
 end
 
 ## Nimble
-__prefix_add ~/.nimble
+__prefix_add $HOME/.nimble
 
 ## ~/.local
-__prefix_add ~/.local
+__prefix_add $HOME/.local
 

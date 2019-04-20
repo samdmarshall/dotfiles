@@ -42,7 +42,7 @@
     (pandoc)
     (shell
      :variables
-     shell-default-term-shell "/home/linuxbrew/.linuxbrew/bin/fish"
+     shell-default-term-shell "/brew/bin/fish"
      )
     (version-control)
 
@@ -68,6 +68,12 @@
   )
 )
 
+(setq-default dotspacemacs-excluded-packages
+  '(
+    (org-bullets) ;; Disable the "fancy" org-mode bullets package
+  )
+)
+
 ;; -------
 
 (setq-default
@@ -77,12 +83,15 @@
   dotspacemacs-line-numbers         '(:enabled-for-modes prog-mode)
   dotspacemacs-maximized-at-startup t
   dotspacemacs-whitespace-cleanup   nil
-  )
+)
 
 (defun demi/user-config/defaults ()
-  (defvar user-home-directory  (getenv "HOME"))
-  (defvar xdg-config-directory (getenv "XDG_CONFIG_HOME"))
-  (defvar xdg-cache-directory  (getenv "XDG_CACHE_HOME"))
+  (defvar user-home-directory
+    (file-name-as-directory (getenv "HOME")))
+  (defvar xdg-config-directory
+    (file-name-as-directory (expand-file-name ".config/" user-home-directory)))
+  (defvar xdg-cache-directory
+    (file-name-as-directory (expand-file-name ".cache/"  user-home-directory)))
 
   (defvar demi/org-project-directory
     (file-name-as-directory (expand-file-name "org/" user-home-directory)))
@@ -227,13 +236,10 @@
     ;; Template: (sequence "ACTIONABLE_STATE(abbrev)" "|" "COMPLETION_STATE(abbrev)")
 
     ;; General Tasks TODO Keywords
-    (sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "FOLLOWUP(f)" "|" "DONE(d)" "CANCELED(c)")
+    (sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "FOLLOWUP(f)" "|" "DONE(d)" "CANCELED(c)" )
 
     ;; Meeting/Event TODO Keywords
-    (sequence                                    "TENTATIVE(m)" "|" "CONFIRMED(y)" "DECLINED(n)" "CANCELED(c)")
-
-    ;; Appointment TODO Keywords
-    (sequence                          "ASAP(a)" "REQUESTED(r)" "|" "BOOKED(b)" "CANCELED(c)")
+    (sequence                                    "TENTATIVE(m)" "|" "CONFIRMED(y)" "DECLINED(n)" "CANCELED(c)" )
 
     )
   )
@@ -265,33 +271,6 @@
 
     )
   )
-
-
-  ;; Custom Tags for Org-mode headings
-  (setq org-tag-alist
-    '(
-      (:startgroup . nil)                ; Opening marker of a group of tags
-      ("CURRENT" . nil) (:newline . nil) ; Tag item followed by indicator for this tag to insert a newline after it
-      ("ONGOING" . nil) (:newline . nil) ; ^^^ ditto
-      (:endgroup . nil)                  ; Closing marker of a group of tags
-      )
-    )
-
-  ;; Custom Tag Faces
-  (setq org-tag-faces
-    '(
-      ("CURRENT" . org-done) ; Using pre-defined faces, follows same template as the keyword faces above.
-      ("ONGOING" . org-done)
-      )
-    )
-
-  ;; Normally tags will be inherited by all sub-headings, disable that in these cases.
-  (setq org-tags-exclude-from-inheritance
-    '(
-      "ONGOING"
-      "CURRENT"
-      )
-    )
 
   ;; Insert date+time of marking a TODO item to a completed state.
   (setq org-log-done 'time)
