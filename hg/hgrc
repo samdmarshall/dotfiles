@@ -1,23 +1,44 @@
+
+[annotate]
+ignorews = true
+ignorewseol = true
+ignoreblanklines = true
+
+[commands]
+status.relative = true
+
+[color]
+mode = auto
+pagermode = never
+
+[extensions]
+# bundled
+amend =
+bookmarks =
+churn =
+gpg =
+#histedit =
+purge =
+rebase =
+shelve =
+transplant =
+#zeroconf =
+# third party
+debugshell = ~/.config/hg/extensions/debugshell.py
+hggit = /brew/lib/python3.7/site-packages/hggit/
+
+[gpg]
+key = 0BFD99A4
+
+[hooks]
+#precommit.sign = hg sign --no-commit
+#priority.precommit.sign = 1
+precommit.signature = python:~/.config/hg/hooks/signoff.py:sign_commit_message
+
 [ui]
 username = Samantha Demi <hello@pewpewthespells.com>
 interactive = true
 interface = curses
 verbose = true
-
-[gpg]
-key = 0BFD99A4
-
-[extensions]
-beautifygraph =
-churn =
-gpg = 
-graphlog =
-hggit = /home/linuxbrew/.linuxbrew/lib/python2.7/site-packages/hggit
-hgk =
-highlight =
-histedit =
-purge =
-rebase =
-shelve =
-transplant =
-zeroconf =
+#debug = true
+paginate = false

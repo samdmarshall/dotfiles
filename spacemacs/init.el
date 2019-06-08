@@ -5,74 +5,62 @@
 (setq-default dotspacemacs-configuration-layers
   '(
     ;; Functionality
-    (auto-completion)
-    (nlinum)
-    (spell-checking
-     :variables
-     enable-flyspell-auto-completion t
-     )
-    (syntax-checking)
+    auto-completion
+    nlinum
+    spell-checking
+    syntax-checking
 
     ;; Editing Support
-    (org)
-    (emoji)
-    (typography)
+    org
+    org-demi
+    emoji
+    typography
 
     ;; Languages
-    (asm)
-    (c-c++
-     :variables
-     c-c++-enable-clang-support t
-     )
-    (emacs-lisp)
-    (html)
-    (javascript)
-    (lua)
-    (nim)
-    (python)
-    (shell-scripts)
-    (typescript)
-    (windows-scripts)
+    asm
+    (c-c++ :variables c-c++-enable-clang-support t)
+    emacs-lisp
+    html
+    javascript
+    lua
+    nim
+    python
+    shell-scripts
+    typescript
+    windows-scripts
 
 
     ;; Applications
-    (ansible)
-    (github)
-    (nginx)
-    (pandoc)
-    (shell
-     :variables
-     shell-default-term-shell "/brew/bin/fish"
-     )
-    (version-control)
+    ansible
+    github
+    nginx
+    pandoc
+    (shell :variables shell-default-term-shell "/brew/bin/fish")
+    version-control
 
     ;; Data Files
-    (csv)
-    (graphviz)
-    (markdown)
-    (yaml)
+    csv
+    graphviz
+    markdown
+    yaml
     )
   )
 
 (setq-default dotspacemacs-additional-packages
   '(
-    ;; Org Mode Additions
-    (calfw :variables calendar-week-start-day 1)
-    (calfw-cal)
-    (calfw-ical)
-    (calfw-org)
-    (org-caldav)
-    (org-vcard)
+    ahg
 
-    (toml-mode)
+    guide-key
+
+    toml-mode
+    )
   )
-)
 
 (setq-default dotspacemacs-excluded-packages
   '(
-    (org-bullets) ;; Disable the "fancy" org-mode bullets package
+    org-bullets ;; Disable the "fancy" org-mode bullets package
+    )
   )
-)
 
 ;; -------
 
@@ -86,38 +74,87 @@
 )
 
 (defun demi/user-config/defaults ()
-  (defvar user-home-directory
-    (file-name-as-directory (getenv "HOME")))
-  (defvar xdg-config-directory
-    (file-name-as-directory (expand-file-name ".config/" user-home-directory)))
-  (defvar xdg-cache-directory
-    (file-name-as-directory (expand-file-name ".cache/"  user-home-directory)))
 
-  (defvar demi/org-project-directory
-    (file-name-as-directory (expand-file-name "org/" user-home-directory)))
-  (defvar demi/spacemacs-directory
-    (file-name-as-directory (expand-file-name "spacemacs.d/" xdg-config-directory)))
-  (defvar demi/emacs-cache-directory
-    (file-name-as-directory (expand-file-name "emacs/" xdg-cache-directory)))
-  (defvar demi/emacs-backups-directory
-    (file-name-as-directory (expand-file-name "backups/" demi/emacs-cache-directory)))
-  (defvar demi/emacs-autosave-directory
-    (file-name-as-directory (expand-file-name "autosave/" demi/emacs-cache-directory)))
+  (defvar demi/directory-user
+    (file-name-as-directory
+     (getenv "HOME")))
 
-  (defvar demi/diary-file
-    (expand-file-name "project-diary.org" demi/org-project-directory))
-  (defvar demi/customize-file
-    (expand-file-name "custom.el" demi/spacemacs-directory))
-  (defvar demi/save-completions-file-name
-    (expand-file-name "completions" demi/emacs-cache-directory))
-  (defvar demi/save-place-file
-    (expand-file-name "saved-positions" demi/emacs-cache-directory))
-  (defvar demi/abbrev-file-name
-    (expand-file-name "abbrev-defs" demi/emacs-cache-directory))
-  (defvar demi/recentf-save-file
-    (expand-file-name "recentf" demi/emacs-cache-directory))
+  (defvar demi/xdg/directory-config
+    (file-name-as-directory
+     (expand-file-name ".config/" demi/directory-user)))
 
+  (defvar demi/xdg/directory-cache
+    (file-name-as-directory
+     (expand-file-name ".cache/"  demi/directory-user)))
 
+  ;; =========
+
+  (defvar demi/org/directory-root
+    (file-name-as-directory
+     (expand-file-name "OrgFiles/" demi/directory-user)))
+
+  (defvar demi/org/directory-assets
+    (file-name-as-directory
+     (expand-file-name "assets/" demi/org/directory-root)))
+
+  (defvar demi/org/directory-data
+    (file-name-as-directory
+     (expand-file-name "data/" demi/org/directory-root)))
+
+  ;; =========
+
+  (defvar demi/org/file-diary
+    (expand-file-name "project-diary.org" demi/org/directory-root))
+
+  (defvar demi/org/file-books
+    (expand-file-name "books.org" demi/org/directory-data))
+
+  ;; =========
+
+  (defvar demi/spacemacs/directory-root
+    (file-name-as-directory
+     (expand-file-name "spacemacs.d/" demi/xdg/directory-config)))
+
+  (defvar demi/cache-emacs/directory-root
+    (file-name-as-directory
+     (expand-file-name "emacs/" demi/xdg/directory-cache)))
+
+  (defvar demi/cache-emacs/directory-backups
+    (file-name-as-directory
+     (expand-file-name "backups/" demi/cache-emacs/directory-root)))
+
+  (defvar demi/cache-emacs/directory-autosave
+    (file-name-as-directory
+     (expand-file-name "autosave/" demi/cache-emacs/directory-root)))
+
+  ;; =========
+
+  (defvar demi/org/file-diary
+    (expand-file-name "project-diary.org" demi/org/directory-root))
+
+  (defvar demi/org/file-books
+    (expand-file-name "books.org" demi/org/directory-data))
+
+  ;; =========
+
+  (defvar demi/spacemacs/file-customize
+    (expand-file-name "custom.el" demi/spacemacs/directory-root))
+
+  ;; =========
+
+  (defvar demi/cache-emacs/file-completions
+    (expand-file-name "completions" demi/cache-emacs/directory-root))
+
+  (defvar demi/cache-emacs/file-saved-positions
+    (expand-file-name "saved-positions" demi/cache-emacs/directory-root))
+
+  (defvar demi/cache-emacs/file-abbrev-defs
+    (expand-file-name "abbrev-defs" demi/cache-emacs/directory-root))
+
+  (defvar demi/cache-emacs/file-recentf
+    (expand-file-name "recentf" demi/cache-emacs/directory-root))
+
+  ;; =========
 
   (setq-default
    ;; Basics
@@ -126,12 +163,13 @@
    user-mail-address     "hello@pewpewthespells.com"
 
    ;; Locations
-   custom-file                demi/customize-file
-   save-completions-file-name demi/save-completions-file-name
-   save-place-file            demi/save-place-file
-   abbrev-file-name           demi/abbrev-file-name
-   diary-file                 demi/diary-file
-   recentf-save-file          demi/recentf-save-file
+   custom-file                demi/spacemacs/file-customize
+   save-completions-file-name demi/cache-emacs/file-completions
+   save-place-file            demi/cache-emacs/file-saved-positions
+   abbrev-file-name           demi/cache-emacs/file-abbrev-defs
+   recentf-save-file          demi/cache-emacs/file-recentf
+   diary-file                 demi/org/file-diary
+   org-books-file             demi/org/file-books
 
    ;; Displaying time and date
    display-time-24hr-format  t
@@ -165,7 +203,7 @@
 
    )
 
-  (rainbow-delimiters-mode nil)
+ ; (rainbow-delimiters-mode nil)
   (cua-mode t)
   (ido-mode 'both)
   (tooltip-mode t)
@@ -180,7 +218,7 @@
   )
 
 (defun demi/user-config/interface ()
-  (spacemacs/toggle-fullscreen-frame-on)
+  (spacemacs/toggle-fullscreen-frame-off)
   (spacemacs/toggle-menu-bar-on)
   (spacemacs/toggle-tool-bar-on)
   (spacemacs/toggle-fringe-on)
@@ -194,6 +232,7 @@
   (spacemacs/toggle-mode-line-battery-on)
   (spacemacs/toggle-mode-line-minor-modes-off)
   (spacemacs/toggle-display-time-on)
+  (spacemacs/toggle-centered-point-globally-off)
 
   (spacemacs/toggle-smartparens-globally-off)
   (spacemacs/toggle-highlight-current-line-globally-off)
@@ -210,27 +249,10 @@
   (spaceline-toggle-flycheck-info-on)
   (spaceline-toggle-flycheck-warning-on)
   (spaceline-toggle-flycheck-error-on)
+
   )
 
-(defun demi/user-config/hooks ()
-  (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
-  )
-
-(defun dotspacemacs/user-config ()
-  (demi/user-config/defaults)
-  (demi/user-config/interface)
-  (demi/user-config/theme)
-  (demi/user-config/hooks)
-  )
-
-(with-eval-after-load 'org
-
-  ;; Additional Imports
-  (require 'calfw)
-  (require 'calfw-cal)
-  (require 'calfw-ical)
-  (require 'calfw-org)
-
+(defun demi/user-config/configure/org ()
   ;; Add custom keywords
   (setq org-todo-keywords '(
     ;; Template: (sequence "ACTIONABLE_STATE(abbrev)" "|" "COMPLETION_STATE(abbrev)")
@@ -279,25 +301,46 @@
   (setq org-closed-keep-when-no-todo t)
 
   ;; Set path to the default directory that Org-mode files should be found in.
-  (setq org-directory (expand-file-name "~/org"))
-  ;; Set the search pattern for generating Org-mode's Agenda.
-  (setq org-agenda-files (directory-files org-directory t "^project\-.*\.org$"))
+  (setq org-directory demi/org/directory-root)
 
-  ;; Disable for now, this needs more work.
-  ;; The intent is to automatically export an html copy of the .org file, (as well as backing it up to iCloud+WebDAV) on save. this should be an async on-save hook only when Org-mode is active.
-  ;(defun save-and-export-org-mode()
-  ;  (when (eq major-mode 'org-mode) (org-html-export-to-html t t))
-  ;  )
-  ;(add-hook 'after-save-hook 'save-and-export-org-mode)
+  ;; Set the search pattern for generating Org-mode's Agenda.
+  (setq org-agenda-files (directory-files org-directory t "^(project\-)?.*\.org$"))
+
+  )
+
+(defun demi/user-config/configure/ispell ()
+  (setq ispell-program-name "hunspell")
+  (setq ispell-really-hunspell t)
+  ;; ispell-set-spellchecker-params has to be called
+  ;; before ispell-hunspell-add-multi-dic will work
+  (ispell-set-spellchecker-params)
+  (ispell-hunspell-add-multi-dic "en_US,en_GB,Medical,hyphen_en_US,hyph_en_GB")
+  (setq ispell-dictionary "en_US") ;,en_GB,Medical,hyphen_en_US,hyph_en_GB")
+  )
+
+(defun demi/save-and-commit ()
+  (when (eq major-mode 'org-mode) (message "do a thing on save") )
+  )
+
+(defun demi/disable-spell-check ()
+  (when (eq major-mode 'prog-mode) (flyspell-mode-off) )
+  )
+
+(defun demi/user-config/hooks ()
+  (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
+  (add-hook    'after-save-hook      'demi/save-and-commit)
+  (add-hook    'prog-mode-hook       'demi/disable-spell-check)
+
+  (with-eval-after-load 'org    'demi/user-config/configure/org)
+  (with-eval-after-load 'ispell 'demi/user-config/configure/ispell)
   )
 
 
-;(with-eval-after-load "ispell"
-;  (setq ispell-program-name "hunspell")
-;  (setq ispell-really-hunspell t)
-  ;; ispell-set-spellchecker-params has to be called
-  ;; before ispell-hunspell-add-multi-dic will work
-;  (ispell-set-spellchecker-params)
-;  (ispell-hunspell-add-multi-dic "en_US,en_GB,Medical,hyphen_en_US,hyph_en_GB")
-;  (setq ispell-dictionary "en_US") ;,en_GB,Medical,hyphen_en_US,hyph_en_GB")
-;  )
+(defun dotspacemacs/user-config ()
+  (demi/user-config/defaults)
+  (demi/user-config/interface)
+  (demi/user-config/theme)
+  (demi/user-config/hooks)
+  )
+
+
