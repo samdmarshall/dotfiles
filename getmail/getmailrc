@@ -1,6 +1,6 @@
 [retriever]
 type = SimpleIMAPSSLRetriever
-server = mail.messagingengine.com
+server = imap.fastmail.com
 username = samdm@mailc.net
 password_command = ("rune", "get", "--key:fastmail-password")
 mailboxes = ALL
