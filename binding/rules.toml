@@ -305,9 +305,10 @@ to-or = ["medical@"]
 
 [Notes]
 from-or = ["notes@"]
+to-or = [""]
 
 [sent]
-rule = "(from:@pewpewthespells.com or from:me@samdmarshall.com) and not (tag:Notes or from:notes@)"
+rule = "(from:@pewpewthespells.com or from:me@samdmarshall.com or from:samdm@mailc.net) and not (tag:Notes or from:notes@)"
 
 [Archive]
 rule = "tag:inbox and not date:-1month..today"

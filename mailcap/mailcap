@@ -1,15 +1,15 @@
 # view
 text/html;                      w3m -dump -o document_charset=%{charset} '%s'; nametemplate=%s.html; copiousoutput
-text/*;                         micro %s; needsterminal
+text/*;                         emacsclient %s; needsterminal
 
 # calendar
-application/ics;                khal import --include-calendar iCloud --batch %s
+application/ics;                khal import --include-calendar Personal --batch %s
 
 # images
-image/*;                        open -a Preview %s
+image/*;                        wsl-open %s
 
 # pdfs
-application/pdf;                open -a Preview %s
+application/pdf;                wsl-open %s
 
 # archive formatss
 application/zip;                dtrx %s
