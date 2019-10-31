@@ -9,3 +9,8 @@
 #
 #  eval command tree $defaults $ignore_patterns -- $display_paths
 #end
+
+alias t="tree -F -U -C -D --timefmt='| %y/%m/%d %H:%M' --du -h --noreport"
+alias tree1="t -L 1"
+alias tree2="t -L 2"
+

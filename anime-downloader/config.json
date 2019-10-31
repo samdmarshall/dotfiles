@@ -1,0 +1,32 @@
+{
+    "dl": {
+        "download_dir": "/home/demi/Videos/",
+        "external_downloader": "",
+        "fallback_qualities": [
+            "720p",
+            "480p",
+            "360p"
+        ],
+        "file_format": "{anime_title}/{anime_title}_{ep_no}",
+        "force_download": false,
+        "log_level": "INFO",
+        "player": null,
+        "provider": "kissanime",
+        "quality": "720p",
+        "skip_download": false,
+        "url": false
+    },
+    "siteconfig": {
+        "kissanime.ru": {
+            "server": "mp4upload"
+        },
+        "nineanime": {
+            "server": "mp4upload"
+        }
+    },
+    "watch": {
+        "log_level": "INFO",
+        "provider": "",
+        "quality": "720p"
+    }
+}

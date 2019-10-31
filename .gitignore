@@ -9,6 +9,10 @@ history
 
 # Directorys
 ## alot
+alot/*.log
+alot/*.pyc
+alot/__pycache__
+alot/logs
 
 ## asciinema
 asciinema/install-id

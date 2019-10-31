@@ -1,55 +1,67 @@
-attachment_prefix = /home/demi/Downloads/
+
+
+
+
+
+
+
+
+
+
+
+
+#attachment_prefix = /home/demi/Downloads/
 colourmode = 256
-editor_cmd = emacs -nw
-initial_command = "search tag:unread"
+initial_command = "search tag:unread; call hooks.startup(ui)"
 tabwidth = 2
-theme = tomorrow
-bug_on_exit = False
-honor_followup_to = True
-prefer_plaintext = True
-auto_remove_unread = True
+#theme = tomorrow
+#bug_on_exit = False
+#honor_followup_to = True
+#prefer_plaintext = True
+#auto_remove_unread = True
 handle_mouse = True
 
-
 [accounts]
-    [[default]]
-        realname = Samantha Demi
-        address = hello@pewpewthespells.com
-        aliases = hello@pewpewthespells.com,me@samdmarshall.com
-        sendmail_command = msmtp --read-recipients --read-envelope-from 
-        sign_by_default = True
-        gpg_key = 0BFD99A4
-        sent_box = maildir:///home/demi/eMail/Outbox/
-        draft_box = maildir:///home/demi/eMail/Drafts/
-        signature_as_attachment = False
-        [[[abook]]]
-            type = shellcommand
-            command = khard email --parsable
-            regexp = '^(?P<email>[^@]+@[^\t]+)\t+(?P<name>[^\t]+)'
-            ignorecase = True
+  [[personal]]
+    realname     = Samantha Demi
+    address      = hello@pewpewthespells.com
+    #alias_regexp = *@[pewpewthespells|samdmarshall].com
+
+    gpg_key         = 0BFD99A4
+    sign_by_default = True
+
+    sendmail_command = "msmtp --read-recipients --read-envelope-from"
+
+    draft_box  = maildir:///home/demi/eMail/Drafts/
+    sent_box  = maildir:///home/demi/eMail/Outbox/
+
+    [[[abook]]]
+      type       = shellcommand
+      command    = "khard email --parsable"
+      regexp     = '^(?P<email>[^@]+@[^\t]+)\t+(?P<name>[^\t]+)'
                 
 
 [bindings]
-    k = 
-    j =
-    page up =
-    page down = 
-    'g g' = 
-    G =
-    'ctrl d' =
-    @ = 
-    I = 
-    '#' =
+#    k = 
+#    j =
+#    page up =
+#    page down = 
+#    'g g' = 
+#    G =
+#    'ctrl d' =
+#    @ = 
+#    I = 
+#    '#' =
     shift tab = bprevious
-    U = 
-    tab =
-    \ =
-    d = 
-    $ = 
-    m = 
-    o = 
-    q = 
-    . = 
+#    U = 
+#    tab =
+#    \ =
+#    d = 
+#    $ = 
+#    m = 
+#    o = 
+#    q = 
+#    . = 
     up = move up
     down = move down
     ' ' = move page down
@@ -67,26 +79,26 @@ handle_mouse = True
         enter = open
 
     [[search]]
-        a = 
-        & = 
-        ! = 
-        s = 
-        l = 
-        O = 
-        | = 
+#        a = 
+#        & = 
+#        ! = 
+#       s = 
+#        l = 
+#        O = 
+#        | = 
         enter = select
 
     [[envelope]]
-        a = 
-        y = 
-        P = 
-        s = 
-        f = 
-        t = 
-        b = 
-        c = 
-        S = 
-        'g f' =
+#        a = 
+#        y = 
+#        P = 
+#        s = 
+#        f = 
+#        t = 
+#        b = 
+#        c = 
+#        S = 
+#        'g f' =
         'ctrl a' = prompt 'attach '
         'ctrl s' = save
 
@@ -96,36 +108,36 @@ handle_mouse = True
 
     [[thread]]
         enter = select
-        E = 
-        e = 
-        > =
-        C = 
-        c = 
-        < = 
+#        E = 
+#        e = 
+#        > =
+#        C = 
+#        c = 
+#        < = 
         left = fold
         right = unfold
-        'g f' =
-        'ctrl t' = togglesource
-        H = 
-        P = 
-        S = 
-        R = untag unread
-        U = tag unread
-        'ctrl s' = 
-        g =
-        'ctrl r' = 
-        f = 
-        'ctrl f' = 
-        p = 
-        n =
-        b = 
-        'ctrl b' = 
-        s = 
-        r = 
-        | = 
-        'g j' =
-        'g k' = 
-        'g h' =
-        'g l' =
-        ' ' = move next
-        v = pipeto --separately --shell --format=filepath -- email-url-export
+#        'g f' =
+#        'ctrl t' = togglesource
+#        H = 
+#        P = 
+#        S = 
+#        R = untag unread
+#        U = tag unread
+#        'ctrl s' = 
+#        g =
+#        'ctrl r' = 
+#        f = 
+#        'ctrl f' = 
+#        p = 
+#        n =
+#        b = 
+#        'ctrl b' = 
+#        s = 
+#        r = 
+#        | = 
+#        'g j' =
+#        'g k' = 
+#        'g h' =
+#        'g l' =
+#        ' ' = move next
+#        v = pipeto --separately --shell --format=filepath -- email-url-export

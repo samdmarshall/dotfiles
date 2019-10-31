@@ -18,9 +18,6 @@ source $FISH_CONFIG_DIR/wrappers.fish || true
 ## Only load when attached to something, unused otherwise
 if status is-interactive
   source $FISH_CONFIG_DIR/handlers.fish
-  source $FISH_CONFIG_DIR/process-agent.fish
-
-  #setup-process-agent "emacs --daemon"
 
 	## Kitty (Terminal) setup
 	if not functions --query __kitty_completions

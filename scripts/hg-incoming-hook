@@ -1,0 +1,5 @@
+#!/usr/bin/env fish
+
+echo "Hook: $HG_HOOKNAME"
+echo "    Node: $HG_NODE"
+echo "  Source: $HG_URL"
