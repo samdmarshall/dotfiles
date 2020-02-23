@@ -55,6 +55,8 @@
 
 [url "ssh://github.com"]
   insteadOf = https://github.com
+[url "ssh://gist.github.com"]
+  insteadOf = https://gist.github.com
 [filter "lfs"]
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f

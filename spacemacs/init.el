@@ -53,6 +53,8 @@
     guide-key
 
     toml-mode
+
+    xcode-project
     )
   )
 
@@ -342,5 +344,3 @@
   (demi/user-config/theme)
   (demi/user-config/hooks)
   )
-
-

@@ -1,3 +1,3 @@
 function remove
-	rm --dir --recursive $argv ;
+  rm --dir --recursive $argv ;
 end

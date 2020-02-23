@@ -1,4 +1,5 @@
 
+
 set --unexport --local rune_path     (command --search rune)
 set --unexport --local grimoire_path (command --search grimoire)
 
@@ -11,8 +12,8 @@ if test -n "$command_v_node_path" -a -x "$command_v_node_path"
 end
 
 if test -z $rune_path
-	echo "cannot find `rune` in PATH!"
-	exit 1
+  echo "cannot find `rune` in PATH!"
+  exit 1
 end
 
 if test -z $grimoire_path
@@ -35,13 +36,16 @@ set --local --unexport unsupported_bash_scripts "$HOME/.nvm/nvm.sh"
 for script in $unsupported_bash_scripts
   if test -e $script
     set --local --unexport script_name (basename --suffix=.sh $script)
-    alias $script_name "bass source $script --no-use ';' $script_name " 
+    alias $script_name "bass source $script --no-use ';' $script_name "
   end
 end
 
-abbr --add --global emacs emacsclient
+abbr --add --global emacs-open "emacsclient"
+abbr --add --global emacs-fix  "kill -SIGHUP (pgrep --newest emacs)"
 
-abbr --add --global video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff -i <input> <output.gif>" 
-abbr --add --global certinfo "openssl x509 -inform DER -text -in <input>"
+abbr --add --global ptree     "pstree --long --uid-changes --show-pids --thread-names"
+abbr --add --global video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff -i <input> <output.gif>"
+abbr --add --global certinfo  "openssl x509 -inform DER -text -in <input>"
+
 
 

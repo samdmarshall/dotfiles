@@ -1,4 +1,3 @@
-
 # [Task] Title:
 
 ## Include information regarding what changed based on category of change:

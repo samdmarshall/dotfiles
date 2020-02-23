@@ -4,10 +4,13 @@
   from-or = ["noreply@email.apple.com", "noreply@apple.com"]
 
   [Alerts.Amazon]
-  from-or = ["-confirm@amazon.com", "shipment-tracking@amazon.com"]
+  from-or = ["-confirm@amazon.com", "shipment-tracking@amazon.com", "@amazon.com"]
 
   [Alerts.CircleCI]
   from-or = ["@circleci.com"]
+
+  [Alerts.Duolingo]
+  from-or = ["@duolingo.com"]
 
   [Alerts.Kickstarter]
   from-or = ["no-reply@kickstarter.com"]
@@ -16,7 +19,8 @@
   from-or = ["info@meetup.com"]
 
   [Alerts.Linode]
-  rule = "subject:'Linode Alert' or subject:'Linode Events Notification' or from:noreply@linode.com"
+  from-or = ["@linode.com"]
+  subject-or = ["Linode Alert", "Linode Events Notification"]
 
   [Alerts.Synology]
   from-or = ["notification@synology.com", "@synologynotification.com", "Synology@NAS.local"]
@@ -57,6 +61,9 @@
   [Alerts.Taxi]
   from-or = ["donotreply@taxihail.com"]
 
+  [Alerts.Lyft]
+  from-or = ["support@lyft-new.zendesk.com"]
+
   [Alerts.NameDotCom]
   from-or = [":no-reply@name.com"]
 
@@ -87,6 +94,24 @@
 
   [Alerts.Discourse]
   from-or = ["@discoursemail.com"]
+
+  [Alerts.Venmo]
+  from-or = ["@venmo.com"]
+
+  [Alerts.Payflex]
+  from-or = ["@payflex.com"]
+
+  [Alerts.IconForHire]
+  from-or = ["@iconforhire.net"]
+
+  [Alerts.TechLadies]
+  from-or = ["@hiretechladies.com"]
+
+  [Alerts.Microsoft]
+  from-or = ["microsoft.com"]
+
+  [Alerts.Netshade]
+  from-or = ["@raynersw.com"]
 
 [Billing]
   [Billing.Amazon]
@@ -146,6 +171,15 @@
   [Billing.Bandcamp]
   from-or = ["noreply@bandcamp.com"]
 
+  [Billing.BlizzardStore]
+  from-or = ["blizzardgearstore.com"]
+
+  [Billing.TShirtsBot]
+  from-or = ["tshirtsbot.com"]
+
+  [Billing.Exentri]
+  from-or = ["order@exentri", "@exentri.", "agilton2@gmail.com"]
+
   [Billing.Fidelity]
   from-or = ["Fidelity.Investments.email@workplacedocs.fidelity.com", "Fidelity.Investments@mail.fidelity.com"]
 
@@ -196,6 +230,18 @@
   [Billing.TCGPlayer]
   from-or = ["sales@tcgplayer.com"]
 
+  [Billing.TicketMaster]
+  from-or = ["ticketmaster.com"]
+
+  [Billing.TicketWeb]
+  from-or = ["@ticketweb.com"]
+
+  [Billing.Xsolla]
+  from-or = ["@xsolla.com"]
+
+  [Billing.Etsy]
+  from-or = ["transaction@etsy.com", "emails@mail.etsy.com"]
+
 [Developer]
   [Developer.Apple]
   from-or = ["noreply-appledev@apple.com", "developer@insideapple.apple.com"]
@@ -215,8 +261,15 @@
   [Developer.DependencyCI]
   from-or = ["dependencyci.com"]
 
+  [Developer.Microsoft]
+  from-or = ["windowsinsiderprogram@e-mail.microsoft.com", "email@engage.windows.com"]
+
+  [Developer.GlyphIcons]
+  from-or = ["GLYPHICONS.com"]
+
+
 [MailingList]
-from-or = ["security-announce-request@lists.apple.com", "macbeta@list.valvesoftware.com", "product-security-noreply@lists.apple.com", "darwin-dev@lists.apple.com", "AppleTeacher@InsideApple.apple.com", "getmail-help@lists.pyropus.ca", "getmail@lists.pyropus.ca", "@bountysource.com"]
+from-or = ["security-announce-request@lists.apple.com", "macbeta@list.valvesoftware.com", "product-security-noreply@lists.apple.com", "darwin-dev@lists.apple.com", "AppleTeacher@InsideApple.apple.com", "getmail-help@lists.pyropus.ca", "getmail@lists.pyropus.ca", "@bountysource.com", "@lists.apple.com"]
 to-or = ["Women-Who-Code-Boston-list@meetup.com", "darwin-dev@lists.apple.com", "cocoaheadsboston@googlegroups.com", "bug-texinfo@gnu.org", "Women-Who-Code-Boston", "getmail@lists.pyropus.ca"]
 
 [Support]
@@ -234,7 +287,11 @@ to-or = ["Women-Who-Code-Boston-list@meetup.com", "darwin-dev@lists.apple.com", 
 
 [Employment]
   [Employment.Recruiter]
+  [Employment.Apple]
+  [Employment.GitLab]
   [Employment.Microsoft]
+  from-or = ["@emails.careers.microsoft.com"]
+  [Employment.TechLadies]
   [Employment.iRobot]
   from-or = ["@irobot.com"]
   [Employment.MLB]
@@ -250,7 +307,7 @@ to-or = ["Women-Who-Code-Boston-list@meetup.com", "darwin-dev@lists.apple.com", 
 
 [spam]
 subject-or = ["SPAM"]
-from-or = ["happybirthday@movies.fandango.com", "customer-reviews-messages@amazon.com", "store-news@amazon.com", "@marketplace.amazon.com", "recommendations@ifttt.com", "ello.com", "ello.co"]
+from-or = ["happybirthday@movies.fandango.com", "customer-reviews-messages@amazon.com", "store-news@amazon.com", "@marketplace.amazon.com", "recommendations@ifttt.com", "ello.com", "ello.co", "truebluedining@", "TrueBlue Dining", "@eventbrite.com"]
 
 [Charity]
 to-or = ["charities@"]
@@ -263,11 +320,17 @@ to-or = ["moving@"]
 
 [Medical]
 to-or = ["medical@"]
+
   [Medical.Therapy]
   from-or = ["@therapyportal.com", "@thriveworks.com"]
   subject-or = ["Thriveworks Appointment Confirmation"]
+
   [Medical.FenwayHealth]
+  from-or = ["@fenwayhealth.org"]
+  subject-or = ["Your upcoming appointment with "]
+
   [Medical.BrighamWomens]
+  from-or = ["@bwh.harvard.edu"]  
 
 [Games]
   [Games.Blizzard]
@@ -297,6 +360,9 @@ to-or = ["medical@"]
   from-or = ["LINCOLN INVESTMENT", "id@proxyvote.com"]
 
 [Comics]
+  [Comics.WebToon]
+  from-or = ["do-not-reply@webtoon.com"]
+
   [Comics.Sparkler]
   to-or = ["sparkler@"]
 
@@ -305,11 +371,18 @@ to-or = ["medical@"]
 
 [Notes]
 from-or = ["notes@"]
-to-or = [""]
 
 [sent]
 rule = "(from:@pewpewthespells.com or from:me@samdmarshall.com or from:samdm@mailc.net) and not (tag:Notes or from:notes@)"
 
+[Family]
+  [Family.Parents]
+  from-or = ["ramhoj@comcast.net", "jsmarshall508@comcast.net"]
+
+  [Family.Ellen]
+  from-or = ["@asmallteapot.com"]
+
 [Archive]
 rule = "tag:inbox and not date:-1month..today"
+
 

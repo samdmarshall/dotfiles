@@ -1,16 +1,23 @@
-set --unexport --local platform
+set --local --unexport platform
 
-switch (command uname --kernel-name)
-	case "Darwin" "darwin"
-		set --append platform "Darwin"
-	case "Linux" "linux"
-		set --append platform "Linux"
+
+set --local --unexport kernel_name (string lower (command uname --kernel-name))
+
+switch $kernel_name
+  case "darwin"
+    set --append platform "Darwin"
+  case "linux"
+    set --append platform "Linux"
 end
 
-switch (command uname --kernel-release)
-	case "*-Microsoft"
-		set --append platform "WSL"
+
+set --local --unexport kernel_release (string lower (command uname --kernel-release))
+
+switch $kernel_release
+  case "*microsoft*"
+    set --append platform "WSL"
 end
+
 
 set --export --global PLATFORM_NAME (string join '+' $platform)
 set --export --global PLATFORM_ARCH (command uname --processor)

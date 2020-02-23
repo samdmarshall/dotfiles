@@ -12,7 +12,7 @@ function cat --wraps=cat
 end
 
 function icat
-    command kitty +kitten icat $argv
+  command kitty +kitten icat $argv
 end
 
 complete --command cat --short-option c --long-option color --description "Use `pygmentize` for syntax highlighting"

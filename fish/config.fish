@@ -19,14 +19,14 @@ source $FISH_CONFIG_DIR/wrappers.fish || true
 if status is-interactive
   source $FISH_CONFIG_DIR/handlers.fish
 
-	## Kitty (Terminal) setup
-	if not functions --query __kitty_completions
-		source (kitty + complete setup fish | psub)
-	end
+  ## Kitty (Terminal) setup
+  if not functions --query __kitty_completions
+    source (kitty + complete setup fish | psub)
+  end
 
-	## pyenv setup
-	if not functions --query pyenv
-		source (pyenv init -| psub)
-	end
+  ## pyenv setup
+  if not functions --query pyenv
+    source (pyenv init -| psub)
+  end
 end
 
