@@ -51,7 +51,7 @@ other_email=me@samdmarshall.com;demi@pewpewthespells.com;
 #
 
 [new]
-tags=unread;inbox
+tags=unread;inbox;fetched
 ignore=
 
 # Search configuration

@@ -224,7 +224,7 @@
 
   [Billing.Microsoft]
   from-or = ["Microsoft Store", "stremail@microsoft.com"]
-  
+
   [Billing.UPS]
 
   [Billing.TCGPlayer]
@@ -300,6 +300,16 @@ to-or = ["Women-Who-Code-Boston-list@meetup.com", "darwin-dev@lists.apple.com", 
   from-or = ["@bamtechmedia.com"]
   [Employment.Disney]
   from-or = ["@disney.com", "@disneystreaming.com"]
+  [Employment.Shopify]
+  [Employment.PSPDFKit]
+  [Employment.Square]
+  [Employment.Twitter]
+  [Employment.theScore]
+  [Employment.Experis]
+  [Employment.NewYorkTimes]
+  [Employment.BuoyHealth]
+  [Employment.Gitlab]
+  [Employment.Artsy]
 
 [Social]
   [Social.Mastodon]
@@ -330,7 +340,7 @@ to-or = ["medical@"]
   subject-or = ["Your upcoming appointment with "]
 
   [Medical.BrighamWomens]
-  from-or = ["@bwh.harvard.edu"]  
+  from-or = ["@bwh.harvard.edu"]
 
 [Games]
   [Games.Blizzard]

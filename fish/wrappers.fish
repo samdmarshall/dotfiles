@@ -46,6 +46,6 @@ abbr --add --global emacs-fix  "kill -SIGHUP (pgrep --newest emacs)"
 abbr --add --global ptree     "pstree --long --uid-changes --show-pids --thread-names"
 abbr --add --global video2gif "ffmpeg -vf scale=640:-1 -gifflags +transdiff -i <input> <output.gif>"
 abbr --add --global certinfo  "openssl x509 -inform DER -text -in <input>"
-
+abbr --add --global cat       "bat"
 
 

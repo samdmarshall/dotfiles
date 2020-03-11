@@ -2,40 +2,26 @@
   email = hello@pewpewthespells.com #me@samdmarshall.com
   name = Samantha Demi
   signingkey = 0BFD99A4 #4434EFA2
+
 [core]
   editor = emacsclient
   pager = w3m
-  excludesfile = ~/.config/git/excludes
   autocrlf = input
   sparsecheckout = true
-[pull]
-  rebase = true
-[push]
-  default = simple
-[transfer]
-  fsckobjects = true
-[fetch]
-  fsckobjects = true
-[receive]
-  fsckobjects = true
-[help]
-  autocorrect = 10
-[diff]
-  compatctionHeuristic = true
-[pager]
-  diff = diff-so-fancy | $PAGER
-  show = diff-so-fancy | $PAGER
-[diff-so-fancy]
-  rulerWidth = 80
-  markEmptyLines = false
+
+[alias]
+  stat = !git --no-pager diff --stat
+  bless = blame
 
 [color]
   ui = true
+
 [color "diff-highlight"]
   oldNormal = "red bold"
   oldHighlight = "red bold 52"
   newNormal = "green bold"
   newHighlight = "green bold 22"
+
 [color "diff"]
   meta = "yellow"
   frag = "magenta bold"
@@ -44,19 +30,50 @@
   new = "green bold"
   whitespace = "red reverse"
 
-[difftool]
-  prompt = false
 [commit]
   gpgsign = true
   template = ~/.config/git/template.txt
 
-[alias]
-  stat = !git --no-pager diff --stat
+[pull]
+  rebase = true
+
+[push]
+  default = simple
+
+[transfer]
+  fsckobjects = true
+
+[fetch]
+  fsckobjects = true
+
+[receive]
+  fsckobjects = true
+
+[help]
+  autocorrect = 10
+
+[diff]
+  compatctionHeuristic = true
+
+[pager]
+  diff = diff-so-fancy | $PAGER
+  show = diff-so-fancy | $PAGER
+
+[diff-so-fancy]
+  rulerWidth = 80
+  markEmptyLines = false
+
+[difftool]
+  prompt = false
+
+[status]
+  relativePaths = false
 
 [url "ssh://github.com"]
   insteadOf = https://github.com
 [url "ssh://gist.github.com"]
   insteadOf = https://gist.github.com
+
 [filter "lfs"]
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f

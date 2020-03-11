@@ -50,6 +50,8 @@
   '(
     ahg
 
+    call-graph
+
     guide-key
 
     toml-mode
