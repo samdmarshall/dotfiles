@@ -52,7 +52,7 @@ EdgeResistance 50 50
 Compatible
 
 # Set icon search path. It needs before "Style".
-IconPath /usr/local/include/X11/pixmaps:/home/demi/Projects/mlvwm/mini-icons:/home/demi/Projects/mlvwm/mlvwm/pixmap
+IconPath /usr/local/include/X11/pixmaps:/Users/Samantha/Projects/mlvwm/mini-icons:/Users/Samantha/Projects/mlvwm/mlvwm/pixmap
 IconMenuIcon label2.xpm
 
 # Balloon help Settings
@@ -80,7 +80,7 @@ END
 Menu Apple, Icon label1.xpm, Stick
 "About this Workstation..." NonSelect, Gray, Action About
 "" NonSelect
-"Terminal"	Icon mini-display.xpm, Action Exec "kitty" exec /home/demi/.local/bin/kitty
+"Terminal"	Icon mini-display.xpm, Action Exec "kitty" exec /Users/Samantha/.local/bin/kitty
 "Editor"  Action Exec "emacs" exec /usr/local/bin/emacs, Icon mini-edit.xpm
 "calculator" Action Exec "xcal" exec xcalc, Icon mini-calc.xpm
 END
@@ -177,7 +177,7 @@ END
 # Define the initial function
 InitFunction
 Desk 1
-Exec "kitty" /home/demi/.local/bin/kitty
+Exec "kitty" /Users/Samantha/.local/bin/kitty
 END
 
 # Define the restart function

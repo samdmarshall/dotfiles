@@ -24,14 +24,14 @@ secure = ["GISTIT_TOKEN"]
 status = false
 secure = ["WEECHAT_PASSPHRASE"]
   [weechat.additional]
-  WEECHAT_HOME = "/home/demi/.config/weechat/"
+  WEECHAT_HOME = "/Users/Samantha/.config/weechat/"
 
 [brew]
 status = true
 secure = ["HOMEBREW_GITHUB_API_TOKEN"]
 remove = ["GIT_CONFIG"]
   [brew.additional]
-  HOMEBREW_BROWSER = "/home/linuxbrew/.linuxbrew/bin/wsl-open"
+#  HOMEBREW_BROWSER = "/home/linuxbrew/.linuxbrew/bin/wsl-open"
   HOMEBREW_INSTALL_BADGE = "🌈"
   HOMEBREW_NO_ANALYTICS = true
   HOMEBREW_NO_AUTO_UPDATE = true

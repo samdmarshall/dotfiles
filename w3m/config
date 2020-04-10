@@ -65,9 +65,9 @@ document_root /
 personal_document_root 
 cgi_bin 
 index_file 
-mime_types ~/.mime.types, /home/linuxbrew/.linuxbrew/Cellar/w3m/0.5.3_6/etc/mime.types
+mime_types ~/.mime.types, /usr/local/Cellar/w3m/0.5.3_6/etc/mime.types
 mailcap ~/.mailcap
-urimethodmap ~/.w3m/urimethodmap, /home/linuxbrew/.linuxbrew/Cellar/w3m/0.5.3_6/etc/w3m/urimethodmap
+urimethodmap ~/.w3m/urimethodmap, /usr/local/Cellar/w3m/0.5.3_6/etc/w3m/urimethodmap
 editor emacs
 mailto_options 1
 mailer alot

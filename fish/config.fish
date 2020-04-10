@@ -8,12 +8,12 @@ set --unexport --local FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
 # ============================
 
 source $FISH_CONFIG_DIR/platform.fish
-source $FISH_CONFIG_DIR/{$PLATFORM_NAME}.fish || true
+source $FISH_CONFIG_DIR/{$PLATFORM_NAME}.fish; or true
 source $FISH_CONFIG_DIR/environment-functions.fish
 source $FISH_CONFIG_DIR/environment.fish
 source $FISH_CONFIG_DIR/prompt.fish
 source $FISH_CONFIG_DIR/bindings.fish
-source $FISH_CONFIG_DIR/wrappers.fish || true
+source $FISH_CONFIG_DIR/wrappers.fish; or true
 
 ## Only load when attached to something, unused otherwise
 if status is-interactive

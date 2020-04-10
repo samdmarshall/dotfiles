@@ -29,7 +29,7 @@ begin
   begin
     ### fzf
     set --export --global FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
-#    set --export --global FZF_DEFAULT_OPTS    '--preview="preview --metadata {} "'
+    set --export --global FZF_DEFAULT_OPTS    '--preview="preview --metadata {} "'
 
     ### git
     set --export --global GIT_CONFIG $GIT_CONFIG_DIR/config

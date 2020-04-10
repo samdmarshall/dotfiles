@@ -1,7 +1,7 @@
 set --local --unexport platform
 
 
-set --local --unexport kernel_name (string lower (command uname --kernel-name))
+set --local --unexport kernel_name (string lower (command uname -s))
 
 switch $kernel_name
   case "darwin"
@@ -11,7 +11,7 @@ switch $kernel_name
 end
 
 
-set --local --unexport kernel_release (string lower (command uname --kernel-release))
+set --local --unexport kernel_release (string lower (command uname -r))
 
 switch $kernel_release
   case "*microsoft*"
@@ -20,5 +20,5 @@ end
 
 
 set --export --global PLATFORM_NAME (string join '+' $platform)
-set --export --global PLATFORM_ARCH (command uname --processor)
+set --export --global PLATFORM_ARCH (command uname -p)
 

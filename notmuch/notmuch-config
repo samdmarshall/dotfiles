@@ -12,7 +12,7 @@
 #
 
 [database]
-path=/home/demi/eMail/Inbox/
+path=/Users/Samantha/eMail/Inbox/
 
 # User configuration
 #
@@ -104,4 +104,4 @@ synchronize_flags=true
 gpg_path=gpg
 
 [custom]
-backup=/home/demi/eMail-backup
+backup=/Users/Samantha/eMail-backup

@@ -10,7 +10,7 @@
 
 
 
-#attachment_prefix = /home/demi/Downloads/
+#attachment_prefix = /Users/Samantha/Downloads/
 colourmode = 256
 initial_command = "search tag:unread; call hooks.startup(ui)"
 tabwidth = 2
@@ -32,8 +32,8 @@ handle_mouse = True
 
     sendmail_command = "msmtp --read-recipients --read-envelope-from"
 
-    draft_box  = maildir:///home/demi/eMail/Drafts/
-    sent_box  = maildir:///home/demi/eMail/Outbox/
+    draft_box  = maildir:///Users/Samantha/eMail/Drafts/
+    sent_box  = maildir:///Users/Samantha/eMail/Outbox/
 
     [[[abook]]]
       type       = shellcommand
