@@ -1,0 +1,54 @@
+
+alot >= 0.8.1 ; python_version > '3.0'
+asciinema >= 2.0.2 ; python_version > '3.0'
+
+biplist >= 1.0.3
+blessed >= 1.15.0
+
+emoji >= 0.5.1 ; python_version > '3.0'
+gpg >= 1.13.1 ; python_version > '3.0'
+
+hg-git >= 0.8.12 ; python_version > '3.0'
+
+httpie >= 2.0.0 ; python_version > '3.0'
+http-prompt >= 1.0.0 ; python_version > '3.0'
+
+khal >= 0.10.1 ; python_version > '3.0'
+khard >= 0.15.1 ; python_version > '3.0'
+
+linode-cli >= 2.1.4 ; python_version > '3.0'
+
+mercurial >= 5.3.1 ; python_version > '3.0'
+
+mypy >= 0.761 ; python_version > '3.0'
+mypy-extensions >= 0.4.3 ; python_version > '3.0'
+mypyls >= 0.2.1 ; python_version > '3.0'
+
+notmuch == 0.29.1  ; python_version > '3.0'
+
+pandocfilters >= 1.4.2 ; python_version > '3.0'
+paramiko >= 2.4.2 ; python_version > '3.0'
+
+pyconfig >= 1.1.3.1  ; python_version > '3.0'
+Pygments >= 2.5.2 ; python_version > '3.0'
+python-magic >= 0.4.15
+
+pylint >= 2.4.4 ; python_version > '3.0'
+
+pyparsing >= 2.4.6 ; python_version > '3.0'
+
+remarshal >= 0.11.2 ; python_version > '3.0'
+rows >= 0.4.1 ; python_version > '3.0'
+
+todoman >= 3.5.0 ; python_version > '3.0'
+toml >= 0.10.0 ; python_version > '3.0'
+tox >= 3.14.5
+tox-pyenv >= 1.1.0
+twine >= 1.13.0  ; python_version > '3.0'
+
+vdirsyncer >= 0.16.7 ; python_version > '3.0'
+WeasyPrint >= 51 ; python_version > '3.0'
+
+
+tootstream >= 0.3.8.1 ; python_version > '3.0'
+rainbowstream ; python_version > '3.0'

@@ -1,0 +1,465 @@
+
+tap "caskroom/fonts"
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+
+# =================
+# Mac-Only Software
+# =================
+
+if OS.MacOSX?
+  tap "caskroom/cask"
+  tap "homebrew/cask"
+  tap "homebrew/services"
+end
+
+# ===================
+# Linux-Only Software
+# ===================
+
+if OS.Linux?
+  tap "homebrew/core", "https://github.com/Homebrew/linuxbrew-core.git"
+
+  tap "linuxbrew/extra"
+  tap "linuxbrew/xorg"
+
+  # Keyboard configuration database for the X Window System
+  brew "linuxbrew/xorg/xkeyboardconfig"
+
+  # Additional extensions to the XCB library
+  brew "linuxbrew/xorg/xcb-util"
+
+  # X.Org Fonts: font cursor misc
+  brew "linuxbrew/xorg/font-cursor-misc"
+
+  # Additional Wayland protocols
+  brew "linuxbrew/xorg/wayland-protocols", args: ["HEAD"]
+
+  # XML-XCB protocol descriptions that libxcb uses for code generation
+  brew "linuxbrew/xorg/xcb-proto"
+
+  # XCB cursor library (replacement for libXcursor)
+  brew "linuxbrew/xorg/xcb-util-cursor"
+
+  # Additional extensions to the XCB library
+  brew "linuxbrew/xorg/xcb-util-keysyms"
+
+  # Client and window-manager helpers for EWMH and ICCCM
+  brew "linuxbrew/xorg/xcb-util-wm"
+
+  # X.Org: redglass and whiteglass animated cursor themes
+  brew "linuxbrew/xorg/xcursor-themes"
+
+  # X.Org Applications: xprop
+  brew "linuxbrew/xorg/xprop"
+
+  # Protocol for a compositor to talk to its clients
+  brew "linuxbrew/xorg/wayland"
+
+  # Cross-driver middleware
+  brew "linuxbrew/xorg/mesa"
+
+  # Command-line utility that is designed to run on any system with an X11
+  brew "xclip"
+end
+
+
+# ==================
+# Universal Software
+# ==================
+
+brew "fish"
+
+brew "python@2" # Interpreted, interactive, object-oriented programming language
+brew "python"   # Interpreted, interactive, object-oriented programming language
+
+brew "sqlite"   # Command-line interface for SQLite
+brew "cadaver"  # Command-line client for DAV
+brew "graphviz" # Graph visualization software from AT&T and Bell Labs
+brew "paperkey" # Extract just secret information out of OpenPGP secret keys
+brew "pass"     # Password manager
+brew "pass-otp" # The Pass extension for managing one-time-password (OTP) tokens
+
+brew "ncurses"    # Text-based UI library
+brew "libsecret"  # Library for storing/retrieving passwords and other secrets
+brew "lz4"        # Extremely Fast Compression algorithm
+
+
+
+# Software library to render fonts
+brew "freetype"
+
+
+# XML-based font configuration API for X Windows
+brew "fontconfig", args: ["HEAD"]
+
+# Perl compatible regular expressions library
+brew "pcre"
+
+
+# Core application library for C
+brew "glib"
+
+# Vector graphics library with cross-device output support
+brew "cairo"
+
+# Image manipulation library
+brew "jpeg"
+
+# Database of common MIME types
+brew "shared-mime-info"
+
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
+
+# OpenType text shaping engine
+brew "harfbuzz"
+
+# Library to render SVG files using Cairo
+brew "librsvg"
+
+# Garbage collector for C and C++
+brew "bdw-gc"
+
+# International domain name library (IDNA2008, Punycode and TR46)
+brew "libidn2"
+
+# ASN.1 structure parser library
+brew "libtasn1"
+
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+
+# GNU Emacs text editor
+brew "emacs", link: false
+
+# User-space interfaces to POSIX 1003.1e capabilities
+brew "libcap"
+
+
+
+
+
+# System and service manager
+brew "systemd"
+
+# Library for USB device access
+brew "libusb"
+
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+
+# Library access to GnuPG
+brew "gpgme"
+
+# MIME mail utilities
+brew "gmime"
+
+# Implementation of the file(1) command
+brew "libmagic"
+
+# Hierarchical, reference-counted memory pool with destructors
+brew "talloc"
+
+# Thread-based email index, search, and tagging
+brew "notmuch"
+
+# Platform built on V8 to build network applications
+brew "node"
+
+# Download your favourite anime
+brew "anime-downloader"
+
+# Codec library for encoding and decoding AV1 video streams
+brew "aom"
+
+# Spell checker with better logic than ispell
+brew "aspell"
+
+# Message bus system, providing inter-application communication
+brew "dbus"
+
+# Protocol definitions and daemon for D-Bus at-spi
+brew "at-spi2-core"
+
+# GNOME accessibility toolkit
+brew "atk"
+
+# Configuration editing tool and API
+brew "augeas"
+
+# Automatic configure script builder
+brew "autoconf"
+
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+
+# Arbitrary precision numeric processing language
+brew "bc"
+
+# Generate compilation database for clang tooling
+brew "bear"
+
+# GNU binary tools for native development
+brew "binutils"
+
+# Parser generator
+brew "bison"
+
+# Command-line interface for Cabal and Hackage
+brew "cabal-install"
+
+# Library that provides automatic proxy configuration management
+brew "libproxy"
+
+
+
+
+# Vector graphics library with cross-device output support
+brew "cairomm"
+# Statistics utility to count lines of code
+brew "cloc"
+# Cross-platform make
+brew "cmake"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Go dependency management tool
+brew "dep"
+# Display user-friendly message boxes from shell scripts
+brew "dialog"
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
+# Create ASCII graphical histograms in the terminal
+brew "distribution"
+# XML vocabulary to create presentation-neutral documents
+brew "docbook-xsl"
+# Convert text between DOS, UNIX, and Mac formats
+brew "dos2unix"
+# Generate documentation for several programming languages
+brew "doxygen"
+# Extract, view, and test RAR archives
+brew "unrar"
+# Intelligent archive extraction
+brew "dtrx"
+# BSD-style licensed readline alternative
+brew "libedit"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Emacs plugin using libclang to complete C/C++ code
+brew "emacs-clang-complete-async"
+# Emoji on the command-line :scream:
+brew "emojify"
+# Read, write, modify, and display EXIF data on the command-line
+brew "exif"
+# Program that can automate interactive applications
+brew "expect"
+# Library for JPEG-2000 image manipulation
+brew "openjpeg"
+# VP8/VP9 video codec
+brew "libvpx"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Library of Unicode names and annotation data
+brew "libuninameslist"
+# Command-line outline and bitmap font editor/converter
+brew "fontforge"
+# Extraction utility for .zip compressed archives
+brew "unzip"
+# Library for manipulating fonts
+brew "fonttools"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# YAML Parser
+brew "libyaml"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Work on GitHub issues on the command-line
+brew "ghi"
+# Command-line utility for creating Gists
+brew "gistit"
+# Distributed revision control system
+brew "git"
+# Command-line option parsing utility
+brew "gnu-getopt"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# Library for manipulating JPEG-2000 images
+brew "jasper"
+# Image manipulation
+brew "netpbm"
+# GNU triangulated surface library
+brew "gts"
+
+# GNU troff text-formatting system
+brew "groff"
+# SASL library command-line interface
+brew "gsasl"
+# GSettings schemas for desktop components
+brew "gsettings-desktop-schemas"
+# GUI toolkit
+brew "gtk+"
+# Ncurses-based console hex editor
+brew "hexcurse"
+# Idempotent command-line utility for managing your /etc/hosts file
+brew "hostess"
+# Improved top (interactive process viewer)
+brew "htop"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Add GitHub support to git on the command-line
+brew "hub"
+# Spell checker and morphological analyzer
+brew "hunspell"
+# Open h.265 video codec implementation
+brew "libde265"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
+# LLVM's OpenMP runtime library
+brew "libomp", link: false
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Time series, events, and metrics database
+brew "influxdb"
+# String tool
+brew "intltool"
+# Json incremental digger
+brew "jid"
+# Regular expressions library
+brew "oniguruma"
+# Console carddav client
+brew "khard"
+# Network authentication protocol
+brew "krb5"
+# Library for Apple Binary- and XML-Property Lists
+brew "libplist"
+# Callback framework for C++
+brew "libsigc++"
+# C library SSHv1/SSHv2 client and server protocols
+brew "libssh"
+# C implementation of the XDG Base Directory specifications
+brew "libxdg-basedir"
+# Keyboard handling library
+brew "libxkbcommon", args: ["HEAD"]
+# Curses-based tool for viewing and analyzing log files
+brew "lnav"
+# Powerful, lightweight programming language
+brew "lua"
+# Package manager for the Lua programming language
+brew "luarocks"
+# Text-based web browser
+brew "lynx"
+# Swiss Army knife of email handling
+brew "mailutils"
+# Utility for directing compilation
+brew "make"
+# Create a graph of dependencies from GNU-Make
+brew "makefile2graph"
+# Scalable distributed version control system
+brew "mercurial"
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Fast and user friendly build system
+brew "meson"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
+# Remote terminal application
+brew "mosh"
+# Statically typed compiled systems programming language
+brew "nim"
+# Port scanning utility for large networks
+brew "nmap"
+# Node.js virtual environment builder
+brew "nodeenv"
+# Libraries for security-enabled client and server applications
+brew "nss"
+# Tools for one-time password authentication systems
+brew "oath-toolkit"
+# Development kit for the Java programming language
+brew "openjdk"
+# PNG file optimizer
+brew "optipng"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+
+# Linter for prose
+brew "proselint"
+# Password generator
+brew "pwgen"
+# Python 2 bindings for the Cairo graphics library
+brew "py2cairo"
+# Python 3 bindings for the Cairo graphics library
+brew "py3cairo"
+# Python version management
+brew "pyenv"
+# State machine compiler
+brew "ragel"
+# ReStructuredText linter
+brew "rst-lint"
+# Substitute for classic 'make' tool with autoconf/automake functionality
+brew "scons"
+# Stateful tail: show changes to files since last check
+brew "since"
+# SOcket CAT: netcat on steroids
+brew "socat"
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
+# Tool to create intelligent and beautiful documentation
+brew "sphinx-doc"
+# Reference implementation of startup notification protocol
+brew "startup-notification"
+# Version control system designed to be a better CVS
+brew "subversion"
+# Library for writing text-based user interfaces
+brew "termbox"
+# Multi-platform code-search similar to ack and ag
+brew "the_platinum_searcher"
+# Text interface for Git repositories
+brew "tig"
+# Terminal multiplexer
+brew "tmux"
+# Synchronize calendars and contacts
+brew "vdirsyncer"
+# Pager/text based browser
+brew "w3m"
+# Command-line client for WebSockets
+brew "websocat"
+
+# Interactive viewer for graphs written in Graphviz's dot language
+brew "xdot"
+# JavaScript package manager
+brew "yarn"
+# Download YouTube videos from the command-line
+brew "youtube-dl"
+
+
+
+tap "samdmarshall/formulae"
+
+# a script that generates link graphs based on network data
+brew "samdmarshall/formulae/afterglow"
+# Extensible mail retrieval system with POP3, IMAP4, SSL support
+brew "samdmarshall/formulae/getmail"
+# rewrite of `make` in Python
+brew "samdmarshall/formulae/makepy", args: ["HEAD"]
+# SMTP client that can be used as an SMTP plugin for Mutt
+brew "samdmarshall/formulae/msmtp"
+# small file browser
+brew "samdmarshall/formulae/noice", args: ["HEAD"]
+# sig2dot.pl can be used to generate a graph of all of the signature relationships in a GPG/PGP keyring
+brew "samdmarshall/formulae/sig2dot"
+# script for visualizing traceroute data using graphviz
+brew "samdmarshall/formulae/traceviz"
+# utility functions for the X resource manager, development files
+brew "samdmarshall/formulae/xcb-util-xrm", args: ["HEAD"]
+
+
+tap "mistydemeo/formulae"

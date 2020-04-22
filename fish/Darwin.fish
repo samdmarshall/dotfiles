@@ -4,7 +4,7 @@ function __fish_man_page --argument name --argument section
   set -l grep_string ""
   set -l commandline_string (command basename (commandline -po; echo)[1]) ^/dev/null
 
-  if test -n $name 
+  if test -n $name
     set name $commandline_string
   end
 

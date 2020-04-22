@@ -7,7 +7,7 @@
   editor = emacsclient
   pager = w3m
   autocrlf = input
-  sparsecheckout = true
+	sparsecheckout = true
 
 [alias]
   stat = !git --no-pager diff --stat

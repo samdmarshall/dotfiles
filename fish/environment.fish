@@ -18,6 +18,10 @@ begin
   ## System
   set --export --global SHELL /brew/bin/fish
 
+  __envar_add MANPATH /usr/share/man
+  __envar_add MANPATH /usr/local/share/man
+  __envar_add MANPATH $HOME/.local/share/man
+
   ## Default Applications
   set --export --global EDITOR "emacsclient"
   set --export --global PAGER  "w3m"
@@ -29,7 +33,7 @@ begin
   begin
     ### fzf
     set --export --global FZF_DEFAULT_COMMAND "pt --hidden --home-ptignore -g=''"
-#    set --export --global FZF_DEFAULT_OPTS    '--preview="preview --metadata {} "'
+    set --export --global FZF_DEFAULT_OPTS    '--preview="preview --metadata {} "'
 
     ### git
     set --export --global GIT_CONFIG $GIT_CONFIG_DIR/config
@@ -54,6 +58,9 @@ switch $PLATFORM_NAME
       case '*+WSL'
         set --export --global COMPOSE_CONVERT_WINDOWS_PATHS true
         set --export --global DOCKER_HOST 'tcp://127.0.0.1:2375'
+
+        __envar_add MANPATH /brew/share/man
+        __envar_add INFOPATH /brew/share/info
     end
 end
 
@@ -74,6 +81,8 @@ switch $PLATFORM_NAME
     __prefix_add /usr/local
   case "Linux*"
     __prefix_add /brew
+    __path_add /mnt/c/Program\ Files/Microsoft\ VS\ Code/bin
+    __path_add /mnt/c/Program\ Files/Microsoft\ VS\ Code
 end
 
 ## Nimble
@@ -81,4 +90,3 @@ __prefix_add $HOME/.nimble
 
 ## ~/.local
 __prefix_add $HOME/.local
-

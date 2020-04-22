@@ -25,7 +25,7 @@ transplant =
 #zeroconf =
 # third party
 debugshell = ~/.config/hg/extensions/debugshell.py
-hggit = /brew/lib/python3.7/site-packages/hggit/
+#hggit = /brew/lib/python3.7/site-packages/hggit/
 
 [gpg]
 key = 0BFD99A4

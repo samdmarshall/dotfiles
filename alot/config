@@ -121,8 +121,8 @@ handle_mouse = True
 #        H = 
 #        P = 
 #        S = 
-#        R = untag unread
-#        U = tag unread
+        R = untag unread
+        U = tag unread
 #        'ctrl s' = 
 #        g =
 #        'ctrl r' = 
@@ -140,4 +140,4 @@ handle_mouse = True
 #        'g h' =
 #        'g l' =
 #        ' ' = move next
-#        v = pipeto --separately --shell --format=filepath -- email-url-export
+        v = pipeto --separately --shell --format=filepath -- email-url-export
