@@ -1,4 +1,4 @@
-function list --wraps=ls
+function la --wraps=ls
 
   set --local paths
   set --local additional_flags
