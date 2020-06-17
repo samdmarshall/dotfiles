@@ -1,5 +1,8 @@
 #!/usr/bin/env fish
 
-for remove_path in (command git status | grep "deleted:" | awk '{print $2}')
-    command git rm "$remove_path"
-end 
+set --local git_output (git status --porcelain | string match --regex "^[ D|D ].\\s(.+)\\Z" | awk 'NR%2 ==0')
+
+for remove_path in $git_output
+  eval git rm $remove_path
+end
+

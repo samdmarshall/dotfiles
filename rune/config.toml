@@ -2,9 +2,9 @@
 path = "~/.config/storage/secure"
 
 [encrypt]
-cmd = "/usr/bin/gpg2"
+cmd = "/brew/bin/gpg"
 args = ["--armor", "--recipient", "me@samdmarshall.com", "--encrypt"]
 
 [decrypt]
-cmd = "/usr/bin/gpg2"
+cmd = "/brew/bin/gpg"
 args = ["--no-tty", "--quiet", "--decrypt"]

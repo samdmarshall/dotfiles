@@ -57,7 +57,7 @@ switch $PLATFORM_NAME
     switch $PLATFORM_NAME
       case '*+WSL'
         set --export --global COMPOSE_CONVERT_WINDOWS_PATHS true
-        set --export --global DOCKER_HOST 'tcp://127.0.0.1:2375'
+#        set --export --global DOCKER_HOST 'tcp://127.0.0.1:2375'
 
         __envar_add MANPATH /brew/share/man
         __envar_add INFOPATH /brew/share/info
@@ -81,8 +81,8 @@ switch $PLATFORM_NAME
     __prefix_add /usr/local
   case "Linux*"
     __prefix_add /brew
-    __path_add /mnt/c/Program\ Files/Microsoft\ VS\ Code/bin
-    __path_add /mnt/c/Program\ Files/Microsoft\ VS\ Code
+#    __path_add /mnt/c/Program\ Files/Microsoft\ VS\ Code/bin
+#    __path_add /mnt/c/Program\ Files/Microsoft\ VS\ Code
 end
 
 ## Nimble

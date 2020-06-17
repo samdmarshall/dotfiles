@@ -21,7 +21,7 @@ if test $sudoers_mount_entry = 0
   mount_directory ~/Music     $WIN_HOME/Music
   mount_directory ~/Videos    $WIN_HOME/Videos
   mount_directory ~/Desktop   $WIN_HOME/Desktop
-  mount_directory ~/.docker   $WIN_HOME/.docker
+#  mount_directory ~/.docker   $WIN_HOME/.docker
 
 else
   echo "Please add entry for 'mount' in '/etc/sudoers.d/'!"
@@ -42,6 +42,8 @@ set --local --unexport cwd (string lower (pwd))
 
 switch $cwd
   case (string lower /mnt/c/Windows/System32)
+    cd $HOME
+  case (string lower $WIN_HOME)
     cd $HOME
   case (string lower /mnt/c/Users/$WIN_USER)
     cd $HOME

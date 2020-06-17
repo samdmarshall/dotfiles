@@ -113,6 +113,9 @@
   [Alerts.Netshade]
   from-or = ["@raynersw.com"]
 
+  [Alerts.Firefox]
+  from-or = ["accounts@firefox.com"]
+
 [Billing]
   [Billing.Amazon]
   from-or = ["order-update@amazon.com", "noreply@amazon.com"]
