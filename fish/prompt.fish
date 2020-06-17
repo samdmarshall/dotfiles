@@ -11,7 +11,9 @@ function fish_right_prompt
 end
 
 function fish_prompt
-  printf '\n%s\n' (when)
-  printf '%s\n' (where --color=always) 
-  printf '(%s%s%s) ' (set_color $__fish_prompt_user) $USER (set_color $__fish_prompt_normal)
+  printf '\n'
+  when --color:always
+  printf '\n' 
+  where --color=always
+  printf ' $ '
 end
