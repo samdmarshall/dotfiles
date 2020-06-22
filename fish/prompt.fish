@@ -11,9 +11,6 @@ function fish_right_prompt
 end
 
 function fish_prompt
-  printf '\n'
-  when --color=always
-  printf '\n'
-  where --color=always
-  printf ' $ '
+  printf '\n%s\n'  (when --color=always)
+  where --color=always ; printf ' $ '
 end
