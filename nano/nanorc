@@ -1,0 +1,5 @@
+set tabsize 2
+set tabstospaces
+
+set smooth
+set softwrap

@@ -163,7 +163,7 @@
   from-or = ["bingo@patreon.com"]
 
   [Billing.StudentLoans]
-  from-or = ["info@borrowerservices.mygreatlakes.org"]
+  from-or = ["info@borrowerservices.mygreatlakes.org", "noreply@studentaid.gov"]
 
   [Billing.HumbleBundle]
   rule = "from:contact@humblebundle.com or subject:'Your Humble Bundle receipt'"

@@ -10,9 +10,10 @@
 
 
 
-#attachment_prefix = /home/demi/Downloads/
+attachment_prefix = ~/Downloads/
 colourmode = 256
-initial_command = "search tag:unread; call hooks.startup(ui)"
+initial_command = "search tag:unread" #; call hooks.startup(ui)"
+hooks_file = ""
 tabwidth = 2
 #theme = tomorrow
 #bug_on_exit = False

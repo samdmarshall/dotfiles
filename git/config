@@ -12,6 +12,8 @@
 [alias]
   stat = !git --no-pager diff --stat
   bless = blame
+  stage = add
+  unstage = reset --
 
 [color]
   ui = true
@@ -80,3 +82,7 @@
   required = true
 [github]
   user = samdmarshall
+
+[init]
+defaultBranch = develop
+

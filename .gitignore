@@ -82,6 +82,9 @@ necromancy/trace.log
 
 ## pt
 
+## pulse
+pulse/*
+
 ## pypi (pip)
 
 ## rune
@@ -112,4 +115,5 @@ vdirsyncer/status
 yarn/*
 !yarn/yarnrc
 
-
+# koneko
+koneko/config.ini

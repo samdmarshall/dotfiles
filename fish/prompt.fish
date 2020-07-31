@@ -12,5 +12,5 @@ end
 
 function fish_prompt
   printf '\n%s\n'  (when --color=always)
-  where --color=always ; printf ' $ '
+  where --color=always
 end
