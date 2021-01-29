@@ -35,9 +35,13 @@ remove = ["GIT_CONFIG"]
   HOMEBREW_INSTALL_BADGE = "🌈"
   HOMEBREW_NO_ANALYTICS = true
   HOMEBREW_NO_AUTO_UPDATE = true
-  HOMEBREW_VERBOSE = true
+#  HOMEBREW_VERBOSE = true
   HOMEBREW_NO_INSECURE_REDIRECT = true
   HOMEBREW_PIPELINE_FORMULA_REPO = "samdmarshall/homebrew-formulae"
+  HOMEBREW_NO_INSTALL_CLEANUP = true
+  HOMEBREW_DISPLAY_INSTALL_TIMES = true
+  HOMEBREW_BAT = true
+  HOMEBREW_BAT_CONFIG_PATH = "~/.config/bat/config"
 
 [twine]
 status = true

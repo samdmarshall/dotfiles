@@ -116,6 +116,9 @@
   [Alerts.Firefox]
   from-or = ["accounts@firefox.com"]
 
+  [Alerts.Pixiv]
+  from-or = ["@pixiv.net"]
+
 [Billing]
   [Billing.Amazon]
   from-or = ["order-update@amazon.com", "noreply@amazon.com"]
@@ -154,7 +157,8 @@
   from-or = ["notify@e.simple.com", "support@simple.com", "notify@simple.com"]
 
   [Billing.PlayStation]
-  from-or = ["Sony@email.sonyentertainmentnetwork.com", "PlayStation@playstationemail.com"]
+  from-or = ["Sony@email.sonyentertainmentnetwork.com",
+  "PlayStation@playstationemail.com", "reply@txn-email.playstation.com"]
 
   [Billing.PayPal]
   from-or = ["service@paypal.com", "member@paypal.com", "paypal@paypal.com"]
@@ -315,10 +319,14 @@ to-or = ["Women-Who-Code-Boston-list@meetup.com", "darwin-dev@lists.apple.com", 
   [Employment.BuoyHealth]
   [Employment.Gitlab]
   [Employment.Artsy]
+  [Employment.Adobe]
 
 [Social]
   [Social.Mastodon]
   from-or = ["@awoo.space", "@witches.social"]
+
+  [Social.Blockparty]
+  from-or = ["@blockpartyapp.com"]
 
 [spam]
 subject-or = ["SPAM"]
@@ -372,7 +380,7 @@ to-or = ["medical@"]
 
 [Financial]
   [Financial.LincolnInvestments]
-  from-or = ["LINCOLN INVESTMENT", "id@proxyvote.com"]
+  from-or = ["LINCOLN INVESTMENT", "id@proxyvote.com", "alerts@lincolninvestment.com"]
 
 [Comics]
   [Comics.WebToon]
@@ -383,6 +391,9 @@ to-or = ["medical@"]
 
   [Comics.ChromaticPress]
   from-or = ["@chromaticpress.com"]
+
+  [Comics.Inkr]
+  from-or = ["@inkr.com"]
 
 [Notes]
 from-or = ["notes@"]

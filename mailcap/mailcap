@@ -1,6 +1,7 @@
 # view
 text/html;                      w3m -dump -o document_charset=%{charset} '%s'; nametemplate=%s.html; copiousoutput
-text/*;                         emacsclient %s; needsterminal
+#text/*;                         emacsclient %s; needsterminal
+text/*;                         w3m -dump -T %t -I %{charset} -O %{charset} '%s'; copiousoutput
 
 # calendar
 application/ics;                khal import --include-calendar Personal --batch %s

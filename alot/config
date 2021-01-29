@@ -1,19 +1,8 @@
 
-
-
-
-
-
-
-
-
-
-
-
 attachment_prefix = ~/Downloads/
 colourmode = 256
 initial_command = "search tag:unread" #; call hooks.startup(ui)"
-hooks_file = ""
+#hooks_file = ""
 tabwidth = 2
 #theme = tomorrow
 #bug_on_exit = False
@@ -40,6 +29,7 @@ handle_mouse = True
       type       = shellcommand
       command    = "khard email --parsable"
       regexp     = '^(?P<email>[^@]+@[^\t]+)\t+(?P<name>[^\t]+)'
+      ignore_case= True
                 
 
 [bindings]

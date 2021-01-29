@@ -8,7 +8,7 @@
 
     org-caldav
     org-vcard
-    org-mind-map
+;;    org-mind-map
     org-if
     (org-books :location (recipe :fetcher github :repo "lepisma/org-books"))
     )
@@ -40,9 +40,9 @@
     (use-package org-vcard)
     )
 
-  (defun org-demi/init-org-mind-map ()
-    (use-package org-mind-map)
-    )
+;;  (defun org-demi/init-org-mind-map ()
+;;    (use-package org-mind-map)
+;;    )
 
   (defun org-demi/init-org-if ()
     (use-package org-if)
