@@ -4,7 +4,7 @@ mode = ScriptMode.Verbose
 switch "listFullPaths", "on"
 #switch "NimblePath", "~/.nimble/pkgs"
 switch "verbosity", "2"
-#switch "cc", "clang"
+switch "cc", "clang"
 switch "colors", "on"
 #switch "index", "on"
 #switch "lineTrace", "on"

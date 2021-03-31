@@ -18,8 +18,12 @@
 
     ;; Languages
     asm
-    (c-c++ :variables c-c++-enable-clang-support t)
+    (c-c++ :variables
+           c-c++-enable-clang-support t
+           c-c++-enable-clang-format-on-save t
+           )
     emacs-lisp
+    gpu
     html
     javascript
     lua
@@ -31,15 +35,16 @@
 
 
     ;; Applications
-    ansible
-    github
     nginx
     pandoc
+    pass
     (shell :variables shell-default-term-shell "/brew/bin/fish")
     version-control
 
     ;; Data Files
     csv
+    json
+    restructuredtext
     graphviz
     markdown
     yaml
@@ -55,10 +60,16 @@
     guide-key
 
     toml-mode
+    cuda-mode
+
+    smog
 
     xcode-project
 
+    ;; Themes
     moe-theme
+    poet-theme
+    ayu-theme
     )
   )
 
@@ -97,7 +108,7 @@
 
   (defvar demi/org/directory-root
     (file-name-as-directory
-     (expand-file-name "OrgFiles/" demi/directory-user)))
+     (expand-file-name "iCloud/Documents/OrgFiles/" demi/directory-user)))
 
   (defvar demi/org/directory-assets
     (file-name-as-directory
@@ -207,6 +218,7 @@
    fish-indent-offset 2
    indent-tabs-mode nil
 
+   smog-command "style -L en"
    )
 
  ; (rainbow-delimiters-mode nil)
@@ -348,16 +360,3 @@
   (demi/user-config/theme)
   (demi/user-config/hooks)
   )
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(moe-theme yapfify yaml-mode xterm-color xcode-project x86-lookup ws-butler winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package typo toml-mode toc-org tide tagedit spaceline slim-mode shell-pop scss-mode sass-mode restart-emacs request rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort pug-mode powershell pip-requirements persp-mode pcre2el paradox pandoc-mode ox-pandoc org-vcard org-projectile org-present org-pomodoro org-mind-map org-mime org-if org-download org-caldav org-books open-junk-file nlinum-relative nim-mode nginx-mode neotree nasm-mode multi-term move-text mmm-mode markdown-toc magit-gh-pulls macrostep lua-mode lorem-ipsum livid-mode live-py-mode link-hint json-mode js2-refactor js-doc jinja2-mode insert-shebang indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag guide-key graphviz-dot-mode google-translate golden-ratio gnuplot github-search github-clone github-browse-file git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-nim flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emoji-cheat-sheet-plus emmet-mode elisp-slime-nav dumb-jump disaster diminish diff-hl define-word cython-mode csv-mode company-web company-tern company-statistics company-shell company-emoji company-c-headers company-ansible company-anaconda column-enforce-mode coffee-mode cmake-mode clean-aindent-mode clang-format cargo call-graph calfw-org calfw-ical calfw-cal calfw auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile ansible-doc ansible ahg aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

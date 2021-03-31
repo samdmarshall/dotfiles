@@ -4,7 +4,7 @@
   signingkey = 0BFD99A4 #4434EFA2
 
 [core]
-  editor = emacsclient
+  editor = emacsclient --tty
   pager = w3m
   autocrlf = input
 	sparsecheckout = true
@@ -71,18 +71,26 @@
 [status]
   relativePaths = false
 
-[url "ssh://github.com"]
-  insteadOf = https://github.com
-[url "ssh://gist.github.com"]
-  insteadOf = https://gist.github.com
+[protocol.http]
+  allow = never
+[protocol.git]
+  allow = never
+
+#[url "ssh://github.com"]
+#  insteadOf = https://github.com
+#[url "ssh://gist.github.com"]
+#  insteadOf = https://gist.github.com
 
 [filter "lfs"]
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
+
 [github]
   user = samdmarshall
 
 [init]
-defaultBranch = develop
+  defaultBranch = main
 
+[sequence]
+  editor = rebase-editor

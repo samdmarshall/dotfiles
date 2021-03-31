@@ -90,3 +90,6 @@ __prefix_add $HOME/.nimble
 
 ## ~/.local
 __prefix_add $HOME/.local
+
+## Cargo
+__prefix_add $HOME/.cargo

@@ -4,16 +4,15 @@
 # Imports
 #=========
 
+import os
+import datetime
+import logging
+import asyncio
+import subprocess
 
-# import os
-# import datetime
-# import logging
-# import asyncio
-# import subprocess
-
-# from alot.settings.const import settings
-# from alot.ui import UI
-# from alot.commands import Command, registerCommand
+from alot.settings.const import settings
+from alot.ui import UI
+from alot.commands import Command, registerCommand
 
 
 #================
@@ -53,34 +52,34 @@
 #   logging.info("closing now...")
 
 # Called periodically (`periodic_hook_frequency` = [300 sec, default]) while application is in use.
-# def pre_global_loop_hook(**kwargs):
-#   logging.info("idle update...")
+def pre_global_loop_hook(**kwargs):
+    logging.info("idle update...")
 
-# @registerCommand(MODE, 'fetch')
-# class FetchCommand(Command):
 
-#   repeatable = True
+@registerCommand('global', 'fetch', help="Fetch new mail")
+class FetchCommand(Command):
+    repeatable = True
 
-#   async def apply(self, ui):
-#     command = ["notmuch", "new"]
+    async def apply(self, ui):
+        command = ["/brew/bin/notmuch", "new"]
 
-#     config_dir = os.path.dirname(settings.hooks.__file__)
-#     logging.info(config_dir)
+        config_dir = os.path.dirname(settings.hooks.__file__)
+        logging.info(config_dir)
 
-#     logging_dir = os.path.join(config_dir, "logs/")
-#     logging.info(logging_dir)
+        logging_dir = os.path.join(config_dir, "logs/")
+        logging.info(logging_dir)
 
-#     if not (os.path.exists(logging_dir) and os.path.isdir(logging_dir)):
-#       os.makedirs(logging_dir)
+        if not (os.path.exists(logging_dir) and os.path.isdir(logging_dir)):
+            os.makedirs(logging_dir)
 
-#     time = datetime.date.today().strftime("%Y%m%d %H%M%S")
-#     log_file_path = "_".join(command) + " " + time
+        time = datetime.date.today().strftime("%Y%m%d %H%M%S")
+        log_file_path = "_".join(command) + " " + time
 
-#     stdout_log_path = os.path.join(logging_dir, log_file_path + ".stdout.log")
-#     stderr_log_path = os.path.join(logging_dir, log_file_path + ".stderr.log")
+        stdout_log_path = os.path.join(logging_dir, log_file_path + ".stdout.log")
+        stderr_log_path = os.path.join(logging_dir, log_file_path + ".stderr.log")
 
-#     stdout_log = open(stdout_log_path, 'w')
-#     stderr_log = open(stderr_log_path, 'w')
+        stdout_log = open(stdout_log_path, 'w')
+        stderr_log = open(stderr_log_path, 'w')
 
-#     result = await subprocess.Popen(command, stdout=stdout_log, stderr=stderr_log)
-#     return result
+        result = subprocess.Popen(command, stdout=stdout_log, stderr=stderr_log)
+        return result

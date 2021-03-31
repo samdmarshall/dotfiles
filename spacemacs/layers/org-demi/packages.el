@@ -11,6 +11,8 @@
 ;;    org-mind-map
     org-if
     (org-books :location (recipe :fetcher github :repo "lepisma/org-books"))
+    org-auto-tangle
+
     )
   )
 
@@ -50,6 +52,13 @@
 
   (defun org-demi/init-org-books ()
     (use-package org-books)
+    )
+
+  (defun org-demi/init-org-auto-tangle ()
+    (use-package org-auto-tangle
+      :defer t
+      :hook (org-mode . org-auto-tangle-mode)
+      )
     )
 
 ;;  )

@@ -7,7 +7,7 @@ tabwidth = 2
 #theme = tomorrow
 #bug_on_exit = False
 #honor_followup_to = True
-#prefer_plaintext = True
+prefer_plaintext = True
 #auto_remove_unread = True
 handle_mouse = True
 

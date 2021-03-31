@@ -65,3 +65,7 @@ secure = ["LINODE_CLI_TOKEN"]
 [hub]
 status = true
 secure = ["GITHUB_TOKEN"]
+
+[cargo]
+status = true
+remove = ["GIT_CONFIG"]

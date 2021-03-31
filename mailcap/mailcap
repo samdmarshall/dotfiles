@@ -5,14 +5,24 @@ text/*;                         w3m -dump -T %t -I %{charset} -O %{charset} '%s'
 
 # calendar
 application/ics;                khal import --include-calendar Personal --batch %s
+text/calendar;                  khal import --include-calendar Personal --batch %s
 
 # images
-image/*;                        wsl-open %s
+image/*;                        viu %s
 
 # pdfs
 application/pdf;                wsl-open %s
 
-# archive formatss
+# office documents
+#application/msword; 
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; docx2txt %s; copiousoutput # docx file
+#application/vnd.ms-excel; # .xls
+#application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; # .xlsx
+#application/vnd.ms-powerpoint; # .ppt
+#application/vnd.openxmlformats-officedocument.presentationml.presentation; # .pptx
+
+
+# archive formats
 application/zip;                dtrx %s
 application/x-tar;              dtrx %s
 application/x-bzip2;            dtrx %s
@@ -23,4 +33,4 @@ application/x-xz;               dtrx %s
 application/x-7z-compressed;    dtrx %s
 application/x-rar-compressed;   dtrx %s
 application/x-gtar;             dtrx %s
-
+application/vnd.rar;            dtrx %s

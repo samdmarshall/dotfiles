@@ -68,7 +68,7 @@ index_file
 mime_types ~/.mime.types, /home/linuxbrew/.linuxbrew/Cellar/w3m/0.5.3_6/etc/mime.types
 mailcap ~/.mailcap
 urimethodmap ~/.w3m/urimethodmap, /home/linuxbrew/.linuxbrew/Cellar/w3m/0.5.3_6/etc/w3m/urimethodmap
-editor emacs
+editor emacsclient
 mailto_options 1
 mailer alot
 extbrowser /usr/bin/firefox

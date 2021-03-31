@@ -25,7 +25,8 @@ transplant =
 #zeroconf =
 # third party
 debugshell = ~/.config/hg/extensions/debugshell.py
-#hggit = /brew/lib/python3.7/site-packages/hggit/
+#hggit = /brew/lib/python3.8/site-packages/hggit/
+hggit =
 
 [gpg]
 key = 0BFD99A4
@@ -33,7 +34,7 @@ key = 0BFD99A4
 [hooks]
 #precommit.sign = hg sign --no-commit
 #priority.precommit.sign = 1
-precommit.signature = python:~/.config/hg/hooks/signoff.py:sign_commit_message
+#precommit.signature = python:~/.config/hg/hooks/signoff.py:sign_commit_message
 
 [ui]
 username = Samantha Demi <hello@pewpewthespells.com>
@@ -42,3 +43,8 @@ interface = curses
 verbose = true
 #debug = true
 paginate = false
+ignore.other = ~/.config/hg/hgignore
+
+[git]
+intree = true
+
