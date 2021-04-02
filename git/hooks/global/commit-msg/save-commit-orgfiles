@@ -120,8 +120,10 @@ def main(args: list) -> int:
 
     #print(orgfiles_commit_file)
     shutil.copy2(commit_msg_file, orgfiles_commit_file)
+    print("  Saving commit to: {}".format( orgfiles_commit_file ))
 
     commits_index_orgfile = orgfiles_directory.joinpath("commits.org")
+    print("  Updating {} index...".format( commits_index_orgfile ))
     fd = open(commits_index_orgfile, 'a')
     with fd:
         fd.write("* <{}> [[file:./git-commits/{}/{}/{}][{}]] :{}: ".format( timestamp, encoded_origin, encoded_branch, commit_orgfile, ". ".join(summary), repo_path.name ) + "\n")
