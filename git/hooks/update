@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Arguments
+#   refname="$1"
+#   oldrev="$2"
+#   newrev="$3"
+
+dir=`dirname $0`
+name=`basename $0`
+
+$dir/hook-runner $name $*
+

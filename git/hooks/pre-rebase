@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Arguments
+#   basebranch="$1"
+#   targetbranch="$2"
+
+dir=`dirname $0`
+name=`basename $0`
+
+$dir/hook-runner $name $*

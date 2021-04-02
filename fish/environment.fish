@@ -43,6 +43,9 @@ begin
 
     ## Gem
     set --export --global GEM_HOME   $HOME/.gem
+
+    ## OrgFiles
+    set --export --global ORGFILES_DIR $HOME/iCloud/Documents/OrgFiles/
   end
 end
 

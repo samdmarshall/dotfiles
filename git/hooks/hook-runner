@@ -1,0 +1,97 @@
+#!/usr/bin/env python3
+
+# The purpose of this script is to handle the invocation of hooks
+# registered globally as well as hooks that are local to the specific
+# repository that is being worked from. So this script first calls any
+# actions that are registered in the "global/" sub-directory, then
+# finds the repository's ".git/hooks/" directory based on the CWD -
+# then calls those hooks afterwards.
+#
+# 2021-04-01: There may be some future problems with the ordering of
+# these hook actions but right now i have so few hooks that it isn't
+# a concern for me.
+
+# =======
+# Imports
+# =======
+
+import sys
+import stat
+import random
+import typing
+import subprocess
+from pathlib import Path
+
+# =========
+# Constants
+# =========
+
+T = typing.TypeVar("T")
+
+# =========
+# Functions
+# =========
+
+def one(l: typing.Sequence[T]) -> T:
+    result = None
+    if len(l) > 0:
+        result = random.choice(l)
+    return result
+
+
+def find_deepest_git_repo(file: Path) -> typing.Tuple[bool, Path]:
+    result = file.resolve()
+    matches = []
+    parents = result.parents
+    for parent in reversed(parents):
+        git_repo = parent.joinpath(".git/")
+        if git_repo.exists() and git_repo.is_dir():
+            matches.append(git_repo)
+    if len(matches) > 0:
+        return (True, one(matches))
+    return (False, result)
+
+def main(args: list) -> int:
+    result = 0
+
+    hook_name = args[1]
+    arguments = args[2:]
+
+    #print("DEBUG:[git-hook]: {}".format( hook_name ))
+
+    current_file = Path(__file__).resolve()
+    current_dir = current_file.parent
+    global_hooks_root = current_dir.joinpath("global/")
+    global_hook_path = global_hooks_root.joinpath(hook_name)
+    if global_hook_path.exists() and global_hook_path.is_dir():
+        # only attempt calling global hooks if there is one registered!
+        for hook_path in global_hook_path.iterdir():
+            is_executable = stat.S_IXUSR & hook_path.stat()[stat.ST_MODE]
+            if hook_path.is_file() and is_executable:
+                exec_arguments = [hook_path]
+                exec_arguments.extend(arguments)
+                print("[{}]: {}".format( hook_name, hook_path.name ))
+                result = subprocess.run(exec_arguments).returncode
+                if result != 0:
+                    break
+    if result == 0:
+        found_repo, git_repo = find_deepest_git_repo(Path.cwd())
+        if found_repo:
+            # now call the hooks that are part of the specific git repo this was called from!
+            git_repo_hooks_dir = git_repo.joinpath("hooks/")
+            git_repo_hook_path = git_repo_hooks_dir.joinpath(hook_name)
+            if git_repo_hook_path.exists() and git_repo_hook_path.is_file():
+                # ensure that the specific hook being called has a registered action.
+                exec_arguments = [git_repo_hook_path]
+                exec_arguments.extend(arguments)
+                print("[{}]: {} ".format( hook_name, git_repo_hook_path ))
+                result = subprocess.run(exec_arguments).returncode
+    return result
+
+# ===========
+# Entry Point
+# ===========
+
+if __name__ == "__main__":
+    exit_code = main(sys.argv)
+    sys.exit(exit_code)

@@ -8,6 +8,7 @@
   pager = w3m
   autocrlf = input
 	sparsecheckout = true
+  hooksPath = ~/.config/git/hooks/
 
 [alias]
   stat = !git --no-pager diff --stat
@@ -34,7 +35,8 @@
 
 [commit]
   gpgsign = true
-  template = ~/.config/git/template.txt
+#  template = ~/.config/git/template.txt
+  status = false
 
 [pull]
   rebase = true
@@ -76,8 +78,8 @@
 [protocol.git]
   allow = never
 
-#[url "ssh://github.com"]
-#  insteadOf = https://github.com
+[url "ssh://github.com"]
+  insteadOf = https://github.com
 #[url "ssh://gist.github.com"]
 #  insteadOf = https://gist.github.com
 

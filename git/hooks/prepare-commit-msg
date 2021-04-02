@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Arguments:
+#   COMMIT_MSG_FILE=$1
+#   COMMIT_SOURCE=$2
+#   SHA1=$3
+
+dir=`dirname $0`
+name=`basename $0`
+
+$dir/hook-runner $name $*
+
