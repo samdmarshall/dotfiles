@@ -93,7 +93,7 @@ def main(args: list) -> int:
             if len(line) > 0:
                 summary.append(line)
 
-    orgfiles_directory = Path(os.environ.get("ORGFILES_DIR", "~/Docuemnts/Orgfiles/")).resolve()
+    orgfiles_directory = Path(os.getenv("ORGFILES_DIR", "~/Documents/Orgfiles/")).resolve()
     if not orgfiles_directory.exists():
         orgfiles_directory.mkdir(parents=True)
 
