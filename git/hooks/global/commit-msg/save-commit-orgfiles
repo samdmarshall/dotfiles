@@ -97,7 +97,7 @@ def main(args: list) -> int:
     if not orgfiles_directory.exists():
         orgfiles_directory.mkdir(parents=True)
 
-    print(orgfiles_directory)
+    #print(orgfiles_directory)
     orgfiles_gitcommits_dir = orgfiles_directory.joinpath("git-commits/")
     if not orgfiles_gitcommits_dir.exists():
         orgfiles_gitcommits_dir.mkdir()
