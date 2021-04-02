@@ -144,7 +144,7 @@ def main() -> int:
         fd.write("#+date: {} ".format( timestamp ) + "\n")
 
         fd.write("#+tags: added(A) modified(M) deleted(D) renamed(R) copied(C) ignored(I) untracked(?) typechange(T) unreadable(X) " + "\n")
-        fd.write("#+startup: indent showeverything " + "\n")
+        fd.write("#+startup: showeverything " + "\n")
 
         fd.write("<summary> " + "\n")
         fd.write("\n")

@@ -97,28 +97,28 @@ def main(args: list) -> int:
     if not orgfiles_directory.exists():
         orgfiles_directory.mkdir(parents=True)
 
-    print(orgfiles_directory)
+    #print(orgfiles_directory)
     orgfiles_gitcommits_dir = orgfiles_directory.joinpath("git-commits/")
     if not orgfiles_gitcommits_dir.exists():
         orgfiles_gitcommits_dir.mkdir()
 
-    print(orgfiles_gitcommits_dir)
+    #print(orgfiles_gitcommits_dir)
     encoded_origin = origin_address.replace(os.sep, "_")
     orgfiles_remote_dir = orgfiles_gitcommits_dir.joinpath(encoded_origin)
     if not orgfiles_remote_dir.exists():
         orgfiles_remote_dir.mkdir()
 
-    print(orgfiles_remote_dir)
+    #print(orgfiles_remote_dir)
     encoded_branch = branch.replace(os.sep, "_")
     orgfiles_branch_dir = orgfiles_remote_dir.joinpath(encoded_branch)
     if not orgfiles_branch_dir.exists():
         orgfiles_branch_dir.mkdir()
 
-    print(orgfiles_branch_dir)
+    #print(orgfiles_branch_dir)
     commit_orgfile = "{}.org".format(timestamp)
     orgfiles_commit_file = orgfiles_branch_dir.joinpath(commit_orgfile)
 
-    print(orgfiles_commit_file)
+    #print(orgfiles_commit_file)
     shutil.copy2(commit_msg_file, orgfiles_commit_file)
 
     commits_index_orgfile = orgfiles_directory.joinpath("commits.org")
@@ -127,7 +127,7 @@ def main(args: list) -> int:
         fd.write("* <{}> [[file:./git-commits/{}/{}/{}][{}]] :{}: ".format( timestamp, encoded_origin, encoded_branch, commit_orgfile, ". ".join(summary), repo_path.name ) + "\n")
     fd.close()
 
-    exit_code = 1
+    exit_code = 0
 #    repo_path = find_root_git_repo(Path.cwd())
 #    repo = pygit2.Repository(repo_path)
 
