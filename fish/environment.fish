@@ -16,7 +16,7 @@ begin
   set fish_emoji_width 2
 
   ## System
-  set --export --global SHELL /brew/bin/fish
+  set --export --global SHELL /opt/homebrew/bin/fish
 
   __envar_add MANPATH /usr/share/man
   __envar_add MANPATH /usr/local/share/man
@@ -45,7 +45,7 @@ begin
     set --export --global GEM_HOME   $HOME/.gem
 
     ## OrgFiles
-    set --export --global ORGFILES_DIR $HOME/iCloud/Documents/OrgFiles/
+    set --export --global ORGFILES_DIR $HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs/Documents/OrgFiles/
   end
 end
 
@@ -59,7 +59,7 @@ switch $PLATFORM_NAME
   case 'Linux*'
     switch $PLATFORM_NAME
       case '*+WSL'
-        set --export --global COMPOSE_CONVERT_WINDOWS_PATHS true
+#        set --export --global COMPOSE_CONVERT_WINDOWS_PATHS true
 #        set --export --global DOCKER_HOST 'tcp://127.0.0.1:2375'
 
         __envar_add MANPATH /brew/share/man
@@ -81,7 +81,7 @@ __path_add $SCRIPTS_DIR
 ## Homebrew
 switch $PLATFORM_NAME
   case "Darwin"
-    __prefix_add /usr/local
+    __prefix_add /opt/homebrew
   case "Linux*"
     __prefix_add /brew
 #    __path_add /mnt/c/Program\ Files/Microsoft\ VS\ Code/bin

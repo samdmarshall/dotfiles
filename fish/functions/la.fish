@@ -1,4 +1,4 @@
-function la --wraps=ls
+function la --wraps=gls
 
   set --local paths
   set --local additional_flags
@@ -35,11 +35,11 @@ function la --wraps=ls
     --color=always           \
     --time=access            \
     --author                 \
-    --sort=none              \
+#    --sort=name              \
     --quoting-style=literal  \
     $no_owner_display        \
-    $natural_number_ordering \
+#    $natural_number_ordering \
     $ignore_patterns
 
-  command ls $flags $additional_flags -U $paths
+  command gls $flags $additional_flags -U $paths
 end

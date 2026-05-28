@@ -7,7 +7,7 @@ set __fish_prompt_hostname (hostname -s)
 
 
 function fish_right_prompt
-  printf '%s %s' (coven) (batterylevel --default --color --status)
+  printf '%s' (batterylevel --default --color --status)
 end
 
 function fish_prompt

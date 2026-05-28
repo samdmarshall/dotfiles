@@ -26,7 +26,7 @@ hint "CC", on
 hint "Source", on
 hint "XDeclaredButNotUsed", on
 hint "Exec", on
-hint "LineTooLong", off
+#hint "LineTooLong", off
 hint "GlobalVar", off
 hint "Performance", on
 hint "Path", on
@@ -35,5 +35,5 @@ hint "GCStats", off
 
 #switch "define", "checkAbi:on"
 
-switch "cincludes", "/brew/include"
-switch "clibdir", "/brew/lib"
+switch "cincludes", "/opt/homebrew/include"
+switch "clibdir", "/opt/homebrew/lib"
